@@ -142,17 +142,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "713d9c83375bbc49",
+  "active": "1b1427fe48c851aa",
   "lastOpenFiles": [
+    "queries/Table Query Examples.md",
+    "example_data/dailys/2022-02-04.md",
     "example_data/dailys/2022-01-03.md",
+    "Vault To Do.md",
+    "example_data/dailys/2022-02-27.md",
+    "example_data/dailys/2022-02-28.md",
     "queries/Task Query Examples.md",
-    "example_data/dailys/2022-03-25.md",
-    "example_data/dailys/2021-01-02.md",
-    "README.md",
-    "example_data/dailys/2022-01-07.md",
-    "example_data/dailys/2022-01-09.md",
-    "example_data/dailys/2022-01-18.md",
-    "example_data/dailys/2022-01-16.md",
-    "example_data/dailys/2022-01-14.md"
+    "example_data/dailys/2022-01-28.md",
+    "example_data/dailys/2022-01-30.md",
+    "example_data/dailys/2022-01-04.md"
   ]
 }

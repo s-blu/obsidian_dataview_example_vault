@@ -1,18 +1,30 @@
 # Task Query Examples
 
-List all tasks that are completed for a specific week
-```dataview
-TASK
-FROM "example_data/dailys"
-WHERE completed AND date(file.name).week = 5
-```
-
-
-List all tasks with a specific status grouped by their file
+List all tasks with a specific status
 ```dataview
 TASK
 FROM "example_data/dailys"
 WHERE status = ">"
-GROUP BY file.name
 ```
 
+---
+
+Get latest 10 uncompleted (status is not "x") tasks
+```dataview
+TASK
+FROM "example_data/dailys"
+WHERE !completed
+SORT file.day DESC
+LIMIT 10
+```
+
+---
+
+Get latest 10 tasks with a status (not empty) grouped by their status
+```dataview
+TASK FROM "example_data/dailys" 
+WHERE status != " "
+SORT file.day DESC 
+LIMIT 10
+GROUP BY status 
+```
