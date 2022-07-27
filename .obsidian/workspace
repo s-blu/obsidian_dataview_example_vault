@@ -1,0 +1,158 @@
+{
+  "main": {
+    "id": "8efec187561d2300",
+    "type": "split",
+    "children": [
+      {
+        "id": "1b1427fe48c851aa",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "queries/Task Query Examples.md",
+            "mode": "source",
+            "source": true
+          }
+        },
+        "group": "794d5f5467e42d33"
+      },
+      {
+        "id": "713d9c83375bbc49",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "queries/Task Query Examples.md",
+            "mode": "preview",
+            "source": true
+          }
+        },
+        "group": "794d5f5467e42d33"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6a189c6aa5284acc",
+    "type": "split",
+    "children": [
+      {
+        "id": "bbbd6d720b737bc7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a18cf52ed364c038",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "8ff88b78df77468b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "582c838ac6d2ee3b",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e1176dba1b9385e0",
+    "type": "split",
+    "children": [
+      {
+        "id": "081eec5af4565df6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "687975acb485308b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "queries/Task Query Examples.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d9621be65816a759",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "queries/Task Query Examples.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e030557ea0fb71ec",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "74d8ffbd545e64c6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "queries/Task Query Examples.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "713d9c83375bbc49",
+  "lastOpenFiles": [
+    "example_data/dailys/2022-01-03.md",
+    "queries/Task Query Examples.md",
+    "example_data/dailys/2022-03-25.md",
+    "example_data/dailys/2021-01-02.md",
+    "README.md",
+    "example_data/dailys/2022-01-07.md",
+    "example_data/dailys/2022-01-09.md",
+    "example_data/dailys/2022-01-18.md",
+    "example_data/dailys/2022-01-16.md",
+    "example_data/dailys/2022-01-14.md"
+  ]
+}
