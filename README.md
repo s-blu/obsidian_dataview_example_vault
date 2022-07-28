@@ -15,11 +15,23 @@ We hope you enjoy!
 2. Unzip to a location of your liking
 3. Open the vault in Obsidian via "Open another vault -> Open folder as vault"
 4. Trust us. :) 
-5. Navigate to "queries" and start browsing for solutions. You can, of course, add and edit files to your liking to try things out!
+5. Navigate to "20 Dataview Queries" and start browsing for solutions. You can, of course, add and edit files to your liking to try things out!
+
+### Navigating
+Obsidians search functionality is here for you, of course, but you have three other ways of navigating this vault:
+
+1. Use the folder structure to find examples of a certain type of query
+2. Search for tags. Each query is tagged with their type (LIST, TASK, ...) and the used data commands (WHERE, SORT, ...)
+3. Use the [[Dataview Queries Overview]]
+
+## FAQ
+
+You have some sort of question? Refer to the [[FAQ]].
 
 ## Contributing
 
-If you found an issue or want to add a query you think could be helpful for others, be very welcome to get involved! You have two possibilities to contribute:
+If you found an issue or want to add a query you think could be helpful for others, be very welcome to get involved! You want to help, but don't know how? Have a look at the [[Vault To Do]].
+In general, you have two possibilities to contribute:
 
 If you have a Github Account, head over to the [Github](https://github.com/s-blu/obsidian_dataview_examplevault) and open a Pull Request. That is easiest for the maintainers :) 
 

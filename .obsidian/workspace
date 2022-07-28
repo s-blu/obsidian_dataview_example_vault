@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "queries/Task Query Examples.md",
+            "file": "README.md",
             "mode": "source",
             "source": true
           }
@@ -22,7 +22,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "queries/Task Query Examples.md",
+            "file": "README.md",
             "mode": "preview",
             "source": true
           }
@@ -91,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "queries/Task Query Examples.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +108,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "queries/Task Query Examples.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "queries/Task Query Examples.md"
+                "file": "README.md"
               }
             }
           }
@@ -144,15 +144,15 @@
   },
   "active": "1b1427fe48c851aa",
   "lastOpenFiles": [
-    "queries/Table Query Examples.md",
-    "example_data/dailys/2022-02-04.md",
-    "example_data/dailys/2022-01-03.md",
-    "Vault To Do.md",
-    "example_data/dailys/2022-02-27.md",
-    "example_data/dailys/2022-02-28.md",
-    "queries/Task Query Examples.md",
-    "example_data/dailys/2022-01-28.md",
-    "example_data/dailys/2022-01-30.md",
-    "example_data/dailys/2022-01-04.md"
+    "20 Dataview Queries/Dataview Queries Overview.md",
+    "20 Dataview Queries/Queries per Type.md",
+    "20 Dataview Queries/Queries by Data Command.md",
+    "20 Dataview Queries/23 Task/List all tasks with a custom status.md",
+    "20 Dataview Queries/23 Task/Get latest open tasks.md",
+    "20 Dataview Queries/Task Query Examples.md",
+    "10 Example Data/dailys/2021-01-02.md",
+    "20 Dataview Queries/Table Query Examples.md",
+    "20 Dataview Queries/22 Table/Display metadata of a week as emjois (habit tracking).md",
+    "00 Meta/Tag Index.md"
   ]
 }
