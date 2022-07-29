@@ -1,9 +1,7 @@
 ---
 description: List all tasks that have a custom status (i.e. >)
 ---
-
-#querytype/TASK
-#datacommand/FROM  #datacommand/WHERE #datacommand/SORT #datacommand/GROUPBY #datacommand/LIMIT 
+#dv/task #dv/from #dv/where #dv/sort #dv/limit #dv/groupby 
 # List all tasks with a custom status
 
 ## Basic 

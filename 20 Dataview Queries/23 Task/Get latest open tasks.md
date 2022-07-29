@@ -1,9 +1,9 @@
 ---
 description: Get the latest, not completed tasks 
 ---
+#dataviewquery
+#dv/task #dv/from #dv/where #dv/sort #dv/limit 
 
-#querytype/TASK
-#datacommand/FROM  #datacommand/WHERE #datacommand/SORT #datacommand/LIMIT 
 # Get latest open tasks
 
 ## Basic 

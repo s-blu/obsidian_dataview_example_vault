@@ -1,10 +1,8 @@
 ---
 description: Display Files grouped after metadata where one felt discomfort
 ---
-
-#querytype/table
-#datacommand/FROM  #datacommand/WHERE #datacommand/GROUPBY 
-#functions/choice
+#dataviewquery
+#dv/table #dv/from #dv/where #dv/groupby #dv/choice 
 # Group files by meta data
 
 ## Basic 

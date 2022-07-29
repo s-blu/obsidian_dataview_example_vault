@@ -1,9 +1,9 @@
 ---
 description: Display values from a multivalue YAML frontmatter field
 ---
+#dataviewquery
+#dv/table #dv/from #dv/where 
 
-#querytype/table
-#datacommand/FROM  #datacommand/WHERE
 # Multivalue YAML Frontmatter Field
 
 ## Basic 

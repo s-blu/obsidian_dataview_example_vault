@@ -1,16 +1,8 @@
 ---
 description: Show all bullet points that are in a specific section and have a certain metadata value
-querytype: TABLE
-datacommands:
-  - FROM
-  - WHERE
-  - GROUP BY
-  - FLATTEN
-dqlfunctions:
-  - meta
-  - contains
 ---
 #dataviewquery
+#dv/table #dv/from #dv/where #dv/groupby #dv/flatten #dv/meta #dv/contains 
 
 # Show all list items under a specific heading with a metadata field
 

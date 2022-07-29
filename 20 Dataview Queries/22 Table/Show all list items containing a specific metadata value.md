@@ -1,14 +1,8 @@
 ---
 description: Show all bullet points that contain a certain metadata value
-querytype: TABLE
-datacommands:
-  - FROM
-  - WHERE
-  - FLATTEN
-dqlfunctions:
-  - contains
 ---
 #dataviewquery
+#dv/table #dv/from #dv/where #dv/flatten #dv/contains 
 
 # Show all list items containing a specific metadata value
 

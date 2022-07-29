@@ -1,15 +1,8 @@
 ---
 description: List all bullet points under a certain heading
-querytype: TABLE
-datacommands:
-  - FROM
-  - WHERE
-  - GROUP BY
-  - FLATTEN
-dqlfunctions:
-  - meta
 ---
 #dataviewquery
+#dv/table #dv/from #dv/where #dv/groupby #dv/flatten #dv/meta
 
 # Show all list items under a specific heading
 

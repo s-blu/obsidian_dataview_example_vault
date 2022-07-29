@@ -2,23 +2,25 @@
 
 > [!info] Which tag is for what?
 
+
 **Querytype Tags** specify the dataview query type that's used
-#querytype/list
-#querytype/task
-#querytype/table
-#querytype/calendar
-#querytype/dataviewjs
+#dv/list 
+#dv/table 
+#dv/task
+#dv/calendar
+#dv/dataviewjs
 
 **Data Command Tags** give information which data commands were used
-#datacommand/WHERE
-#datacommand/SORT
-#datacommand/FLATTEN
-#datacommand/FROM
-#datacommand/GROUPBY
-#datacommand/LIMIT
+
+#dv/where
+#dv/sort
+#dv/flatten
+#dv/from
+#dv/groupby 
+#dv/limit
 
 **Functions Tags** give information which [Dataview functions](https://blacksmithgu.github.io/obsidian-dataview/query/functions) were used
 
-#functions/choice 
+#dv/choice 
 (etc)
 

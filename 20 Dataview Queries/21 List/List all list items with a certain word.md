@@ -1,15 +1,8 @@
 ---
 description: List all bullet points that contain a specific word
-querytype: LIST
-datacommands:
-  - FROM
-  - WHERE
-  - GROUP BY
-  - FLATTEN
-dqlfunctions:
-  - icontains
 ---
 #dataviewquery
+#dv/list #dv/from #dv/where #dv/groupby #dv/flatten #dv/icontains
 
 # List all list items with a certain word
 ## Basic 

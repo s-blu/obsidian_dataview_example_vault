@@ -1,17 +1,7 @@
 ---
 description: %% What does the query do? %%
-querytype: %% TASK, LIST, TABLE, CALENDAR %%
-datacommands:
-  - FROM
-  - WHERE
-  - SORT
-  - LIMIT
-  - GROUP BY
-  - FLATTEN
-dqlfunctions:
-  - 
 ---
-#dataviewquery
+#dv/
 
 # {{title}}
 
@@ -20,7 +10,9 @@ dqlfunctions:
 > - [ ] Write a short description of the query in the Frontmatter
 > - [ ] Write the most basic version of the query possible
 > - [ ] If applicable, add one or multiple variants of the query and explain what they are doing
-> - [ ] Add the appropiate querytype and all used datacommands and [functions](https://blacksmithgu.github.io/obsidian-dataview/query/functions/) to the frontmatter
+> - [ ] Add the used query type (LIST, TABLE, TASK, CALENDAR) as tags (always with #dv in front, i.e. #dv/LIST)
+> - [ ] Add all used datacommands (FROM, WHERE, SORT, LIMIT, GROUPBY, FLATTEN) as tags (with dv prefix) 
+> - [ ] Add all used [functions](https://blacksmithgu.github.io/obsidian-dataview/query/functions/) as tags (with dv prefix)
 > - [ ] Delete this callout :) 
 
 ## Basic 

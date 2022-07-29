@@ -1,15 +1,8 @@
 ---
 description: Print all Bullet Points that contain a certain word
-querytype: TABLE
-datacommands:
-  - FROM
-  - WHERE
-  - GROUP BY
-  - FLATTEN
-dqlfunctions:
-  - icontains
 ---
 #dataviewquery
+#dv/table #dv/from #dv/where #dv/groupby #dv/flatten #dv/icontains 
 
 # Show all list items with a certain word
 

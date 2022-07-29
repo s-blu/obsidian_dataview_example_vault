@@ -1,14 +1,8 @@
 ---
 description: List all bullet points that contain a certain tag
-querytype: LIST
-datacommands:
-  - FROM
-  - WHERE
-  - FLATTEN
-dqlfunctions:
-  - contains
 ---
 #dataviewquery
+#dv/list #dv/from #dv/where #dv/flatten #dv/contains
 
 # List all list items containing a certain tag
 

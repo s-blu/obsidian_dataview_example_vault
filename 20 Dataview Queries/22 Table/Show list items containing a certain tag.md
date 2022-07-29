@@ -1,15 +1,8 @@
 ---
 description: Show all bullet points that contain a certain tag
-querytype: TABLE
-datacommands:
-  - FROM
-  - WHERE
-  - GROUP BY
-  - FLATTEN
-dqlfunctions:
-  - contains
 ---
 #dataviewquery
+#dv/table #dv/from #dv/where #dv/groupby #dv/flatten #dv/contains 
 
 # Show list items containing a certain tag
 

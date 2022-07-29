@@ -1,10 +1,8 @@
 ---
 description: Display metadata of a certain week as emojis (i.e. for habit tracking)
 ---
-
-#querytype/table
-#datacommand/FROM  #datacommand/WHERE 
-#functions/choice 
+#dataviewquery
+#dv/table #dv/from  #dv/where #dv/choice
 # Display metadata of a week as emjois (habit tracking)
 
 ## Basic 
