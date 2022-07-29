@@ -3,23 +3,23 @@
 ## SORT 
 ```dataview
 TABLE description
-FROM "20 Dataview Queries" AND #datacommand/SORT 
+FROM "20 Dataview Queries" AND #dv/sort 
 ```
 
 ## LIMIT 
 ```dataview
 TABLE description
-FROM "20 Dataview Queries" AND #datacommand/LIMIT  
+FROM "20 Dataview Queries" AND #dv/limit  
 ```
 
 ## FLATTEN 
 ```dataview
 TABLE description
-FROM "20 Dataview Queries" AND #datacommand/FLATTEN  
+FROM "20 Dataview Queries" AND #dv/flatten  
 ```
 
 ## GROUPBY 
 ```dataview
 TABLE description
-FROM "20 Dataview Queries" AND #datacommand/GROUPBY 
+FROM "20 Dataview Queries" AND #dv/groupby 
 ```

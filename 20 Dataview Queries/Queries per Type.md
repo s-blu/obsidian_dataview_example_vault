@@ -3,29 +3,29 @@
 ## List
 ```dataview
 TABLE description
-FROM "20 Dataview Queries" AND #querytype/list 
+FROM "20 Dataview Queries" AND #dv/list 
 ```
 
 ## Table
 ```dataview
 TABLE description
-FROM "20 Dataview Queries" AND #querytype/table 
+FROM "20 Dataview Queries" AND #dv/table 
 ```
 
 ## Task
 ```dataview
 TABLE description
-FROM "20 Dataview Queries" AND #querytype/TASK
+FROM "20 Dataview Queries" AND #dv/task
 ```
 
 ## Calendar
 ```dataview
 TABLE description
-FROM "20 Dataview Queries" AND #querytype/calendar  
+FROM "20 Dataview Queries" AND #dv/calendar  
 ```
 
 ## Dataviewjs
 ```dataview
 TABLE description
-FROM "20 Dataview Queries" AND #querytype/dataviewjs  
+FROM "20 Dataview Queries" AND #dv/dataviewjs  
 ```

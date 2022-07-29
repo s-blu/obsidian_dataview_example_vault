@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "20 Dataview Queries/23 Task/List all tasks with a custom status.md",
+            "file": "20 Dataview Queries/Dataview Queries Overview.md",
             "mode": "source",
             "source": true
           }
@@ -24,7 +24,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "20 Dataview Queries/23 Task/List all tasks with a custom status.md",
+            "file": "20 Dataview Queries/Dataview Queries Overview.md",
             "mode": "preview",
             "source": true
           }
@@ -73,8 +73,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "20 Dataview Queries/23 Task/List all tasks with a custom status.md",
+                "file": "20 Dataview Queries/Dataview Queries Overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "20 Dataview Queries/23 Task/List all tasks with a custom status.md",
+                "file": "20 Dataview Queries/Dataview Queries Overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20 Dataview Queries/23 Task/List all tasks with a custom status.md"
+                "file": "20 Dataview Queries/Dataview Queries Overview.md"
               }
             }
           }
@@ -145,17 +144,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "8ff88b78df77468b",
+  "active": "1b1427fe48c851aa",
   "lastOpenFiles": [
+    "20 Dataview Queries/Queries per Type.md",
+    "20 Dataview Queries/Queries by Data Command.md",
+    "20 Dataview Queries/Dataview Queries Overview.md",
+    "20 Dataview Queries/23 Task/List all tasks with a custom status.md",
     "20 Dataview Queries/23 Task/Get latest open tasks.md",
     "20 Dataview Queries/22 Table/Group files by meta data.md",
     "00 Meta/Tag Index.md",
     "20 Dataview Queries/22 Table/Show list items containing a certain tag.md",
     "20 Dataview Queries/22 Table/Show all list items with a certain word.md",
-    "20 Dataview Queries/22 Table/Show all list items under a specific heading with a metadata field.md",
-    "20 Dataview Queries/22 Table/Show all list items under a specific heading.md",
-    "20 Dataview Queries/22 Table/Show all list items containing a specific metadata value.md",
-    "20 Dataview Queries/22 Table/Multivalue YAML Frontmatter Field.md",
-    "20 Dataview Queries/22 Table/Display metadata of a week as emjois (habit tracking).md"
+    "20 Dataview Queries/22 Table/Show all list items under a specific heading with a metadata field.md"
   ]
 }
