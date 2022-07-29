@@ -12,6 +12,7 @@ We hope you enjoy!
 ## Usage
 
 1. Download the vault via Code -> Download zip
+   ![[Pasted image 20220729113542.png]]
 2. Unzip to a location of your liking
 3. Open the vault in Obsidian via "Open another vault -> Open folder as vault"
 4. Trust us. :) 
@@ -24,14 +25,20 @@ Obsidians search functionality is here for you, of course, but you have three ot
 2. Search for tags. Each query is tagged with their type (LIST, TASK, ...) and the used data commands (WHERE, SORT, ...)
 3. Use the [[Dataview Queries Overview]]
 
-## FAQ
+## Documentation & FAQ
+
+You need more details on how dataview works exactly? Head over to the [official documentation](https://blacksmithgu.github.io/obsidian-dataview/).
+Also, we collected some [[tips, tricks and interesting facts]]!
 
 You have some sort of question? Refer to the [[FAQ]].
 
 ## Contributing
 
-If you found an issue or want to add a query you think could be helpful for others, be very welcome to get involved! You want to help, but don't know how? Have a look at the [[Vault To Do]].
-In general, you have two possibilities to contribute:
+If you found an issue or want to add a query you think could be helpful for others, be very welcome to get involved! You want to help, but don't know what to do? Have a look at the [[Vault To Do]].
+
+Wonder how to add a new query? Head over to the [[FAQ#^497ec2|answer in the FAQ]].
+
+You have two possibilites to contribute: 
 
 If you have a Github Account, head over to the [Github](https://github.com/s-blu/obsidian_dataview_examplevault) and open a Pull Request. That is easiest for the maintainers :) 
 

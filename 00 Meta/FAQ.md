@@ -1,5 +1,10 @@
 # FAQ
 
+
+> [!question] What is this about? What is Dataview?
+> Dataview is a very popular community plugin for [Obsidian.md](https://obsidian.md/). It lets you query your data inside your vault and can help you in various, powerful ways. Its potential is almost unlimited due to dataviews support for [javascript queries](https://blacksmithgu.github.io/obsidian-dataview/api/intro/)
+
+
 > [!question]- Who is the maintainer of this vault?
 > I'm Sam, a regular Obsidian user. You'll sometimes catch me in the dataview thread of the Obsidian Discord. I hope I won't stay the only maintainer for long - this was AB1908 idea in the first place, anyway.
 
@@ -14,7 +19,9 @@
 > - Right now, this vault is only a planned project without much value just yet. It should mature to something valuable before we put it somewhere
 
 > [!question]- I have a cool query. How do I add it?
-> Nice! Create a new note in the appropiate folder - depending on which type of query you want to share. You'll find a template you can use [[Dataview Query Template|here]], that gives you a bit more guidance. Please create a new note per independent query - if the query returning the same result and doing things just a _tad_ differently, add it as a "Variant". Refer to [[README#Contributing]] for infos how to share your cool query!
+> Nice! Create a new note in the appropiate folder - depending on which type of query you want to share. Insert the [[Dataview Query Template]]. It'll give you a template to fill out and a little guidance checklist to work through. Please create a new note per independent query - if the query returning the same result and doing things just a _tad_ differently, add it as a "Variant". Refer to [[README#Contributing]] for infos how to share your cool query! 
+
+^497ec2
 
 > [!question]- I'm trying to achieve something with dataview, but it doesnt work!
 > Hop over to the [Obsidian Community](https://obsidian.md/community) and ask for help either in the forum or Discord. The Obsidian Community is a very helpful lot, so go ask them!

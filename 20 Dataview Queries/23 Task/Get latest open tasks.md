@@ -6,6 +6,9 @@ description: Get the latest, not completed tasks
 
 # Get latest open tasks
 
+> [!info] Difference between status and completed
+> A task only counts as completed if its status is equals to "x". If you use custom task statuses, i.e. "-", a task will appear checked but is _not_ completed.
+
 ## Basic 
 
 ```dataview

@@ -6,14 +6,6 @@ description: Show all bullet points that contain a certain tag
 
 # Show list items containing a certain tag
 
-> [!todo] Create a new Query Note
-> - [x] Use this template
-> - [ ] Write a short description of the query in the Frontmatter
-> - [ ] Write the most basic version of the query possible
-> - [ ] If applicable, add one or multiple variants of the query and explain what they are doing
-> - [ ] Add the appropiate querytype and all used datacommands and [functions](https://blacksmithgu.github.io/obsidian-dataview/query/functions/) to the frontmatter
-> - [ ] Delete this callout :) 
-
 ## Basic 
 
 ```dataview
