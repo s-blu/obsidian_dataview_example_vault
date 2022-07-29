@@ -1,19 +1,17 @@
 ---
-description: %% What does the query do? %%
-querytype: %% TASK, LIST, TABLE, CALENDAR %%
+description: Show all bullet points that contain a certain tag
+querytype: TABLE
 datacommands:
   - FROM
   - WHERE
-  - SORT
-  - LIMIT
   - GROUP BY
   - FLATTEN
 dqlfunctions:
-  - 
+  - contains
 ---
 #dataviewquery
 
-# {{title}}
+# Show list items containing a certain tag
 
 > [!todo] Create a new Query Note
 > - [x] Use this template
@@ -26,13 +24,19 @@ dqlfunctions:
 ## Basic 
 
 ```dataview
-
+TABLE L.text AS "My lists"
+FROM "10 Example Data/dailys"
+FLATTEN file.lists AS L
+WHERE contains(L.tags, "#tag1")
 ```
 
 ## Variants
-
-Description of Variant A - what does it differently? What do we achieve with that?
+### grouping by file
 
 ```dataview
-
+TABLE rows.L.text AS "My lists"
+FROM "10 Example Data/dailys"
+FLATTEN file.lists AS L
+WHERE contains(L.tags, "#tag1")
+GROUP BY file.link
 ```

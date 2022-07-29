@@ -2,5 +2,7 @@
   "newFileLocation": "folder",
   "newFileFolderPath": "queries",
   "attachmentFolderPath": "./_attachments",
-  "promptDelete": false
+  "promptDelete": false,
+  "showFrontmatter": true,
+  "alwaysUpdateLinks": true
 }
