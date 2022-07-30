@@ -12,7 +12,7 @@ We hope you enjoy!
 ## Usage
 
 1. Download the vault via Code -> Download zip
-   ![[Pasted image 20220729113542.png]]
+![Game Example](00%20Meta/attachments/Pasted%20image%2020220729113542.png)
 2. Unzip to a location of your liking
 3. Open the vault in Obsidian via "Open another vault -> Open folder as vault"
 4. Trust us. :) 
@@ -28,7 +28,7 @@ Obsidians search functionality is here for you, of course, but you have three ot
 ## Documentation & FAQ
 
 You need more details on how dataview works exactly? Head over to the [official documentation](https://blacksmithgu.github.io/obsidian-dataview/).
-Also, we collected some [[tips, tricks and interesting facts]]!
+Also, we collected some [[Tips, tricks and interesting facts]]!
 
 You have some sort of question? Refer to the [[FAQ]].
 
