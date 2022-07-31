@@ -37,11 +37,17 @@ TABLE pagesRead, totalPages, "<progress value='" + round(100*pagesRead/totalPage
 Thanks to Jillard and mnvwvnm!
 
 ```dataview
-TABLE pagesRead, 
-      totalPages, 
-      "<div style='border-style:solid; border-width:1px; border-color:#AAAAAA;'><div align='center' style='background-color:"+ choice(per<50, "#d5763f", "#a8c373") +"; padding:5px; min-width:40px; width:" + per + "%;'>" + per + "%</div></div>" AS Progress
+TABLE pagesRead, totalPages, 
+
+"<div style='border-style:solid; border-width:1px; border-color:#AAAAAA; display:flex;'>" + 
+"<div align='center' style='padding:5px; min-width:10px; background-color:" +
+	choice(percent < 50, "#d5763f", "#a8c373") + "; width:" +
+	percent + "%; color:black'>" + 
+choice(percent < 30, " </div><div style='padding:5px;'>", "") +
+percent + "%</div></div>" AS Progress
+
 FROM "10 Example Data/books"
-FLATTEN round(100*pagesRead/totalPages) AS per
+FLATTEN round(100*pagesRead/totalPages) as percent
 ```
 
 ### Rendering a progress bar that is stored inside a field on the source file
