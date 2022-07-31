@@ -33,8 +33,7 @@ for (let i = 1; i < DQL.headers.length; i++) {
 	sums.push(sum);
 }
 // add a divider line for visual distinction between the query and the sums (thanks, Jillard!), add both to the table data
-const hrString = "<hr style=\"padding:0px; margin:0px;\">" //dividing line
-let hrArray = Array(DQL.headers.length).fill(hrString);
+let hrArray = Array(DQL.headers.length).fill('<hr style="padding:0; margin:0 -10px;">');
 DQL.values.push(hrArray)
 DQL.values.push(sums)
 //print the table
@@ -78,8 +77,7 @@ for (let i = 1; i < DQL.headers.length; i++) {
 }
 
 // add a divider line for visual distinction between the query and the sums (thanks, Jillard!), add both to the table data
-const hrString = "<hr style=\"padding:0px; margin:0px;\">" //dividing line
-let hrArray = Array(DQL.headers.length).fill(hrString);
+let hrArray = Array(DQL.headers.length).fill('<hr style="padding:0; margin:0 -10px;">');
 DQL.values.push(hrArray)
 DQL.values.push(sums)
 //print the table

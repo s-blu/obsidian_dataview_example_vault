@@ -8,7 +8,7 @@ description: Show multiple meta data fields in one table column - useful when yo
 ## Basic 
 
 ```dataview
-TABLE wake-up, go-to-sleep, [lunch, dinner] AS "Meal times"
+TABLE wake-up, [go-to-sleep, gotosleep] as "Bed time", [lunch, dinner] AS "Meal times"
 from "10 Example Data/dailys"
 where date(day).weekyear = 3
 ```

@@ -22,7 +22,7 @@ WHERE file.name = "2022-01-20"
 **As js inline query to the console (hit SHIFT + CTRL + I)**
 `$= console.log("Current Page:", dv.current())`
 
-**As span inside the document** (add `dataviewjs` to the block - the output is lengthy!)
+**As span inside the document** (add `dataviewjs` to the block to see a result - the output is lengthy!)
 ```
 dv.span(dv.page("2022-01-05"))
 ```

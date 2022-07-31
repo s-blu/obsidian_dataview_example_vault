@@ -34,11 +34,14 @@ TABLE pagesRead, totalPages, "<progress value='" + round(100*pagesRead/totalPage
 
 
 ### Rendering custom styled progress bar directly in tables or list 
-Thanks to Jillard!
+Thanks to Jillard and mnvwvnm!
 
 ```dataview
-TABLE pagesRead, totalPages, "<div style='border-style:solid; border-width:1px; border-color:#AAAAAA;'><div align='center' style='background-color:#FFBB55; padding:5px; width:" + round(100*pagesRead/totalPages) + "%;'>" + round(100*pagesRead/totalPages) + "%</div></div>" AS Progress 
+TABLE pagesRead, 
+      totalPages, 
+      "<div style='border-style:solid; border-width:1px; border-color:#AAAAAA;'><div align='center' style='background-color:"+ choice(per<50, "#d5763f", "#a8c373") +"; padding:5px; min-width:40px; width:" + per + "%;'>" + per + "%</div></div>" AS Progress
 FROM "10 Example Data/books"
+FLATTEN round(100*pagesRead/totalPages) AS per
 ```
 
 ### Rendering a progress bar that is stored inside a field on the source file
@@ -46,7 +49,7 @@ FROM "10 Example Data/books"
 Also useable in tables, if put in an inline query on the source file.
 
 > [!attention]
-> For this to work, you need **avoid** using `dv.current()` in the source files. Using `dv.current()`, you would always see the progress of the _current_ task. Instead, give the explicit file, i.e. `dv.page("2022-01-03")` - have a look at the example data!
+> For this to work, you need **avoid** using `dv.current()` in the source files. Using `dv.current()`, you would always see the progress of the _current_ file. Instead, give the explicit file, i.e. `dv.page("2022-01-03")` - have a look at the example data!
 
 ```dataview
 TABLE task-completion
