@@ -3,6 +3,9 @@ description: List files a contact page is linked to as a contact log for this pe
 ---
 #dv/table #dv/from #dv/join #dv/min #dv/flatten #dv/groupby #dv/sort #dv/date #dv/limit #dv/contains 
 
+> [!hint] Contributed by [mnvwvnm via Discord](https://discord.com/channels/686053708261228577/875721010144477204/1003820438696243260)
+
+
 # List contacts with a person
 
 ## Basic 
@@ -24,7 +27,7 @@ FROM [[AB1908]] AND "10 Example Data/dailys"
 ```dataview
 TABLE WITHOUT ID 
 join(rows.file.link) AS "Contact note", 
-rows.day[0] + ": **" + min(rows.T) + " days**" AS "Last contact" 
+rows.day + ": **" + min(rows.T) + " days**" AS "Last contact" 
 FROM [[AB1908]] 
 FLATTEN (date(today) - day).days AS T 
 GROUP BY file.day
@@ -36,7 +39,7 @@ SORT min(rows.T) asc
 ```dataview
 TABLE WITHOUT ID 
 join(rows.file.link) AS "Contact note", 
-rows.day[0] + ": **" + min(rows.T) + " days**" AS "Last contact" 
+rows.day + ": **" + min(rows.T) + " days**" AS "Last contact" 
 FROM [[AB1908]] 
 FLATTEN (date(today) - day).days AS T 
 GROUP BY file.day
