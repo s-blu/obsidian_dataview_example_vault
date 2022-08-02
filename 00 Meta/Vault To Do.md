@@ -10,3 +10,4 @@
 - [ ] Add TABLE queries that showcase the basic syntax
 - [ ] Add TASK queries that showcase the basic syntax
 - [ ] Add CALENDAR queries that showcase the basic syntax
+- [ ] Add the examples from the Dataview documentation (with back reference) for easy try-outs

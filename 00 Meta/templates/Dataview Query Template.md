@@ -3,6 +3,9 @@ description: %% What does the query do? %%
 ---
 #dv/
 
+
+> [!hint] Contributed by PutYourNameHere
+
 # {{title}}
 
 > [!todo] Create a new Query Note
@@ -13,6 +16,7 @@ description: %% What does the query do? %%
 > - [ ] Add the used query type (LIST, TABLE, TASK, CALENDAR) as tags (always with #dv in front, i.e. #dv/LIST)
 > - [ ] Add all used datacommands (FROM, WHERE, SORT, LIMIT, GROUPBY, FLATTEN) as tags (with dv prefix) 
 > - [ ] Add all used [functions](https://blacksmithgu.github.io/obsidian-dataview/query/functions/) as tags (with dv prefix)
+> - [ ] Add your name in the contribution callout at the top - or remove the contribution callout, however you like it better!
 > - [ ] Delete this callout :) 
 
 ## Basic 
