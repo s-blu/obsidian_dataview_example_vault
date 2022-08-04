@@ -6,8 +6,7 @@ description: shows all unresolved links (links to non existing pages), optionall
 #dv/dataviewjs 
 
 
-> [!hint] Basic query contributed by [scholarInTraining via Discord](https://discord.com/channels/686053708261228577/875721010144477204/1003446314081726574) 
-> If you have questions to a query, feel free to visit the [Obsidian Forum or Discord](https://obsidian.md/community) - there are a lot of people willing to help! _Pinging the contributor isn't necessary - thanks! :)_
+> [!hint] Basic query contributed [via Discord](https://discord.com/channels/686053708261228577/875721010144477204/1003441486492352572) 
 
 # List non existing links
 

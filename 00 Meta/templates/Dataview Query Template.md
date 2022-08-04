@@ -5,7 +5,6 @@ description: %% What does the query do? %%
 
 
 > [!hint] Contributed by PutYourNameOrSourceHere
-> If you have questions to a query, feel free to visit the [Obsidian Forum or Discord](https://obsidian.md/community) - there are a lot of people willing to help! _Pinging the contributor isn't necessary - thanks! :)_
 
 # {{title}}
 
