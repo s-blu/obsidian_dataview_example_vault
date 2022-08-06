@@ -8,6 +8,7 @@ started:: 2021-03-16
 finished:: 2022-02-04
 **Project ID**::  922
 **tags**:: #clientA
+**working hours**:: 03:38, 02:42, 02:24, 05:46, 01:56
 
 - [x] Task 1 of project_3 
 - [x] Task 2 of project_3 
