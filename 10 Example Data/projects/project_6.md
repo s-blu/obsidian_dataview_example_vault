@@ -7,6 +7,7 @@ started:: 2022-06-06
 finished:: 
 **Project ID**:: 555
 **tags**:: #clientA
+**working hours**:: 03:59, 01:03
 
 - [x] Task 1 of project_6 
 - [x] Task 2 of project_6 
