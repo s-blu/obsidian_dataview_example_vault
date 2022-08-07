@@ -76,7 +76,9 @@ Object.entries(dv.app.metadataCache.unresolvedLinks)
     return referingFile.startsWith("10 Example Data/dailys")
   })
   .filter(([_, unresolvedLinks]) => {
-	  return Object.keys(unresolvedLinks).filter(link => link.contains("na")).length
+	  return Object.keys(unresolvedLinks)
+	  .filter(link => link.startsWith("B") && link.length > 3)
+	  .length
 	})
   .forEach(([referingFile, unresolvedLink]) => process(referingFile, unresolvedLink));
 
