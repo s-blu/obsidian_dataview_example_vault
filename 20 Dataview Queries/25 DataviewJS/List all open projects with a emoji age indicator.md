@@ -8,7 +8,7 @@ description: Shows a table with all open project and a emoji score how long thes
 ## Basic 
 
 ```dataview
-TABLE "😡" * (date(now).weekyear - date(started).weekyear) AS "Score"
+TABLE "😡" * (date(now) - date(started)).weeks AS "Score"
 FROM "10 Example Data/projects"
 WHERE status != "finished"
 ```
