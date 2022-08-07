@@ -26,8 +26,8 @@ FROM [[AB1908]] AND "10 Example Data/dailys"
 
 ```dataview
 TABLE WITHOUT ID
-file.link AS "Contact note",
-file.day + ": **" + T + " days**" AS "Last contact" 
+file.link AS "Contact notes",
+file.day + ": **" + T + " days**" AS "Last contacts" 
 FROM [[AB1908]] 
 FLATTEN (date(today) - file.day).days AS T 
 SORT file.day desc
