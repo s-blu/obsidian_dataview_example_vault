@@ -15,7 +15,6 @@
 - [ ] Add LIST queries that showcase the basic syntax
 - [ ] Add TABLE queries that showcase the basic syntax
 - [ ] Add TASK queries that showcase the basic syntax
-- [ ] Add CALENDAR queries that showcase the basic syntax
 - [ ] Add the examples from the Dataview documentation (with back reference) for easy try-outs
 - [ ] Add [the usage of Object.assign for duplicating entries into custom made groups](https://discord.com/channels/686053708261228577/875721010144477204/1003404078233178263) and [the metadata based groups](https://discord.com/channels/686053708261228577/875721010144477204/1005498669719638119) as a variant
 - [ ] 
