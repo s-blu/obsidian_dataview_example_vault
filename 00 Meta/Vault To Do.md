@@ -11,10 +11,10 @@
 - [ ] Add tags for querying
 
 ## Queries
-- [ ] Add the example queries from the dataview documentation (and fitting data)
+- [ ] Add the examples from the Dataview documentation (with back reference) for easy try-outs
 - [ ] Add LIST queries that showcase the basic syntax
 - [ ] Add TABLE queries that showcase the basic syntax
 - [ ] Add TASK queries that showcase the basic syntax
-- [ ] Add the examples from the Dataview documentation (with back reference) for easy try-outs
+- [ ] Add CALENDAR queries that showcase the basic syntax
+- [ ] Add the [possibility to burn out dataview queries with markdownTable and templater](https://github.com/blacksmithgu/obsidian-dataview/discussions/1241) (also [here](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847/225) ) with a back reference, explanation and example code
 - [ ] Add [the usage of Object.assign for duplicating entries into custom made groups](https://discord.com/channels/686053708261228577/875721010144477204/1003404078233178263) and [the metadata based groups](https://discord.com/channels/686053708261228577/875721010144477204/1005498669719638119) as a variant
-- [ ] 

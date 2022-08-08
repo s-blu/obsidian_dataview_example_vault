@@ -25,25 +25,23 @@ FROM [[AB1908]] AND "10 Example Data/dailys"
 ### Show days since last contact
 
 ```dataview
-TABLE WITHOUT ID 
-join(rows.file.link) AS "Contact note", 
-rows.day + ": **" + min(rows.T) + " days**" AS "Last contact" 
+TABLE WITHOUT ID
+file.link AS "Contact notes",
+file.day + ": **" + T + " days**" AS "Last contacts" 
 FROM [[AB1908]] 
-FLATTEN (date(today) - day).days AS T 
-GROUP BY file.day
-SORT min(rows.T) asc
+FLATTEN (date(today) - file.day).days AS T 
+SORT file.day desc
 ```
 
 ### Only show the most recent contact
 
 ```dataview
-TABLE WITHOUT ID 
-join(rows.file.link) AS "Contact note", 
-rows.day + ": **" + min(rows.T) + " days**" AS "Last contact" 
+TABLE WITHOUT ID
+file.link AS "Contact note",
+file.day + ": **" + T + " days**" AS "Last contact" 
 FROM [[AB1908]] 
-FLATTEN (date(today) - day).days AS T 
-GROUP BY file.day
-SORT min(rows.T) asc
+FLATTEN (date(today) - file.day).days AS T 
+SORT file.day desc
 LIMIT 1
 ```
 
