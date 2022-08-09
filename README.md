@@ -7,7 +7,7 @@ This example vault showcases different usages of the [Dataview](https://blacksmi
 We hope you enjoy!
 
 > [!attention] Early stage
-> This vault is in a very early stage and somewhat barebone. Please feel encouraged helping us building it to a useful resource! Find out more unter **Contributing**
+> This vault is in an early stage. Please feel encouraged helping us building it to a useful resource! Find out more unter **Contributing**
 
 ## Usage
 
@@ -19,11 +19,8 @@ We hope you enjoy!
 5. Navigate to "20 Dataview Queries" and start browsing for solutions. You can, of course, add and edit files to your liking to try things out!
 
 ### Navigating
-Obsidians search functionality is here for you, of course, but you have three other ways of navigating this vault:
 
-1. Use the folder structure to find examples of a certain type of query
-2. Search for tags. Each query is tagged with their type (LIST, TASK, ...) and the used data commands (WHERE, SORT, ...)
-3. Use the [[Dataview Queries Overview]]
+Beside Obsidians built-in search, the **[[20.01 Dataview Queries Overview]]** is here for you!
 
 ## Documentation & FAQ
 

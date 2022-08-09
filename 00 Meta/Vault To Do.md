@@ -2,7 +2,6 @@
 
 ## Organization
 
-- [ ] Think of a useful folder structure - current structure under 20 Dataview Queries is not really feasable
 - [ ] Write MOCs or similar that encourage exploration, the current ones are awful (sorry!)
 - [ ] Introduce a possibility to group queries that belongs to a topic, i.e. listing bullet points, habit tracking, task management, ... 
 - [ ] Add #dvjs tags to pages containing dataviewjs queries to make the (dataview specific) js functions searchable, too
@@ -20,6 +19,11 @@
 - [ ] Add the [possibility to burn out dataview queries with markdownTable and templater](https://github.com/blacksmithgu/obsidian-dataview/discussions/1241) (also [here](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847/225) ) with a back reference, explanation and example code
 - [ ] Add [the usage of Object.assign for duplicating entries into custom made groups](https://discord.com/channels/686053708261228577/875721010144477204/1003404078233178263) and [the metadata based groups](https://discord.com/channels/686053708261228577/875721010144477204/1005498669719638119) as a variant
 - [ ] Add query for [custom sorting](https://discord.com/channels/686053708261228577/875721010144477204/1006263776976318577)
-- [ ] Add [list pages with the same metadata values](https://discord.com/channels/686053708261228577/875721010144477204/1006083409631789086) query
+- [ ] Add [list pages with the same metadata values](https://discord.com/channels/686053708261228577/875721010144477204/1006083409631789086) (and [this](https://discord.com/channels/@me/973972301127249950/1006086345858502746)) query
 - [ ] Add a example of the different frontmatter possibilities (list, multiline, escaped links ("[[link]]") etc.) and how they get rendered in lists and tables
-- [ ] 
+- [ ] Add an example that explains [the behaviour of metadata fields after a GROUP BY](https://discord.com/channels/686053708261228577/875721010144477204/1004654445348532234)
+- [ ] Add an example about [how to render custom strings in tables or lists](https://discord.com/channels/686053708261228577/875721010144477204/1004658573009227836)
+- [ ] Add [this thing about the earlierst and latest outlink I don't fully understand](https://discord.com/channels/686053708261228577/875721010144477204/1004254235812184124)
+- [ ] Add [this thing](https://discord.com/channels/686053708261228577/875721010144477204/1003433672780808212)
+- [ ] Add [grouped, nested tables](https://discord.com/channels/686053708261228577/875721010144477204/1002958739705438288)
+- [ ] Add [the dynamic query based on a tag in an inline field](https://discord.com/channels/@me/973972301127249950/1001569802629951640)

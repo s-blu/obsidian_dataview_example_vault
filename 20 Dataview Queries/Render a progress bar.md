@@ -32,7 +32,6 @@ This does not need a extra meta data field on the source files.
 TABLE pagesRead, totalPages, "<progress value='" + round(100*pagesRead/totalPages) + "' max='100'></progress> " + round(100*pagesRead/totalPages) + "%" AS Progress FROM "10 Example Data/books"
 ```
 
-
 ### Rendering custom styled progress bar directly in tables or list 
 Thanks to Jillard and mnvwvnm!
 
