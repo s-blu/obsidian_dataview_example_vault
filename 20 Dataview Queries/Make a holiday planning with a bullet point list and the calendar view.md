@@ -23,14 +23,14 @@ description: Render a event-overview calendar when i.e. planning holidays
 
 ```dataview
 CALENDAR L.when
-FROM "Make a holiday planning with a bullet point list and the calendar view"
+FROM "20 Dataview Queries/Make a holiday planning with a bullet point list and the calendar view"
 FLATTEN file.lists AS L
 ```
 It could be helpful to render a chronologically sorted List in addition:
 
 ```dataview
 LIST WITHOUT ID L.text
-FROM "Make a holiday planning with a bullet point list and the calendar view"
+FROM "20 Dataview Queries/Make a holiday planning with a bullet point list and the calendar view"
 FLATTEN file.lists AS L
 SORT L.when
 ```
