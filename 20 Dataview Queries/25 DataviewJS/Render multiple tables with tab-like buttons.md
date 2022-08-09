@@ -1,7 +1,7 @@
 ---
 description: Show tv shows after current status in multiple tables switchable via button
 ---
-#dv/dataviewjs
+#dv/dataviewjs #dvjs/el #dvjs/pages #dvjs/where #dvjs/header #dvjs/table #dvjs/map #dvjs/container 
 
 # Render multiple tables with tab-like buttons
 
@@ -26,8 +26,9 @@ const renderTable = (name) => {
 	const pages = dv.pages('"10 Example Data/shows"').where(page => page.status == name)
 		
 	dv.header(2, name)
-	
-	const tabel = dv.table(['Title', 'Rating', 'Runtime', 'Seasons', 'Episodes'], pages.map(page => [page.file.link, page.rating, page.runtime, page.seasons, page.episodes]))
+	dv.table(
+	['Title', 'Rating', 'Runtime', 'Seasons', 'Episodes'], 
+	pages.map(page => [page.file.link, page.rating, page.runtime, page.seasons, page.episodes]))
 }
 
 const removeTable = () => {
@@ -42,7 +43,7 @@ renderTable('Watching')
 
 ## Variants
 
-Display amount of watched episodes
+### Display amount of watched episodes
 
 ```dataviewjs
 const createButton = (name) => {
@@ -64,7 +65,7 @@ const renderTable = (name) => {
 	
 	dv.header(2, name)
 	
-	const tabel = dv.table(['Title', 'Rating', 'Runtime', 'Seasons', 'Ep watched/total'], pages.map(page => {
+	dv.table(['Title', 'Rating', 'Runtime', 'Seasons', 'Ep watched/total'], pages.map(page => {
 	let watchedEp = 0
 	const totalEp = page.episodes
 	
@@ -85,4 +86,51 @@ const removeTable = () => {
 buttons.forEach(button => createButton(button))
 
 renderTable('Watching')
+```
+
+### Render other views/different ones per tab
+
+```dataviewjs
+const views = ['Table', 'List', 'Tasks']
+
+const changeView = (viewName) => {
+    removeView()
+
+    if (viewName == 'Table') {
+        dv.header('2', 'Some table')
+        dv.table(['File', 'Day'], dv.pages('"10 Example Data/dailys"').limit(7).map(p => [p.file.link, p.day]))
+    }
+    if (viewName == 'List') {
+        dv.list(dv.pages('"10 Example Data/dailys"').limit(7).file.name)
+    }
+    if (viewName == 'Tasks') {
+        dv.taskList(dv.page("10 Example Data/projects/project_2").file.tasks)
+    }
+}
+
+const createButtons = () => {
+    const buttonContainer = dv.el('div', '', {cls: 'tabButtons'})
+    
+    views.forEach(view => {
+        const button = dv.el('button', view)
+
+        button.addEventListener('click', (event) => {
+            event.preventDefault()
+            changeView(view)
+        })
+
+        buttonContainer.append(button)
+        
+    })
+}
+
+const removeView = () => {
+    Array.from(this.container.children).forEach(el => {
+        if(!el.classList.contains('tabButtons')) {
+            el.remove()
+        }
+    })
+}
+
+createButtons()
 ```
