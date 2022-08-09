@@ -18,3 +18,4 @@
 - [ ] Add CALENDAR queries that showcase the basic syntax
 - [ ] Add the [possibility to burn out dataview queries with markdownTable and templater](https://github.com/blacksmithgu/obsidian-dataview/discussions/1241) (also [here](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847/225) ) with a back reference, explanation and example code
 - [ ] Add [the usage of Object.assign for duplicating entries into custom made groups](https://discord.com/channels/686053708261228577/875721010144477204/1003404078233178263) and [the metadata based groups](https://discord.com/channels/686053708261228577/875721010144477204/1005498669719638119) as a variant
+- [ ] Add query for [custom sorting](https://discord.com/channels/686053708261228577/875721010144477204/1006263776976318577)
