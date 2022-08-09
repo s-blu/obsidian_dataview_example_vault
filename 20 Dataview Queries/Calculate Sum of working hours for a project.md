@@ -1,7 +1,7 @@
 ---
 description: Calculate the sum of multiple times (hh:mm), i.e. the sum of hours one has spent on a project 
 ---
-#dv/dataviewjs 
+#dv/dataviewjs #dvjs/pages #dvjs/mutate #dvjs/table #dvjs/map #dvjs/luxon #dvjs/sort
 
 # Calculate Sum of working hours for a project
 

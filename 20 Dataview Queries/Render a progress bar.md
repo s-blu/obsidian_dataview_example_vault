@@ -1,7 +1,7 @@
 ---
 description: Renders a progress bar for a percentage i.e. done tasks in file
 ---
-#dv/inline #dv/dataviewjs #dv/table #dv/round #dv/from #dv/where 
+#dv/inline #dv/dataviewjs #dv/table #dv/round #dv/from #dv/where #dvjs/current
 
 # Render a progress bar
 

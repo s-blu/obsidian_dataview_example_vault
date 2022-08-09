@@ -7,7 +7,7 @@ This example vault showcases different usages of the [Dataview](https://blacksmi
 We hope you enjoy!
 
 > [!attention] Early stage
-> This vault is in an early stage. Please feel encouraged helping us building it to a useful resource! Find out more unter **Contributing**
+> This vault is in an early stage. Please feel encouraged helping us building it to a useful resource! Find out more under **Contributing**
 
 ## Usage
 

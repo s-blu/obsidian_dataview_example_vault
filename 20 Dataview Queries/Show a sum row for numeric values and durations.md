@@ -1,7 +1,7 @@
 ---
 description: Show a sum row for numeric values and durations
 ---
-#dv/dataviewjs 
+#dv/dataviewjs  #dvjs/tryQuery #dvjs/table 
 
 # Show a sum row for a numeric table
 

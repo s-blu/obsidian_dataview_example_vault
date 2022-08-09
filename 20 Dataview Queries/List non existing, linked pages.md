@@ -3,7 +3,7 @@
 ---
 description: shows all unresolved links (links to non existing pages), optionally with the files containing them
 ---
-#dv/dataviewjs 
+#dv/dataviewjs #dv/table #dv/from #dv/flatten #dv/where #dv/groupby #dvjs/flatMap #dvjs/sort #dvjs/list #dvjs/table
 
 
 > [!hint] Basic query contributed [via Discord](https://discord.com/channels/686053708261228577/875721010144477204/1003441486492352572) [and Discord](https://discord.com/channels/686053708261228577/875721010144477204/1005583638177517628)

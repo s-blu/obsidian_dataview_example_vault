@@ -1,7 +1,7 @@
 ---
 description: Display random images from a path in vault
 ---
-#dv/dataviewjs 
+#dv/dataviewjs #dvjs/list #dvjs/array #dvjs/sort #dvjs/limit #dvjs/map
 
 # Display random images from a path
 

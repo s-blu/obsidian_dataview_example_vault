@@ -1,7 +1,7 @@
 ---
 description: Group meta data fields after their order in a file (useful if you have multiples in the same file)
 ---
-#dv/dataviewjs 
+#dv/dataviewjs #dvjs/pages #dvjs/where #dvjs/sort #dvjs/table 
 
 # Group duplicated meta data fields after their order in file
 

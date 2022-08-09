@@ -1,7 +1,7 @@
 ---
 description: Calculate time spans with a start and end time, i.e. waking phase by wake up and go to sleep times
 ---
-#dv/dataviewjs #dv/table #dv/from #dv/limit #dv/flatten 
+#dv/dataviewjs #dv/table #dv/from #dv/limit #dv/flatten #dvjs/pages #dvjs/limit #dvjs/mutate #dvjs/table #dvjs/map #dvjs/luxon 
 
 # Calculate timespans with times
 ## Basic 

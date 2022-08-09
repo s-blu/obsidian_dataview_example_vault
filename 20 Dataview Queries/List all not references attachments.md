@@ -1,7 +1,7 @@
 ---
 description: List all attachments that are nowhere linked
 ---
-#dv/dataviewjs 
+#dv/dataviewjs #dvjs/pages #dvjs/filter #dvjs/list #dvjs/fileLink #dvjs/array #dvjs/map 
 
 # List all not references attachments
 
