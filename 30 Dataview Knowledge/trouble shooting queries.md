@@ -39,6 +39,10 @@ and open the developer console with `CTRL SHIFT I`.
 
 ## Query shows some kind of error
 
+> [!hint] Open up read and edit mode side by side
+> These examples are observed best when you switch to "[Edit Mode](https://help.obsidian.md/How+to/Read+and+edit+modes)" and open up a second pane in read mode - otherwise you'll only see the error or the dataview query :) 
+
+
 Read the error description carefully. There is a little arrow pointing at the errornous place. For example:
 
 ```dataview
@@ -63,9 +67,6 @@ WHERE contains(file.tags, "#dv/calendar")
 Solved! 🎉
 
 **Another example**:
-
-> [!hint] Open up read and edit mode side by side
-> These examples are observed best when you switch to "[Edit Mode](https://help.obsidian.md/How+to/Read+and+edit+modes)" and open up a second pane in read mode - otherwise you'll only see the error or the dataview query :) 
 
 ```dataview
 LIST sum
@@ -109,4 +110,4 @@ WHERE paid
 FLATTEN sum(paid) as sum
 ```
 
-Huh, that doesn't give us an error anymore, but an improvable output. You want to know how to get a real sum? Head over to [[Mark all days in a calendar where you spent a certain amount of money]].
+Huh, that doesn't give us an error anymore, but an improvable output. You want to know how to get a real sum? Head over to [[Mark all days in a calendar where you spent a certain amount of money#^8d9d50|"When using expenses in form of 99 $"]].

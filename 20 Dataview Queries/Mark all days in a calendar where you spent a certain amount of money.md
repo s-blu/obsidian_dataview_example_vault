@@ -24,6 +24,8 @@ paid:: 7
 
 ### When using expenses in form of "99 $"
 
+^8d9d50
+
 > [!info]
 > You'll need to go back to Januray/Februrary 2022 to see the data
 
