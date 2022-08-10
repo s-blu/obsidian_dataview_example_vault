@@ -15,7 +15,7 @@
 - [ ] Add TABLE queries that showcase the basic syntax
 - [ ] Add TASK queries that showcase the basic syntax
 - [ ] Add the [possibility to burn out dataview queries with markdownTable and templater](https://github.com/blacksmithgu/obsidian-dataview/discussions/1241) (also [here](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847/225) ) with a back reference, explanation and example code
-- [ ] Add [the usage of Object.assign for duplicating entries into custom made groups](https://discord.com/channels/686053708261228577/875721010144477204/1003404078233178263) and [the metadata based groups](https://discord.com/channels/686053708261228577/875721010144477204/1005498669719638119) as a variant
+- [ ] Add [the usage of Object.assign for duplicating entries into custom made groups](https://discord.com/channels/686053708261228577/875721010144477204/1003404078233178263) and [the metadata based groups](https://discord.com/channels/686053708261228577/875721010144477204/1005498669719638119) as a variant - and try if [dv.clone](https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/#dvclonevalue) is a good alternative to Object.assign
 - [ ] Add query for [custom sorting](https://discord.com/channels/686053708261228577/875721010144477204/1006263776976318577)
 - [ ] Add [list pages with the same metadata values](https://discord.com/channels/686053708261228577/875721010144477204/1006083409631789086) (and [this](https://discord.com/channels/@me/973972301127249950/1006086345858502746)) query
 - [ ] Add a example of the different frontmatter possibilities (list, multiline, escaped links ("[[link]]") etc.) and how they get rendered in lists and tables
@@ -34,3 +34,4 @@
 	- [ ] What does SORT and how to use it
 	- [ ] Where is file.day coming from, how to set and how to use it
 	- [ ] What are implicits fields and how to use them
+- Explain what inline queries can do (and what not)
