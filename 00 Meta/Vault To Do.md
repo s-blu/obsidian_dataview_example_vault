@@ -25,3 +25,4 @@
 - [ ] Add [this thing](https://discord.com/channels/686053708261228577/875721010144477204/1003433672780808212)
 - [ ] Add [grouped, nested tables](https://discord.com/channels/686053708261228577/875721010144477204/1002958739705438288)
 - [ ] Add [the dynamic query based on a tag in an inline field](https://discord.com/channels/@me/973972301127249950/1001569802629951640)
+- [ ] Add an example about indexing through a link, see [here](https://discord.com/channels/686053708261228577/875721010144477204/1006970754375614635) 

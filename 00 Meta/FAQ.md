@@ -28,4 +28,4 @@
 > Maybe my [script for generating example data](https://github.com/s-blu/obsidian_things/tree/main/example_data) is helpful to you!
 
 > [!question]- I'm trying to achieve something with dataview, but it doesnt work!
-> Hop over to the [Obsidian Community](https://obsidian.md/community) and ask for help either in the forum or Discord. The Obsidian Community is a very helpful lot, so go ask them!
+> You can try our tips on [[trouble shooting queries]] Hop over to the [Obsidian Community](https://obsidian.md/community) and ask for help either in the forum or Discord. The Obsidian Community is a very helpful lot, so go ask them!

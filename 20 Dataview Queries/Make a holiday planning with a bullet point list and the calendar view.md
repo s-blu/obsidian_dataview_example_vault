@@ -8,7 +8,7 @@ description: Render a event-overview calendar when i.e. planning holidays
 ## Basic 
 
 > [!warning] Limitations
-> This overview calendar comes with two limitations: First, you cannot have any other list (nor task list) inside the file that does _not_ have a "when" field. The calendar won't render then. Secondly: The dot hover will always show you the whole page, instead of the concrete event happening.
+> The calendar is only for a rough overview and cannot display your events. The dot hover will always show you the whole page, instead of the concrete event happening.
 
 - Some cool event [when:: 2022-08-14]
 - Some cool event [when:: 2022-08-15]
@@ -25,6 +25,7 @@ description: Render a event-overview calendar when i.e. planning holidays
 CALENDAR L.when
 FROM "20 Dataview Queries/Make a holiday planning with a bullet point list and the calendar view"
 FLATTEN file.lists AS L
+WHERE L.when
 ```
 It could be helpful to render a chronologically sorted List in addition:
 
@@ -32,5 +33,7 @@ It could be helpful to render a chronologically sorted List in addition:
 LIST WITHOUT ID L.text
 FROM "20 Dataview Queries/Make a holiday planning with a bullet point list and the calendar view"
 FLATTEN file.lists AS L
+WHERE L.when
 SORT L.when
 ```
+
