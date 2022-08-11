@@ -31,7 +31,7 @@ GROUP BY file.link
 ### Using flatten/filter instead of group-by
 
 ```dataview
-TABLE Research
+TABLE WITHOUT ID "<nobr>" + file.link + "</nobr>" AS Page, Research
 FROM "10 Example Data/dailys"
 FLATTEN list(filter(file.lists, (x) => meta(x.section).subpath = "Research").text) as Research
 WHERE Research
@@ -40,7 +40,7 @@ WHERE Research
 ### Using flatten to make multiple columns based on different headings
 
 ```dataview
-TABLE Research, Topics
+TABLE WITHOUT ID "<nobr>" + file.link + "</nobr>" AS Page, Research, Topics
 FROM "10 Example Data/dailys"
 FLATTEN list(filter(file.lists, (x) => meta(x.section).subpath = "Research").text) as Research
 FLATTEN list(filter(file.lists, (x) => meta(x.section).subpath = "Topics").text) as Topics
