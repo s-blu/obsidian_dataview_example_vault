@@ -5,7 +5,7 @@
 > Dataview is a very popular community plugin for [Obsidian.md](https://obsidian.md/). It lets you query your data inside your vault and can help you in various, powerful ways. Its potential is almost unlimited due to dataviews support for [javascript queries](https://blacksmithgu.github.io/obsidian-dataview/api/intro/)
 
 
-> [!question]- Who is the maintainer of this vault?
+> [!question]- Who maintains this vault?
 > I'm Sam, a regular Obsidian user. You'll sometimes catch me in the dataview thread of the Obsidian Discord. I hope I won't stay the only maintainer for long - this was AB1908 idea in the first place, anyway.
 
 > [!question]- Why does this vault exists?
