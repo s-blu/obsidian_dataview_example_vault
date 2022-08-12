@@ -2,7 +2,7 @@
 
 open project. work, work...
 
-**status**:: in-progess
+**status**:: in-progress
 started:: 2022-06-06
 finished:: 
 **Project ID**:: 555
