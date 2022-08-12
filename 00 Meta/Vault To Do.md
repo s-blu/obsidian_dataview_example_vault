@@ -34,4 +34,4 @@
 	- [ ] What does SORT and how to use it
 	- [ ] Where is file.day coming from, how to set and how to use it
 	- [ ] What are implicits fields and how to use them
-- Explain what inline queries can do (and what not)
+ - [ ] Explain what inline queries can do (and what not)
