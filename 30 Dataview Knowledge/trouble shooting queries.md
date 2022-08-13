@@ -77,7 +77,7 @@ WHERE paid
 FLATTEN sum() as sum
 ```
 
-It tells us that our **where** clause failed and shows us the **first three errors** why. Here, it's the same one three times. 
+It tells us that our `WHERE` clause failed and shows us the **first three errors** why. Here, it's the same one three times. 
 
 Let's read this message: `No implementation of 'sum' found for arguments:`
 It's rather technical. What it tries to tell you: "I don't know what to do with these arguments: (none)" - because you did not give any arguments inside the round brackets.
