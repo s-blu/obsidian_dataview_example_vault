@@ -33,10 +33,4 @@ You have some sort of question? Refer to the [[FAQ]].
 
 If you found an issue or want to add a query you think could be helpful for others, be very welcome to get involved! You want to help, but don't know what to do? Have a look at the [[Vault To Do]].
 
-Wonder how to add a new query? Head over to the [[FAQ#^497ec2|answer in the FAQ]].
-
-You have two possibilites to contribute: 
-
-If you have a Github Account, head over to the [Github](https://github.com/s-blu/obsidian_dataview_examplevault) and open a Pull Request. That is easiest for the maintainers :) 
-
-Alternatively, head to the #dataview Thread in the Obsidian Discord and post it there. Probability is good that somebody with writing rights will get aware of your post and add it to the vault.
+Read more about how to contribute under [[00 Meta/Contribution]].
