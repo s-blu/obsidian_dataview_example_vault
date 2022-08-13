@@ -1,6 +1,8 @@
 ---
 description: Overview of handling various types of frontmatter fields, including tricks and traps.
 
+emptyValue:
+Bool: false
 Numeric: 10.5
 StringNumeric: "10.5"
 
@@ -44,9 +46,9 @@ NestedObject: [
 
 ---
 
-## Numbers
+## Numbers & Logic
 ``` dataview
-TABLE WITHOUT ID Numeric, StringNumeric, Date
+TABLE WITHOUT ID EmptyValue, Bool, Numeric, StringNumeric
 FROM ""
 WHERE file.name = this.file.name
 ```
@@ -100,6 +102,9 @@ TABLE WITHOUT ID FlatArray, BulletArray
 FROM ""
 WHERE file.name = this.file.name
 ```
+- If field is an array (like in your case), then contains is looking for an _element_ that matches exactly. So if you had `field:: [[abc]], [[def]], a` then it would match. If field is a string (an array of characters)... it would still be looking for an _element_ it's just that in that case elements are individual characters.  A simple way around it would be to do `=contains(join(this.field), "a")` which turns the array into a string, and then does a character search for any a's.
+
+
 ---
 
 ## Objects
