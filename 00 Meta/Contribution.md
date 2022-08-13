@@ -16,7 +16,6 @@ You'll need a GitHub Account to follow these steps. If you're not git-savvy, it'
 1. [Create a fork and clone it](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop#forking-a-repository) of the [example vault](https://github.com/s-blu/obsidian_dataview_example_vault) . Now you should have a local copy you can work with.
 3. Make your changes like described below!
 
-
 ## Add a query
 
 When you want to add a brand new query, please do the following:
@@ -36,6 +35,9 @@ Probably, your query will need some specific test data. You can either add new f
 1. Do not delete or change existing test data, even it if looks broken. It could be that a query page needs these broken data sets to showcase how to handle such edge cases
 2. Always add test data in a sub folder of `10 Example Data`, i.e. `10 Example Data/recipes`. You're free to create new ones for this. This makes querying easier. You can, of course, also add tags to do the querying. Still, it is easier for maintenance if you put the data in a sub folder
 3. Please make sure your test data does not hurt anyone, doesn't contain personal data and is not illegal (i.e. Copyright infringement)
+
+> [!tip] Script to generate semi-random test data
+> There is a [python script](https://github.com/s-blu/obsidian_things/tree/main/example_data) around, that lets you generate test data with some random values based on one or more template files. Most of the data under 10 Example data/dailys and 10 Example Data/books were generated with it - maybe it's a good fit for you, too. More info on the script itself.
 
 ## Share your contribution
 
