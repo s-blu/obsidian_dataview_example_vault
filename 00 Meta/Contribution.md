@@ -6,15 +6,15 @@ First of all, thanks for considering sharing your knowledge! For adding a query 
 
 First of all, you need to get yourself a local copy of the example vault. There are two ways of doing this.
 
-1. Get a static local copy. Follow the [[README#Usage]] explanation for that
-2. Get a copy via Github - this is more technical, but makes it possible to update the vault to the newest state automatically and makes sharing your contribution easier.
+1. Get a local copy by downloading the vault. Follow the [[README#Usage]] explanation for that.
+2. Get a copy via GitHub - this is more technical, but makes it possible to update the vault to the newest state and makes sharing your contribution easier.
 
 ### Get the example vault via GitHub
 
 You'll need a GitHub Account to follow these steps. If you're not git-savvy, it's probably easier for you to use the [GitHub Desktop](https://desktop.github.com/) application for the following steps.
 
-1. [Create a fork and clone it](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop#forking-a-repository) of the [example vault](https://github.com/s-blu/obsidian_dataview_example_vault) . Now you should have a local copy you can work with.
-3. Make your changes like described below!
+1. [Create a fork and clone it](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop#forking-a-repository) of the [example vault](https://github.com/s-blu/obsidian_dataview_example_vault). Now you should have a local copy you can work with.
+2. Make your changes like described below!
 
 ## Add a query
 
@@ -33,7 +33,9 @@ When you want to add a brand new query, please do the following:
 Probably, your query will need some specific test data. You can either add new files or expand existing ones. Please keep these points in mind:
 
 1. Do not delete or change existing test data, even it if looks broken. It could be that a query page needs these broken data sets to showcase how to handle such edge cases
-2. Always add test data in a sub folder of `10 Example Data`, i.e. `10 Example Data/recipes`. You're free to create new ones for this. This makes querying easier. You can, of course, also add tags to do the querying. Still, it is easier for maintenance if you put the data in a sub folder
+2. Always add test data in a sub folder of `10 Example Data`, i.e. `10 Example Data/recipes`. You're free to create new ones for this. 
+	- Please always add your test data in a sub folder, even if you use tags for querying. It provides a better overview and makes maintenance easier
+	- It's preferable if your test data is general enough so it can potentially extended for new queries, but using very case specific test data is alright, too. 
 3. Please make sure your test data does not hurt anyone, doesn't contain personal data and is not illegal (i.e. Copyright infringement)
 
 > [!tip] Script to generate semi-random test data

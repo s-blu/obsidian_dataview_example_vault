@@ -2,28 +2,28 @@
 
 Your query is not behaving like it should be? We have some tips on how to find out what's going wrong.
 
-## Query returns 0 results, but the data is there
+## Query returns 0 results, but the data is there.
 
-There needs to be something in your query that filters out or hiding your data.
+There needs to be something in your query that filters out or hides your data.
 
 ### 1. Try to remove the FROM clause.
-First, remove your `FROM` statement altogether. Does the result you expect show up now (probably among others, not wanted)? Add every FROM expression back one by one.
+First, remove your `FROM` statement altogether. Does the result you expect show up now (probably among others, not wanted)? Add every `FROM` expression back one by one.
 
-For example, you have `FROM #dv AND "20 Dataview Queries"`, first add only `FROM #dv`. Your result is still there? Try `FROM #dv AND "20 Dataview Queries"` - do your expected pages vanish? Then the FROM clause - maybe in **combination** with the WHERE clause - is causing trouble. So next...
+For example, you have `FROM #dv AND "20 Dataview Queries"`, first add only `FROM #dv`. Your result is still there? Try `FROM #dv AND "20 Dataview Queries"` - do your expected pages vanish? Then the FROM clause - maybe in **combination** with the `WHERE` clause - is causing trouble. So next...
 
 ### 2. Try to remove the WHERE clause.
-Secondly, remove your WHERE clause but keep your `FROM` statement. Are the results still gone? Then your FROM statement is erroneous. Try to find the erroneous part and have a look at your data why they might get filtered out by it.
+Secondly, remove your `WHERE` clause but keep your `FROM` statement. Are the results still gone? Then your `FROM` statement is erroneous. Try to find the erroneous part and have a look at your data why they might get filtered out by it.
 
-Your data is there, if you keep the FROM, but delete the WHERE? Then your WHERE statement is acting up.  Add every WHERE expression back one by one.
+Your data is there, if you keep the `FROM`, but delete the `WHERE`? Then your `WHERE` statement is acting up. Add every `WHERE` expression back one by one.
 
-For example you have `WHERE file.name != this.file.name AND #tag1 AND someMetadata`, then add first `WHERE file.name != this.file.name`. The data you're expecting still there? Try `WHERE file.name != this.file.name AND #tag1`. Still there? No? The last added part of the WHERE clause (`AND #tag1`) causes some trouble.
+For example you have `WHERE file.name != this.file.name AND #tag1 AND someMetadata`, then add first `WHERE file.name != this.file.name`. The data you're expecting still there? Try `WHERE file.name != this.file.name AND #tag1`. Still there? No? The last added part of the `WHERE` clause (`AND #tag1`) causes some trouble.
 
 
 ### 3. Print out the metadata of your page. 
 
-You can do that in different approaches:
+You found the error, but don't understand why it causes problems? It might help if you print out your current page like dataview sees it, to understand the structure of available metadata. You can do that in different approaches:
 
-If you're writing a table-query, **add the metadata you're using in your WHERE as a table column** and see if the values match your expectation.
+If you're writing a table-query, **add the metadata you're using in your `WHERE` as a table column** and see if the values match your expectation.
 
 To **see the whole current page with all its properties and metadata**, add 
 
