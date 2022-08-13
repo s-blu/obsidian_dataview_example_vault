@@ -4,15 +4,17 @@ Your query is not behaving like it should be? We have some tips on how to find o
 
 ## Query returns 0 results, but the data is there
 
-There needs to be something in your query thats filtering out or hiding your data.
+There needs to be something in your query that filters out or hiding your data.
 
 ### 1. Try to remove the FROM clause.
-Does the result you expect show up now (probably among others, not wanted)? Add every WHERE expression back one by one.
+First, remove your `FROM` statement altogether. Does the result you expect show up now (probably among others, not wanted)? Add every FROM expression back one by one.
 
 For example, you have `FROM #dv AND "20 Dataview Queries"`, first add only `FROM #dv`. Your result is still there? Try `FROM #dv AND "20 Dataview Queries"` - do your expected pages vanish? Then the FROM clause - maybe in **combination** with the WHERE clause - is causing trouble. So next...
 
 ### 2. Try to remove the WHERE clause.
-Does the result you expect show up now (probably among others, not wanted)? Add every WHERE expression back one by one.
+Secondly, remove your WHERE clause but keep your `FROM` statement. Are the results still gone? Then your FROM statement is erroneous. Try to find the erroneous part and have a look at your data why they might get filtered out by it.
+
+Your data is there, if you keep the FROM, but delete the WHERE? Then your WHERE statement is acting up.  Add every WHERE expression back one by one.
 
 For example you have `WHERE file.name != this.file.name AND #tag1 AND someMetadata`, then add first `WHERE file.name != this.file.name`. The data you're expecting still there? Try `WHERE file.name != this.file.name AND #tag1`. Still there? No? The last added part of the WHERE clause (`AND #tag1`) causes some trouble.
 
@@ -43,7 +45,7 @@ and open the developer console with `CTRL SHIFT I`.
 > These examples are observed best when you switch to "[Edit Mode](https://help.obsidian.md/How+to/Read+and+edit+modes)" and open up a second pane in read mode - otherwise you'll only see the error or the dataview query :) 
 
 
-Read the error description carefully. There is a little arrow pointing at the errornous place. For example:
+Read the error description carefully. There is a little arrow pointing at the erroneous place. For example:
 
 ```dataview
 TABLE
@@ -57,7 +59,7 @@ TABLE
 WHERE contains(file.tags, "#dv/list"
 ```
 
-Here, we do not have a little arrow, but only a error message: `Got the end of the input`. This normally means that an input ended (because the query is over) without dataview expecting it. On the last line you'll find what the plugin would've expected. We are missing the closing `)`
+Here, we do not have a little arrow, but only a error message: `Got the end of the input`. This normally means that an input ended (because the query is over) without dataview expecting it. On the last line you'll find what the plugin would've expected instead of the end of the query. We are missing the closing `)`
 
 ```dataview
 TABLE
@@ -75,7 +77,7 @@ WHERE paid
 FLATTEN sum() as sum
 ```
 
-It tells us that our **where** clause failed and shows us the **first three errors** why. Here, it's the same one. 
+It tells us that our **where** clause failed and shows us the **first three errors** why. Here, it's the same one three times. 
 
 Let's read this message: `No implementation of 'sum' found for arguments:`
 It's rather technical. What it tries to tell you: "I don't know what to do with these arguments: (none)" - because you did not give any arguments inside the round brackets.
@@ -89,7 +91,7 @@ WHERE paid
 FLATTEN sum(paid, paid) as sum
 ```
 
-Now our error message is a bit different and the first three arent completely equal anymore. It now says "I dont know what to do with two things that are null and null - or array and array - or string and string"
+Now our error message is a bit different and the first three aren't completely equal anymore. It now says "I don't know what to do with two things that are null and null - or array and array - or string and string"
 
 So the `sum` function doesn't know how to handle our input. How to solve this?
 First, head over to the [official dataview documentation and read up how sum works](https://blacksmithgu.github.io/obsidian-dataview/query/functions/#sumarray):
