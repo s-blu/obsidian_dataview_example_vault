@@ -1,0 +1,24 @@
+.grid-item {
+  display: block;
+  max-width: 97%;
+  margin: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.imagegrid {
+  border: 1px solid;
+}
+
+.imagegrid:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.grid-col {
+  float: left;
+  width: 32%;
+}

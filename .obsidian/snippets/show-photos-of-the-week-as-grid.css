@@ -1,0 +1,18 @@
+.imagegrid ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.imagegrid ul li {
+  display: flex;
+  flex-direction: column;
+}
+.imagegrid ul li::marker {
+  content: "";
+}
+/* I wanted to ignore the width on the images and set a fixed one for them.
+Remove if you want to preserve the width configured on the image link itself. */
+.imagegrid ul li img,
+.markdown-rendered img:not([width]) {
+  max-width: 200px;
+}
