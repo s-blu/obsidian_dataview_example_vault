@@ -1,5 +1,7 @@
 ---
 description: Show on which date which files were edited
+topics:
+  - visualization
 ---
 #dv/calendar
 

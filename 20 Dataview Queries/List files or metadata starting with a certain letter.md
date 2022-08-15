@@ -1,5 +1,7 @@
 ---
 description: List filenames or files with metadata values that start with a specific character
+topics:
+  - filter for filenames
 ---
 #dv/list #dv/from #dv/where 
 

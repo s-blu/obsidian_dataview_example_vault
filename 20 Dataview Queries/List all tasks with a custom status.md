@@ -1,5 +1,7 @@
 ---
 description: List all tasks that have a custom status (i.e. >)
+topics:
+  - custom status for tasks
 ---
 #dv/task #dv/from #dv/where #dv/sort #dv/limit #dv/groupby 
 # List all tasks with a custom status

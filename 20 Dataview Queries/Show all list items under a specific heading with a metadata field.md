@@ -1,5 +1,7 @@
 ---
 description: Show all bullet points that are in a specific section and have a certain metadata value
+topics:
+  - filter bullet points
 ---
 #dataviewquery
 #dv/table #dv/from #dv/where #dv/groupby #dv/flatten #dv/meta #dv/contains 

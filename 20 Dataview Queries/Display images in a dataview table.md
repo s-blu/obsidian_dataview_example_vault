@@ -2,6 +2,8 @@
 description: display and resize images in dataview tables.
 test-internal: "![[Bar Chart Category Series.png|500]]"
 test-internal2: "[[Bar Chart Series Category Value 2.png]]"
+topics:
+  - images in tables
 ---
 #dv/table #dv/from #dv/where #dv/embed #dv/meta #dv/link 
 

@@ -1,5 +1,8 @@
 ---
 description: Remove a suffix or prefix from a filename delimited with certain characters 
+topics:
+  - suffixes and prefixes
+  - custom output
 ---
 #dv/list #dv/link #dv/regexreplace #dv/from 
 

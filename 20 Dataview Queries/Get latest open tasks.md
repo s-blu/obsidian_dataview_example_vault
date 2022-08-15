@@ -1,5 +1,8 @@
 ---
 description: Get the latest, not completed tasks 
+topics:
+  - open tasks
+  - latest items
 ---
 #dataviewquery
 #dv/task #dv/from #dv/where #dv/sort #dv/limit 

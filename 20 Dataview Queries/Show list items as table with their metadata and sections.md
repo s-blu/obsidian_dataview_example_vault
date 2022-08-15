@@ -1,5 +1,7 @@
 ---
 description: Show a bullet point list as a table with their metadata and sections (headers) as columns
+topics:
+  - lists with metadata
 ---
 #dv/table #dv/from #dv/flatten #dv/sort #dv/regexreplace
 

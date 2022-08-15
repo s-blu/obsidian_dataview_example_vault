@@ -1,5 +1,7 @@
 ---
 description: List files a contact page is linked to as a contact log for this person
+topics:
+  - contacts
 ---
 #dv/table #dv/from #dv/join #dv/min #dv/flatten #dv/groupby #dv/sort #dv/date #dv/limit #dv/contains 
 

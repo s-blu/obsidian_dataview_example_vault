@@ -1,5 +1,8 @@
 ---
 description: Calculate the sum of multiple times (hh:mm), i.e. the sum of hours one has spent on a project 
+topics:
+  - durations
+  - sums
 ---
 #dv/dataviewjs #dvjs/pages #dvjs/mutate #dvjs/table #dvjs/map #dvjs/luxon #dvjs/sort
 

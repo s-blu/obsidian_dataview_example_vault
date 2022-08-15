@@ -1,5 +1,7 @@
 ---
 description: List all bullet points that contain a certain tag
+topics:
+  - filter bullet points
 ---
 #dataviewquery
 #dv/list #dv/from #dv/where #dv/flatten #dv/contains

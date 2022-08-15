@@ -1,5 +1,8 @@
 ---
-description: Plot the results of a Category-Series structured DQL query (with an artibrary number of Series columns) on a line or bar chart. 
+description: Plot the results of a Category-Series structured DQL query (with an artibrary number of Series columns) on a line or bar chart.
+topics:
+  - combining plugins
+  - charts
 ---
 #dv/table #dv/from #dv/where #dv/groupby #dv/sort #dv/sum #dvjs/tryQuery 
 

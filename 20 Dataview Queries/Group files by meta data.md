@@ -1,5 +1,7 @@
 ---
 description: Display Files grouped after metadata where one felt discomfort
+topics:
+  - grouping
 ---
 #dataviewquery
 #dv/table #dv/from #dv/where #dv/groupby #dv/choice 

@@ -1,5 +1,7 @@
 ---
 description: Show a calender that marks all days with praying = yes
+topics:
+  - habit tracking
 ---
 #dv/table #dv/from #dv/where 
 

@@ -1,7 +1,7 @@
-
-
 ---
 description: shows all unresolved links (links to non existing pages), optionally with the files containing them
+topics:
+  - unresolved links
 ---
 #dv/dataviewjs #dv/table #dv/from #dv/flatten #dv/where #dv/groupby #dvjs/flatMap #dvjs/sort #dvjs/list #dvjs/table
 

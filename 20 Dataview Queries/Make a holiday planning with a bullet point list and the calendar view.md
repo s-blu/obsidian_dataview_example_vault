@@ -1,5 +1,7 @@
 ---
 description: Render a event-overview calendar when i.e. planning holidays
+topics:
+  - event planning
 ---
 #dv/calendar #dv/where #dv/flatten #dv/list #dv/sort 
 

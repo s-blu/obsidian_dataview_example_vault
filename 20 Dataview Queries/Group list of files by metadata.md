@@ -1,5 +1,8 @@
 ---
 description: Group a list of files according to their metadata
+topics:
+  - grouping
+  - custom output
 ---
 #dv/list #dv/from #dv/where #dv/groupby #dv/flatten #dv/join 
 

@@ -1,5 +1,7 @@
 ---
 description: Marks all days in a calendar where you spent more than a money limit (i.e. 75)
+topics:
+  - tresholds
 ---
 #dv/table #dv/from #dv/flatten #dv/where #dv/round #dv/sum #dv/map #dv/number #dv/regexreplace 
 

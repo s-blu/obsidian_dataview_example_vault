@@ -1,5 +1,7 @@
 ---
 description: Show a calender that marks all days with uncompleted tasks
+topics:
+  - task tracking
 ---
 #dv/calendar #dv/from #dv/flatten #dv/where #dv/all #dv/map #dv/any
 

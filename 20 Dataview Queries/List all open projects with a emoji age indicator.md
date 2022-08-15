@@ -1,5 +1,8 @@
 ---
 description: Shows a table with all open project and a emoji score how long these projects are already open
+topics:
+  - emoji 
+  - scores
 ---
 #dv/table #dv/from #dv/where #dv/date #dvjs/where #dvjs/pages #dvjs/mutate #dvjs/table #dv/dataviewjs 
 

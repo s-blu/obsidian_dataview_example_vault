@@ -1,5 +1,8 @@
 ---
 description: Plot the results of a Series-Category-Value structured DQL query on a line or bar chart. 
+topics:
+  - combining plugins
+  - charts
 ---
 #dv/table #dv/from #dv/where #dv/groupby #dv/sort 
 

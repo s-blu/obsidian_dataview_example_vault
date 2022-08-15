@@ -1,5 +1,7 @@
 ---
 description: Display values from a multivalue YAML frontmatter field
+topics:
+  - multivalue yaml
 ---
 #dataviewquery
 #dv/table #dv/from #dv/where 

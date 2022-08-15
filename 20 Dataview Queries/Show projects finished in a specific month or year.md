@@ -1,5 +1,7 @@
 ---
 description: Shows all projects with a finish date that lies in a specific month or year, optionally with additional metadata
+topics:
+  - date based overviews
 ---
 #dv/table #dv/date #dv/dateformat #dv/from #dv/where #dv/groupby 
 
@@ -38,7 +40,7 @@ GROUP BY dateformat(date(finished), "yyyy-MM")
 ### Show all finished projects grouped by month of a specific year
 
 ```dataview
-Table rows.finished AS "Finished on"
+Table rows.file.link AS "project", rows.finished AS "Finished on"
 FROM "10 Example Data/projects" 
 WHERE finished AND dateformat(date(finished), "yyyy") = "2022"
 GROUP BY dateformat(date(finished), "yyyy-MM")

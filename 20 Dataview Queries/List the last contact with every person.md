@@ -1,5 +1,8 @@
 ---
 description: Show all persons in your vault and when you had last contact with them 
+topics:
+  - contacts
+  - latest items
 ---
 #dv/table #dv/max #dv/from #dv/where #dv/flatten #dv/groupby #dv/sort #dv/min #dv/choice 
 

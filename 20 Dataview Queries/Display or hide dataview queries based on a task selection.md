@@ -1,5 +1,7 @@
 ---
 description: Hide or show dataview queries based on a task selection ("toggle tasks")
+topics:
+  - show or hide queries
 ---
 #dv/dataviewjs #dvjs/current #dvjs/header #dvjs/list #dvjs/flatMap #dvjs/where 
 

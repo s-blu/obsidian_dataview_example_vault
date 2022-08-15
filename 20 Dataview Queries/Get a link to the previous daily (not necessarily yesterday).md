@@ -1,5 +1,7 @@
 ---
 description: Fetches the file that has the highest day that is lower than the current files day in order to get the previous day
+topics:
+  - navigation
 date: 2022-07-07
 ---
 #dv/list #dv/from #dv/where #dv/sort #dv/limit 

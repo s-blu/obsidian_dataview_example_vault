@@ -1,5 +1,8 @@
 ---
 description: Display metadata of a certain week as emojis (i.e. for habit tracking)
+topics:
+  - habit tracking
+  - emojis as output
 ---
 #dataviewquery
 #dv/table #dv/from  #dv/where #dv/choice
