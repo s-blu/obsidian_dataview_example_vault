@@ -25,7 +25,8 @@ new Colcade(dv.container, {
   items: '.grid-item',
 });
 
-/* ==== COLCADE LIBRAY, LICENSED UNDER MIT, SOURCE: https://github.com/desandro/colcade ===== */
+/* ==== COLCADE LIBRAY, MIT LICENSED, SOURCE: https://github.com/desandro/colcade ===== */
+/* ATTENTION: This code is minimized in functionality to only yield code we need for the specific use case */
 
 /*!
  * Colcade v0.2.0
@@ -33,9 +34,6 @@ new Colcade(dv.container, {
  * by David DeSandro
  * MIT license
  */
-
-/*jshint browser: true, undef: true, unused: true */
-
 function factory() {
   // -------------------------- Colcade -------------------------- //
 
@@ -69,35 +67,12 @@ function factory() {
   var instances = {};
 
   proto.create = function () {
-    this.errorCheck();
     // add guid for Colcade.data
     var guid = (this.guid = ++GUID);
     this.element.colcadeGUID = guid;
     instances[guid] = this; // associate via id
     // update initial properties & layout
     this.reload();
-    // events
-    this._windowResizeHandler = this.onWindowResize.bind(this);
-    this._loadHandler = this.onLoad.bind(this);
-    window.addEventListener('resize', this._windowResizeHandler);
-    this.element.addEventListener('load', this._loadHandler, true);
-  };
-
-  proto.errorCheck = function () {
-    var errors = [];
-    if (!this.element) {
-      errors.push('Bad element: ' + this.element);
-    }
-    if (!this.options.columns) {
-      errors.push('columns option required: ' + this.options.columns);
-    }
-    if (!this.options.items) {
-      errors.push('items option required: ' + this.options.items);
-    }
-
-    if (errors.length) {
-      throw new Error('[Colcade error] ' + errors.join('. '));
-    }
   };
 
   // update properties and do layout
@@ -154,95 +129,6 @@ function factory() {
     this.columnHeights[index] += item.offsetHeight || 1;
   };
 
-  // ----- adding items ----- //
-
-  proto.append = function (elems) {
-    var items = this.getQueryItems(elems);
-    // add items to collection
-    this.items = this.items.concat(items);
-    // lay them out
-    this.layoutItems(items);
-  };
-
-  proto.prepend = function (elems) {
-    var items = this.getQueryItems(elems);
-    // add items to collection
-    this.items = items.concat(this.items);
-    // lay out everything
-    this._layout();
-  };
-
-  proto.getQueryItems = function (elems) {
-    elems = makeArray(elems);
-    var fragment = document.createDocumentFragment();
-    elems.forEach(function (elem) {
-      fragment.appendChild(elem);
-    });
-    return querySelect(this.options.items, fragment);
-  };
-
-  // ----- measure column height ----- //
-
-  proto.measureColumnHeight = function (elem) {
-    var boundingRect = this.element.getBoundingClientRect();
-    this.activeColumns.forEach(function (column, i) {
-      // if elem, measure only that column
-      // if no elem, measure all columns
-      if (!elem || column.contains(elem)) {
-        var lastChildRect = column.lastElementChild.getBoundingClientRect();
-        // not an exact calculation as it includes top border, and excludes item bottom margin
-        this.columnHeights[i] = lastChildRect.bottom - boundingRect.top;
-      }
-    }, this);
-  };
-
-  // ----- events ----- //
-
-  proto.onWindowResize = function () {
-    clearTimeout(this.resizeTimeout);
-    this.resizeTimeout = setTimeout(
-      function () {
-        this.onDebouncedResize();
-      }.bind(this),
-      100
-    );
-  };
-
-  proto.onDebouncedResize = function () {
-    var activeColumns = this.getActiveColumns();
-    // check if columns changed
-    var isSameLength = activeColumns.length == this.activeColumns.length;
-    var isSameColumns = true;
-    this.activeColumns.forEach(function (column, i) {
-      isSameColumns = isSameColumns && column == activeColumns[i];
-    });
-    if (isSameLength && isSameColumns) {
-      return;
-    }
-    // activeColumns changed
-    this.activeColumns = activeColumns;
-    this._layout();
-  };
-
-  proto.onLoad = function (event) {
-    this.measureColumnHeight(event.target);
-  };
-
-  // ----- destroy ----- //
-
-  proto.destroy = function () {
-    // move items back to container
-    this.items.forEach(function (item) {
-      this.element.appendChild(item);
-    }, this);
-    // remove events
-    window.removeEventListener('resize', this._windowResizeHandler);
-    this.element.removeEventListener('load', this._loadHandler, true);
-    // remove data
-    delete this.element.colcadeGUID;
-    delete instances[this.guid];
-  };
-
   // -------------------------- HTML init -------------------------- //
 
   docReady(function () {
@@ -270,61 +156,6 @@ function factory() {
     var id = elem && elem.colcadeGUID;
     return id && instances[id];
   };
-
-  // -------------------------- jQuery -------------------------- //
-
-  Colcade.makeJQueryPlugin = function ($) {
-    $ = $ || window.jQuery;
-    if (!$) {
-      return;
-    }
-
-    $.fn.colcade = function (arg0 /*, arg1 */) {
-      // method call $().colcade( 'method', { options } )
-      if (typeof arg0 == 'string') {
-        // shift arguments by 1
-        var args = Array.prototype.slice.call(arguments, 1);
-        return methodCall(this, arg0, args);
-      }
-      // just $().colcade({ options })
-      plainCall(this, arg0);
-      return this;
-    };
-
-    function methodCall($elems, methodName, args) {
-      var returnValue;
-      $elems.each(function (i, elem) {
-        // get instance
-        var colcade = $.data(elem, 'colcade');
-        if (!colcade) {
-          return;
-        }
-        // apply method, get return value
-        var value = colcade[methodName].apply(colcade, args);
-        // set return value if value is returned, use only first value
-        returnValue = returnValue === undefined ? value : returnValue;
-      });
-      return returnValue !== undefined ? returnValue : $elems;
-    }
-
-    function plainCall($elems, options) {
-      $elems.each(function (i, elem) {
-        var colcade = $.data(elem, 'colcade');
-        if (colcade) {
-          // set options & init
-          colcade.option(options);
-          colcade.layout();
-        } else {
-          // initialize new instance
-          colcade = new Colcade(elem, options);
-          $.data(elem, 'colcade', colcade);
-        }
-      });
-    }
-  };
-
-  // try making plugin
-  Colcade.makeJQueryPlugin();
 
   // -------------------------- utils -------------------------- //
 
