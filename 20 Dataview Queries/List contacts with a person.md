@@ -67,3 +67,13 @@ day AS "Contact date"
 FROM "10 Example Data/dailys"
 WHERE contains(person, "Christa")
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

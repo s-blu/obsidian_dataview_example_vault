@@ -48,3 +48,13 @@ FLATTEN list(filter(file.lists, (x) => meta(x.section).subpath = "Research").tex
 FLATTEN list(filter(file.lists, (x) => meta(x.section).subpath = "Topics").text) as Topics
 WHERE Research OR Topics
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

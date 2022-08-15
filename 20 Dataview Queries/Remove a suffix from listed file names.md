@@ -39,3 +39,13 @@ FROM "10 Example Data/prefixes and suffixes"
 LIST WITHOUT ID link(file.link, regexreplace(regexreplace(file.name, "^.*_", ""), "--.*$", ""))
 FROM "10 Example Data/prefixes and suffixes"
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

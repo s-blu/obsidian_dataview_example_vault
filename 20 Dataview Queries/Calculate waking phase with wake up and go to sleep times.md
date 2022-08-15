@@ -96,3 +96,13 @@ TABLE WITHOUT ID t1, t2, duration
 WHERE file.name = this.file.name
 FLATTEN t2 - t1 as duration
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

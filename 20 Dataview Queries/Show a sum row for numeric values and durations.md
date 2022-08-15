@@ -86,3 +86,12 @@ DQL.values.push(sums)
 dv.table(DQL.headers, DQL.values)
 ```
 
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

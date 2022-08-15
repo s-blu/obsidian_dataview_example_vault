@@ -45,3 +45,13 @@ FROM "10 Example Data/projects"
 WHERE finished AND dateformat(date(finished), "yyyy") = "2022"
 GROUP BY dateformat(date(finished), "yyyy-MM")
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```
