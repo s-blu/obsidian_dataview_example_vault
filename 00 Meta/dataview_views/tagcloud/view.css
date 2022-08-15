@@ -1,0 +1,19 @@
+.cloud-item {
+  display: inline-block;
+  padding: 4px;
+  margin: 4px;
+  border-radius: 4px;
+  background: rgba(221, 221, 221, 0.2);
+}
+
+.cloud-item.small {
+  font-size: 0.85em;
+}
+
+.cloud-item.medium {
+  font-size: 1.1em;
+}
+
+.cloud-item.big {
+  font-size: 1.4em;
+}
