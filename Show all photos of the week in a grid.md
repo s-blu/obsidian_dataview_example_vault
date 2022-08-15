@@ -38,7 +38,9 @@ dv.list(pages.picoftheday)
 
 ### Use as view snippet with a library for a nice layout
 
+> [!info] Sources of this query
+> You'll find the sources of this dv.view snippet under `00 Meta/dataview_views/imagegrid`. dv.views are a possibility to reuse complex javascript queries and to add css styling to them. Read more [here](https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/#dvviewpath-input)
+
 ```dataviewjs
 await dv.view('00 Meta/dataview_views/imagegrid')
-
 ```
