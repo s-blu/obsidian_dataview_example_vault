@@ -28,6 +28,19 @@ When you want to add a brand new query, please do the following:
 6. If necessary, add test data for your query. See [[Contribution#Add test data]] for details
 7. Done - good job! The second step is to [[Contribution#Share your contribution|share your contribution with us]]
 
+
+### Integrating other community plugins 
+
+This is a vault about dataview, but one of dataviews strength is it versatility and usability with other plugins. Still, we want to keep this vault as slim as possible, so if you want to add a query that requires an additional plugin, please do the following:
+1. Install the additional plugin in your local copy
+2. Write the queries and take screenshots of the results
+3. Add these screenshots to your query file
+4. Add a hint at the top of the query page that the installation of plugin XY is necessary to get these working
+
+The plugin files will be automatically ignored and not commited, so that the only plugin contained in the vault is dataview. Everyone who has interest in experience these queries can install the plugin for themselves. 
+
+A good example for this are the chart pages: [[Plot a Category-Series DQL query]]
+
 ## Add test data
 
 Probably, your query will need some specific test data. You can either add new files or expand existing ones. Please keep these points in mind:
@@ -43,7 +56,7 @@ Probably, your query will need some specific test data. You can either add new f
 
 ## Share your contribution
 
-You've added a new query or enhanced the vault in some other way. Thanks a lot! When you created a fork via GitHub, please follow these steps.
+You've added a new query or enhanced the vault in some other way. Thanks a lot! Now, onto sharing your contribution.
 
 ### When you used a downloaded local copy
 
@@ -52,9 +65,10 @@ If you used a static copy of the vault, but still own a GitHub account, please p
 1. Go to issues in the [dataview example vault repository](https://github.com/s-blu/obsidian_dataview_example_vault/issues) 
 2. Hit "New Issue" on the right
 3. Give the issue a name that reflect your changes, i.e. "Add query about (title of query file)"
-4. Attach all files you've created or changed to the issue
-5. Hit "Submit new issue"
-6. We'll review your changed files and integrate them into the dataview example vault if everything is alright
+4. Be welcome to give us a bit context in the description, i.e. what the query does 
+5. Attach all files you've created or changed to the issue
+6. Hit "Submit new issue"
+7. We'll review your changed files and integrate them into the dataview example vault if everything is alright
 
 **If you can't share your contribution via GitHub**, drop a message in the #dataview thread of the Obsidian Discord and somebody will take care of that for you. Mind though, it's easiest for the maintainers if you share your contribution via GitHub.
 
