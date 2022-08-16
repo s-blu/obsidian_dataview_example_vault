@@ -37,6 +37,7 @@ topics:
 ```
 
 
+%% === end of query page === %%
 > [!help]- Similar Queries
 > Maybe these queries are of interest for you, too:
 > ```dataview

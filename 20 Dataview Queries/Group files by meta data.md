@@ -2,6 +2,7 @@
 description: Display Files grouped after metadata where one felt discomfort
 topics:
   - grouping
+  - group pages based on meta data
 ---
 #dataviewquery
 #dv/table #dv/from #dv/where #dv/groupby #dv/choice 
