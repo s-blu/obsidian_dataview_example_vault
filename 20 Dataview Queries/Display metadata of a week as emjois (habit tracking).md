@@ -1,5 +1,8 @@
 ---
 description: Display metadata of a certain week as emojis (i.e. for habit tracking)
+topics:
+  - habit tracking
+  - emojis as output
 ---
 #dataviewquery
 #dv/table #dv/from  #dv/where #dv/choice
@@ -21,3 +24,13 @@ TABLE choice(wellbeing.mood = 1, "😢", choice(wellbeing.mood = 2 or wellbeing.
 FROM "10 Example Data/dailys"
 WHERE wellbeing.mood > 0 AND date(file.day).weekyear = 2
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

@@ -1,5 +1,7 @@
 ---
 description: Group meta data fields after their order in a file (useful if you have multiples in the same file)
+topics:
+  - meta data grouping
 ---
 #dv/dataviewjs #dvjs/pages #dvjs/where #dvjs/sort #dvjs/table 
 
@@ -29,4 +31,13 @@ function getValue(page, key, i) {
 }
 ```
 
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```
 

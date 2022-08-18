@@ -1,5 +1,8 @@
 ---
 description: Calculate the sum of multiple times (hh:mm), i.e. the sum of hours one has spent on a project 
+topics:
+  - durations
+  - sums
 ---
 #dv/dataviewjs #dvjs/pages #dvjs/mutate #dvjs/table #dvjs/map #dvjs/luxon #dvjs/sort
 
@@ -49,3 +52,13 @@ function sumUpWorkHours(workingHours) {
 	return dv.luxon.Duration.fromMillis(sum).toFormat("hh'h' mm'm'")
 }
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

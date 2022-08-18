@@ -1,5 +1,8 @@
 ---
 description: Display random images from a path in vault
+topics:
+  - random
+  - images
 ---
 #dv/dataviewjs #dvjs/list #dvjs/array #dvjs/sort #dvjs/limit #dvjs/map
 
@@ -17,3 +20,13 @@ dv.list(dv.array(imageFiles)
 		.limit(amountOfImages)
 		.map(file => dv.func.embed(dv.fileLink(file.path))))
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

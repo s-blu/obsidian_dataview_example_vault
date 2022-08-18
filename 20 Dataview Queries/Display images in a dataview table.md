@@ -2,6 +2,8 @@
 description: display and resize images in dataview tables.
 test-internal: "![[Bar Chart Category Series.png|500]]"
 test-internal2: "[[Bar Chart Series Category Value 2.png]]"
+topics:
+  - images in tables
 ---
 #dv/table #dv/from #dv/where #dv/embed #dv/meta #dv/link 
 
@@ -94,3 +96,13 @@ FLATTEN choice(typeof(cover-img)="link",
 		)
 	).path, "50")), "![anyName|50](" + cover-img + ")") AS EmbededCoverImg
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

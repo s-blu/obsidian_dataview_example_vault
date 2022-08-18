@@ -1,5 +1,7 @@
 ---
 description: List all bullet points that contain a specific word
+topics:
+  - filter bullet points
 ---
 #dataviewquery
 #dv/list #dv/from #dv/where #dv/groupby #dv/flatten #dv/icontains
@@ -36,3 +38,13 @@ FLATTEN file.lists AS L
 WHERE icontains(L.text, "ipsum")
 GROUP BY file.link
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

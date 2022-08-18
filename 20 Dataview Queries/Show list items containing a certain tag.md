@@ -1,5 +1,7 @@
 ---
 description: Show all bullet points that contain a certain tag
+topics:
+  - filter bullet points
 ---
 #dataviewquery
 #dv/table #dv/from #dv/where #dv/groupby #dv/flatten #dv/contains 
@@ -25,3 +27,13 @@ FLATTEN file.lists AS L
 WHERE contains(L.tags, "#tag1")
 GROUP BY file.link
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

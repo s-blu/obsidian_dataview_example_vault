@@ -1,5 +1,8 @@
 ---
 description: Renders a progress bar for a percentage i.e. done tasks in file
+topics:
+  - progress tracking
+  - visualization
 ---
 #dv/inline #dv/dataviewjs #dv/table #dv/round #dv/from #dv/where #dvjs/current
 
@@ -68,4 +71,12 @@ FROM "10 Example Data/dailys"
 WHERE task-completion
 ```
 
-
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

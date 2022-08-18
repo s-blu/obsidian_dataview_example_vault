@@ -1,5 +1,7 @@
 ---
 description: Render a event-overview calendar when i.e. planning holidays
+topics:
+  - event planning
 ---
 #dv/calendar #dv/where #dv/flatten #dv/list #dv/sort 
 
@@ -37,3 +39,12 @@ WHERE L.when
 SORT L.when
 ```
 
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

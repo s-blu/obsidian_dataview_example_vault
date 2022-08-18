@@ -1,5 +1,8 @@
 ---
 description: Show all persons in your vault and when you had last contact with them 
+topics:
+  - contacts
+  - latest items
 ---
 #dv/table #dv/max #dv/from #dv/where #dv/flatten #dv/groupby #dv/sort #dv/min #dv/choice 
 
@@ -53,3 +56,13 @@ FLATTEN person AS contactedPerson
 GROUP BY contactedPerson
 SORT max(rows.file.day) DESC
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

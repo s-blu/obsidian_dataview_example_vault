@@ -1,5 +1,7 @@
 ---
 description: List files a contact page is linked to as a contact log for this person
+topics:
+  - contacts
 ---
 #dv/table #dv/from #dv/join #dv/min #dv/flatten #dv/groupby #dv/sort #dv/date #dv/limit #dv/contains 
 
@@ -65,3 +67,13 @@ day AS "Contact date"
 FROM "10 Example Data/dailys"
 WHERE contains(person, "Christa")
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

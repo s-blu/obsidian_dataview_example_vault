@@ -1,5 +1,8 @@
 ---
-description: Plot the results of a Category-Series structured DQL query (with an artibrary number of Series columns) on a line or bar chart. 
+description: Plot the results of a Category-Series structured DQL query (with an artibrary number of Series columns) on a line or bar chart.
+topics:
+  - combining plugins
+  - charts
 ---
 #dv/table #dv/from #dv/where #dv/groupby #dv/sort #dv/sum #dvjs/tryQuery 
 
@@ -250,3 +253,13 @@ dv.span("");
 if (showTable) { dv.table(DQL.headers, DQL.values) } 
 
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

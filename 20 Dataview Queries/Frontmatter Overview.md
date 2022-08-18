@@ -1,5 +1,7 @@
 ---
 description: Overview of handling various types of frontmatter fields, including tricks and traps.
+topics:
+  - basics
 
 emptyValue:
 Bool: false

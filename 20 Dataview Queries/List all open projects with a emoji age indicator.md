@@ -1,5 +1,8 @@
 ---
 description: Shows a table with all open project and a emoji score how long these projects are already open
+topics:
+  - emoji 
+  - scores
 ---
 #dv/table #dv/from #dv/where #dv/date #dvjs/where #dvjs/pages #dvjs/mutate #dvjs/table #dv/dataviewjs 
 
@@ -45,3 +48,13 @@ function addEmojis(emoji, max) {
 }
 
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

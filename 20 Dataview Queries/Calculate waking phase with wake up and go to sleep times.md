@@ -1,9 +1,12 @@
 ---
 description: Calculate time spans with a start and end time, i.e. waking phase by wake up and go to sleep times
+topics: 
+  - durations
+  - timespans
 ---
 #dv/dataviewjs #dv/table #dv/from #dv/limit #dv/flatten #dvjs/pages #dvjs/limit #dvjs/mutate #dvjs/table #dvjs/map #dvjs/luxon 
 
-# Calculate timespans with times
+# Calculate waking phase with wake up and go to sleep times
 ## Basic 
 ### As DataviewJS solution
 ```dataviewjs
@@ -93,3 +96,13 @@ TABLE WITHOUT ID t1, t2, duration
 WHERE file.name = this.file.name
 FLATTEN t2 - t1 as duration
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

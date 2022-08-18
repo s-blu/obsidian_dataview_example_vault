@@ -1,5 +1,8 @@
 ---
 description: Display Files grouped after metadata where one felt discomfort
+topics:
+  - grouping
+  - group pages based on meta data
 ---
 #dataviewquery
 #dv/table #dv/from #dv/where #dv/groupby #dv/choice 
@@ -34,3 +37,13 @@ FROM #daily
 WHERE wellbeing.mood-notes = "discomfort"
 GROUP BY wellbeing.pain
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

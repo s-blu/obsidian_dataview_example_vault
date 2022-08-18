@@ -1,5 +1,7 @@
 ---
 description: Show a calender that marks all days with praying = yes
+topics:
+  - habit tracking
 ---
 #dv/table #dv/from #dv/where 
 
@@ -15,3 +17,13 @@ CALENDAR file.day
 FROM "10 Example Data/dailys"
 WHERE praying = "yes"
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

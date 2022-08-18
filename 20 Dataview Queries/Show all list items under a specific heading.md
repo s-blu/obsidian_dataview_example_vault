@@ -1,5 +1,7 @@
 ---
 description: List all bullet points under a certain heading
+topics:
+  - filter bullet points
 ---
 #dataviewquery
 #dv/table #dv/from #dv/where #dv/groupby #dv/flatten #dv/meta #dv/filter
@@ -46,3 +48,13 @@ FLATTEN list(filter(file.lists, (x) => meta(x.section).subpath = "Research").tex
 FLATTEN list(filter(file.lists, (x) => meta(x.section).subpath = "Topics").text) as Topics
 WHERE Research OR Topics
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

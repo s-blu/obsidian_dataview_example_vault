@@ -1,7 +1,7 @@
-
-
 ---
 description: shows all unresolved links (links to non existing pages), optionally with the files containing them
+topics:
+  - unresolved links
 ---
 #dv/dataviewjs #dv/table #dv/from #dv/flatten #dv/where #dv/groupby #dvjs/flatMap #dvjs/sort #dvjs/list #dvjs/table
 
@@ -87,3 +87,13 @@ dv.table(
   Object.entries(result).map(([unresolvedLink, referingFiles]) => [unresolvedLink, referingFiles.join(" • ")])
 );
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

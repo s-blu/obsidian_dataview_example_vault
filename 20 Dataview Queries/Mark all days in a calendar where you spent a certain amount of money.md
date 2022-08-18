@@ -1,5 +1,7 @@
 ---
 description: Marks all days in a calendar where you spent more than a money limit (i.e. 75)
+topics:
+  - tresholds
 ---
 #dv/table #dv/from #dv/flatten #dv/where #dv/round #dv/sum #dv/map #dv/number #dv/regexreplace 
 
@@ -45,3 +47,13 @@ FROM "10 Example Data/dailys"
 FLATTEN round(sum(map(paid, (x) => number(regexreplace(x, "\$", ""))))) as SUM
 WHERE paid and SUM > 75
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

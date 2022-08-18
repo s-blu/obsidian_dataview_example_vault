@@ -1,5 +1,7 @@
 ---
 description: Show tv shows after current status in multiple tables switchable via button
+topics:
+  - show or hide queries
 ---
 #dv/dataviewjs #dvjs/el #dvjs/pages #dvjs/where #dvjs/header #dvjs/table #dvjs/map #dvjs/container 
 
@@ -134,3 +136,13 @@ const removeView = () => {
 
 createButtons()
 ```
+
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```
