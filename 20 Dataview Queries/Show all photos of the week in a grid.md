@@ -1,5 +1,8 @@
 ---
 description: Show all images you have in your daily notes for this week in an image grid 
+topics:
+  - images
+  - grid view
 ---
 #dv/dataviewjs #dvjs/pages #dvjs/where #dvjs/container #dvjs/list #dvjs/view
 
@@ -59,3 +62,15 @@ Remove if you want to preserve the width configured on the image link itself. */
 ```dataviewjs
 await dv.view('00 Meta/dataview_views/imagegrid')
 ```
+
+---
+%% === end of query page === %%
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

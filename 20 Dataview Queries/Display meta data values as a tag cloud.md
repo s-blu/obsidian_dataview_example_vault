@@ -22,7 +22,7 @@ await dv.view("00 Meta/dataview_views/tagcloud",
 ```
 
 > [!info] Usage in the dataview example vault
-> This query is used to render the [[Topic Cloud]]!
+> This query is used to render the [[Topic Overview]]!
 
 > [!help]- Similar Queries
 > Maybe these queries are of interest for you, too:

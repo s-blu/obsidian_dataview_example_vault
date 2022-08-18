@@ -1,5 +1,8 @@
 ---
 description: List all persons that have birthday the current month
+topics:
+  - contacts
+  - date based overviews
 ---
 #dv/list #dv/where #dv/from #dv/inline #dvjs/pages #dvjs/where 
 
@@ -21,3 +24,15 @@ WHERE birthday.month = date(today).month
 ### As inline query
 
 `$=dv.pages('"10 Example Data/people"').where(p => p.birthday).where(p => p.birthday.month == dv.date('today').month).file.link`
+
+---
+%% === end of query page === %%
+> [!help]- Similar Queries
+> Maybe these queries are of interest for you, too:
+> ```dataview
+> LIST
+> FROM "20 Dataview Queries"
+> FLATTEN topics as flattenedTopics
+> WHERE contains(this.topics, flattenedTopics)
+> AND file.name != this.file.name
+> ```

@@ -8,10 +8,6 @@
   box-sizing: border-box;
 }
 
-.imagegrid {
-  border: 1px solid;
-}
-
 .imagegrid:after {
   display: block;
   content: '';

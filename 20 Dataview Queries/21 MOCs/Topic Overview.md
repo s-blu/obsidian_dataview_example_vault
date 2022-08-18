@@ -1,4 +1,4 @@
-# Topic Cloud
+# Topic Overview
 
 Each query has one or more **topics**, grouping queries with similar goals together. Wonder what's available? Wonder no more!
 
@@ -19,4 +19,4 @@ SORT count DESC, t ASC
 ```
 
 > [!info] Used queries
-> You want these fancy queries for your own data? Find the tag cloud [[Display meta data values as a tag cloud|here]] and [[List pages that share a meta data value with the current page|the list here]].
+> You want these fancy queries for your own data? Find the [[Display meta data values as a tag cloud|tag cloud here]] and [[List pages that share a meta data value with the current page|the list here]].

@@ -1,4 +1,4 @@
-# Queries per Type
+# Queries by Type
 
 ## List
 ```dataview
