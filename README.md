@@ -29,6 +29,10 @@ Also, we collected some [[Tips, tricks and interesting facts]]!
 
 You have some sort of question? Refer to the [[FAQ]].
 
+## Useful links
+- [Latest dataview topics in Share &amp; showcase - Obsidian Forum](https://forum.obsidian.md/t/hand-crafting-a-todo-widget-for-obsidian/41988 "Latest dataview topics in Share &amp; showcase - Obsidian Forum")
+- [Posts with dataview tag in Obsidian Snippets](https://obsidian-snippets.pages.dev/tags/dataview/ "Obsidian Snippets")
+
 ## Contributing
 
 If you found an issue or want to add a query you think could be helpful for others, be very welcome to get involved! You want to help, but don't know what to do? Have a look at the [[Vault To Do]].
