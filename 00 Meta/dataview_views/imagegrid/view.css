@@ -1,6 +1,6 @@
 .grid-item {
   display: block;
-  max-width: 97%;
+  max-width: calc(100% - 4px);
   margin: 4px;
 }
 

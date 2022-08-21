@@ -4,7 +4,8 @@ const Colcade = factory();
 const yearAndWeek = ['2022', '02']; // should be dv.current().file.name.split('-W'), if weekly is named like 2022-W2
 const pages = dv
   .pages('"10 Example Data/dailys"')
-  .where(p => p.day && p.day.year == yearAndWeek[0] && p.day.weekNumber == yearAndWeek[1]);
+  .where(p => p.day && p.day.year == yearAndWeek[0] && p.day.weekNumber == yearAndWeek[1])
+  .sort(p => p.file.name);
 dv.container.className += ' imagegrid';
 
 // render column elements for colcade. Styling is optimised for three columns. 
