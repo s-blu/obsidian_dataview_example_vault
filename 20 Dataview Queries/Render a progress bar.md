@@ -3,6 +3,7 @@ description: Renders a progress bar for a percentage i.e. done tasks in file
 topics:
   - progress tracking
   - visualization
+  - progress bars
 ---
 #dv/inline #dv/dataviewjs #dv/table #dv/round #dv/from #dv/where #dvjs/current
 

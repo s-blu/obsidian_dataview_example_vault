@@ -18,7 +18,7 @@ topics:
 > - [ ] Add appropriate tags to the page 
 > 	- [ ] If a DQL query: used query type (LIST, TABLE etc), data commands (FROM, WHERE, FLATTEN etc) and used [functions](https://blacksmithgu.github.io/obsidian-dataview/query/functions/) - always with #dv in front, i.e. #dv/list 
 > 	- [ ] If a dataviewjs query: #dv/dataviewjs and every [dataviewjs](https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/) or [data array](https://blacksmithgu.github.io/obsidian-dataview/api/data-array/) function as a #dvjs tag, i.e. #dvjs/current 
-> - [ ] Add topics to the frontmatter that helps the query at the end of the page to list similar queries. Head over to the [[Topic Overview]] to see what's available, but be welcome to introduce new topics where appropriate!
+> - [ ] Add topics to the frontmatter that helps the query at the end of the page to list similar queries. Head over to the [[Topic Overview]] to see what's available and be welcome to introduce new topics where appropriate!
 > - [ ] Add your name in the contribution callout at the top - or remove the contribution callout, however you like it better! Mind, though: Before contributing queries from others, always ask for their permission.
 > - [ ] Delete this callout :) 
 
