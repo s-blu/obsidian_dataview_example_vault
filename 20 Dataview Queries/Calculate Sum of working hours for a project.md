@@ -12,6 +12,7 @@ topics:
 
 ```dataviewjs
 const projects = dv.pages('"10 Example Data/projects"')
+	.where(p => p["working hours"])
 	.mutate(p => p.workHourSum = sumUpWorkHours(p["working hours"]))
 
 
@@ -36,6 +37,7 @@ function sumUpWorkHours(workingHours) {
 
 ```dataviewjs
 const projects = dv.pages('"10 Example Data/projects"')
+	.where(p => p["working hours"])
 	.mutate(p => p.workHourSum = sumUpWorkHours(p["working hours"]))
 	.sort(p => p.status, "desc")
 
