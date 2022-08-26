@@ -3,6 +3,7 @@ description: Show all images you have in your daily notes for this week in an im
 topics:
   - images
   - grid view
+  - weekly aggregation
 ---
 #dv/dataviewjs #dvjs/pages #dvjs/where #dvjs/container #dvjs/list #dvjs/view
 
