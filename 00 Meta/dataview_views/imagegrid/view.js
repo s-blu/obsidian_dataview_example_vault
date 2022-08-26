@@ -1,9 +1,9 @@
 // requiring or importing the lib did not work, thus we call it directly from within the same file
 const Colcade = factory();
 
-const yearAndWeek = ['2022', '02']; // should be dv.current().file.name.split('-W'), if weekly is named like 2022-W2
+const yearAndWeek = ["2022", "2"] // ATTENTION! use this instead: input.current.file.name.split('-W')
 const pages = dv
-  .pages('"10 Example Data/dailys"')
+  .pages(input.dailyNotesSearchQuery)
   .where(p => p.day && p.day.year == yearAndWeek[0] && p.day.weekNumber == yearAndWeek[1])
   .sort(p => p.file.name);
 dv.container.className += ' imagegrid';
@@ -14,7 +14,7 @@ for (let i = 0; i < 3; i++) {
 }
 
 //render images
-dv.list(pages.picoftheday);
+dv.list(pages[input.metadatafield]);
 // move the rendered images into the container so colcade can handle them (doesn't work if they are nested)
 dv.container.querySelectorAll('ul li img').forEach(el => {
   el.className = 'grid-item';
