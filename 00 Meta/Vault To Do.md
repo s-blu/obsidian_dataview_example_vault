@@ -9,7 +9,6 @@
 
 ## Queries
 - [ ] Add the examples from the Dataview documentation (with back reference) for easy try-outs
-- [ ] Add LIST queries that showcase the basic syntax
 - [ ] Add TABLE queries that showcase the basic syntax
 - [ ] Add TASK queries that showcase the basic syntax
 - [ ] Add the [possibility to burn out dataview queries with markdownTable and templater](https://github.com/blacksmithgu/obsidian-dataview/discussions/1241) (also [here](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847/225) ) with a back reference, explanation and example code
@@ -33,3 +32,16 @@
  - [ ] Explain what inline queries can do (and what not)
  - [ ] Add [sum up number of pages fulfilling certain criteria](https://discord.com/channels/686053708261228577/875721010144477204/1010262245755858994)
  - [ ] Add a page about [transforming dates](https://discord.com/channels/686053708261228577/875721010144477204/1011564039639404584) into a [format dataview recognizes](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/#field-types)
+
+## Missing but linked pages
+
+> [!info] 
+> A note is referring to a non-existing file, probably to a file that explains something in detail. Find out the context of the unresolved link and see if you either can create the fitting file or exchange the dead link with a in-place explanation.
+
+```dataview
+TABLE WITHOUT ID key AS "unresolved link", rows.file.link AS "referencing file"
+FROM "20 Dataview Queries"
+FLATTEN file.outlinks as outlinks
+WHERE !(outlinks.file) AND !(contains(meta(outlinks).path, "/"))
+GROUP BY outlinks
+```
