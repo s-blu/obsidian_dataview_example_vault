@@ -3,7 +3,7 @@ birthday: 1986-11-30
 relationship: 
 contacts: 
   phone: 869869919842
-  mail: Hercule W@hotmail.com
+  mail: Hercule-W@hotmail.com
 ---
 
 # Hercule W

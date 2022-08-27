@@ -44,9 +44,10 @@ FROM "10 Example Data/games" AND #genre/action
 
 > [!attention] Add `dataview` to code block
 > The output of this is pretty long. If you want to see it, add `dataview` to the code block - like on the examples above!
+> Please note: There needs to be a **space** behind `LIST` to see results!
 
 ```
-LIST
+LIST 
 ```
 
 ## Variants

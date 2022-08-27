@@ -1,7 +1,8 @@
 ---
 description: Customize the output of a LIST query to fit your needs and to display more than one additional meta data value
 topics:
-  - 
+  - basics
+  - custom output
 ---
 #dv/list #dv/from 
 
@@ -10,7 +11,7 @@ topics:
 ## Basic 
 
 ```dataview
-LIST "from " + author + " (Progress: " + pagesRead + "/" + totalPages + ")"
+LIST "from " + author + " (Progress: " + pagesRead + "/" + totalPages + " pages)"
 FROM #type/books 
 ```
 
