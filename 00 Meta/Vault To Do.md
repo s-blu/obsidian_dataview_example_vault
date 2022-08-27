@@ -9,7 +9,6 @@
 
 ## Queries
 - [ ] Add the examples from the Dataview documentation (with back reference) for easy try-outs
-- [ ] Add TABLE queries that showcase the basic syntax
 - [ ] Add TASK queries that showcase the basic syntax
 - [ ] Add the [possibility to burn out dataview queries with markdownTable and templater](https://github.com/blacksmithgu/obsidian-dataview/discussions/1241) (also [here](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847/225) ) with a back reference, explanation and example code
 - [ ] Add [the usage of Object.assign for duplicating entries into custom made groups](https://discord.com/channels/686053708261228577/875721010144477204/1003404078233178263) and [the metadata based groups](https://discord.com/channels/686053708261228577/875721010144477204/1005498669719638119) as a variant - and try if [dv.clone](https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/#dvclonevalue) is a good alternative to Object.assign
@@ -23,8 +22,7 @@
 - [ ] Add an example about indexing through a link, see [here](https://discord.com/channels/686053708261228577/875721010144477204/1006970754375614635) 
 - [ ] Create  syntax examples/explanations that apply to all types
 	- [ ] How to select or exclude the current file
-	- [ ] How to get a custom text as output
-	- [ ] What does GROUP BY and how to deal with it
+	- [ ] What does GROUP BY and how to deal with it [[How grouping works]]
 	- [ ] What does FLATTEN and how to use it
 	- [ ] What does SORT and how to use it
 	- [ ] Where is file.day coming from, how to set and how to use it
