@@ -6,7 +6,7 @@ price: 9.99
 genre: Action, Adventure, Indie, RPG
 languages: English, French, Italian, German, Spanish - Spain, Polish, Portuguese - Brazil, Russian, Simplified Chinese
 ---
-#games
+#games #genre/action
 
 # Terraria
 

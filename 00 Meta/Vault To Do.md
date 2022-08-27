@@ -6,7 +6,6 @@
 
 ## Example Data
 - [ ] Add more example data for "Collection" queries (book/game/food notes)
-- [ ] Add tags for querying
 
 ## Queries
 - [ ] Add the examples from the Dataview documentation (with back reference) for easy try-outs
