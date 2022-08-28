@@ -1,14 +1,14 @@
 # Introduce Use Cases
 
-In order to make the vault better navigatable and give some more context to available queries as well as inspiration how these queries could be used, we want to introduce **Use Cases**. 
+In order to make the vault better navigable and give some more context to available queries as well as inspiration how these queries could be used, we want to introduce **Use Cases**. 
 
 ## What's a good topic for a Use Case?
 
 Like the name says, a Use Case should be about some specific scenario you could achieve with dataview which requires (or can require) more than one dataview query. They should be **overviews for a topic**. Some examples:
 - A Daily/Weekly/Quarterly Note (Template)
 - A Music Album Overview page that provides information for songs, the album, the interpret, ...
-- A persons page with informations about his birthday, the last contact with them, their interests, their relationships with other persons, ...
-- Overview about a tv series, it's prequels and sequels, how many episodes you watched, when the new series comes out, participating actors, director, world, ... 
+- A persons page with information about his birthday, the last contact with them, their interests, their relationships with other persons, ...
+- Overview about a TV series, it's prequels and sequels, how many episodes you watched, when the new series comes out, participating actors, director, world, ... 
 
 ## Parts of a Use Case
 
@@ -35,3 +35,10 @@ A Use Case should be created as a **folder** under **30 Dataview Resources/33 Us
       Example2.md
 ```
 
+If a Use Case, for whatever (good) reason do **not** have and will not have examples, skip the folder and place the Use Case Overview directly under 33 Use Cases:
+
+```
+30 Dataview Resources/
+  33 Use Cases/
+    Basics of Dataview.md // <-- Use Case Overview/Explanation Page
+```

@@ -20,7 +20,9 @@ We hope you enjoy!
 
 ### Navigating
 
-Beside Obsidians built-in search, the **[[31.01 Dataview Queries Overview]]** is here for you!
+Beside Obsidians built-in search, the **[[Dataview Queries Overview]]** is here for you!
+
+**Are you new to dataview?** Have a look at [[Learn the Basics]]!
 
 ## Documentation & FAQ
 
@@ -33,4 +35,4 @@ You have some sort of question? Refer to the [[FAQ]].
 
 If you found an issue or want to add a query you think could be helpful for others, be very welcome to get involved! You want to help, but don't know what to do? Have a look at the [[Vault To Do]].
 
-Read more about how to contribute under [[00 Meta/Contribution]].
+Read more about how to contribute under [[00 Meta/Vault Infos/Contribution]].

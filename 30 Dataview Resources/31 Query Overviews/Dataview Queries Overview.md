@@ -1,6 +1,6 @@
 # Dataview Queries Overview
 
-The  [[Topic Overview]]  has all the use cases this vault covers. 
+The [[Topic Overview]]  has all the topics this vault covers. 
 
 Additionally, you can browse...
 
