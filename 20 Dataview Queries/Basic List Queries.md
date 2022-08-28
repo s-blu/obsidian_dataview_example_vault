@@ -62,7 +62,7 @@ WHERE author = "Conrad C"
 ### List pages and show a meta data field
 
 > [!attention] Only one additional information
-> For lists, you can only add **one** additional output. For more, you need to use a [[Basic Table Queries|table]] or [[List pages with customized text|create a custom output]].
+> For lists, you can only add **one** additional output. For more, you need to use a [[Basic Table Queries|table]] or [[How to create custom outputs in queries|create a custom output]].
 
 ```dataview
 LIST author

@@ -6,7 +6,7 @@ topics:
 ---
 #dv/list #dv/from 
 
-# Create custom outputs in Queries
+# How to create custom outputs in queries
 
 > [!hint] String concatenation
 > You can create custom outputs with something called **string concatenation**. Basically, that means that you are adding strings - texts - and meta data together to one output, just like numbers.
