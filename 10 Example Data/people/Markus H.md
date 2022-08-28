@@ -3,7 +3,7 @@ birthday: 2002-02-21
 relationship: work-related
 contacts: 
   phone: 853275063842
-  mail: Markus H@aim.com
+  mail: Markus_H@aim.com
 ---
 
 # Markus H
