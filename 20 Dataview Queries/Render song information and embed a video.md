@@ -1,5 +1,5 @@
 ---
-description: This page is a fancy setup for notes you want to make on music videos.
+description: This page is a fancy setup for notes you want to make on music videos. It renders song information and embeds a youtube video.
 topics:
   - embed
   - video
