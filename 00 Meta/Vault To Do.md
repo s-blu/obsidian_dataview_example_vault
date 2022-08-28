@@ -3,6 +3,11 @@
 ## Organization
 
 - [ ] Write MOCs or similar that encourage exploration, the current ones are awful (sorry!)
+- [ ] [[Introduce Use Cases]]
+	- [ ] Basics
+	- [ ] Daily Notes
+	- [ ] Weekly Notes
+	- [ ] A Person page (last contact, birthday, ...)
 
 ## Example Data
 - [ ] Add more example data for "Collection" queries (book/game/food notes)

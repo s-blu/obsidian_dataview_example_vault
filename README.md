@@ -20,7 +20,7 @@ We hope you enjoy!
 
 ### Navigating
 
-Beside Obsidians built-in search, the **[[21.01 Dataview Queries Overview]]** is here for you!
+Beside Obsidians built-in search, the **[[31.01 Dataview Queries Overview]]** is here for you!
 
 ## Documentation & FAQ
 
