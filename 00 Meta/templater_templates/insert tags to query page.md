@@ -2,7 +2,7 @@
 const dvApi = app.plugins.plugins.dataview.api;
 const dataviewRegex = /```(dataview(?:js)?)(.+?)```/gms;
 const currFile = app.workspace.getActiveFile();
-const content = await app.vault.cachedRead(currFile);
+const content = (await app.vault.cachedRead(currFile)).split("%% === end of query page === %%")[0];
 
 const datacommands = ["LIST", "TABLE", "TASK", "CALENDAR", "FROM", "WHERE", "FLATTEN", "SORT", "GROUP BY"];
 const tags = [];
@@ -24,18 +24,25 @@ for (let query of queries) {
     const functions = query.matchAll(/([a-zA-Z]+)\(/g);
     addFunctionsTags(functions, tags)
   } else {
+	addTag('dataviewjs')
     tagprefix = "#dvjs/"
+   
     const functions = query.matchAll(/dv\.([a-zA-Z]+)/g)
     addFunctionsTags(functions, tags)
   }
 }
 tR += tags.reduce((acc, curr) => `${acc} ${curr}`, "")
 
-function addFunctionsTags(functions, tags) {
+function addFunctionsTags(functions) {
   for (let fn of functions) {
-    const tag = `${tagprefix}${fn[1]}`
-    if (!tags.contains(tag)) tags.push(tag)
+    addTag(fn[1])
   }
 }
+
+function addTag(subtag) {
+	const tag = `${tagprefix}${subtag}`
+    if (!tags.contains(tag)) tags.push(tag)
+}
+
 %>
 
