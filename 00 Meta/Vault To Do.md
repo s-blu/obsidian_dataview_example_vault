@@ -3,7 +3,7 @@
 ## Organization
 
 - [ ] Write MOCs or similar that encourage exploration, the current ones are awful (sorry!)
-- [ ] [[Introduce Use Cases]]
+- [ ] [[Use Cases]]
 	- [ ] Daily Notes
 	- [ ] Weekly Notes
 	- [ ] A Person page (last contact, birthday, ...)

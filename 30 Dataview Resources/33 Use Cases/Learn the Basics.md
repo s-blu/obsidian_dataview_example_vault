@@ -2,11 +2,11 @@
 
 This page shall guide you if you are a newcomer to the power of Dataview. **Before you start out**, make sure you made yourself familiar with the [official Documentation](https://blacksmithgu.github.io/obsidian-dataview/). While the documentation is not the most intuitive guide, it's important to get a grasp of the general idea and functionality to enable you writing your own queries. 
 
-There are some [[Dataview Documentation and Resources|further reading]] you can dive into, but that's not necessary to get started. If you stumble across something, maybe the [[FAQ]] can help out.
+There is some [[Dataview Documentation and Resources|further reading]] you can dive into, but that's not necessary to get started. If you stumble across something, maybe the [[FAQ]] can help out.
 
 ## Understanding meta data on notes
 
-Before you can start querying data from your vault, you need [**meta data**](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/) to query. While there are some information already available on your notes, to leverage the full power of dataview, you'll need to add your own meta data via the frontmatter or inline fields.
+Before you can start querying data from your vault, you need [**meta data**](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/) to query. While there is already some information available on your [notes](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/#implicit-fields) and [tasks](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/#implicit-fields_1), to leverage the full power of dataview, you'll need to add your own meta data via the frontmatter or inline fields.
 
 **Learn more about YAML Frontmatter** on the official documentation of Obsidian and take a look on our [[Frontmatter Overview]] and how [[Multivalue YAML Frontmatter Field]]s work.
 
@@ -36,7 +36,7 @@ Beside the four **types** of a query, you can use [**data commands**](https://bl
 
 [**Inline Queries**](https://blacksmithgu.github.io/obsidian-dataview/data-queries/#inline-dql) are a special form of query. We'll showcase the basics in [[Basic Inline Queries]].
 
-## Understanding JavaScript
+## Understanding JavaScript Queries
 
 ... would go way beyond the scope of this project 😉. [JavaScript Queries](https://blacksmithgu.github.io/obsidian-dataview/api/intro/) are an advanced technique, enabling you to create basically _anything_ if you have dataview, time and knowledge. JavaScript is a full-fledged programming language and learning it takes a huge commitment. 
 
