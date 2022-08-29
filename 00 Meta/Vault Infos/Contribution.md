@@ -2,6 +2,9 @@
 
 First of all, thanks for considering sharing your knowledge! For adding a query to the vault, there are two things to do: First, **add the query** with fitting test data so it produces results and secondly, **share the query** so it'll become part of the example vault.
 
+> [!hint] Vault To Do
+> Want to help, but don't have a cool query at hand? Have a look at the [[Vault To Do]] - there's always something to work on! :) 
+
 ## Get a local copy
 
 First of all, you need to get yourself a local copy of the example vault. There are two ways of doing this.

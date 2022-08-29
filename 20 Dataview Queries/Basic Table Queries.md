@@ -79,7 +79,7 @@ WHERE source
 
 > [!info] New "first level"
 > When grouping tables, your "first level" changes. Without grouping, the first level are the file links you get back from your `FROM/WHERE` statement, so they automatically get displayed if you give no additional information to the `TABLE` command.
-> After grouping though, your _groups_ become the first level, meaning that without adding an additional information you'll see the groups in your table instead of the file links. To still see the file names, you need to add them as a column. Find out more about this in [[How grouping works]]
+> After grouping though, your _groups_ become the first level, meaning that without adding an additional information you'll see the groups in your table instead of the file links. To still see the file names, you need to add them as a column. Find out more about this in [[How GROUP BY works]].
 
 **Without additional columns**
 ```dataview
