@@ -1,0 +1,58 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "file:README",
+      "color": {
+        "a": 1,
+        "rgb": 16730077
+      }
+    },
+    {
+      "query": "path:\"00 Meta\"",
+      "color": {
+        "a": 1,
+        "rgb": 10711081
+      }
+    },
+    {
+      "query": "path:\"10 Example Data\"",
+      "color": {
+        "a": 1,
+        "rgb": 11114080
+      }
+    },
+    {
+      "query": "path:\"20 Dataview Queries\"",
+      "color": {
+        "a": 1,
+        "rgb": 4111214
+      }
+    },
+    {
+      "query": "path:\"30 Dataview Resources\"",
+      "color": {
+        "a": 1,
+        "rgb": 2519914
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.18462326225858156,
+  "close": false
+}
