@@ -1,3 +1,7 @@
+.month {
+  height: 1.2em;
+}
+
 .monthLabel {
   display: inline-block;
   min-width: 30px;

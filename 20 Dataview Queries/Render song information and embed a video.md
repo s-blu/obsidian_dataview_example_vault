@@ -30,7 +30,6 @@ dv.span(`The song *${me.title}*, composed by *${me.artist}* and sung by *${me.vo
 dv.span(`<iframe width="560" height="315" src="${me.yt}?modestbranding=1&hl=en&persist" title="${me.artist} - ${me.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
 ```
 
-
 ---
 %% === end of query page === %%
 > [!help]- Similar Queries
@@ -42,3 +41,23 @@ dv.span(`<iframe width="560" height="315" src="${me.yt}?modestbranding=1&hl=en&p
 > WHERE contains(this.topics, flattenedTopics)
 > AND file.name != this.file.name
 > ```
+
+```dataviewjs
+const inlinksFromUseCases = dv.current().file.inlinks.filter(link => link.path.contains("33 Use Cases"));
+
+const header = `> [!info] Part of Use Cases`;
+
+if (inlinksFromUseCases.length > 1) {
+	const list = inlinksFromUseCases.array().reduce((acc, curr) => `${acc}</br> - ${curr}`,"")
+
+	dv.span(`${header}
+    > This query is part of following use cases:
+    > ${list}
+    > 
+	`)
+} else if (inlinksFromUseCases.length === 1) {
+	dv.span(`${header}
+    > This query is part of use case ${inlinksFromUseCases[0]}.
+	`)
+}
+```
