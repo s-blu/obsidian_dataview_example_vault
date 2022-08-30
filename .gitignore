@@ -1,4 +1,5 @@
 .obsidian/plugins/*
 !.obsidian/plugins/dataview
 .obsidian/workspace
+.obsidian/workspace.json
 .obsidian/community-plugins.json
