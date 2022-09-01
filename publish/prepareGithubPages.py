@@ -1,5 +1,3 @@
-# TODO v2: replace callout syntax to work with adminition plugin
-
 import shutil
 import os
 import re
@@ -9,7 +7,6 @@ pagesDir = "publish/pages"
 
 if Path(pagesDir).is_dir():
     shutil.rmtree(pagesDir)
-# Path(pagesDir).mkdir()
 dirsToCopy = ['00 Meta', '10 Example Data',
               '20 Dataview Queries', '30 Dataview Resources']
 
@@ -22,11 +19,9 @@ for (dirpath, dirnames, filenames) in os.walk(pagesDir):
     for filename in filenames:
         filepath = os.path.join(dirpath, filename)
         if ".md" not in filepath:
-            print('not an md file, skip: ', filepath)
             continue
         try:
             with open(filepath, 'r') as file:
-                print('Replacing callouts with adminition syntax: ', filepath)
                 filedata = file.read()
                 filedata = re.sub(r"> \[\!(.+?)\] (.+)",
                                   r'!!! \1 "\2"', filedata)
