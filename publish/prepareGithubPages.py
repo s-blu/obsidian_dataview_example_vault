@@ -22,18 +22,17 @@ for (dirpath, dirnames, filenames) in os.walk(pagesDir):
     for filename in filenames:
         filepath = os.path.join(dirpath, filename)
         if ".md" not in filepath:
+            print('not an md file, skip: ', filepath)
             continue
-        # Read in the file
         try:
             with open(filepath, 'r') as file:
+                print('Replacing callouts with adminition syntax: ', filepath)
                 filedata = file.read()
-
-                # Replace the target string
                 filedata = re.sub(r"> \[\!(.+?)\] (.+)",
                                   r'!!! \1 "\2"', filedata)
                 # TODO this also converts standard cite blocks, would need to check if I have a match with the first one before this
                 filedata = re.sub(r"> (.+)", r'    \1', filedata)
-                # Write the file out again
+
                 with open(filepath, 'w') as file:
                     file.write(filedata)
         except:
