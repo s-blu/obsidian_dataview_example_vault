@@ -1,0 +1,25 @@
+site_name: Dataview Example Vault
+repo_url: https://github.com/s-blu/obsidian_dataview_example_vault
+edit_uri: tree/master/
+docs_dir: pages
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: deep purple
+    accent: deep purple
+  logo: assets/logo.png
+  favicon: assets/logo.png
+markdown_extensions:
+    - toc:
+         permalink: True
+    - fenced_code
+    - tables
+    - admonition
+    - meta
+    - nl2br
+
+plugins:
+  - search
+  - roamlinks 

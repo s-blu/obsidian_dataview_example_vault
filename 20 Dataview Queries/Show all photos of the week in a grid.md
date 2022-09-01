@@ -57,7 +57,7 @@ Remove if you want to preserve the width configured on the image link itself. */
 
 ### Use as view snippet with a library for a nice layout
 
-![[What is ...#^dv-view]]
+![[What is#^dv-view]]
 
 > [!warning] Adjustment of script necessary
 > For demonstration purposes, the variable "yearAndWeek" is hardcoded to ["2022", "2"]. In order to use the script inside your vault, you need to adjust this line as explained inside the script.

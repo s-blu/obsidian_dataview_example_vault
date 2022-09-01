@@ -1,0 +1,21 @@
+name: publish to github pages
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+            fetch-depth: 0 # fetch everything so that mkdocs doesn't run into the missing refs problem
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: python .publish/prepareGithubPages.py
+      - run: pip install mkdocs-material
+      - run: pip install mkdocs-roamlinks-plugin
+      - run: |
+         cd .publish
+         mkdocs gh-deploy 

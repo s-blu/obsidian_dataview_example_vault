@@ -35,6 +35,7 @@
  - [ ] Explain what inline queries can do (and what not) [[Basic Inline Queries]]
  - [ ] Add [sum up number of pages fulfilling certain criteria](https://discord.com/channels/686053708261228577/875721010144477204/1010262245755858994)
  - [ ] Add a page about [transforming dates](https://discord.com/channels/686053708261228577/875721010144477204/1011564039639404584) into a [format dataview recognizes](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/#field-types)
+ - [ ] Add [List activity log from projects in daily note via a date header](https://discord.com/channels/686053708261228577/1014259487445622855/1014949689394741370)
 
 ## Missing but linked pages
 

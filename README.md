@@ -20,6 +20,14 @@ Wonder where to start? Good starting points are the Use Cases under `30 Dataview
 > [!hint] Community effort
 > This vault is a project that lives through the community. Please feel encouraged helping us building it to a useful resource! Find out more under [[Contribution]]
 
+## Online Version
+
+While I heartly recommend to download the vault, if you only want to browse through it or want to link a query to someone, the vault is deployed as a mkdocs page:
+
+[**Online Version of the Obsidian Example Vault**](https://s-blu.github.io/obsidian_dataview_example_vault/)
+
+To see the results of the queries, you need to download the vault. 
+
 ## Documentation & FAQ
 
 You need more details on how dataview works exactly? Head over to the [official documentation.](https://blacksmithgu.github.io/obsidian-dataview/)

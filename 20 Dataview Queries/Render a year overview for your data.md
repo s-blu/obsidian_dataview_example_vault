@@ -225,7 +225,7 @@ function determineColor(date) {
 
 ### Use as a view file for reusability
 
-![[What is ...#^dv-view]]
+![[What is#^dv-view]]
 
 **Simple case** - input pages to display, the year to render and an "active" color 
 ```dataviewjs

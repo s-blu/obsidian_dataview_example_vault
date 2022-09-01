@@ -1,4 +1,4 @@
-# What is ...
+# What is
 
 This note provides embedable callouts to explain certain functionality in-place in query pages.
 
