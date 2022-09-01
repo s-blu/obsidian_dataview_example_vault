@@ -6,8 +6,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Overview of handling various types of frontmatter fields, including tricks and traps.">
-      
       
       
       <link rel="icon" href="../../assets/logo.png">
@@ -4124,7 +4122,7 @@
 </div>
 <div class="admonition tldr">
 <p class="admonition-title">Navigation</p>
-<p><a href="#numbers">#Numbers</a> | <a href="#strings">#Strings</a> | <a href="#links">#Links</a> | <a href="#dates">#Dates</a> | <a href="#arrays">#Arrays</a> | <a href="#objects">#Objects</a></p>
+<p>[[#Numbers]] | [[#Strings]] | [[#Links]] | [[#Dates]] | [[#Arrays]] | [[#Objects]]</p>
 </div>
 <hr />
 <h2 id="numbers-logic">Numbers &amp; Logic<a class="headerlink" href="#numbers-logic" title="Permanent link">&para;</a></h2>
@@ -4185,12 +4183,12 @@ FROM &quot;&quot;
 WHERE file.name = this.file.name
 </code></pre>
 <h4 id="looking-inside">Looking inside<a class="headerlink" href="#looking-inside" title="Permanent link">&para;</a></h4>
-<pre><code class="language-dataview">TABLE WITHOUT ID KeyedObject.name, NestedObject[0].color, &quot;&lt;div style='background-color:#&quot; + NestedObject[0].color + &quot;;'    &lt;/div&gt;&quot; as  &quot;HTML Color&quot;
+<pre><code class="language-dataview">TABLE WITHOUT ID KeyedObject.name, NestedObject[0].color, &quot;&lt;div style='background-color:\#&quot; + NestedObject[0].color + &quot;;'    &lt;/div&gt;&quot; as  &quot;HTML Color&quot;
 FROM &quot;&quot;
 WHERE file.name = this.file.name
 </code></pre>
 <h4 id="flattening-objects">Flattening objects<a class="headerlink" href="#flattening-objects" title="Permanent link">&para;</a></h4>
-<pre><code class="language-dataview">TABLE WITHOUT ID NObjects.name, NObjects.color, &quot;&lt;div style='background-color:#&quot; + NObjects.color + &quot;;'    &lt;/div&gt;&quot; as  &quot;HTML Color&quot;
+<pre><code class="language-dataview">TABLE WITHOUT ID NObjects.name, NObjects.color, &quot;&lt;div style='background-color:\#&quot; + NObjects.color + &quot;;'    &lt;/div&gt;&quot; as  &quot;HTML Color&quot;
 FROM &quot;&quot;
 WHERE file.name = this.file.name
 FLATTEN NestedObject as NObjects

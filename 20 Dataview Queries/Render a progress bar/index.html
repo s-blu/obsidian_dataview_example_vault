@@ -6,8 +6,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Renders a progress bar for a percentage i.e. done tasks in file">
-      
       
       
       <link rel="icon" href="../../assets/logo.png">
@@ -66,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dvinline-dvdataviewjs-dvtable-dvround-dvfrom-dvwhere-dvjscurrent" class="md-skip">
+        <a href="#render-a-progress-bar" class="md-skip">
           Skip to content
         </a>
       
@@ -3304,9 +3302,81 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Render a progress bar
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Render a progress bar
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic" class="md-nav__link">
+    Basic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    Variants
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculate-progress-of-task-completion-for-current-file" class="md-nav__link">
+    Calculate progress of task completion for current file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-progress-bar-directly-in-tables-or-list" class="md-nav__link">
+    Rendering progress bar directly in tables or list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-custom-styled-progress-bar-directly-in-tables-or-list" class="md-nav__link">
+    Rendering custom styled progress bar directly in tables or list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-a-progress-bar-that-is-stored-inside-a-field-on-the-source-file" class="md-nav__link">
+    Rendering a progress bar that is stored inside a field on the source file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3892,6 +3962,62 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic" class="md-nav__link">
+    Basic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    Variants
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculate-progress-of-task-completion-for-current-file" class="md-nav__link">
+    Calculate progress of task completion for current file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-progress-bar-directly-in-tables-or-list" class="md-nav__link">
+    Rendering progress bar directly in tables or list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-custom-styled-progress-bar-directly-in-tables-or-list" class="md-nav__link">
+    Rendering custom styled progress bar directly in tables or list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-a-progress-bar-that-is-stored-inside-a-field-on-the-source-file" class="md-nav__link">
+    Rendering a progress bar that is stored inside a field on the source file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3908,7 +4034,7 @@
 
 
 
-<h1 id="dvinline-dvdataviewjs-dvtable-dvround-dvfrom-dvwhere-dvjscurrent">dv/inline #dv/dataviewjs #dv/table #dv/round #dv/from #dv/where #dvjs/current<a class="headerlink" href="#dvinline-dvdataviewjs-dvtable-dvround-dvfrom-dvwhere-dvjscurrent" title="Permanent link">&para;</a></h1>
+<p>#dv/inline #dv/dataviewjs #dv/table #dv/round #dv/from #dv/where #dvjs/current</p>
 <h1 id="render-a-progress-bar">Render a progress bar<a class="headerlink" href="#render-a-progress-bar" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Inline queries currently (v0.5.41) do not render in Live Preview mode. Switch to Read Mode to see the result.</p>
@@ -3933,9 +4059,9 @@ totalPages:: 130</p>
 <p>Thanks to Jillard and mnvwvnm!</p>
 <pre><code class="language-dataview">TABLE pagesRead, totalPages, 
 
-&quot;&lt;div style='border-style:solid; border-width:1px; border-color:#AAAAAA; display:flex;'&gt;&quot; + 
+&quot;&lt;div style='border-style:solid; border-width:1px; border-color:\#AAAAAA; display:flex;'&gt;&quot; + 
 &quot;&lt;div align='center' style='padding:5px; min-width:10px; background-color:&quot; +
-    choice(percent &lt; 50, &quot;#d5763f&quot;, &quot;#a8c373&quot;) + &quot;; width:&quot; +
+    choice(percent &lt; 50, &quot;\#d5763f&quot;, &quot;\#a8c373&quot;) + &quot;; width:&quot; +
     percent + &quot;%; color:black'&gt;&quot; + 
 choice(percent &lt; 30, &quot; &lt;/div&gt;&lt;div style='padding:5px;'&gt;&quot;, &quot;&quot;) +
 percent + &quot;%&lt;/div&gt;&lt;/div&gt;&quot; AS Progress

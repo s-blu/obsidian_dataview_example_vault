@@ -6,8 +6,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="display and resize images in dataview tables.">
-      
       
       
       <link rel="icon" href="../../assets/logo.png">
@@ -66,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dvtable-dvfrom-dvwhere-dvembed-dvmeta-dvlink" class="md-skip">
+        <a href="#display-images-in-a-dataview-table" class="md-skip">
           Skip to content
         </a>
       
@@ -2856,9 +2854,74 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Display images in a dataview table
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Display images in a dataview table
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-external-images" class="md-nav__link">
+    Basic - External Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-internal-images" class="md-nav__link">
+    Basic - Internal Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variations" class="md-nav__link">
+    Variations
+  </a>
+  
+    <nav class="md-nav" aria-label="Variations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#internal-images-using-the-meta-path-approach" class="md-nav__link">
+    Internal Images - using the meta path approach
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-images" class="md-nav__link">
+    Mixed Images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3892,6 +3955,55 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-external-images" class="md-nav__link">
+    Basic - External Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-internal-images" class="md-nav__link">
+    Basic - Internal Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variations" class="md-nav__link">
+    Variations
+  </a>
+  
+    <nav class="md-nav" aria-label="Variations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#internal-images-using-the-meta-path-approach" class="md-nav__link">
+    Internal Images - using the meta path approach
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-images" class="md-nav__link">
+    Mixed Images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3908,18 +4020,15 @@
 
 
 
-<h1 id="dvtable-dvfrom-dvwhere-dvembed-dvmeta-dvlink">dv/table #dv/from #dv/where #dv/embed #dv/meta #dv/link<a class="headerlink" href="#dvtable-dvfrom-dvwhere-dvembed-dvmeta-dvlink" title="Permanent link">&para;</a></h1>
+<p>#dv/table #dv/from #dv/where #dv/embed #dv/meta #dv/link </p>
 <h1 id="display-images-in-a-dataview-table">Display images in a dataview table<a class="headerlink" href="#display-images-in-a-dataview-table" title="Permanent link">&para;</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip - Setting image size</p>
 <p>When returning an embeded image link in a dataview query, dataview will interpret an numeric display name alias as an image size. For example:<br />
 - <code>[anyName](image-link)</code> will display the image at it natural largest size. <br />
-- <code>[anyname|50](image-link)</code> will display the image at a size of 50.</p>
+- <code>[anyname|50](image-link)</code> will display the image at a size of 50.<br />
+<strong>Note:</strong> This <code>[]()</code> format only works for external images, and for internal images where you specify the full hard-drive path to the image file. For relative internal links, see [[#Basic - Internal Images]].</p>
 </div>
-<blockquote>
-<pre><code>**Note:** This `[]()` format only works for external images, and for internal images where you specify the full hard-drive path to the image file. For relative internal links, see [#Basic - Internal Images](#basic---internal-images).
-</code></pre>
-</blockquote>
 <h2 id="basic-external-images">Basic - External Images<a class="headerlink" href="#basic-external-images" title="Permanent link">&para;</a></h2>
 <p><strong>Link to a online image file saved as YAML</strong></p>
 <pre><code class="language-YAML">---
@@ -3933,12 +4042,9 @@ FROM &quot;10 Example Data/books&quot;
 <h2 id="basic-internal-images">Basic - Internal Images<a class="headerlink" href="#basic-internal-images" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning - Internal Image Links</p>
-<p>Internal links are usually stored as relative paths within the vault, making the previous <code>[]()</code> approach impractical for sizing internal images (because it requires the full hard-drive path to the image). </p>
+<p>Internal links are usually stored as relative paths within the vault, making the previous <code>[]()</code> approach impractical for sizing internal images (because it requires the full hard-drive path to the image). <br />
+This means a different approach must be used for internal links. Below is one possible (simple) method, although this method reduces flexibilty by hard-coding the size of the image into the metadata field itself.  An alternative approach is outlined further below in [[#Internal Images - meta path approach]]. </p>
 </div>
-<blockquote>
-<pre><code>This means a different approach must be used for internal links. Below is one possible (simple) method, although this method reduces flexibilty by hard-coding the size of the image into the metadata field itself.  An alternative approach is outlined further below in [#Internal Images - meta path approach](#internal-images---meta-path-approach).
-</code></pre>
-</blockquote>
 <pre><code class="language-YAML">---
 cover-img: &quot;![[Some Internal Image.jpg|500]]&quot;
 ---

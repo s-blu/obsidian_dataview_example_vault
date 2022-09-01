@@ -6,8 +6,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Render a year overview and color every day that matches your search criteria">
-      
       
       
       <link rel="icon" href="../../assets/logo.png">
@@ -4117,9 +4115,9 @@ function determineColor(date) {
     let color = emptyColor;
 
     if (started &amp;&amp; finished) {
-        color = '#9959ff';  
+        color = '\#9959ff'; 
     } else if (started) {
-        color = '#ff5976'
+        color = '\#ff5976'
     } else if (finished) {
         color = 'green'
     }
@@ -4181,9 +4179,9 @@ function determineColor(date) {
     let color = emptyColor;
 
     if (started &amp;&amp; finished) {
-        color = '#9959ff';  
+        color = '\#9959ff'; 
     } else if (started) {
-        color = '#ff5976'
+        color = '\#ff5976'
     } else if (finished) {
         color = 'green'
     }
@@ -4239,7 +4237,7 @@ function determineColor(date) {
 }
 </code></pre>
 <h3 id="use-as-a-view-file-for-reusability">Use as a view file for reusability<a class="headerlink" href="#use-as-a-view-file-for-reusability" title="Permanent link">&para;</a></h3>
-<p><img alt="What is#^dv-view" src="../../00%20Meta/Vault%20Infos/What%20is/#dv-view" /></p>
+<p>![[What is#^dv-view]]</p>
 <p><strong>Simple case</strong> - input pages to display, the year to render and an "active" color </p>
 <pre><code class="language-dataviewjs">await dv.view(&quot;00 Meta/dataview_views/year_overview&quot;, 
     {

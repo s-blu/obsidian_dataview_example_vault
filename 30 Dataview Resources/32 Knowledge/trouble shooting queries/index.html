@@ -4028,11 +4028,11 @@
 <p>There needs to be something in your query that filters out or hides your data.</p>
 <h3 id="1-try-to-remove-the-from-clause">1. Try to remove the FROM clause.<a class="headerlink" href="#1-try-to-remove-the-from-clause" title="Permanent link">&para;</a></h3>
 <p>First, remove your <code>FROM</code> statement altogether. Does the result you expect show up now (probably among others, not wanted)? Add every <code>FROM</code> expression back one by one.</p>
-<p>For example, you have <code>FROM #dv AND "20 Dataview Queries"</code>, first add only <code>FROM #dv</code>. Your result is still there? Try <code>FROM #dv AND "20 Dataview Queries"</code> - do your expected pages vanish? Then the FROM clause - maybe in <strong>combination</strong> with the <code>WHERE</code> clause - is causing trouble. So next...</p>
+<p>For example, you have <code>FROM \#dv AND "20 Dataview Queries"</code>, first add only <code>FROM \#dv</code>. Your result is still there? Try <code>FROM \#dv AND "20 Dataview Queries"</code> - do your expected pages vanish? Then the FROM clause - maybe in <strong>combination</strong> with the <code>WHERE</code> clause - is causing trouble. So next...</p>
 <h3 id="2-try-to-remove-the-where-clause">2. Try to remove the WHERE clause.<a class="headerlink" href="#2-try-to-remove-the-where-clause" title="Permanent link">&para;</a></h3>
 <p>Secondly, remove your <code>WHERE</code> clause but keep your <code>FROM</code> statement. Are the results still gone? Then your <code>FROM</code> statement is erroneous. Try to find the erroneous part and have a look at your data why they might get filtered out by it.</p>
 <p>Your data is there, if you keep the <code>FROM</code>, but delete the <code>WHERE</code>? Then your <code>WHERE</code> statement is acting up. Add every <code>WHERE</code> expression back one by one.</p>
-<p>For example you have <code>WHERE file.name != this.file.name AND #tag1 AND someMetadata</code>, then add first <code>WHERE file.name != this.file.name</code>. The data you're expecting still there? Try <code>WHERE file.name != this.file.name AND #tag1</code>. Still there? No? The last added part of the <code>WHERE</code> clause (<code>AND #tag1</code>) causes some trouble.</p>
+<p>For example you have <code>WHERE file.name != this.file.name AND \#tag1 AND someMetadata</code>, then add first <code>WHERE file.name != this.file.name</code>. The data you're expecting still there? Try <code>WHERE file.name != this.file.name AND \#tag1</code>. Still there? No? The last added part of the <code>WHERE</code> clause (<code>AND \#tag1</code>) causes some trouble.</p>
 <h3 id="3-print-out-the-metadata-of-your-page">3. Print out the metadata of your page.<a class="headerlink" href="#3-print-out-the-metadata-of-your-page" title="Permanent link">&para;</a></h3>
 <p>You found the error, but don't understand why it causes problems? It might help if you print out your current page like dataview sees it, to understand the structure of available metadata. You can do that in different approaches:</p>
 <p>If you're writing a table-query, <strong>add the metadata you're using in your <code>WHERE</code> as a table column</strong> and see if the values match your expectation.</p>
@@ -4050,15 +4050,15 @@ WHERE file.name = this.file.name
 </div>
 <p>Read the error description carefully. There is a little arrow pointing at the erroneous place. For example:</p>
 <pre><code class="language-dataview">TABLE
-WHERE #dv/list
+WHERE \#dv/list
 </code></pre>
 <p>The little arrow is pointing at the # - because WHERE cannot work with a plain tag. You need to tell WHERE what to do with this tag.</p>
 <pre><code class="language-dataview">TABLE
-WHERE contains(file.tags, &quot;#dv/list&quot;
+WHERE contains(file.tags, &quot;\#dv/list&quot;
 </code></pre>
 <p>Here, we do not have a little arrow, but only a error message: <code>Got the end of the input</code>. This normally means that an input ended (because the query is over) without dataview expecting it. On the last line you'll find what the plugin would've expected instead of the end of the query. We are missing the closing <code>)</code></p>
 <pre><code class="language-dataview">TABLE
-WHERE contains(file.tags, &quot;#dv/calendar&quot;)
+WHERE contains(file.tags, &quot;\#dv/calendar&quot;)
 </code></pre>
 <p>Solved! 🎉</p>
 <p><strong>Another example</strong>:</p>
@@ -4092,7 +4092,7 @@ FROM &quot;10 Example Data/dailys&quot;
 WHERE paid
 FLATTEN sum(paid) as sum
 </code></pre>
-<p>Huh, that doesn't give us an error anymore, but an improvable output. You want to know how to get a real sum? Head over to <a href="../../../20%20Dataview%20Queries/Mark%20all%20days%20in%20a%20calendar%20where%20you%20spent%20a%20certain%20amount%20of%20money/#8d9d50">"When using expenses in form of 99 $"</a>.</p>
+<p>Huh, that doesn't give us an error anymore, but an improvable output. You want to know how to get a real sum? Head over to [[Mark all days in a calendar where you spent a certain amount of money#^8d9d50|"When using expenses in form of 99 $"]].</p>
 
 
 

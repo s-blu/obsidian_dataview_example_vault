@@ -6,8 +6,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Shows a table with all open project and a emoji score how long these projects are already open">
-      
       
       
       <link rel="icon" href="../../assets/logo.png">
@@ -66,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dvtable-dvfrom-dvwhere-dvdate-dvjswhere-dvjspages-dvjsmutate-dvjstable-dvdataviewjs" class="md-skip">
+        <a href="#list-all-open-projects-with-a-emoji-age-indicator" class="md-skip">
           Skip to content
         </a>
       
@@ -3080,9 +3078,60 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          List all open projects with a emoji age indicator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         List all open projects with a emoji age indicator
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic" class="md-nav__link">
+    Basic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    Variants
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-different-emojis-for-certain-timespans" class="md-nav__link">
+    Use different emojis for certain timespans
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3892,6 +3941,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic" class="md-nav__link">
+    Basic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    Variants
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-different-emojis-for-certain-timespans" class="md-nav__link">
+    Use different emojis for certain timespans
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3908,7 +3992,7 @@
 
 
 
-<h1 id="dvtable-dvfrom-dvwhere-dvdate-dvjswhere-dvjspages-dvjsmutate-dvjstable-dvdataviewjs">dv/table #dv/from #dv/where #dv/date #dvjs/where #dvjs/pages #dvjs/mutate #dvjs/table #dv/dataviewjs<a class="headerlink" href="#dvtable-dvfrom-dvwhere-dvdate-dvjswhere-dvjspages-dvjsmutate-dvjstable-dvdataviewjs" title="Permanent link">&para;</a></h1>
+<p>#dv/table #dv/from #dv/where #dv/date #dvjs/where #dvjs/pages #dvjs/mutate #dvjs/table #dv/dataviewjs </p>
 <h1 id="list-all-open-projects-with-a-emoji-age-indicator">List all open projects with a emoji age indicator<a class="headerlink" href="#list-all-open-projects-with-a-emoji-age-indicator" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataview">TABLE &quot;😡&quot; * (date(now) - date(started)).weeks AS &quot;Score&quot;
