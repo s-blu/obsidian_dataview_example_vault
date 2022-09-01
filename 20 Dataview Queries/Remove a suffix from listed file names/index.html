@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3927,21 +3913,20 @@
 <h1 id="dvlist-dvlink-dvregexreplace-dvfrom">dv/list #dv/link #dv/regexreplace #dv/from<a class="headerlink" href="#dvlist-dvlink-dvregexreplace-dvfrom" title="Permanent link">&para;</a></h1>
 <h1 id="remove-a-suffix-from-listed-file-names">Remove a suffix from listed file names<a class="headerlink" href="#remove-a-suffix-from-listed-file-names" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>[!hint]
-If you have another character or character sequence that is delimiting your suffix, you need to exchange the <code>--</code> of the regular expressions . Here a few examples:
-If your delimiter is "__" use <code>regexreplace(file.name, "__.*$", "")</code>
-If your delimiter is "{" use <code>regexreplace(file.name, "{.*$", "")</code>
-If your delimiter is "--!" use <code>regexreplace(file.name, "--\!.*$", "")</code></p>
-</blockquote>
+<pre><code>[!hint]
+If you have another character or character sequence that is delimiting your suffix, you need to exchange the `--` of the regular expressions . Here a few examples:
+If your delimiter is "\_\_" use `regexreplace(file.name, "__.*$", "")`
+If your delimiter is "{" use `regexreplace(file.name, "{.*$", "")`
+If your delimiter is "--!" use `regexreplace(file.name, "--\!.*$", "")`
+</code></pre>
 <pre><code class="language-dataview">LIST WITHOUT ID link(file.link, regexreplace(file.name, &quot;--.*$&quot;, &quot;&quot;))
 FROM &quot;10 Example Data/prefixes and suffixes&quot;
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="replace-a-prefix-instead">Replace a prefix instead<a class="headerlink" href="#replace-a-prefix-instead" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>[!hint] Adjusted examples (see callout above): <code>"^.*__"</code>, <code>"^.*{"</code>, <code>"^.*--\!"</code></p>
-</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Adjusted examples (see callout above): <code>"^.*__"</code>, <code>"^.*{"</code>, <code>"^.*--\!"</code></p>
+</div>
 <pre><code class="language-dataview">LIST WITHOUT ID link(file.link, regexreplace(file.name, &quot;^.*_&quot;, &quot;&quot;))
 FROM &quot;10 Example Data/prefixes and suffixes&quot;
 </code></pre>
@@ -3950,32 +3935,30 @@ FROM &quot;10 Example Data/prefixes and suffixes&quot;
 FROM &quot;10 Example Data/prefixes and suffixes&quot;
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

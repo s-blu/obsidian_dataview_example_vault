@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3927,9 +3913,9 @@
 <h1 id="dvdataviewjs-dvjsel-dvjspages-dvjswhere-dvjsheader-dvjstable-dvjsmap-dvjscontainer">dv/dataviewjs #dvjs/el #dvjs/pages #dvjs/where #dvjs/header #dvjs/table #dvjs/map #dvjs/container<a class="headerlink" href="#dvdataviewjs-dvjsel-dvjspages-dvjswhere-dvjsheader-dvjstable-dvjsmap-dvjscontainer" title="Permanent link">&para;</a></h1>
 <h1 id="render-multiple-tables-with-tab-like-buttons">Render multiple tables with tab-like buttons<a class="headerlink" href="#render-multiple-tables-with-tab-like-buttons" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
-<pre><code class="language-dataviewjs">const createButton = (name) =&gt; {
+<pre><code class="language-dataviewjs">const createButton = (name) =    {
     const btn = dv.el('button', name)
-    btn.addEventListener('click', (event) =&gt; {
+    btn.addEventListener('click', (event) =    {
         event.preventDefault()
         removeTable()
         renderTable(name)
@@ -3941,29 +3927,29 @@
 const buttons = ['Watching', 'Going to watch', 'Watched all', 'Stopped watching']
 
 
-const renderTable = (name) =&gt; {
-    const pages = dv.pages('&quot;10 Example Data/shows&quot;').where(page =&gt; page.status == name)
+const renderTable = (name) =    {
+    const pages = dv.pages('&quot;10 Example Data/shows&quot;').where(page =    page.status == name)
 
     dv.header(2, name)
     dv.table(
     ['Title', 'Rating', 'Runtime', 'Seasons', 'Episodes'], 
-    pages.map(page =&gt; [page.file.link, page.rating, page.runtime, page.seasons, page.episodes]))
+    pages.map(page =    [page.file.link, page.rating, page.runtime, page.seasons, page.episodes]))
 }
 
-const removeTable = () =&gt; {
+const removeTable = () =    {
     this.container.lastChild.remove()
     this.container.lastChild.remove()
 }
 
-buttons.forEach(button =&gt; createButton(button))
+buttons.forEach(button =    createButton(button))
 
 renderTable('Watching')
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="display-amount-of-watched-episodes">Display amount of watched episodes<a class="headerlink" href="#display-amount-of-watched-episodes" title="Permanent link">&para;</a></h3>
-<pre><code class="language-dataviewjs">const createButton = (name) =&gt; {
+<pre><code class="language-dataviewjs">const createButton = (name) =    {
     const btn = dv.el('button', name)
-    btn.addEventListener('click', (event) =&gt; {
+    btn.addEventListener('click', (event) =    {
         event.preventDefault()
         removeTable()
         renderTable(name)
@@ -3975,16 +3961,16 @@ renderTable('Watching')
 const buttons = ['Watching', 'Going to watch', 'Watched all', 'Stopped watching']
 
 
-const renderTable = (name) =&gt; {
-    const pages = dv.pages('&quot;10 Example Data/shows&quot;').where(page =&gt; page.status == name)
+const renderTable = (name) =    {
+    const pages = dv.pages('&quot;10 Example Data/shows&quot;').where(page =    page.status == name)
 
     dv.header(2, name)
 
-    dv.table(['Title', 'Rating', 'Runtime', 'Seasons', 'Ep watched/total'], pages.map(page =&gt; {
+    dv.table(['Title', 'Rating', 'Runtime', 'Seasons', 'Ep watched/total'], pages.map(page =    {
     let watchedEp = 0
     const totalEp = page.episodes
 
-    page.file.tasks.values.forEach(el =&gt; {
+    page.file.tasks.values.forEach(el =    {
         if(el.checked) {
             watchedEp += 1
         }
@@ -3993,24 +3979,24 @@ const renderTable = (name) =&gt; {
     })) 
 }
 
-const removeTable = () =&gt; {
+const removeTable = () =    {
     this.container.lastChild.remove()
     this.container.lastChild.remove()
 }
 
-buttons.forEach(button =&gt; createButton(button))
+buttons.forEach(button =    createButton(button))
 
 renderTable('Watching')
 </code></pre>
 <h3 id="render-other-viewsdifferent-ones-per-tab">Render other views/different ones per tab<a class="headerlink" href="#render-other-viewsdifferent-ones-per-tab" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataviewjs">const views = ['Table', 'List', 'Tasks']
 
-const changeView = (viewName) =&gt; {
+const changeView = (viewName) =    {
     removeView()
 
     if (viewName == 'Table') {
         dv.header('2', 'Some table')
-        dv.table(['File', 'Day'], dv.pages('&quot;10 Example Data/dailys&quot;').limit(7).map(p =&gt; [p.file.link, p.day]))
+        dv.table(['File', 'Day'], dv.pages('&quot;10 Example Data/dailys&quot;').limit(7).map(p =    [p.file.link, p.day]))
     }
     if (viewName == 'List') {
         dv.list(dv.pages('&quot;10 Example Data/dailys&quot;').limit(7).file.name)
@@ -4020,13 +4006,13 @@ const changeView = (viewName) =&gt; {
     }
 }
 
-const createButtons = () =&gt; {
+const createButtons = () =    {
     const buttonContainer = dv.el('div', '', {cls: 'tabButtons'})
 
-    views.forEach(view =&gt; {
+    views.forEach(view =    {
         const button = dv.el('button', view)
 
-        button.addEventListener('click', (event) =&gt; {
+        button.addEventListener('click', (event) =    {
             event.preventDefault()
             changeView(view)
         })
@@ -4036,8 +4022,8 @@ const createButtons = () =&gt; {
     })
 }
 
-const removeView = () =&gt; {
-    Array.from(this.container.children).forEach(el =&gt; {
+const removeView = () =    {
+    Array.from(this.container.children).forEach(el =    {
         if(!el.classList.contains('tabButtons')) {
             el.remove()
         }
@@ -4047,32 +4033,30 @@ const removeView = () =&gt; {
 createButtons()
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

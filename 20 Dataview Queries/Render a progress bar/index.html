@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3926,10 +3912,10 @@
 
 <h1 id="dvinline-dvdataviewjs-dvtable-dvround-dvfrom-dvwhere-dvjscurrent">dv/inline #dv/dataviewjs #dv/table #dv/round #dv/from #dv/where #dvjs/current<a class="headerlink" href="#dvinline-dvdataviewjs-dvtable-dvround-dvfrom-dvwhere-dvjscurrent" title="Permanent link">&para;</a></h1>
 <h1 id="render-a-progress-bar">Render a progress bar<a class="headerlink" href="#render-a-progress-bar" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!info] Inline queries currently (v0.5.41) do not render in Live Preview mode. Switch to Read Mode to see the result.</p>
-</blockquote>
-<p>pagesRead:: 42
+<div class="admonition info">
+<p class="admonition-title">Inline queries currently (v0.5.41) do not render in Live Preview mode. Switch to Read Mode to see the result.</p>
+</div>
+<p>pagesRead:: 42<br />
 totalPages:: 130</p>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <p><code>$= const value = Math.round((dv.current().pagesRead / dv.current().totalPages) * 100); "&lt;progress value='" + value + "' max='100'&gt;&lt;/progress&gt;" + " " + value + "%"</code></p>
@@ -3940,10 +3926,10 @@ totalPages:: 130</p>
 <li>[x] Task2</li>
 <li>[ ] Task3</li>
 </ul>
-<p><code>$= const value = Math.round(((dv.current().file.tasks.where(t =&gt; t.completed).length) / (dv.current().file.tasks).length || 0) * 100); "&lt;progress value='" + value + "' max='100'&gt;&lt;/progress&gt;" + " " + value + "%"</code></p>
+<p><code>$= const value = Math.round(((dv.current().file.tasks.where(t =    t.completed).length) / (dv.current().file.tasks).length || 0) * 100); "&lt;progress value='" + value + "' max='100'&gt;&lt;/progress&gt;" + " " + value + "%"</code></p>
 <h3 id="rendering-progress-bar-directly-in-tables-or-list">Rendering progress bar directly in tables or list<a class="headerlink" href="#rendering-progress-bar-directly-in-tables-or-list" title="Permanent link">&para;</a></h3>
 <p>This does not need a extra meta data field on the source files.</p>
-<pre><code class="language-dataview">TABLE pagesRead, totalPages, &quot;&lt;progress value='&quot; + round(100*pagesRead/totalPages) + &quot;' max='100'&gt;&lt;/progress&gt; &quot; + round(100*pagesRead/totalPages) + &quot;%&quot; AS Progress FROM &quot;10 Example Data/books&quot;
+<pre><code class="language-dataview">TABLE pagesRead, totalPages, &quot;&lt;progress value='&quot; + round(100*pagesRead/totalPages) + &quot;' max='100'&gt;&lt;/progress    &quot; + round(100*pagesRead/totalPages) + &quot;%&quot; AS Progress FROM &quot;10 Example Data/books&quot;
 </code></pre>
 <h3 id="rendering-custom-styled-progress-bar-directly-in-tables-or-list">Rendering custom styled progress bar directly in tables or list<a class="headerlink" href="#rendering-custom-styled-progress-bar-directly-in-tables-or-list" title="Permanent link">&para;</a></h3>
 <p>Thanks to Jillard and mnvwvnm!</p>
@@ -3961,10 +3947,9 @@ FLATTEN round(100*pagesRead/totalPages) as percent
 </code></pre>
 <h3 id="rendering-a-progress-bar-that-is-stored-inside-a-field-on-the-source-file">Rendering a progress bar that is stored inside a field on the source file<a class="headerlink" href="#rendering-a-progress-bar-that-is-stored-inside-a-field-on-the-source-file" title="Permanent link">&para;</a></h3>
 <p>Also useable in tables, if put in an inline query on the source file.</p>
-<blockquote>
-<p>[!attention]
-For this to work, you need <strong>avoid</strong> using <code>dv.current()</code> in the source files. Using <code>dv.current()</code>, you would always see the progress of the <em>current</em> file. Instead, give the explicit file, i.e. <code>dv.page("2022-01-03")</code> - have a look at the example data!</p>
-</blockquote>
+<pre><code>[!attention]
+For this to work, you need **avoid** using `dv.current()` in the source files. Using `dv.current()`, you would always see the progress of the _current_ file. Instead, give the explicit file, i.e. `dv.page("2022-01-03")` - have a look at the example data!
+</code></pre>
 <pre><code class="language-dataview">TABLE task-completion
 FROM &quot;10 Example Data/dailys&quot;
 WHERE task-completion
@@ -3974,32 +3959,30 @@ FROM &quot;10 Example Data/dailys&quot;
 WHERE task-completion
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

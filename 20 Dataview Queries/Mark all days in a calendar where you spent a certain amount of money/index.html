@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3930,60 +3916,56 @@
 <pre><code class="language-dataview">CALENDAR file.mtime
 FROM &quot;20 Dataview Queries&quot;
 FLATTEN round(sum(paid)) as SUM
-WHERE paid and SUM &gt; 75
+WHERE paid and SUM     75
 </code></pre>
-<p>bought:: Nike shoes
+<p>bought:: Nike shoes<br />
 paid:: 99</p>
-<p>bought:: Delicious Cake
+<p>bought:: Delicious Cake<br />
 paid:: 7</p>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="when-using-expenses-in-form-of-99">When using expenses in form of "99 $"<a class="headerlink" href="#when-using-expenses-in-form-of-99" title="Permanent link">&para;</a></h3>
 <p>^8d9d50</p>
-<blockquote>
-<p>[!info]
-You'll need to go back to Januray/Februrary 2022 to see the data</p>
-</blockquote>
+<pre><code>[!info]
+You'll need to go back to Januray/Februrary 2022 to see the data
+</code></pre>
 <pre><code class="language-dataview">CALENDAR file.day
 FROM &quot;10 Example Data/dailys&quot;
-FLATTEN round(sum(map(paid, (x) =&gt; number(regexreplace(x, &quot; ?\$&quot;, &quot;&quot;))))) as SUM
-WHERE paid and SUM &gt; 75
+FLATTEN round(sum(map(paid, (x) =    number(regexreplace(x, &quot; ?\$&quot;, &quot;&quot;))))) as SUM
+WHERE paid and SUM     75
 </code></pre>
-<blockquote>
-<p>[!tip]
-When you try to write complex calendar queries, write a TABLE query first to make sure your query returns the results you're expecting.</p>
-</blockquote>
+<pre><code>[!tip]
+When you try to write complex calendar queries, write a TABLE query first to make sure your query returns the results you're expecting.
+</code></pre>
 <pre><code class="language-dataview">TABLE paid, SUM
 FROM &quot;10 Example Data/dailys&quot;
-FLATTEN round(sum(map(paid, (x) =&gt; number(regexreplace(x, &quot;\$&quot;, &quot;&quot;))))) as SUM
-WHERE paid and SUM &gt; 75
+FLATTEN round(sum(map(paid, (x) =    number(regexreplace(x, &quot;\$&quot;, &quot;&quot;))))) as SUM
+WHERE paid and SUM     75
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

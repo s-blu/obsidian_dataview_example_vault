@@ -330,20 +330,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3972,7 +3958,7 @@
 
 <h1 id="topic-overview">Topic Overview<a class="headerlink" href="#topic-overview" title="Permanent link">&para;</a></h1>
 <p>Each query has one or more <strong>topics</strong>, grouping queries with similar goals together. Wonder what's available? Wonder no more!</p>
-<pre><code class="language-dataviewjs">await dv.view(&quot;00 Meta/dataview_views/tagcloud&quot;, {values: dv.pages('&quot;20 Dataview Queries&quot;').where(p =&gt; p.topics).topics})
+<pre><code class="language-dataviewjs">await dv.view(&quot;00 Meta/dataview_views/tagcloud&quot;, {values: dv.pages('&quot;20 Dataview Queries&quot;').where(p =    p.topics).topics})
 </code></pre>
 <h2 id="topic-list">Topic List<a class="headerlink" href="#topic-list" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataview">TABLE WITHOUT ID t as &quot;Topic&quot;, count, rows.file.link AS &quot;pages&quot;
@@ -3983,10 +3969,10 @@ GROUP BY t
 FLATTEN length(rows.file.link) as count
 SORT count DESC, t ASC
 </code></pre>
-<blockquote>
-<p>[!info] Used queries
-You want these fancy queries for your own data? Find the <a href="../../../20%20Dataview%20Queries/Display%20meta%20data%20values%20as%20a%20tag%20cloud/">tag cloud here</a> and <a href="../../../20%20Dataview%20Queries/List%20pages%20that%20share%20a%20meta%20data%20value%20with%20the%20current%20page/">the list here</a>.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Used queries</p>
+<p>You want these fancy queries for your own data? Find the <a href="../../../20%20Dataview%20Queries/Display%20meta%20data%20values%20as%20a%20tag%20cloud/">tag cloud here</a> and <a href="../../../20%20Dataview%20Queries/List%20pages%20that%20share%20a%20meta%20data%20value%20with%20the%20current%20page/">the list here</a>.</p>
+</div>
 
 
 

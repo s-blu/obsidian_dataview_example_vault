@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3925,15 +3911,15 @@
 
 
 <h1 id="dvtable-dvfrom-dvjoin-dvmin-dvflatten-dvgroupby-dvsort-dvdate-dvlimit-dvcontains">dv/table #dv/from #dv/join #dv/min #dv/flatten #dv/groupby #dv/sort #dv/date #dv/limit #dv/contains<a class="headerlink" href="#dvtable-dvfrom-dvjoin-dvmin-dvflatten-dvgroupby-dvsort-dvdate-dvlimit-dvcontains" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!hint] Contributed by <a href="https://discord.com/channels/686053708261228577/875721010144477204/1003820438696243260">mnvwvnm via Discord</a></p>
-</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Contributed by <a href="https://discord.com/channels/686053708261228577/875721010144477204/1003820438696243260">mnvwvnm via Discord</a></p>
+</div>
 <h1 id="list-contacts-with-a-person">List contacts with a person<a class="headerlink" href="#list-contacts-with-a-person" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>[!hint] Use on a contact page
-If you want to use this snippet on the contact page of the person directly, you can replace <code>FROM [[person]]</code> with <code>FROM [](#)</code>. See <a href="../../10%20Example%20Data/people/AB1908/">AB1908</a> as an example. If you want to look at <em>all</em> files, everywhere, skip the additional <code>"AND something"</code> in FROM.</p>
-</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Use on a contact page</p>
+<p>If you want to use this snippet on the contact page of the person directly, you can replace <code>FROM [[person]]</code> with <code>FROM [](#)</code>. See <a href="../../10%20Example%20Data/people/AB1908/">AB1908</a> as an example. If you want to look at <em>all</em> files, everywhere, skip the additional <code>"AND something"</code> in FROM.</p>
+</div>
 <pre><code class="language-dataview">TABLE WITHOUT ID 
 file.link AS &quot;Contact note&quot;, 
 day AS &quot;Contact date&quot;
@@ -3972,32 +3958,30 @@ FROM &quot;10 Example Data/dailys&quot;
 WHERE contains(person, &quot;Christa&quot;)
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3948,11 +3934,11 @@ FROM &quot;10 Example Data/books&quot; OR &quot;10 Example Data/games&quot;
 FROM &quot;10 Example Data/games&quot; AND #genre/action  
 </code></pre>
 <p><strong>List all pages</strong></p>
-<blockquote>
-<p>[!attention] Add <code>dataview</code> to code block
-The output of this is pretty long. If you want to see it, add <code>dataview</code> to the code block - like on the examples above!
+<div class="admonition attention">
+<p class="admonition-title">Add <code>dataview</code> to code block</p>
+<p>The output of this is pretty long. If you want to see it, add <code>dataview</code> to the code block - like on the examples above!<br />
 Please note: There needs to be a <strong>space</strong> behind <code>TABLE</code> to see results!</p>
-</blockquote>
+</div>
 <pre><code>TABLE 
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
@@ -3971,11 +3957,11 @@ FROM &quot;10 Example Data/food&quot;
 WHERE source
 </code></pre>
 <h3 id="group-list-elements">Group list elements<a class="headerlink" href="#group-list-elements" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>[!info] New "first level"
-When grouping tables, your "first level" changes. Without grouping, the first level are the file links you get back from your <code>FROM/WHERE</code> statement, so they automatically get displayed if you give no additional information to the <code>TABLE</code> command.
+<div class="admonition info">
+<p class="admonition-title">New "first level"</p>
+<p>When grouping tables, your "first level" changes. Without grouping, the first level are the file links you get back from your <code>FROM/WHERE</code> statement, so they automatically get displayed if you give no additional information to the <code>TABLE</code> command.<br />
 After grouping though, your <em>groups</em> become the first level, meaning that without adding an additional information you'll see the groups in your table instead of the file links. To still see the file names, you need to add them as a column. Find out more about this in [[How GROUP BY works]].</p>
-</blockquote>
+</div>
 <p><strong>Without additional columns</strong></p>
 <pre><code class="language-dataview">TABLE 
 FROM &quot;10 Example Data/books&quot;
@@ -4006,32 +3992,30 @@ FROM &quot;10 Example Data/books&quot;
 SORT author
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

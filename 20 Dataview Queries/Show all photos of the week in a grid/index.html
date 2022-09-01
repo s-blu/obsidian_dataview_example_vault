@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3927,16 +3913,18 @@
 <h1 id="dvdataviewjs-dvjspages-dvjswhere-dvjscontainer-dvjslist-dvjsview">dv/dataviewjs #dvjs/pages #dvjs/where #dvjs/container #dvjs/list #dvjs/view<a class="headerlink" href="#dvdataviewjs-dvjspages-dvjswhere-dvjscontainer-dvjslist-dvjsview" title="Permanent link">&para;</a></h1>
 <h1 id="show-all-photos-of-the-week-in-a-grid">Show all photos of the week in a grid<a class="headerlink" href="#show-all-photos-of-the-week-in-a-grid" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>[!attention] Additional CSS Snippet required
-A CSS Snippet is in place to style this query. You'll find it under <code>.obsidian\snippets\show-photos-of-the-week-as-grid.css</code>  as well as below. <a href="https://help.obsidian.md/How+to/Add+custom+styles#Use+Themes+and+or+CSS+snippets">Read more about how to use CSS Snippets</a></p>
-<p>[!info] Usage in a weekly note
-When you want to use this query in a weekly note and your weekly note is named like "2022W2", use this as the first line: 
-<code>const yearAndWeek = dv.current().file.name.split('-W')</code>
+<div class="admonition attention">
+<p class="admonition-title">Additional CSS Snippet required</p>
+<p>A CSS Snippet is in place to style this query. You'll find it under <code>.obsidian\snippets\show-photos-of-the-week-as-grid.css</code>  as well as below. <a href="https://help.obsidian.md/How+to/Add+custom+styles#Use+Themes+and+or+CSS+snippets">Read more about how to use CSS Snippets</a></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Usage in a weekly note</p>
+<p>When you want to use this query in a weekly note and your weekly note is named like "2022W2", use this as the first line: <br />
+<code>const yearAndWeek = dv.current().file.name.split('-W')</code><br />
  This will retrieve the year and weeknumber information from your file name and you do not need to adjust this manually.</p>
-</blockquote>
+</div>
 <pre><code class="language-dataviewjs">const yearAndWeek = [&quot;2022&quot;, &quot;02&quot;]
-const pages = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.day &amp;&amp; p.day.year == yearAndWeek[0] &amp;&amp; p.day.weekNumber == yearAndWeek[1])
+const pages = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =    p.day &amp;&amp; p.day.year == yearAndWeek[0] &amp;&amp; p.day.weekNumber == yearAndWeek[1])
 dv.container.className += ' imagegrid'
 dv.list(pages.picoftheday)
 </code></pre>
@@ -3965,41 +3953,39 @@ Remove if you want to preserve the width configured on the image link itself. */
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="use-as-view-snippet-with-a-library-for-a-nice-layout">Use as view snippet with a library for a nice layout<a class="headerlink" href="#use-as-view-snippet-with-a-library-for-a-nice-layout" title="Permanent link">&para;</a></h3>
-<p><img alt="What is ...#^dv-view" src="../../00%20Meta/Vault%20Infos/What%20is%20.../#dv-view" /></p>
-<blockquote>
-<p>[!warning] Adjustment of script necessary
-For demonstration purposes, the variable "yearAndWeek" is hardcoded to ["2022", "2"]. In order to use the script inside your vault, you need to adjust this line as explained inside the script.</p>
-</blockquote>
+<p><img alt="What is#^dv-view" src="../../00%20Meta/Vault%20Infos/What%20is/#dv-view" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Adjustment of script necessary</p>
+<p>For demonstration purposes, the variable "yearAndWeek" is hardcoded to ["2022", "2"]. In order to use the script inside your vault, you need to adjust this line as explained inside the script.</p>
+</div>
 <pre><code class="language-dataviewjs">
 await dv.view('00 Meta/dataview_views/imagegrid', { current: dv.current(), dailyNotesSearchQuery: '&quot;10 Example Data/dailys&quot;', metadatafield: 'picoftheday'})
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

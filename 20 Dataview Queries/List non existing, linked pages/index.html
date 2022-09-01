@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3925,9 +3911,9 @@
 
 
 <h1 id="dvdataviewjs-dvtable-dvfrom-dvflatten-dvwhere-dvgroupby-dvjsflatmap-dvjssort-dvjslist-dvjstable">dv/dataviewjs #dv/table #dv/from #dv/flatten #dv/where #dv/groupby #dvjs/flatMap #dvjs/sort #dvjs/list #dvjs/table<a class="headerlink" href="#dvdataviewjs-dvtable-dvfrom-dvflatten-dvwhere-dvgroupby-dvjsflatmap-dvjssort-dvjslist-dvjstable" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!hint] Basic query contributed <a href="https://discord.com/channels/686053708261228577/875721010144477204/1003441486492352572">via Discord</a> <a href="https://discord.com/channels/686053708261228577/875721010144477204/1005583638177517628">and Discord</a></p>
-</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Basic query contributed <a href="https://discord.com/channels/686053708261228577/875721010144477204/1003441486492352572">via Discord</a> <a href="https://discord.com/channels/686053708261228577/875721010144477204/1005583638177517628">and Discord</a></p>
+</div>
 <h1 id="list-non-existing-links">List non existing links<a class="headerlink" href="#list-non-existing-links" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <p>As <strong>DQL</strong>:</p>
@@ -3939,7 +3925,7 @@ GROUP BY outlinks
 </code></pre>
 <p>As <strong>dataviewjs:</strong> (for a more similar result like the DQL solution, see variant "List the files the unresolved link is contained in")</p>
 <pre><code class="language-dataviewjs">const res = Object.values(app.metadataCache.unresolvedLinks)
-.flatMap(unresolved =&gt; Object.keys(unresolved))
+.flatMap(unresolved =    Object.keys(unresolved))
 .sort(); 
 
 const resSet = new Set(res).values();
@@ -3947,9 +3933,9 @@ dv.list(resSet);
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="list-the-files-the-unresolved-link-is-contained-in">List the files the unresolved link is contained in<a class="headerlink" href="#list-the-files-the-unresolved-link-is-contained-in" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>[!info] See Basic -&gt; DQL for a pure DQL version of this result</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">See Basic -    DQL for a pure DQL version of this result</p>
+</div>
 <pre><code class="language-dataviewjs">const unresolvedLinksMap = app.metadataCache.unresolvedLinks
 
 const res = {}
@@ -3963,23 +3949,23 @@ for (let page in unresolvedLinksMap) {
 }
 
 
-dv.table([&quot;Unresolved Link&quot;, &quot;Contained in&quot;], Object.values(res).map(l =&gt; [l.link, l.usages]));
+dv.table([&quot;Unresolved Link&quot;, &quot;Contained in&quot;], Object.values(res).map(l =    [l.link, l.usages]));
 </code></pre>
 <h3 id="list-only-unresolved-links-from-a-specific-folder-meeting-specific-criteria">List only unresolved links from a specific folder meeting specific criteria<a class="headerlink" href="#list-only-unresolved-links-from-a-specific-folder-meeting-specific-criteria" title="Permanent link">&para;</a></h3>
 <h4 id="as-dql">As DQL<a class="headerlink" href="#as-dql" title="Permanent link">&para;</a></h4>
 <pre><code class="language-dataview">TABLE WITHOUT ID key AS &quot;unresolved link&quot;, rows.file.link AS &quot;referencing file&quot;
 FROM &quot;10 Example Data&quot;
 FLATTEN file.outlinks as outlinks
-WHERE startswith(meta(outlinks).path, &quot;B&quot;) AND length(meta(outlinks).path) &gt; 3
+WHERE startswith(meta(outlinks).path, &quot;B&quot;) AND length(meta(outlinks).path)     3
 WHERE !(outlinks.file) AND !(contains(meta(outlinks).path, &quot;/&quot;))
 GROUP BY outlinks
 </code></pre>
 <h4 id="as-dataviewjs">As DataviewJS<a class="headerlink" href="#as-dataviewjs" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>[!warning] Limitation when filtering unresolved links in DataviewJS
-The second filter only works limited. When a file contains two unresolved links, i.e. "Fernando" and "Bob" and you're filtering after "Bob", you'll still end up with "Fernando" in the result, too - because they are both referenced from the same file and Bob's availability will keep the file and <strong>all</strong> its unresolved links in the filtered set.
+<div class="admonition warning">
+<p class="admonition-title">Limitation when filtering unresolved links in DataviewJS</p>
+<p>The second filter only works limited. When a file contains two unresolved links, i.e. "Fernando" and "Bob" and you're filtering after "Bob", you'll still end up with "Fernando" in the result, too - because they are both referenced from the same file and Bob's availability will keep the file and <strong>all</strong> its unresolved links in the filtered set.<br />
 In order to fix that, it'd be necessary to filter out the unresolvedLinks array and map it back to the object that'll be processed.</p>
-</blockquote>
+</div>
 <pre><code class="language-dataviewjs">let result = {};
 
 function process(referingFile, unresolvedLinks) {
@@ -3992,48 +3978,46 @@ function process(referingFile, unresolvedLinks) {
 }
 
 Object.entries(dv.app.metadataCache.unresolvedLinks)
-  .filter(([referingFile]) =&gt; {
+  .filter(([referingFile]) =    {
     return referingFile.startsWith(&quot;10 Example Data/dailys&quot;)
   })
-  .filter(([_, unresolvedLinks]) =&gt; {
+  .filter(([_, unresolvedLinks]) =    {
       return Object.keys(unresolvedLinks)
-      .filter(link =&gt; link.startsWith(&quot;B&quot;) &amp;&amp; link.length &gt; 3)
+      .filter(link =    link.startsWith(&quot;B&quot;) &amp;&amp; link.length &gt; 3)
       .length
     })
-  .forEach(([referingFile, unresolvedLink]) =&gt; process(referingFile, unresolvedLink));
+  .forEach(([referingFile, unresolvedLink]) =    process(referingFile, unresolvedLink));
 
 dv.table(
   [&quot;Non existing notes&quot;, &quot;Linked from&quot;],
-  Object.entries(result).map(([unresolvedLink, referingFiles]) =&gt; [unresolvedLink, referingFiles.join(&quot; • &quot;)])
+  Object.entries(result).map(([unresolvedLink, referingFiles]) =    [unresolvedLink, referingFiles.join(&quot; • &quot;)])
 );
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

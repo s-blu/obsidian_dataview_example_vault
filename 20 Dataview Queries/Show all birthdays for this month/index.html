@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3925,9 +3911,9 @@
 
 
 <h1 id="dvlist-dvwhere-dvfrom-dvinline-dvjspages-dvjswhere">dv/list #dv/where #dv/from #dv/inline #dvjs/pages #dvjs/where<a class="headerlink" href="#dvlist-dvwhere-dvfrom-dvinline-dvjspages-dvjswhere" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!hint] Contributed <a href="https://discord.com/channels/686053708261228577/875721010144477204/1008491525321265232">via Discord</a></p>
-</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Contributed <a href="https://discord.com/channels/686053708261228577/875721010144477204/1008491525321265232">via Discord</a></p>
+</div>
 <h1 id="show-all-birthdays-for-this-month">Show all birthdays for this month<a class="headerlink" href="#show-all-birthdays-for-this-month" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataview">LIST birthday
@@ -3936,34 +3922,32 @@ WHERE birthday.month = date(today).month
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="as-inline-query">As inline query<a class="headerlink" href="#as-inline-query" title="Permanent link">&para;</a></h3>
-<p><code>$=dv.pages('"10 Example Data/people"').where(p =&gt; p.birthday).where(p =&gt; p.birthday.month == dv.date('today').month).file.link</code></p>
+<p><code>$=dv.pages('"10 Example Data/people"').where(p =    p.birthday).where(p =&gt; p.birthday.month == dv.date('today').month).file.link</code></p>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

@@ -330,20 +330,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3882,19 +3868,6 @@
     Query shows some kind of error
   </a>
   
-    <nav class="md-nav" aria-label="Query shows some kind of error">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sumarray" class="md-nav__link">
-    sum(array)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -4031,19 +4004,6 @@
     Query shows some kind of error
   </a>
   
-    <nav class="md-nav" aria-label="Query shows some kind of error">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sumarray" class="md-nav__link">
-    sum(array)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -4086,10 +4046,10 @@ WHERE file.name = this.file.name
 <p><code>$= console.log("Current file:", dv.current())</code></p>
 <p>and open the developer console with <code>CTRL SHIFT I</code>.</p>
 <h2 id="query-shows-some-kind-of-error">Query shows some kind of error<a class="headerlink" href="#query-shows-some-kind-of-error" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>[!hint] Open up read and edit mode side by side
-These examples are observed best when you switch to "<a href="https://help.obsidian.md/How+to/Read+and+edit+modes">Edit Mode</a>" and open up a second pane in read mode - otherwise you'll only see the error or the dataview query :) </p>
-</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Open up read and edit mode side by side</p>
+<p>These examples are observed best when you switch to "<a href="https://help.obsidian.md/How+to/Read+and+edit+modes">Edit Mode</a>" and open up a second pane in read mode - otherwise you'll only see the error or the dataview query :) </p>
+</div>
 <p>Read the error description carefully. There is a little arrow pointing at the erroneous place. For example:</p>
 <pre><code class="language-dataview">TABLE
 WHERE #dv/list
@@ -4110,7 +4070,7 @@ WHERE paid
 FLATTEN sum() as sum
 </code></pre>
 <p>It tells us that our <code>WHERE</code> clause failed and shows us the <strong>first three errors</strong> why. Here, it's the same one three times. </p>
-<p>Let's read this message: <code>No implementation of 'sum' found for arguments:</code>
+<p>Let's read this message: <code>No implementation of 'sum' found for arguments:</code><br />
 It's rather technical. What it tries to tell you: "I don't know what to do with these arguments: (none)" - because you did not give any arguments inside the round brackets.</p>
 <p>Lets try this: </p>
 <pre><code class="language-dataview">LIST sum
@@ -4119,14 +4079,15 @@ WHERE paid
 FLATTEN sum(paid, paid) as sum
 </code></pre>
 <p>Now our error message is a bit different and the first three aren't completely equal anymore. It now says "I don't know what to do with two things that are null and null - or array and array - or string and string"</p>
-<p>So the <code>sum</code> function doesn't know how to handle our input. How to solve this?
+<p>So the <code>sum</code> function doesn't know how to handle our input. How to solve this?<br />
 First, head over to the <a href="https://blacksmithgu.github.io/obsidian-dataview/query/functions/#sumarray">official dataview documentation and read up how sum works</a>:</p>
-<blockquote>
-<p>[!cite]</p>
-<h3 id="sumarray"><code>sum(array)</code><a class="headerlink" href="#sumarray" title="Permanent link">&para;</a></h3>
-<p>Sums all numeric values in the array
-<code>sum(list(1, 2, 3)) = 6</code></p>
-</blockquote>
+<pre><code>[!cite]
+### `sum(array)`
+Sums all numeric values in the array
+```
+sum(list(1, 2, 3)) = 6
+```
+</code></pre>
 <p>We've learned two important things here: First, <strong>sum expects exactly one argument</strong>. Secondly, <strong>this argument needs to be an array</strong>. So in order to use sum, we need to provide it with <em>one</em> array:</p>
 <pre><code class="language-dataview">LIST sum
 FROM &quot;10 Example Data/dailys&quot;

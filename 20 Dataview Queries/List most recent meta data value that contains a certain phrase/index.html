@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3925,9 +3911,9 @@
 
 
 <h1 id="dvlist-dvfrom-dvwhere-dvsort-dvlimit-dvinline-dvjspages-dvjswhere-dvjssort-dvjslimit-dvjsflatmap-dvjsarray-dvjslast-dvjsspan">dv/list #dv/from #dv/where #dv/sort #dv/limit #dv/inline #dvjs/pages #dvjs/where #dvjs/sort #dvjs/limit #dvjs/flatMap #dvjs/array #dvjs/last #dvjs/span<a class="headerlink" href="#dvlist-dvfrom-dvwhere-dvsort-dvlimit-dvinline-dvjspages-dvjswhere-dvjssort-dvjslimit-dvjsflatmap-dvjsarray-dvjslast-dvjsspan" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!hint] Contributed <a href="https://discord.com/channels/686053708261228577/875721010144477204/1007282419688284322">via Discord</a></p>
-</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Contributed <a href="https://discord.com/channels/686053708261228577/875721010144477204/1007282419688284322">via Discord</a></p>
+</div>
 <h1 id="list-most-recent-meta-data-value-that-contains-a-certain-phrase">List most recent meta data value that contains a certain phrase<a class="headerlink" href="#list-most-recent-meta-data-value-that-contains-a-certain-phrase" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataview">LIST met
@@ -3938,54 +3924,52 @@ LIMIT 1
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="as-an-javascript-inline-field">As an javascript inline field<a class="headerlink" href="#as-an-javascript-inline-field" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>[!hint] Usage
-A inline query can be i.e. used as a field for the Kanban Board Plugin</p>
-</blockquote>
-<p><code>$=const notes = dv.pages('"10 Example Data/dailys"').where(p =&gt; p.met).where(p =&gt; String(p.met).includes("Sophie")).sort((p) =&gt; p.file.name, 'desc').limit(1); if (notes.length) { const content = notes.flatMap(m =&gt; dv.array(m.met)).where(m =&gt; m.includes("Sophie")).last(); dv.span(notes[0].file.link + ": " + content); }</code></p>
+<div class="admonition hint">
+<p class="admonition-title">Usage</p>
+<p>A inline query can be i.e. used as a field for the Kanban Board Plugin</p>
+</div>
+<p><code>$=const notes = dv.pages('"10 Example Data/dailys"').where(p =    p.met).where(p =&gt; String(p.met).includes("Sophie")).sort((p) =&gt; p.file.name, 'desc').limit(1); if (notes.length) { const content = notes.flatMap(m =&gt; dv.array(m.met)).where(m =&gt; m.includes("Sophie")).last(); dv.span(notes[0].file.link + ": " + content); }</code></p>
 <p>When editing this, it can be helpful to put it into a regular dataviewjs block while editing for better readability:</p>
 <pre><code class="language-dataviewjs">const notes = dv.pages('&quot;10 Example Data/dailys&quot;')
-    .where(p =&gt; p.met)
-    .where(p =&gt; String(p.met)
+    .where(p =    p.met)
+    .where(p =    String(p.met)
     .includes(&quot;Sophie&quot;))
-    .sort((p) =&gt; p.file.name, 'desc')
+    .sort((p) =    p.file.name, 'desc')
     .limit(1); 
 
 if (notes.length) { 
     const content = notes
-        .flatMap(m =&gt; dv.array(m.met)).where(m =&gt; m.includes(&quot;Sophie&quot;))
+        .flatMap(m =    dv.array(m.met)).where(m =&gt; m.includes(&quot;Sophie&quot;))
         .last(); 
 
     dv.span(notes[0].file.link + &quot;: &quot; + content); 
 }
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

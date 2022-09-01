@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3927,19 +3913,19 @@
 <h1 id="dvlist-dvfrom-dvwhere-dvsort-dvstring-dvsplit-dvdateformat-dvlink-dvjoin-dvtable-dvarray-dvchoice-dvtypeof">dv/list #dv/from #dv/where #dv/sort #dv/string #dv/split #dv/dateformat #dv/link #dv/join #dv/table #dv/array #dv/choice #dv/typeof<a class="headerlink" href="#dvlist-dvfrom-dvwhere-dvsort-dvstring-dvsplit-dvdateformat-dvlink-dvjoin-dvtable-dvarray-dvchoice-dvtypeof" title="Permanent link">&para;</a></h1>
 <h1 id="show-a-meta-data-value-for-every-day-of-the-week">Show a meta data value for every day of the week<a class="headerlink" href="#show-a-meta-data-value-for-every-day-of-the-week" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>[!attention] Usage in weekly note
-If you want to use this query in your weekly note and your weekly is named like <code>gggg-[W]ww</code>, i.e. 2022-W4, replace <code>fake.name</code> with <code>file.name</code></p>
-</blockquote>
+<div class="admonition attention">
+<p class="admonition-title">Usage in weekly note</p>
+<p>If you want to use this query in your weekly note and your weekly is named like <code>gggg-[W]ww</code>, i.e. 2022-W4, replace <code>fake.name</code> with <code>file.name</code></p>
+</div>
 <pre><code class="language-dataview">LIST summary
 FROM &quot;10 Example Data/dailys&quot;
 WHERE string(day.year) = split(this.fake.name, &quot;-W&quot;)[0] AND string(day.weekyear) = split(this.fake.name, &quot;-W&quot;)[1]
 SORT file.name
 </code></pre>
-<blockquote>
-<p>[!hint] Alternative usage
-Instead of a summary of the day you could note down something nice that happened that day and remind yourself that the week was quite nice in retrospective!</p>
-</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Alternative usage</p>
+<p>Instead of a summary of the day you could note down something nice that happened that day and remind yourself that the week was quite nice in retrospective!</p>
+</div>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="print-weekdays-instead-of-file-names">Print weekdays instead of file names<a class="headerlink" href="#print-weekdays-instead-of-file-names" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataview">LIST WITHOUT ID &quot;**&quot; + dateformat(day, &quot;cccc&quot;) + &quot;**: &quot; + summary
@@ -3972,32 +3958,30 @@ WHERE string(day.year) = split(this.fake.name2, &quot;-W&quot;)[0] AND string(da
 SORT file.name
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

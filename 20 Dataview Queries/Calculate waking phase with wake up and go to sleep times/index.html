@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3930,11 +3916,11 @@
 <h3 id="as-dataviewjs-solution">As DataviewJS solution<a class="headerlink" href="#as-dataviewjs-solution" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataviewjs">const dailies = dv.pages('&quot;10 Example Data/dailys&quot;')
     .limit(10)
-    .mutate(p =&gt; p.wakingPhase = calculateWakingPhase(p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;]))
+    .mutate(p =    p.wakingPhase = calculateWakingPhase(p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;]))
 
 
 dv.table([&quot;File&quot;, &quot;wake-up&quot;, &quot;go-to-sleep&quot;, &quot;Waking Phase&quot;], 
-         dailies.map(p =&gt; [p.file.link, p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;], p.wakingPhase]))
+         dailies.map(p =    [p.file.link, p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;], p.wakingPhase]))
 
 function calculateWakingPhase(wakeUp, goToSleep) {
     const isValid = isValidTime(wakeUp) &amp;&amp; isValidTime(goToSleep)
@@ -3951,9 +3937,9 @@ function isValidTime(time) {
 }
 </code></pre>
 <h3 id="as-dql-dataview-solution">As DQL (dataview) solution<a class="headerlink" href="#as-dql-dataview-solution" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>[!attention] Dates with invalid times will be skipped and file.day (or another metadata with the files date) must be set </p>
-</blockquote>
+<div class="admonition attention">
+<p class="admonition-title">Dates with invalid times will be skipped and file.day (or another metadata with the files date) must be set </p>
+</div>
 <pre><code class="language-dataview">TABLE wake-up, go-to-sleep, wakeTime
 FROM &quot;10 Example Data/dailys&quot;
 LIMIT 10
@@ -3965,10 +3951,10 @@ FLATTEN dur(date(dt + &quot;T&quot; + go-to-sleep) - date(dt + &quot;T&quot; + w
 <pre><code class="language-dataviewjs">const Duration = dv.luxon.Duration;
 const dailies = dv.pages('&quot;10 Example Data/dailys&quot;')
     .limit(10)
-    .mutate(p =&gt; p.wakingPhase = calculateWakingPhase(p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;]))
+    .mutate(p =    p.wakingPhase = calculateWakingPhase(p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;]))
 
 
-dv.table([&quot;File&quot;, &quot;wake-up&quot;, &quot;go-to-sleep&quot;, &quot;Waking Phase&quot;], dailies.map(p =&gt; [p.file.link, p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;], p.wakingPhase]))
+dv.table([&quot;File&quot;, &quot;wake-up&quot;, &quot;go-to-sleep&quot;, &quot;Waking Phase&quot;], dailies.map(p =    [p.file.link, p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;], p.wakingPhase]))
 
 function calculateWakingPhase(wakeUp, goToSleep) {
     wakeUp = tryToFixUp(wakeUp);
@@ -3998,39 +3984,37 @@ function isValidTime(time) {
 </code></pre>
 <h3 id="calculation-with-00h00m-format">Calculation with 00h00m format<a class="headerlink" href="#calculation-with-00h00m-format" title="Permanent link">&para;</a></h3>
 <p>If your metadata has the format <code>00h00m</code>, i.e. <code>15h55m</code>, calculations get easier.</p>
-<p>t1:: 11h45m
+<p>t1:: 11h45m<br />
 t2:: 15h55m</p>
 <pre><code class="language-dataview">TABLE WITHOUT ID t1, t2, duration
 WHERE file.name = this.file.name
 FLATTEN t2 - t1 as duration
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

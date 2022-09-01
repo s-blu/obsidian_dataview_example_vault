@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -4056,7 +4042,7 @@
 <h1 id="render-a-year-overview-for-your-data">Render a year overview for your data<a class="headerlink" href="#render-a-year-overview-for-your-data" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <p>Track activities in your dailies, i.e. if you have prayed.</p>
-<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.praying === &quot;yes&quot;);
+<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =    p.praying === &quot;yes&quot;);
 const year = 2022;
 const color = &quot;green&quot;;
 const emptyColor = &quot;rgba(255,255,255,0.1)&quot;;
@@ -4070,17 +4056,17 @@ for(let i = 1; i &lt;= 12; i++) {
 
 // == Fill calendar ==
 while (date.year == year) {
-    const col = !!values.find(p =&gt; p.day.equals(date.startOf('day'))) ? color : emptyColor;
+    const col = !!values.find(p =    p.day.equals(date.startOf('day'))) ? color : emptyColor;
     calendar[date.month].push(getDayEl(date, col))
 
     date = addOneDay(date);
 }
 
 // == Render calendar ==
-calendar.forEach((month, i) =&gt; {
+calendar.forEach((month, i) =    {
     const monthEl = `&lt;span style='display:inline-block;min-width:30px;font-size:small'&gt;${dv.luxon.DateTime.utc(year, i).toFormat('MMM')}&lt;/span&gt;`
 
-    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =&gt; `${acc} ${curr}`, &quot;&quot;))
+    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =    `${acc} ${curr}`, &quot;&quot;))
 })
 
 function addOneDay(date) {
@@ -4095,7 +4081,7 @@ function getDayEl(date, color) {
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="use-a-meta-data-field-with-a-date-instead-of-fileday">Use a meta data field with a date instead of file.day<a class="headerlink" href="#use-a-meta-data-field-with-a-date-instead-of-fileday" title="Permanent link">&para;</a></h3>
 <p>See on one glimpse the <strong>start</strong> and <strong>finish</strong> dates of your projects.</p>
-<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/projects&quot;').where(p =&gt; p.started);
+<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/projects&quot;').where(p =    p.started);
 const year = 2022;
 const emptyColor = &quot;rgba(255,255,255,0.1)&quot;;
 
@@ -4113,10 +4099,10 @@ while (date.year == year) {
 }
 
 // == Render calendar ==
-calendar.forEach((month, i) =&gt; {
+calendar.forEach((month, i) =    {
     const monthEl = `&lt;span style='display:inline-block;min-width:30px;font-size:small'&gt;${dv.luxon.DateTime.utc(year, i).toFormat('MMM')}&lt;/span&gt;`
 
-    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =&gt; `${acc} ${curr}`, &quot;&quot;))
+    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =    `${acc} ${curr}`, &quot;&quot;))
 })
 
 function addOneDay(date) {
@@ -4128,8 +4114,8 @@ function getDayEl(date, color) {
 }
 
 function determineColor(date) {
-    const started = values.find(p =&gt; p.started?.startOf('day').equals(date.startOf('day')));
-    const finished = values.find(p =&gt; p.finished?.startOf('day').equals(date.startOf('day')));
+    const started = values.find(p =    p.started?.startOf('day').equals(date.startOf('day')));
+    const finished = values.find(p =    p.finished?.startOf('day').equals(date.startOf('day')));
     let color = emptyColor;
 
     if (started &amp;&amp; finished) {
@@ -4145,7 +4131,7 @@ function determineColor(date) {
 </code></pre>
 <h3 id="add-information-on-hover">Add information on hover<a class="headerlink" href="#add-information-on-hover" title="Permanent link">&para;</a></h3>
 <p>Hover over a dot and wait a moment to see which project started or finished.</p>
-<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/projects&quot;').where(p =&gt; p.started);
+<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/projects&quot;').where(p =    p.started);
 const year = 2022;
 const emptyColor = &quot;rgba(255,255,255,0.1)&quot;;
 
@@ -4163,7 +4149,7 @@ while (date.year == year) {
 
     function createTooltip() {
         let tooltip = &quot;&quot;;
-        const vals = values.filter(p =&gt; checkDateEq(p.started, date) || checkDateEq(p.finished, date))
+        const vals = values.filter(p =    checkDateEq(p.started, date) || checkDateEq(p.finished, date))
         for (let val of vals) {
             tooltip += `${val.file.name} `
         }
@@ -4172,10 +4158,10 @@ while (date.year == year) {
 }
 
 // == Render calendar ==
-calendar.forEach((month, i) =&gt; {
+calendar.forEach((month, i) =    {
     const monthEl = `&lt;span style='display:inline-block;min-width:30px;font-size:small'&gt;${dv.luxon.DateTime.utc(year, i).toFormat('MMM')}&lt;/span&gt;`
 
-    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =&gt; `${acc} ${curr}`, &quot;&quot;))
+    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =    `${acc} ${curr}`, &quot;&quot;))
 })
 
 function addOneDay(date) {
@@ -4192,8 +4178,8 @@ function checkDateEq(date1, date2) {
 }
 
 function determineColor(date) {
-    const started = values.find(p =&gt; p.started?.startOf('day').equals(date.startOf('day')));
-    const finished = values.find(p =&gt; p.finished?.startOf('day').equals(date.startOf('day')));
+    const started = values.find(p =    p.started?.startOf('day').equals(date.startOf('day')));
+    const finished = values.find(p =    p.finished?.startOf('day').equals(date.startOf('day')));
     let color = emptyColor;
 
     if (started &amp;&amp; finished) {
@@ -4208,7 +4194,7 @@ function determineColor(date) {
 }
 </code></pre>
 <h3 id="use-a-intensity-to-display-different-values">Use a intensity to display different values<a class="headerlink" href="#use-a-intensity-to-display-different-values" title="Permanent link">&para;</a></h3>
-<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.wellbeing?.mood);
+<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =    p.wellbeing?.mood);
 const year = 2022;
 const emptyColor = &quot;rgba(255,255,255,0.1)&quot;;
 
@@ -4229,10 +4215,10 @@ while (date.year == year) {
 }
 
 // == Render calendar ==
-calendar.forEach((month, i) =&gt; {
+calendar.forEach((month, i) =    {
     const monthEl = `&lt;span style='display:inline-block;min-width:30px;font-size:small'&gt;${dv.luxon.DateTime.utc(year, i).toFormat('MMM')}&lt;/span&gt;`
 
-    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =&gt; `${acc} ${curr}`, &quot;&quot;))
+    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =    `${acc} ${curr}`, &quot;&quot;))
 })
 
 function addOneDay(date) {
@@ -4245,7 +4231,7 @@ function getDayEl(date, color) {
 }
 
 function determineColor(date) {
-    const page = values.find(p =&gt; p.day.startOf('day').equals(date.startOf('day')));
+    const page = values.find(p =    p.day.startOf('day').equals(date.startOf('day')));
     if (!page) return emptyColor;
 
 
@@ -4255,17 +4241,17 @@ function determineColor(date) {
 }
 </code></pre>
 <h3 id="use-as-a-view-file-for-reusability">Use as a view file for reusability<a class="headerlink" href="#use-as-a-view-file-for-reusability" title="Permanent link">&para;</a></h3>
-<p><img alt="What is ...#^dv-view" src="../../00%20Meta/Vault%20Infos/What%20is%20.../#dv-view" /></p>
+<p><img alt="What is#^dv-view" src="../../00%20Meta/Vault%20Infos/What%20is/#dv-view" /></p>
 <p><strong>Simple case</strong> - input pages to display, the year to render and an "active" color </p>
 <pre><code class="language-dataviewjs">await dv.view(&quot;00 Meta/dataview_views/year_overview&quot;, 
     {
-        pages: dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.praying === &quot;yes&quot;),
+        pages: dv.pages('&quot;10 Example Data/dailys&quot;').where(p =    p.praying === &quot;yes&quot;),
         year: 2022,
         color: &quot;green&quot;
     })
 </code></pre>
 <p><strong>Complex case</strong> - Provide functions to determine color and tooltip. Both function will be called with the date to fill as argument and need to give back a string.</p>
-<pre><code class="language-dataviewjs">const pages = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.wellbeing?.mood);
+<pre><code class="language-dataviewjs">const pages = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =    p.wellbeing?.mood);
 
 await dv.view(&quot;00 Meta/dataview_views/year_overview&quot;, 
     {
@@ -4276,7 +4262,7 @@ await dv.view(&quot;00 Meta/dataview_views/year_overview&quot;,
     })
 
 function determineColor(date) {
-    const page = pages.find(p =&gt; p.day.startOf('day').equals(date.startOf('day')));
+    const page = pages.find(p =    p.day.startOf('day').equals(date.startOf('day')));
     if (!page) return &quot;rgba(9, 99, 199, 0.15)&quot;;
 
     let opacity = (page.wellbeing.mood / 4) ;
@@ -4285,39 +4271,37 @@ function determineColor(date) {
 }
 
 function generateTooltip(date) {
-    const page = pages.find(p =&gt; p.day.startOf('day').equals(date.startOf('day')));
+    const page = pages.find(p =    p.day.startOf('day').equals(date.startOf('day')));
     if (!page) return date.toFormat('yyyy-MM-dd');
 
     return `${page.file.name}: ${page.wellbeing?.mood ?? ''}`
 }
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

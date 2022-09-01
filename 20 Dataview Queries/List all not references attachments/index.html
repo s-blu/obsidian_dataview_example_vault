@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3927,52 +3913,50 @@
 <h1 id="dvdataviewjs-dvjspages-dvjsfilter-dvjslist-dvjsfilelink-dvjsarray-dvjsmap">dv/dataviewjs #dvjs/pages #dvjs/filter #dvjs/list #dvjs/fileLink #dvjs/array #dvjs/map<a class="headerlink" href="#dvdataviewjs-dvjspages-dvjsfilter-dvjslist-dvjsfilelink-dvjsarray-dvjsmap" title="Permanent link">&para;</a></h1>
 <h1 id="list-all-not-references-attachments">List all not references attachments<a class="headerlink" href="#list-all-not-references-attachments" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
-<pre><code class="language-dataviewjs">const allNonMdFiles = app.vault.getFiles().filter(file =&gt; file.extension !== 'md')
-const allNonMdOutlinks = dv.pages().file.outlinks.path.filter(link =&gt; !link.endsWith('.md'))
-const notReferenced = allNonMdFiles.filter(file =&gt; !allNonMdOutlinks.includes(file.path));
+<pre><code class="language-dataviewjs">const allNonMdFiles = app.vault.getFiles().filter(file =    file.extension !== 'md')
+const allNonMdOutlinks = dv.pages().file.outlinks.path.filter(link =    !link.endsWith('.md'))
+const notReferenced = allNonMdFiles.filter(file =    !allNonMdOutlinks.includes(file.path));
 
-dv.list(dv.array(notReferenced).map(link =&gt; dv.fileLink(link.path)))
+dv.list(dv.array(notReferenced).map(link =    dv.fileLink(link.path)))
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <p>Be able to specify file endings to ignore and show a callout if no result is found </p>
 <pre><code class="language-dataviewjs">// add all extensions you want to ignore to the array, i.e. [&quot;md&quot;, &quot;js&quot;, &quot;css&quot;]
-const allNonMdFiles = app.vault.getFiles().filter(file =&gt; ![&quot;md&quot;].includes(file.extension))
-const allNonMdOutlinks = dv.pages().file.outlinks.path.filter(link =&gt; !link.endsWith('.md'))
-const notReferenced = allNonMdFiles.filter(file =&gt; !allNonMdOutlinks.includes(file.path));
+const allNonMdFiles = app.vault.getFiles().filter(file =    ![&quot;md&quot;].includes(file.extension))
+const allNonMdOutlinks = dv.pages().file.outlinks.path.filter(link =    !link.endsWith('.md'))
+const notReferenced = allNonMdFiles.filter(file =    !allNonMdOutlinks.includes(file.path));
 
 if (!notReferenced.length) {
-    dv.span(`&gt; [!done] All good! No unused attachments found :) `)
+    dv.span(`!!! done &quot;All good! No unused attachments found :) `)&quot;
 } 
 
-dv.list(dv.array(notReferenced).map(link =&gt; dv.fileLink(link.path)))
+dv.list(dv.array(notReferenced).map(link =    dv.fileLink(link.path)))
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

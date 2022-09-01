@@ -327,20 +327,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3917,45 +3903,45 @@
 
   <h1>Insert tags to query page</h1>
 
-<p>&lt;%*
-const dvApi = app.plugins.plugins.dataview.api;
-const dataviewRegex = /<code>(dataview(?:js)?)(.+?)</code>/gms;
-const currFile = app.workspace.getActiveFile();
+<p>&lt;%*<br />
+const dvApi = app.plugins.plugins.dataview.api;<br />
+const dataviewRegex = /<code>(dataview(?:js)?)(.+?)</code>/gms;<br />
+const currFile = app.workspace.getActiveFile();<br />
 const content = (await app.vault.cachedRead(currFile)).split("%% === end of query page === %%")[0];</p>
-<p>const datacommands = ["LIST", "TABLE", "TASK", "CALENDAR", "FROM", "WHERE", "FLATTEN", "SORT", "GROUP BY"];
-const tags = [];
+<p>const datacommands = ["LIST", "TABLE", "TASK", "CALENDAR", "FROM", "WHERE", "FLATTEN", "SORT", "GROUP BY"];<br />
+const tags = [];<br />
 let tagprefix = "#dv/"</p>
-<p>const queries = content.matchAll(dataviewRegex);
-for (let query of queries) {
-  const type = query[1];
+<p>const queries = content.matchAll(dataviewRegex);<br />
+for (let query of queries) {<br />
+  const type = query[1];<br />
   query = query[2];</p>
-<p>if (type === 'dataview') {
-    datacommands.forEach(datacommand =&gt; {
-      if (query.includes(datacommand)) {
-        tags.push(<code>${tagprefix}${datacommand}</code>)
-         // we only want to add this tag once, no need to check for the data command again here or in other queries
-        datacommands.splice(datacommands.indexOf(datacommand), 1)
-      }
-    })
-    const functions = query.matchAll(/([a-zA-Z]+)(/g);
-    addFunctionsTags(functions, tags)
-  } else {
-    addTag('dataviewjs')
+<p>if (type === 'dataview') {<br />
+    datacommands.forEach(datacommand =    {<br />
+      if (query.includes(datacommand)) {<br />
+        tags.push(<code>${tagprefix}${datacommand}</code>)<br />
+         // we only want to add this tag once, no need to check for the data command again here or in other queries<br />
+        datacommands.splice(datacommands.indexOf(datacommand), 1)<br />
+      }<br />
+    })<br />
+    const functions = query.matchAll(/([a-zA-Z]+)(/g);<br />
+    addFunctionsTags(functions, tags)<br />
+  } else {<br />
+    addTag('dataviewjs')<br />
     tagprefix = "#dvjs/"</p>
 <pre><code>const functions = query.matchAll(/dv\.([a-zA-Z]+)/g)
 addFunctionsTags(functions, tags)
 </code></pre>
-<p>}
-}
-tR += tags.reduce((acc, curr) =&gt; <code>${acc} ${curr}</code>, "")</p>
-<p>function addFunctionsTags(functions) {
-  for (let fn of functions) {
-    addTag(fn[1])
-  }
+<p>}<br />
+}<br />
+tR += tags.reduce((acc, curr) =    <code>${acc} ${curr}</code>, "")</p>
+<p>function addFunctionsTags(functions) {<br />
+  for (let fn of functions) {<br />
+    addTag(fn[1])<br />
+  }<br />
 }</p>
-<p>function addTag(subtag) {
-    const tag = <code>${tagprefix}${subtag}</code>
-    if (!tags.contains(tag)) tags.push(tag)
+<p>function addTag(subtag) {<br />
+    const tag = <code>${tagprefix}${subtag}</code><br />
+    if (!tags.contains(tag)) tags.push(tag)<br />
 }</p>
 <p>%&gt;</p>
 

@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3926,12 +3912,15 @@
 
 <h1 id="dvtable-dvfrom-dvwhere-dvembed-dvmeta-dvlink">dv/table #dv/from #dv/where #dv/embed #dv/meta #dv/link<a class="headerlink" href="#dvtable-dvfrom-dvwhere-dvembed-dvmeta-dvlink" title="Permanent link">&para;</a></h1>
 <h1 id="display-images-in-a-dataview-table">Display images in a dataview table<a class="headerlink" href="#display-images-in-a-dataview-table" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!tip] Tip - Setting image size
-When returning an embeded image link in a dataview query, dataview will interpret an numeric display name alias as an image size. For example:
-- <code>[anyName](image-link)</code> will display the image at it natural largest size. 
+<div class="admonition tip">
+<p class="admonition-title">Tip - Setting image size</p>
+<p>When returning an embeded image link in a dataview query, dataview will interpret an numeric display name alias as an image size. For example:<br />
+- <code>[anyName](image-link)</code> will display the image at it natural largest size. <br />
 - <code>[anyname|50](image-link)</code> will display the image at a size of 50.</p>
-<p><strong>Note:</strong> This <code>[]()</code> format only works for external images, and for internal images where you specify the full hard-drive path to the image file. For relative internal links, see <a href="#basic---internal-images">#Basic - Internal Images</a>.</p>
+</div>
+<blockquote>
+<pre><code>**Note:** This `[]()` format only works for external images, and for internal images where you specify the full hard-drive path to the image file. For relative internal links, see [#Basic - Internal Images](#basic---internal-images).
+</code></pre>
 </blockquote>
 <h2 id="basic-external-images">Basic - External Images<a class="headerlink" href="#basic-external-images" title="Permanent link">&para;</a></h2>
 <p><strong>Link to a online image file saved as YAML</strong></p>
@@ -3944,10 +3933,13 @@ Cover-Img: &quot;https://images-na.ssl-images-amazon.com/images/S/compressed.pho
 FROM &quot;10 Example Data/books&quot;
 </code></pre>
 <h2 id="basic-internal-images">Basic - Internal Images<a class="headerlink" href="#basic-internal-images" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning - Internal Image Links</p>
+<p>Internal links are usually stored as relative paths within the vault, making the previous <code>[]()</code> approach impractical for sizing internal images (because it requires the full hard-drive path to the image). </p>
+</div>
 <blockquote>
-<p>[!warning] Warning - Internal Image Links
-Internal links are usually stored as relative paths within the vault, making the previous <code>[]()</code> approach impractical for sizing internal images (because it requires the full hard-drive path to the image). </p>
-<p>This means a different approach must be used for internal links. Below is one possible (simple) method, although this method reduces flexibilty by hard-coding the size of the image into the metadata field itself.  An alternative approach is outlined further below in <a href="#internal-images---meta-path-approach">#Internal Images - meta path approach</a>. </p>
+<pre><code>This means a different approach must be used for internal links. Below is one possible (simple) method, although this method reduces flexibilty by hard-coding the size of the image into the metadata field itself.  An alternative approach is outlined further below in [#Internal Images - meta path approach](#internal-images---meta-path-approach).
+</code></pre>
 </blockquote>
 <pre><code class="language-YAML">---
 cover-img: &quot;![[Some Internal Image.jpg|500]]&quot;
@@ -3959,11 +3951,14 @@ WHERE file.name = this.file.name
 </code></pre>
 <h2 id="variations">Variations<a class="headerlink" href="#variations" title="Permanent link">&para;</a></h2>
 <h3 id="internal-images-using-the-meta-path-approach">Internal Images - using the meta path approach<a class="headerlink" href="#internal-images-using-the-meta-path-approach" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning - Internal Image Links</p>
+<p>Because internal links are stored as relative paths within the vault, it is impractical to use the <code>[]()</code> approach; and likewise it can be limiting to hard-code the embed information in the image link itself. </p>
+</div>
 <blockquote>
-<p>[!warning] Warning - Internal Image Links
-Because internal links are stored as relative paths within the vault, it is impractical to use the <code>[]()</code> approach; and likewise it can be limiting to hard-code the embed information in the image link itself. </p>
-<p>To avoid this, an embeded link to an internal resource can be reverse enginered by using <code>meta(...).path</code> as follows:
-<code>embed(link(meta(cover-img).path, "50"))</code></p>
+<pre><code>To avoid this, an embeded link to an internal resource can be reverse enginered by using `meta(...).path` as follows:
+` embed(link(meta(cover-img).path, "50"))`
+</code></pre>
 </blockquote>
 <pre><code class="language-YAML">---
 cover-img: &quot;[[Some Internal Image.jpg]]&quot;
@@ -3975,10 +3970,13 @@ WHERE file.name = this.file.name
 
 </code></pre>
 <h3 id="mixed-images">Mixed Images<a class="headerlink" href="#mixed-images" title="Permanent link">&para;</a></h3>
+<div class="admonition help">
+<p class="admonition-title">Help - I have a mixture of image sources!</p>
+<p>The code below combines the most flexible two methods above; allowing both internal and external images to be handled within the same query. </p>
+</div>
 <blockquote>
-<p>[!help] Help - I have a mixture of image sources!
-The code below combines the most flexible two methods above; allowing both internal and external images to be handled within the same query. </p>
-<p>The code is not pretty - so only use this approach if you know you will encounter mixed image sources. And if you find a cleaner method - let us know! </p>
+<pre><code>The code is not pretty - so only use this approach if you know you will encounter mixed image sources. And if you find a cleaner method - let us know!
+</code></pre>
 </blockquote>
 <pre><code class="language-YAML">---
 cover-img: &quot;[[Some Internal Image.jpg]]&quot;
@@ -3999,32 +3997,30 @@ FLATTEN choice(typeof(cover-img)=&quot;link&quot;,
     ).path, &quot;50&quot;)), &quot;![anyName|50](&quot; + cover-img + &quot;)&quot;) AS EmbededCoverImg
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

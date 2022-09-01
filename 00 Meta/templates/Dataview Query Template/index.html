@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dv" class="md-skip">
+        <a href="#-" class="md-skip">
           Skip to content
         </a>
       
@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -523,12 +509,86 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Dataview Query Template
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Dataview Query Template
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dv" class="md-nav__link">
+    dv/
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#title" class="md-nav__link">
+    {{title}}
+  </a>
+  
+    <nav class="md-nav" aria-label="{{title}}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic" class="md-nav__link">
+    Basic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    Variants
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description-of-variant-a-what-does-it-differently-what-do-we-achieve-with-that" class="md-nav__link">
+    Description of Variant A - what does it differently? What do we achieve with that?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3905,8 +3965,68 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    -
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dv" class="md-nav__link">
+    dv/
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#title" class="md-nav__link">
+    {{title}}
+  </a>
+  
+    <nav class="md-nav" aria-label="{{title}}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic" class="md-nav__link">
+    Basic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    Variants
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description-of-variant-a-what-does-it-differently-what-do-we-achieve-with-that" class="md-nav__link">
+    Description of Variant A - what does it differently? What do we achieve with that?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3924,30 +4044,30 @@
 
 
 
-<hr />
-<p>description: %% What does the query do? %%
-topics:
-  - </p>
-<hr />
+<h2 id="-">-<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
 <h1 id="dv">dv/<a class="headerlink" href="#dv" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!hint] Contributed by PutYourNameOrSourceHere</p>
-</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Contributed by PutYourNameOrSourceHere</p>
+</div>
 <h1 id="title">{{title}}<a class="headerlink" href="#title" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>[!todo] Create a new Query Note
-- [x] Use this template
-- [ ] Write a short description of the query in the frontmatter
-- [ ] Write the most basic version of the query possible. Keeping it simple and reduce it to the necessary makes it easier for others to understand the important parts of a query
-- [ ] If applicable, add one or multiple variants of the query and explain what they are doing - this could i.e. be an enhancement that makes the result better readable/even more useful
-- [ ] Add appropriate tags to the page 
-  <em>Hint: Adding queries often? Consider using the <a href="../../maintenance/Templater%20Tag%20Auto%20Generation/">Templater Tag Auto Generation</a></em>
-  - [ ] If a DQL query: used query type (LIST, TABLE etc), data commands (FROM, WHERE, FLATTEN etc) and used <a href="https://blacksmithgu.github.io/obsidian-dataview/query/functions/">functions</a> - always with #dv in front, i.e. #dv/list 
-  - [ ] If a dataviewjs query: #dv/dataviewjs and every <a href="https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/">dataviewjs</a> or <a href="https://blacksmithgu.github.io/obsidian-dataview/api/data-array/">data array</a> function as a #dvjs tag, i.e. #dvjs/current 
-- [ ] Add topics to the frontmatter that helps the query at the end of the page to list similar queries. Head over to the <a href="../../../30%20Dataview%20Resources/31%20Query%20Overviews/Topic%20Overview/">Topic Overview</a> to see what's available and be welcome to introduce new topics where appropriate!
-- [ ] Add your name in the contribution callout at the top - or remove the contribution callout, however you like it better! Mind, though: Before contributing queries from others, always ask for their permission.
-- [ ] Delete this callout :) </p>
-</blockquote>
+<div class="admonition todo">
+<p class="admonition-title">Create a new Query Note</p>
+<ul>
+<li>[x] Use this template</li>
+<li>[ ] Write a short description of the query in the frontmatter</li>
+<li>[ ] Write the most basic version of the query possible. Keeping it simple and reduce it to the necessary makes it easier for others to understand the important parts of a query</li>
+<li>[ ] If applicable, add one or multiple variants of the query and explain what they are doing - this could i.e. be an enhancement that makes the result better readable/even more useful</li>
+<li>[ ] Add appropriate tags to the page <br />
+<em>Hint: Adding queries often? Consider using the <a href="../../maintenance/Templater%20Tag%20Auto%20Generation/">Templater Tag Auto Generation</a></em><ul>
+<li>[ ] If a DQL query: used query type (LIST, TABLE etc), data commands (FROM, WHERE, FLATTEN etc) and used <a href="https://blacksmithgu.github.io/obsidian-dataview/query/functions/">functions</a> - always with #dv in front, i.e. #dv/list </li>
+<li>[ ] If a dataviewjs query: #dv/dataviewjs and every <a href="https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/">dataviewjs</a> or <a href="https://blacksmithgu.github.io/obsidian-dataview/api/data-array/">data array</a> function as a #dvjs tag, i.e. #dvjs/current </li>
+</ul>
+</li>
+<li>[ ] Add topics to the frontmatter that helps the query at the end of the page to list similar queries. Head over to the <a href="../../../30%20Dataview%20Resources/31%20Query%20Overviews/Topic%20Overview/">Topic Overview</a> to see what's available and be welcome to introduce new topics where appropriate!</li>
+<li>[ ] Add your name in the contribution callout at the top - or remove the contribution callout, however you like it better! Mind, though: Before contributing queries from others, always ask for their permission.</li>
+<li>[ ] Delete this callout :) </li>
+</ul>
+</div>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataview">
 </code></pre>
@@ -3956,32 +4076,30 @@ topics:
 <pre><code class="language-dataview">
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

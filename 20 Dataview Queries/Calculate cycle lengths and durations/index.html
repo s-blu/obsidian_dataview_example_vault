@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3929,11 +3915,11 @@
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataviewjs">const metadatafield = &quot;&quot;
 
-let startDates = dv.pages('&quot;10 Example Data/dailys&quot;').mutate(p =&gt; p.previousDay = dv.page(dv.luxon.DateTime.fromMillis(p.file.day - dv.duration(&quot;1d&quot;)).toFormat('yyyy-MM-dd'))).sort(p =&gt; p.file.name)
+let startDates = dv.pages('&quot;10 Example Data/dailys&quot;').mutate(p =    p.previousDay = dv.page(dv.luxon.DateTime.fromMillis(p.file.day - dv.duration(&quot;1d&quot;)).toFormat('yyyy-MM-dd'))).sort(p =&gt; p.file.name)
 
-const endDates = dv.array(dv.clone(startDates)[0]).where(p =&gt; !checkCriteria(p) &amp;&amp; checkCriteria(p.previousDay))
+const endDates = dv.array(dv.clone(startDates)[0]).where(p =    !checkCriteria(p) &amp;&amp; checkCriteria(p.previousDay))
 
-startDates = startDates.where(p =&gt; checkCriteria(p) &amp;&amp; !checkCriteria(p.previousDay))
+startDates = startDates.where(p =    checkCriteria(p) &amp;&amp; !checkCriteria(p.previousDay))
 
 const cycles = [];
 for (let i = 0; i &lt; endDates.length; i++) {
@@ -3954,32 +3940,30 @@ function checkCriteria(p) {
 
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

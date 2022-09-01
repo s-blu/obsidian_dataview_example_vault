@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3927,47 +3913,45 @@
 <h1 id="dvdataviewjs-dvjsview">dv/dataviewjs #dvjs/view<a class="headerlink" href="#dvdataviewjs-dvjsview" title="Permanent link">&para;</a></h1>
 <h1 id="display-meta-data-values-as-a-tag-cloud">Display meta data values as a tag cloud<a class="headerlink" href="#display-meta-data-values-as-a-tag-cloud" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
-<p><img alt="What is ...#^dv-view" src="../../00%20Meta/Vault%20Infos/What%20is%20.../#dv-view" /></p>
-<blockquote>
-<p>[!example] Sources
-You'll find the sources of this dv.view snippet under <code>00 Meta/dataview_views/tagcloud</code>. It expects the values you want to display as an array in the second argument.</p>
-</blockquote>
+<p><img alt="What is#^dv-view" src="../../00%20Meta/Vault%20Infos/What%20is/#dv-view" /></p>
+<div class="admonition example">
+<p class="admonition-title">Sources</p>
+<p>You'll find the sources of this dv.view snippet under <code>00 Meta/dataview_views/tagcloud</code>. It expects the values you want to display as an array in the second argument.</p>
+</div>
 <pre><code class="language-dataviewjs">await dv.view(&quot;00 Meta/dataview_views/tagcloud&quot;, 
     {
-        values: dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.person).person
+        values: dv.pages('&quot;10 Example Data/dailys&quot;').where(p =    p.person).person
     })
 </code></pre>
-<blockquote>
-<p>[!info] Usage in the dataview example vault
-This query is used to render the <a href="../../30%20Dataview%20Resources/31%20Query%20Overviews/Topic%20Overview/">Topic Overview</a>!</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Usage in the dataview example vault</p>
+<p>This query is used to render the <a href="../../30%20Dataview%20Resources/31%20Query%20Overviews/Topic%20Overview/">Topic Overview</a>!</p>
+</div>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

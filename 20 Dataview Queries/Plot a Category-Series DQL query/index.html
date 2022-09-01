@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3926,13 +3912,21 @@
 
 <h1 id="dvtable-dvfrom-dvwhere-dvgroupby-dvsort-dvsum-dvjstryquery">dv/table #dv/from #dv/where #dv/groupby #dv/sort #dv/sum #dvjs/tryQuery<a class="headerlink" href="#dvtable-dvfrom-dvwhere-dvgroupby-dvsort-dvsum-dvjstryquery" title="Permanent link">&para;</a></h1>
 <h1 id="plot-a-category-series-dataset">Plot a Category-Series dataset<a class="headerlink" href="#plot-a-category-series-dataset" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning - Extra plugin required</p>
+<p>This visualisation requires the <a href="https://github.com/phibr0/obsidian-charts">Obsidian Charts plugin</a> to implement the integration between <a href="https://charts.phibr0.de/Dataview%20Integration">Dataview and Charts.js</a>. </p>
+</div>
 <blockquote>
-<p>[!warning] Warning - Extra plugin required
-This visualisation requires the <a href="https://github.com/phibr0/obsidian-charts">Obsidian Charts plugin</a> to implement the integration between <a href="https://charts.phibr0.de/Dataview%20Integration">Dataview and Charts.js</a>. </p>
-<p>To minimise the need for additional plugins when browsing the example vault, images have been included alongside the JS code. </p>
-<p>[!help] Help - Query Structure
-For this type of chart, the query should return at least two columns (but unlimied additional columns are supported). </p>
-<p>The first column should represent the <em>X-Category</em> labels for the chart, and each subsequent column should represent a different data <em>Series</em>. The column name is used as the <em>Series</em> name on the chart.</p>
+<pre><code>To minimise the need for additional plugins when browsing the example vault, images have been included alongside the JS code.
+</code></pre>
+</blockquote>
+<div class="admonition help">
+<p class="admonition-title">Help - Query Structure</p>
+<p>For this type of chart, the query should return at least two columns (but unlimied additional columns are supported). </p>
+</div>
+<blockquote>
+<pre><code>The first column should represent the *X-Category* labels for the chart, and each subsequent column should represent a different data *Series*. The column name is used as the *Series* name on the chart.
+</code></pre>
 </blockquote>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <h3 id="wellbeing-chart-by-day-from-daily-notes">Wellbeing chart by day (from daily notes)<a class="headerlink" href="#wellbeing-chart-by-day-from-daily-notes" title="Permanent link">&para;</a></h3>
@@ -3950,56 +3944,56 @@ LIMIT 5
 <h4 id="chart-results">Chart Results<a class="headerlink" href="#chart-results" title="Permanent link">&para;</a></h4>
 <p><img alt="Line Chart Category Series.png" src="../../00%20Meta/attachments/Line%20Chart%20Category%20Series.png" /></p>
 <h4 id="dataviewjs">DataviewJS<a class="headerlink" href="#dataviewjs" title="Permanent link">&para;</a></h4>
-<p>``` //dataviewjs
-// -----
-// BASIC SETTINGS
-// -----
-let showTable = false; //show table below chart or not
+<p>``` //dataviewjs<br />
+// -----<br />
+// BASIC SETTINGS<br />
+// -----<br />
+let showTable = false; //show table below chart or not<br />
 let chartType = 'line'; //bar or line</p>
-<p>let xAxis = "xAxis: {type:'time', time: {unit: 'day'}}"; //{type:'category'}";
+<p>let xAxis = "xAxis: {type:'time', time: {unit: 'day'}}"; //{type:'category'}";<br />
 let yAxis = "yAxis: {suggestedMin: 0, ticks: {stepSize: 1}";</p>
-<p>let autoLabels = true; //auto lables, or use list below
+<p>let autoLabels = true; //auto lables, or use list below<br />
 var labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]; //only matter if above is false</p>
 <p>var colors = [['#ff6384'],['#36a2eb'],['#ffce56'],['#4bc0c0'],['#9966ff'],['#ff9f40']]; // Unique colours for up to 6 series; then repeats</p>
-<p>let sDQL = '\
-    TABLE WITHOUT ID \
-        file.name as "Date", \
-        wellbeing.mood as "Mood", \
-        wellbeing.health as "Health", \
-        wellbeing.pain as "Pain" \
-    FROM "10 Example Data/dailys" \
-    WHERE date(file.name).year = 2022 \
+<p>let sDQL = '\<br />
+    TABLE WITHOUT ID \<br />
+        file.name as "Date", \<br />
+        wellbeing.mood as "Mood", \<br />
+        wellbeing.health as "Health", \<br />
+        wellbeing.pain as "Pain" \<br />
+    FROM "10 Example Data/dailys" \<br />
+    WHERE date(file.name).year = 2022 \<br />
     SORT file.name'</p>
-<p>// -----
-// BELOW HERE IS LARGELY AUTOMATIC
-// -----
+<p>// -----<br />
+// BELOW HERE IS LARGELY AUTOMATIC<br />
+// -----<br />
 let DQL = await dv.tryQuery(sDQL);</p>
-<p>//extract necessary data columns from above results
-var allRows = DQL.values;
-var allLabels = allRows.map(r =&gt; r[0]);
+<p>//extract necessary data columns from above results<br />
+var allRows = DQL.values;<br />
+var allLabels = allRows.map(r =    r[0]);<br />
 var allSeries = DQL.headers.slice(1);</p>
-<p>//extract labels automatically if required
-if (autoLabels) {
-    labels = allLabels;
+<p>//extract labels automatically if required<br />
+if (autoLabels) {<br />
+    labels = allLabels;<br />
 }</p>
-<p>//cylce through each series to produce a dataset
-var datasets = [];
+<p>//cylce through each series to produce a dataset<br />
+var datasets = [];<br />
 for (let i = 0; i &lt; allSeries.length; i++) {  <br />
-    let seriesName = allSeries[i];
-    let backCol = colors[i%colors.length];
-    let bordCol = colors[i%colors.length];
+    let seriesName = allSeries[i];<br />
+    let backCol = colors[i%colors.length];<br />
+    let bordCol = colors[i%colors.length];<br />
     let bWidth = 1;</p>
 <pre><code>var dataPoints = [];
 if (!autoLabels) {
     //map each datapoint to a label in the fixed array
-    dataPoints = labels.map(l =&gt; {
+    dataPoints = labels.map(l =    {
         let labelIndex = allLabels.indexOf(l);
         if (labelIndex &lt; 0) { return 0 }
         else { return allRows[labelIndex][i+1] }
     })  
 } else {
     //dataPoints already align with labels
-    dataPoints = allRows.map(r =&gt; r[i+1]);
+    dataPoints = allRows.map(r =    r[i+1]);
 }
 
 //create a dataset to graph
@@ -4012,21 +4006,21 @@ let chartDataset = {label: seriesName,
 datasets.push(chartDataset);
 </code></pre>
 <p>}</p>
-<p>//Make the xAxis category based, if we are using a fixed array of labels
+<p>//Make the xAxis category based, if we are using a fixed array of labels<br />
 xAxis = (autoLabels ? xAxis : "xAxis: {type:'category'}");</p>
-<p>//graph the datasets using standard chart.js syntax
-const chartData = {
-    type: chartType,
-    data: { 
-        labels: labels,
-        datasets: datasets
-    },
+<p>//graph the datasets using standard chart.js syntax<br />
+const chartData = {<br />
+    type: chartType,<br />
+    data: { <br />
+        labels: labels,<br />
+        datasets: datasets<br />
+    },<br />
     options: {<br />
-        scales: { xAxis, yAxis }
-    }
-}
-window.renderChart(chartData, this.container);
-dv.span("");
+        scales: { xAxis, yAxis }<br />
+    }<br />
+}<br />
+window.renderChart(chartData, this.container);<br />
+dv.span("");<br />
 if (showTable) { dv.table(DQL.headers, DQL.values) } </p>
 <pre><code>
 
@@ -4040,77 +4034,84 @@ TABLE
     round(sum(PainValues)/length(PainValues), 1) AS Pain
 FROM &quot;10 Example Data/dailys&quot;
 GROUP BY dateformat(date(file.name), &quot;ccc&quot;) as &quot;DayOfWeek&quot;
-FLATTEN list(filter(rows.wellbeing.mood, (x) =&gt; x)) as MoodValues
-FLATTEN list(filter(rows.wellbeing.health, (x) =&gt; x)) as HealthValues
-FLATTEN list(filter(rows.wellbeing.pain, (x) =&gt; x)) as PainValues
+FLATTEN list(filter(rows.wellbeing.mood, (x) =    x)) as MoodValues
+FLATTEN list(filter(rows.wellbeing.health, (x) =    x)) as HealthValues
+FLATTEN list(filter(rows.wellbeing.pain, (x) =    x)) as PainValues
 SORT date(rows[0].file.name).weekday
 </code></pre>
+<div class="admonition tip">
+<p class="admonition-title">Tip - Calculating Averages</p>
+<p>DQL does not (currently) have an <code>avg()</code> function, however <code>sum()/length()</code> can be used.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip - Using FLATTEN to Clean-up Input Data</p>
+<p>Its possible that individual daily notes will have some, but not all, of the three values above. In these cases <code>sum(...)</code> will return an error and the entire group will be omitted from results. Additionally, <code>length(...)</code> will count the rows even when no data is present. </p>
+</div>
 <blockquote>
-<p>[!tip] Tip - Calculating Averages
-DQL does not (currently) have an <code>avg()</code> function, however <code>sum()/length()</code> can be used.</p>
-<p>[!tip] Tip - Using FLATTEN to Clean-up Input Data
-Its possible that individual daily notes will have some, but not all, of the three values above. In these cases <code>sum(...)</code> will return an error and the entire group will be omitted from results. Additionally, <code>length(...)</code> will count the rows even when no data is present. </p>
-<p>To sanitise the data before calculating the average, <code>FLATTEN</code> can be used to filter out any missing data and create new sanitised arrays to perform statistics on. This process could technically be done directly in the <code>TABLE</code> statement itself; however the query becomes much harder to read. </p>
-<p>The approach used here is:
-<code>FLATTEN list(filter(rows.wellbeing.mood, (x) =&gt; x)) as MoodValues</code>
-Which effectively reads (from the inside out), as: take all the (unsanitised) values collected for mood, filter them to only give values that 'exist', put them back into a new list, and name that list MoodValues. The <code>TABLE</code> statement is then free to perform clean statistics on the new MoodValues list.</p>
-<p>Handling missing data before statistic functions isn't necessary in cases where you are sure the data will exist; or that no 'undefined' data will make it to the <code>sum()</code>, <code>min()</code>, <code>max()</code>, or <code>length()</code> functions.</p>
+<pre><code>To sanitise the data before calculating the average, `FLATTEN` can be used to filter out any missing data and create new sanitised arrays to perform statistics on. This process could technically be done directly in the `TABLE` statement itself; however the query becomes much harder to read.
+
+The approach used here is:
+`FLATTEN list(filter(rows.wellbeing.mood, (x) =&gt; x)) as MoodValues`
+Which effectively reads (from the inside out), as: take all the (unsanitised) values collected for mood, filter them to only give values that 'exist', put them back into a new list, and name that list MoodValues. The `TABLE` statement is then free to perform clean statistics on the new MoodValues list.
+
+Handling missing data before statistic functions isn't necessary in cases where you are sure the data will exist; or that no 'undefined' data will make it to the `sum()`, `min()`, `max()`, or `length()` functions.
+</code></pre>
 </blockquote>
 <h4 id="chart-results_1">Chart Results<a class="headerlink" href="#chart-results_1" title="Permanent link">&para;</a></h4>
 <p><img alt="Bar Chart Category Series.png" src="../../00%20Meta/attachments/Bar%20Chart%20Category%20Series.png" /></p>
 <h4 id="dataviewjs_1">DataviewJS<a class="headerlink" href="#dataviewjs_1" title="Permanent link">&para;</a></h4>
-<p>``` //dataviewjs
-// -----
-// BASIC SETTINGS
-// -----
-let showTable = false; //show table below chart or not
+<p>``` //dataviewjs<br />
+// -----<br />
+// BASIC SETTINGS<br />
+// -----<br />
+let showTable = false; //show table below chart or not<br />
 let chartType = 'bar'; //bar or line</p>
-<p>let xAxis = "xAxis: {type:'category'}"; //{type:'time', time: {unit: 'day'}}";
+<p>let xAxis = "xAxis: {type:'category'}"; //{type:'time', time: {unit: 'day'}}";<br />
 let yAxis = "yAxis: {suggestedMin: 0, ticks: {stepSize: 1}";</p>
-<p>let autoLabels = false; //auto lables, or use list below
+<p>let autoLabels = false; //auto lables, or use list below<br />
 var labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]; //only matter if above is false</p>
 <p>var colors = [['#ff6384'],['#36a2eb'],['#ffce56'],['#4bc0c0'],['#9966ff'],['#ff9f40']]; // Unique colours for up to 6 series; then repeats</p>
-<p>let sDQL = '\
-    TABLE \
-        round(sum(MoodValues)/length(MoodValues), 1) AS Mood, \
-        round(sum(HealthValues)/length(HealthValues), 1) AS Health, \
-        round(sum(PainValues)/length(PainValues), 1) AS Pain \
-    FROM "10 Example Data/dailys" \
-    GROUP BY dateformat(date(file.name), "ccc") as "DayOfWeek" \
-    FLATTEN list(filter(rows.wellbeing.mood, (x) =&gt; x)) as MoodValues \
-    FLATTEN list(filter(rows.wellbeing.health, (x) =&gt; x)) as HealthValues \
-    FLATTEN list(filter(rows.wellbeing.pain, (x) =&gt; x)) as PainValues \
+<p>let sDQL = '\<br />
+    TABLE \<br />
+        round(sum(MoodValues)/length(MoodValues), 1) AS Mood, \<br />
+        round(sum(HealthValues)/length(HealthValues), 1) AS Health, \<br />
+        round(sum(PainValues)/length(PainValues), 1) AS Pain \<br />
+    FROM "10 Example Data/dailys" \<br />
+    GROUP BY dateformat(date(file.name), "ccc") as "DayOfWeek" \<br />
+    FLATTEN list(filter(rows.wellbeing.mood, (x) =    x)) as MoodValues \<br />
+    FLATTEN list(filter(rows.wellbeing.health, (x) =    x)) as HealthValues \<br />
+    FLATTEN list(filter(rows.wellbeing.pain, (x) =    x)) as PainValues \<br />
     SORT date(rows[0].file.name).weekday'</p>
-<p>// -----
-// BELOW HERE IS LARGELY AUTOMATIC
-// -----
+<p>// -----<br />
+// BELOW HERE IS LARGELY AUTOMATIC<br />
+// -----<br />
 let DQL = await dv.tryQuery(sDQL);</p>
-<p>//extract necessary data columns from above results
-var allRows = DQL.values;
-var allLabels = allRows.map(r =&gt; r[0]);
+<p>//extract necessary data columns from above results<br />
+var allRows = DQL.values;<br />
+var allLabels = allRows.map(r =    r[0]);<br />
 var allSeries = DQL.headers.slice(1);</p>
-<p>//extract labels automatically if required
-if (autoLabels) {
-    labels = allLabels;
+<p>//extract labels automatically if required<br />
+if (autoLabels) {<br />
+    labels = allLabels;<br />
 }</p>
-<p>//cylce through each series to produce a dataset
-var datasets = [];
+<p>//cylce through each series to produce a dataset<br />
+var datasets = [];<br />
 for (let i = 0; i &lt; allSeries.length; i++) {  <br />
-    let seriesName = allSeries[i];
-    let backCol = colors[i%colors.length];
-    let bordCol = colors[i%colors.length];
+    let seriesName = allSeries[i];<br />
+    let backCol = colors[i%colors.length];<br />
+    let bordCol = colors[i%colors.length];<br />
     let bWidth = 1;</p>
 <pre><code>var dataPoints = [];
 if (!autoLabels) {
     //map each datapoint to a label in the fixed array
-    dataPoints = labels.map(l =&gt; {
+    dataPoints = labels.map(l =    {
         let labelIndex = allLabels.indexOf(l);
         if (labelIndex &lt; 0) { return 0 }
         else { return allRows[labelIndex][i+1] }
     })  
 } else {
     //dataPoints already align with labels
-    dataPoints = allRows.map(r =&gt; r[i+1]);
+    dataPoints = allRows.map(r =    r[i+1]);
 }
 
 //create a dataset to graph
@@ -4123,51 +4124,51 @@ let chartDataset = {label: seriesName,
 datasets.push(chartDataset);
 </code></pre>
 <p>}</p>
-<p>//Make the xAxis category based, if we are using a fixed array of labels
+<p>//Make the xAxis category based, if we are using a fixed array of labels<br />
 xAxis = (autoLabels ? xAxis : "xAxis: {type:'category'}");</p>
-<p>//graph the datasets using standard chart.js syntax
-const chartData = {
-    type: chartType,
-    data: { 
-        labels: labels,
-        datasets: datasets
-    },
+<p>//graph the datasets using standard chart.js syntax<br />
+const chartData = {<br />
+    type: chartType,<br />
+    data: { <br />
+        labels: labels,<br />
+        datasets: datasets<br />
+    },<br />
     options: {<br />
-        scales: { xAxis, yAxis }
-    }
-}
-window.renderChart(chartData, this.container);
-dv.span("");
+        scales: { xAxis, yAxis }<br />
+    }<br />
+}<br />
+window.renderChart(chartData, this.container);<br />
+dv.span("");<br />
 if (showTable) { dv.table(DQL.headers, DQL.values) } </p>
 <pre><code>
 ---
 %% === end of query page === %%
-&gt; [!help]- Similar Queries
-&gt; Maybe these queries are of interest for you, too:
-&gt; ```dataview
-&gt; LIST
-&gt; FROM &quot;20 Dataview Queries&quot;
-&gt; FLATTEN topics as flattenedTopics
-&gt; WHERE contains(this.topics, flattenedTopics)
-&gt; AND file.name != this.file.name
-&gt; ```
+    [!help]- Similar Queries
+    Maybe these queries are of interest for you, too:
+    ```dataview
+    LIST
+    FROM &quot;20 Dataview Queries&quot;
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name
+    ```
 
 ```dataviewjs
-const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

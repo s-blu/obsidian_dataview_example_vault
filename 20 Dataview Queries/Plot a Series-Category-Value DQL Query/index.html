@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3926,14 +3912,23 @@
 
 <h1 id="dvtable-dvfrom-dvwhere-dvgroupby-dvsort">dv/table #dv/from #dv/where #dv/groupby #dv/sort<a class="headerlink" href="#dvtable-dvfrom-dvwhere-dvgroupby-dvsort" title="Permanent link">&para;</a></h1>
 <h1 id="plot-a-series-category-value-dataset">Plot a Series-Category-Value dataset<a class="headerlink" href="#plot-a-series-category-value-dataset" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning - Extra plugin required</p>
+<p>This visualisation requires the <a href="https://github.com/phibr0/obsidian-charts">Obsidian Charts plugin</a> to implement the integration between <a href="https://charts.phibr0.de/Dataview%20Integration">Dataview and Charts.js</a>. </p>
+</div>
 <blockquote>
-<p>[!warning] Warning - Extra plugin required
-This visualisation requires the <a href="https://github.com/phibr0/obsidian-charts">Obsidian Charts plugin</a> to implement the integration between <a href="https://charts.phibr0.de/Dataview%20Integration">Dataview and Charts.js</a>. </p>
-<p>To minimise the need for additional plugins when browsing the example vault, images have been included alongside the JS code. </p>
-<p>[!help] Help - Query Structure
-For this type of chart, the query should return three columns representing the <em>Series Name</em>, <em>X-Category</em>, and <em>Y-Value</em>. </p>
-<p>To produce a table like this, often the best approach is to <code>GROUP BY</code> the first and second field in a combined way - then split these back into two columns in the TABLE statement itself. This can be done in several ways, but often it is easiest to call on <code>rows[0]</code> for these values. After a <code>GROUP BY</code> operation, <code>rows[0]</code> will represent the first result inside each group. For Series and Category values (column 1 and 2), we know that all rows in the group will have the same values - so refering directly to the first one is ok. </p>
-<p>This approach is used in the Basic example below, where data is grouped by Year-Month (to count how many projects are started each month), then this is plit into a Year and Month column for processing onto the chart. </p>
+<pre><code>To minimise the need for additional plugins when browsing the example vault, images have been included alongside the JS code.
+</code></pre>
+</blockquote>
+<div class="admonition help">
+<p class="admonition-title">Help - Query Structure</p>
+<p>For this type of chart, the query should return three columns representing the <em>Series Name</em>, <em>X-Category</em>, and <em>Y-Value</em>. </p>
+</div>
+<blockquote>
+<pre><code>To produce a table like this, often the best approach is to `GROUP BY` the first and second field in a combined way - then split these back into two columns in the TABLE statement itself. This can be done in several ways, but often it is easiest to call on `rows[0]` for these values. After a `GROUP BY` operation, `rows[0]` will represent the first result inside each group. For Series and Category values (column 1 and 2), we know that all rows in the group will have the same values - so refering directly to the first one is ok.
+
+This approach is used in the Basic example below, where data is grouped by Year-Month (to count how many projects are started each month), then this is plit into a Year and Month column for processing onto the chart.
+</code></pre>
 </blockquote>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <h3 id="projects-started-by-month-and-year">Projects started by month and year<a class="headerlink" href="#projects-started-by-month-and-year" title="Permanent link">&para;</a></h3>
@@ -3950,51 +3945,51 @@ LIMIT 5
 <h4 id="chart-result">Chart Result<a class="headerlink" href="#chart-result" title="Permanent link">&para;</a></h4>
 <p><img alt="Bar Chart Series Category Value.png" src="../../00%20Meta/attachments/Bar%20Chart%20Series%20Category%20Value.png" /></p>
 <h4 id="dataviewjs">DataviewJS<a class="headerlink" href="#dataviewjs" title="Permanent link">&para;</a></h4>
-<p>``` //dataviewjs
-// -----
-// BASIC SETTINGS
-// -----
-let showTable = false; //show table below chart or not
+<p>``` //dataviewjs<br />
+// -----<br />
+// BASIC SETTINGS<br />
+// -----<br />
+let showTable = false; //show table below chart or not<br />
 let chartType = 'bar'; //bar or line</p>
-<p>let xAxis = "xAxis: {type:'category'}"; //{type:'time', time: {unit: 'day'}}
+<p>let xAxis = "xAxis: {type:'category'}"; //{type:'time', time: {unit: 'day'}}<br />
 let yAxis = "yAxis: {suggestedMin: 0, ticks: {stepSize: 1}";</p>
-<p>let autoLabels = false; //auto lables, or use list below
+<p>let autoLabels = false; //auto lables, or use list below<br />
 var labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]; //only matter if above is false</p>
 <p>var colors = [['#ff6384'],['#36a2eb'],['#ffce56'],['#4bc0c0'],['#9966ff'],['#ff9f40']]; // Unique colours for up to 6 series; then repeats</p>
-<p>let sDQL = '\
-    TABLE WITHOUT ID \
-        dateformat(rows[0].started, "yyyy") AS Year, \
-        dateformat(rows[0].started, "MMM") AS "Month", \
-        length(rows) as "Projects" \
-    FROM "10 Example Data/projects" \
-    GROUP BY dateformat(date(started), "yyyy-MM") AS YearMonth \
+<p>let sDQL = '\<br />
+    TABLE WITHOUT ID \<br />
+        dateformat(rows[0].started, "yyyy") AS Year, \<br />
+        dateformat(rows[0].started, "MMM") AS "Month", \<br />
+        length(rows) as "Projects" \<br />
+    FROM "10 Example Data/projects" \<br />
+    GROUP BY dateformat(date(started), "yyyy-MM") AS YearMonth \<br />
     SORT YearMonth desc'</p>
-<p>// -----
-// BELOW HERE IS LARGELY AUTOMATIC
-// -----
+<p>// -----<br />
+// BELOW HERE IS LARGELY AUTOMATIC<br />
+// -----<br />
 let DQL = await dv.tryQuery(sDQL);</p>
-<p>//extract necessary data columns from above results
-var allRows = DQL.values;
-var allLabels = allRows.map(r =&gt; r[1]);
-var distinctSeries = dv.array(allRows).map(r =&gt; r[0]).distinct();</p>
-<p>//extract labels automatically if required
-if (autoLabels) {
-    labels = allLabels;
+<p>//extract necessary data columns from above results<br />
+var allRows = DQL.values;<br />
+var allLabels = allRows.map(r =    r[1]);<br />
+var distinctSeries = dv.array(allRows).map(r =    r[0]).distinct();</p>
+<p>//extract labels automatically if required<br />
+if (autoLabels) {<br />
+    labels = allLabels;<br />
 }</p>
-<p>//cylce through each series to produce a dataset
-var datasets = [];
-for (let i = 0; i &lt; distinctSeries.length; i++) { 
-    let seriesName = distinctSeries[i];
-    let backCol = colors[i%colors.length]; 
-    let bordCol = colors[i%colors.length]; 
+<p>//cylce through each series to produce a dataset<br />
+var datasets = [];<br />
+for (let i = 0; i &lt; distinctSeries.length; i++) { <br />
+    let seriesName = distinctSeries[i];<br />
+    let backCol = colors[i%colors.length]; <br />
+    let bordCol = colors[i%colors.length]; <br />
     let bWidth = 1;</p>
 <pre><code>//get just the labels and values for this series
-let thisSeriesRows = allRows.filter(r =&gt; r[0] == distinctSeries[i]);
-let thisSeriesLabels = thisSeriesRows.map(r =&gt; r[1]);
-let thisSeriesValues = thisSeriesRows.map(r =&gt; r[2]);
+let thisSeriesRows = allRows.filter(r =    r[0] == distinctSeries[i]);
+let thisSeriesLabels = thisSeriesRows.map(r =    r[1]);
+let thisSeriesValues = thisSeriesRows.map(r =    r[2]);
 
 //for each label, find corresponding value from this series
-let dataPoints = labels.map(l =&gt; {
+let dataPoints = labels.map(l =    {
     let labelIndex = thisSeriesLabels.indexOf(l);
     if (labelIndex &lt; 0) { return 0 }
     else { return thisSeriesValues[labelIndex] }
@@ -4010,21 +4005,21 @@ let chartDataset = {label: seriesName,
 datasets.push(chartDataset);
 </code></pre>
 <p>}</p>
-<p>//Make the xAxis category based, if we are using a fixed array of labels
+<p>//Make the xAxis category based, if we are using a fixed array of labels<br />
 xAxis = (autoLabels ? xAxis : "xAxis: {type:'category'}");</p>
-<p>//graph the datasets using standard chart.js syntax
-const chartData = {
-    type: chartType,
-    data: { 
-        labels: labels,
-        datasets: datasets
-    },
+<p>//graph the datasets using standard chart.js syntax<br />
+const chartData = {<br />
+    type: chartType,<br />
+    data: { <br />
+        labels: labels,<br />
+        datasets: datasets<br />
+    },<br />
     options: {<br />
-        scales: { xAxis, yAxis }
-    }
-}
-window.renderChart(chartData, this.container);
-dv.span(" ");
+        scales: { xAxis, yAxis }<br />
+    }<br />
+}<br />
+window.renderChart(chartData, this.container);<br />
+dv.span(" ");<br />
 if (showTable) { dv.table(DQL.headers, DQL.values) } </p>
 <pre><code>
 
@@ -4043,50 +4038,50 @@ LIMIT 5
 <h4 id="chart-result_1">Chart Result<a class="headerlink" href="#chart-result_1" title="Permanent link">&para;</a></h4>
 <p><img alt="Bar Chart Series Category Value 2.png" src="../../00%20Meta/attachments/Bar%20Chart%20Series%20Category%20Value%202.png" /></p>
 <h4 id="dataviewjs_1">DataviewJS<a class="headerlink" href="#dataviewjs_1" title="Permanent link">&para;</a></h4>
-<p>``` //dataviewjs
-// -----
-// BASIC SETTINGS
-// -----
-let showTable = false; //show table below chart or not
+<p>``` //dataviewjs<br />
+// -----<br />
+// BASIC SETTINGS<br />
+// -----<br />
+let showTable = false; //show table below chart or not<br />
 let chartType = 'bar'; //bar or line</p>
-<p>let xAxis = "xAxis: {type:'category'}"; //{type:'time', time: {unit: 'day'}}
+<p>let xAxis = "xAxis: {type:'category'}"; //{type:'time', time: {unit: 'day'}}<br />
 let yAxis = "yAxis: {suggestedMin: 0, ticks: {stepSize: 1}";</p>
-<p>let autoLabels = true; //auto lables, or use list below
+<p>let autoLabels = true; //auto lables, or use list below<br />
 var labels = ["2021-Q1", "2021-Q2", "2021-Q3", "2021-Q4", "2022-Q1", "2022-Q2", "2022-Q3"]; //only matter if above is false</p>
 <p>var colors = [['#4bc0c0'],['#9966ff'],['#ff9f40'],['#ff6384'],['#36a2eb'],['#ffce56']]; // Unique colours for up to 6 series; then repeats</p>
-<p>let sDQL = '\
-    TABLE WITHOUT ID \
-          rows[0].status as "Status", \
-          dateformat(date(rows[0].started), "yyyy-Qq") as "Quarter", \
-          length(rows) as "Projects" \
-     FROM "10 Example Data/projects" \
+<p>let sDQL = '\<br />
+    TABLE WITHOUT ID \<br />
+          rows[0].status as "Status", \<br />
+          dateformat(date(rows[0].started), "yyyy-Qq") as "Quarter", \<br />
+          length(rows) as "Projects" \<br />
+     FROM "10 Example Data/projects" \<br />
     GROUP BY status + " " + dateformat(date(started), "yyyy-Qq")'</p>
-<p>// -----
-// BELOW HERE IS LARGELY AUTOMATIC
-// -----
+<p>// -----<br />
+// BELOW HERE IS LARGELY AUTOMATIC<br />
+// -----<br />
 let DQL = await dv.tryQuery(sDQL);</p>
-<p>//extract necessary data columns from above results
-var allRows = DQL.values;
-var allLabels = dv.array(allRows).map(r =&gt; r[1]).distinct();
-var distinctSeries = dv.array(allRows).map(r =&gt; r[0]).distinct();</p>
-<p>//extract labels automatically if required
-if (autoLabels) {
-    labels = allLabels.array(); 
+<p>//extract necessary data columns from above results<br />
+var allRows = DQL.values;<br />
+var allLabels = dv.array(allRows).map(r =    r[1]).distinct();<br />
+var distinctSeries = dv.array(allRows).map(r =    r[0]).distinct();</p>
+<p>//extract labels automatically if required<br />
+if (autoLabels) {<br />
+    labels = allLabels.array(); <br />
 }</p>
-<p>//cylce through each series to produce a dataset
-var datasets = [];
-for (let i = 0; i &lt; distinctSeries.length; i++) { 
-    let seriesName = distinctSeries[i];
-    let backCol = colors[i%colors.length]; 
-    let bordCol = colors[i%colors.length]; 
+<p>//cylce through each series to produce a dataset<br />
+var datasets = [];<br />
+for (let i = 0; i &lt; distinctSeries.length; i++) { <br />
+    let seriesName = distinctSeries[i];<br />
+    let backCol = colors[i%colors.length]; <br />
+    let bordCol = colors[i%colors.length]; <br />
     let bWidth = 1;</p>
 <pre><code>//get just the labels and values for this series
-let thisSeriesRows = allRows.filter(r =&gt; r[0] == distinctSeries[i]);
-let thisSeriesLabels = thisSeriesRows.map(r =&gt; r[1]);
-let thisSeriesValues = thisSeriesRows.map(r =&gt; r[2]);
+let thisSeriesRows = allRows.filter(r =    r[0] == distinctSeries[i]);
+let thisSeriesLabels = thisSeriesRows.map(r =    r[1]);
+let thisSeriesValues = thisSeriesRows.map(r =    r[2]);
 
 //for each label, find corresponding value from this series
-let dataPoints = labels.map(l =&gt; {
+let dataPoints = labels.map(l =    {
     let labelIndex = thisSeriesLabels.indexOf(l);
     if (labelIndex &lt; 0) { return 0 }
     else { return thisSeriesValues[labelIndex] }
@@ -4102,50 +4097,50 @@ let chartDataset = {label: seriesName,
 datasets.push(chartDataset);
 </code></pre>
 <p>}</p>
-<p>//graph the datasets using standard chart.js syntax
-xAxis = (autoLabels ? xAxis : "xAxis: {type:'category'}");
-const chartData = {
-    type: chartType,
-    data: { 
-        labels: labels,
-        datasets: datasets
-    },
+<p>//graph the datasets using standard chart.js syntax<br />
+xAxis = (autoLabels ? xAxis : "xAxis: {type:'category'}");<br />
+const chartData = {<br />
+    type: chartType,<br />
+    data: { <br />
+        labels: labels,<br />
+        datasets: datasets<br />
+    },<br />
     options: {<br />
-        scales: { xAxis, yAxis }
-    }
-}
+        scales: { xAxis, yAxis }<br />
+    }<br />
+}<br />
 window.renderChart(chartData, this.container);</p>
 <p>dv.span(" ");</p>
 <p>if (showTable) { dv.table(DQL.headers, DQL.values) } </p>
 <pre><code>
 ---
 %% === end of query page === %%
-&gt; [!help]- Similar Queries
-&gt; Maybe these queries are of interest for you, too:
-&gt; ```dataview
-&gt; LIST
-&gt; FROM &quot;20 Dataview Queries&quot;
-&gt; FLATTEN topics as flattenedTopics
-&gt; WHERE contains(this.topics, flattenedTopics)
-&gt; AND file.name != this.file.name
-&gt; ```
+    [!help]- Similar Queries
+    Maybe these queries are of interest for you, too:
+    ```dataview
+    LIST
+    FROM &quot;20 Dataview Queries&quot;
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name
+    ```
 
 ```dataviewjs
-const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>

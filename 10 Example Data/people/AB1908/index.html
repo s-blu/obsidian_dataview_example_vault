@@ -330,20 +330,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3926,14 +3912,14 @@
 
 <h1 id="ab1908">AB1908<a class="headerlink" href="#ab1908" title="Permanent link">&para;</a></h1>
 <p>The one to blame for all of this initially. Disclaimer: I have no idea about AB's birthday :) </p>
-<blockquote>
-<p>[!info] You'll find this inline query and its explanation <a href="../../../20%20Dataview%20Queries/List%20most%20recent%20meta%20data%20value%20that%20contains%20a%20certain%20phrase/">here</a></p>
-</blockquote>
-<p><code>$=const notes = dv.pages('"10 Example Data/dailys"').where(p =&gt; p.met).where(p =&gt; String(p.met).includes(dv.current().file.name)).sort((p) =&gt; p.file.name, 'desc').limit(1); if (notes.length) { const content = notes.flatMap(m =&gt; dv.array(m.met)).where(m =&gt; m.includes(dv.current().file.name)).last(); dv.span(notes[0].file.link + ": " + content); }</code></p>
+<div class="admonition info">
+<p class="admonition-title">You'll find this inline query and its explanation <a href="../../../20%20Dataview%20Queries/List%20most%20recent%20meta%20data%20value%20that%20contains%20a%20certain%20phrase/">here</a></p>
+</div>
+<p><code>$=const notes = dv.pages('"10 Example Data/dailys"').where(p =    p.met).where(p =&gt; String(p.met).includes(dv.current().file.name)).sort((p) =&gt; p.file.name, 'desc').limit(1); if (notes.length) { const content = notes.flatMap(m =&gt; dv.array(m.met)).where(m =&gt; m.includes(dv.current().file.name)).last(); dv.span(notes[0].file.link + ": " + content); }</code></p>
 <hr />
-<blockquote>
-<p>[!info] You'll find this query and its explanation <a href="../../../20%20Dataview%20Queries/List%20contacts%20with%20a%20person/">here</a></p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">You'll find this query and its explanation <a href="../../../20%20Dataview%20Queries/List%20contacts%20with%20a%20person/">here</a></p>
+</div>
 <pre><code class="language-dataview">TABLE WITHOUT ID 
 rows.file.link AS &quot;Contact note&quot;, 
 rows.day AS &quot;Contact date&quot;, 

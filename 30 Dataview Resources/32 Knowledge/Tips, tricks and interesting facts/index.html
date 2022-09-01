@@ -330,20 +330,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3986,10 +3972,10 @@
 
 <h1 id="tips-tricks-and-interesting-facts">Tips, tricks and interesting facts<a class="headerlink" href="#tips-tricks-and-interesting-facts" title="Permanent link">&para;</a></h1>
 <h2 id="metadata-and-case-sensitivity">Metadata and Case Sensitivity<a class="headerlink" href="#metadata-and-case-sensitivity" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>[!hint] Metadata fields with capital letters  are available in their original and a lowercase form
-For example, if you add <code>wentToSleep:: 22:30</code>, you can access this field in your query via <code>wentToSleep</code> or <code>wenttosleep</code> - but not as <code>wenttoSleep</code> etc!</p>
-</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Metadata fields with capital letters  are available in their original and a lowercase form</p>
+<p>For example, if you add <code>wentToSleep:: 22:30</code>, you can access this field in your query via <code>wentToSleep</code> or <code>wenttosleep</code> - but not as <code>wenttoSleep</code> etc!</p>
+</div>
 <pre><code class="language-dataview">TABLE wentToSleep, wenttosleep, wentTosleep, wenttoSleep, WentToSleep, went-to-sleep
 WHERE file.name = &quot;2022-01-05&quot;
 </code></pre>
@@ -3998,12 +3984,12 @@ FROM &quot;10 Example Data/dailys&quot;
 WHERE file.name = &quot;2022-01-20&quot;
 </code></pre>
 <h2 id="inspecting-available-fields">Inspecting available fields<a class="headerlink" href="#inspecting-available-fields" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>[!hint] Inspect available fields of your current (or any) file
-You can do this either with <code>dv.span(dv.current())</code> for the current file or <code>dv.span(dv.page('nameOfPage')</code> for any other file. For better readability, you can also use the developer console for printing it: use <code>console.log("Current Page:", dv.current())</code> and open the console via SHIFT CTRL I. 
+<div class="admonition hint">
+<p class="admonition-title">Inspect available fields of your current (or any) file</p>
+<p>You can do this either with <code>dv.span(dv.current())</code> for the current file or <code>dv.span(dv.page('nameOfPage')</code> for any other file. For better readability, you can also use the developer console for printing it: use <code>console.log("Current Page:", dv.current())</code> and open the console via SHIFT CTRL I. <br />
 Please mind: This only works as a dataviewjs block - or a javascript inline field! </p>
-</blockquote>
-<p><strong>As js inline query to the console (hit SHIFT + CTRL + I)</strong>
+</div>
+<p><strong>As js inline query to the console (hit SHIFT + CTRL + I)</strong><br />
 <code>$= console.log("Current Page:", dv.current())</code></p>
 <p><strong>As span inside the document</strong> (add <code>dataviewjs</code> to the block to see a result - the output is lengthy!)</p>
 <pre><code>dv.span(dv.page(&quot;2022-01-05&quot;))

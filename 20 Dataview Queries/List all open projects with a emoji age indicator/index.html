@@ -332,20 +332,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00%20Meta/Vault%20Infos/What%20is%20.../" class="md-nav__link">
-        What is ...
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../00%20Meta/Vault%20Infos/What%20is/" class="md-nav__link">
         What is
       </a>
@@ -3934,13 +3920,13 @@ WHERE status != &quot;finished&quot;
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="use-different-emojis-for-certain-timespans">Use different emojis for certain timespans<a class="headerlink" href="#use-different-emojis-for-certain-timespans" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataviewjs">const projects = dv.pages('&quot;10 Example Data/projects&quot;')
-    .where(p =&gt; p.status != &quot;finished&quot;)
-    .mutate(p =&gt; {
+    .where(p =    p.status != &quot;finished&quot;)
+    .mutate(p =    {
         p.age = dv.luxon.Duration.fromMillis(Date.now() - p.started.toMillis())
         p.emojiAgeScore = getEmojiScore(p)
     })
 
-dv.table([&quot;Score&quot;, &quot;Project&quot;, &quot;Started&quot;, &quot;Age&quot;], projects.map(p =&gt; [p.emojiAgeScore, p.file.link, p.started, p.age.toFormat(&quot;y'y' M'm' w'w'&quot;)]))
+dv.table([&quot;Score&quot;, &quot;Project&quot;, &quot;Started&quot;, &quot;Age&quot;], projects.map(p =    [p.emojiAgeScore, p.file.link, p.started, p.age.toFormat(&quot;y'y' M'm' w'w'&quot;)]))
 
 function getEmojiScore(p) {
     const age = p.age.shiftTo('months').toObject()
@@ -3961,32 +3947,30 @@ function addEmojis(emoji, max) {
 
 </code></pre>
 <hr />
-<p>%% === end of query page === %%</p>
-<blockquote>
-<p>[!help]- Similar Queries
-Maybe these queries are of interest for you, too:
+<p>%% === end of query page === %%<br />
+    [!help]- Similar Queries<br />
+    Maybe these queries are of interest for you, too:<br />
 <code>dataview
-LIST
-FROM "20 Dataview Queries"
-FLATTEN topics as flattenedTopics
-WHERE contains(this.topics, flattenedTopics)
-AND file.name != this.file.name</code></p>
-</blockquote>
-<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =&gt; link.path.contains(&quot;33 Use Cases&quot;));
+    LIST
+    FROM "20 Dataview Queries"
+    FLATTEN topics as flattenedTopics
+    WHERE contains(this.topics, flattenedTopics)
+    AND file.name != this.file.name</code></p>
+<pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
-const header = `&gt; [!info] Part of Use Cases`;
+const header = `!!! info &quot;Part of Use Cases`;&quot;
 
-if (inlinksFromUseCases.length &gt; 1) {
-    const list = inlinksFromUseCases.array().reduce((acc, curr) =&gt; `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
+if (inlinksFromUseCases.length     1) {
+    const list = inlinksFromUseCases.array().reduce((acc, curr) =    `${acc}&lt;/br&gt; - ${curr}`,&quot;&quot;)
 
     dv.span(`${header}
-    &gt; This query is part of following use cases:
-    &gt; ${list}
+        This query is part of following use cases:
+        ${list}
     &gt; 
     `)
 } else if (inlinksFromUseCases.length === 1) {
     dv.span(`${header}
-    &gt; This query is part of use case ${inlinksFromUseCases[0]}.
+        This query is part of use case ${inlinksFromUseCases[0]}.
     `)
 }
 </code></pre>
