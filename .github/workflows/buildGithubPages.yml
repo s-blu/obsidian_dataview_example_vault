@@ -18,5 +18,5 @@ jobs:
       - run: pip install mkdocs-material
       - run: pip install mkdocs-roamlinks-plugin
       - run: |
-         cd publish
+         cd .publish
          mkdocs gh-deploy 

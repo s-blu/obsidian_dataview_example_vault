@@ -1,5 +1,6 @@
 site_name: Dataview Example Vault
 repo_url: https://github.com/s-blu/obsidian_dataview_example_vault
+edit_uri: tree/master/
 docs_dir: pages
 
 theme:

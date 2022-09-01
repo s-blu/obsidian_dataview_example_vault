@@ -3,5 +3,5 @@
 .obsidian/workspace
 .obsidian/workspace.json
 .obsidian/community-plugins.json
-publish/pages
-publish/site
+.publish/pages
+.publish/site

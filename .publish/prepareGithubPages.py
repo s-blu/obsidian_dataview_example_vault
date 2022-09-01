@@ -3,7 +3,7 @@ import os
 import re
 from pathlib import Path
 
-pagesDir = "publish/pages"
+pagesDir = ".publish/pages"
 
 if Path(pagesDir).is_dir():
     shutil.rmtree(pagesDir)
@@ -13,7 +13,7 @@ dirsToCopy = ['00 Meta', '10 Example Data',
 for dir in dirsToCopy:
     shutil.copytree(f'{dir}', f'{pagesDir}/{dir}')
 
-shutil.copy('README.md', 'publish/pages/index.md')
+shutil.copy('README.md', f'{pagesDir}/index.md')
 
 for (dirpath, dirnames, filenames) in os.walk(pagesDir):
     for filename in filenames:
