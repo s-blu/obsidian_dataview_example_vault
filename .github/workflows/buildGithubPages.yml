@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+            fetch-depth: 0 # fetch everything so that mkdocs doesn't run into the missing refs problem
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
