@@ -10,7 +10,7 @@ topics:
 
 ## Basic 
 
-![[What is ...#^dv-view]]
+![[What is#^dv-view]]
 
 > [!example] Sources
 > You'll find the sources of this dv.view snippet under `00 Meta/dataview_views/tagcloud`. It expects the values you want to display as an array in the second argument.
