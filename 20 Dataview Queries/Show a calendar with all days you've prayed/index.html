@@ -3904,7 +3904,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/s-blu/obsidian_dataview_example_vault/edit/master/docs/20 Dataview Queries/Show a calendar with all days you've prayed.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/s-blu/obsidian_dataview_example_vault/tree/master/20 Dataview Queries/Show a calendar with all days you've prayed.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
@@ -3921,15 +3921,17 @@ FROM &quot;10 Example Data/dailys&quot;
 WHERE praying = &quot;yes&quot;
 </code></pre>
 <hr />
-<p>%% === end of query page === %%<br />
-    [!help]- Similar Queries<br />
-    Maybe these queries are of interest for you, too:<br />
+<p>%% === end of query page === %%</p>
+<div class="admonition help">
+<p class="admonition-title">Similar Queries</p>
+<p>Maybe these queries are of interest for you, too:<br />
 <code>dataview
-    LIST
-    FROM "20 Dataview Queries"
-    FLATTEN topics as flattenedTopics
-    WHERE contains(this.topics, flattenedTopics)
-    AND file.name != this.file.name</code></p>
+LIST
+FROM "20 Dataview Queries"
+FLATTEN topics as flattenedTopics
+WHERE contains(this.topics, flattenedTopics)
+AND file.name != this.file.name</code></p>
+</div>
 <pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
 const header = `!!! info &quot;Part of Use Cases`;&quot;

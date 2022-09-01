@@ -3904,7 +3904,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/s-blu/obsidian_dataview_example_vault/edit/master/docs/20 Dataview Queries/Sort a table with a custom sort order.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/s-blu/obsidian_dataview_example_vault/tree/master/20 Dataview Queries/Sort a table with a custom sort order.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
@@ -3924,23 +3924,20 @@ SORT choice(recipe-type = &quot;vegetarian&quot;, &quot;1&quot;, choice(recipe-t
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="if-you-have-a-lot-of-values-to-sort">If you have a lot of values to sort<a class="headerlink" href="#if-you-have-a-lot-of-values-to-sort" title="Permanent link">&para;</a></h3>
-<pre><code>[!info]- Query Explanation
-Wondering what's happening here? Let's have a look. First, we're calling `default(customsort, "99")` - that means "If the custom sort doesn't return anything, use 99 as the sort value" - and since we have less than 99 sort items, it'll put it to the very end (and sort all with the same value alphabetically).
-The magic happens here:
-```
-((x) =&gt; something)(G)
-```
-We're calling `((x) =&gt; something)(G)`, meaning we define a [lambda](https://blacksmithgu.github.io/obsidian-dataview/query/expressions/#lambdas) function and put in G (our flattened Genre) as a parameter. G becomes x inside the function.
-```
-{ "Drama":1, 
+<div class="admonition info">
+<p class="admonition-title">Query Explanation</p>
+<p>Wondering what's happening here? Let's have a look. First, we're calling <code>default(customsort, "99")</code> - that means "If the custom sort doesn't return anything, use 99 as the sort value" - and since we have less than 99 sort items, it'll put it to the very end (and sort all with the same value alphabetically).<br />
+The magic happens here:<br />
+<code>((x) =&gt; something)(G)</code><br />
+We're calling <code>((x) =&gt; something)(G)</code>, meaning we define a <a href="https://blacksmithgu.github.io/obsidian-dataview/query/expressions/#lambdas">lambda</a> function and put in G (our flattened Genre) as a parameter. G becomes x inside the function.<br />
+<code>{ "Drama":1, 
 "Crime":2,
 "Horror": 3,
 "Comedy": 4,
 "Thriller": 5,
-"Science-Fiction": 6 }
-```
-is an object that maps our genres to a numeric value that's in the end used to define the sorting. This is what puts "Drama" first and "Crime" second. By calling `[x]` at the very end, we "search" for the genre we pass into the lambda inside the function - returning its numeric value if available or nothing if we did not define it. In case of the latter, we'll get back `99` due to the `default` on top.
-</code></pre>
+"Science-Fiction": 6 }</code><br />
+is an object that maps our genres to a numeric value that's in the end used to define the sorting. This is what puts "Drama" first and "Crime" second. By calling <code>[x]</code> at the very end, we "search" for the genre we pass into the lambda inside the function - returning its numeric value if available or nothing if we did not define it. In case of the latter, we'll get back <code>99</code> due to the <code>default</code> on top.</p>
+</div>
 <pre><code class="language-dataview">TABLE WITHOUT ID key AS &quot;genre&quot;, rows.file.link AS &quot;shows&quot;
 FROM &quot;10 Example Data/shows&quot;
 FLATTEN Genre as G
@@ -3955,15 +3952,17 @@ SORT default(((x) =    {
 }[x])(G), &quot;99&quot;) ASC
 </code></pre>
 <hr />
-<p>%% === end of query page === %%<br />
-    [!help]- Similar Queries<br />
-    Maybe these queries are of interest for you, too:<br />
+<p>%% === end of query page === %%</p>
+<div class="admonition help">
+<p class="admonition-title">Similar Queries</p>
+<p>Maybe these queries are of interest for you, too:<br />
 <code>dataview
-    LIST
-    FROM "20 Dataview Queries"
-    FLATTEN topics as flattenedTopics
-    WHERE contains(this.topics, flattenedTopics)
-    AND file.name != this.file.name</code></p>
+LIST
+FROM "20 Dataview Queries"
+FLATTEN topics as flattenedTopics
+WHERE contains(this.topics, flattenedTopics)
+AND file.name != this.file.name</code></p>
+</div>
 <pre><code class="language-dataviewjs">const inlinksFromUseCases = dv.current().file.inlinks.filter(link =    link.path.contains(&quot;33 Use Cases&quot;));
 
 const header = `!!! info &quot;Part of Use Cases`;&quot;
