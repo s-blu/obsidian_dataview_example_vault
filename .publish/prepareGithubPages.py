@@ -14,6 +14,7 @@ for dir in dirsToCopy:
     shutil.copytree(f'{dir}', f'{pagesDir}/{dir}')
 
 shutil.copy('README.md', f'{pagesDir}/index.md')
+shutil.copytree(f'.publish/assets', f'{pagesDir}/assets')
 
 for (dirpath, dirnames, filenames) in os.walk(pagesDir):
     for filename in filenames:
@@ -23,6 +24,12 @@ for (dirpath, dirnames, filenames) in os.walk(pagesDir):
         try:
             with open(filepath, 'r') as file:
                 filedata = file.read()
+
+                # Remove navigation queries from bottom of file
+                filedata = re.sub(
+                    r"---\s(%% === end of query page === %%)(.+)", '', filedata, flags=re.DOTALL)
+
+                # Change Callout syntax to adminition syntax
                 filedata = re.sub(r"> \[\!(.+?)\][-+]? (.+)",
                                   r'!!! \1 "\2"', filedata)
                 # TODO this also converts standard cite blocks, would need to check if I have a match with the first one before this

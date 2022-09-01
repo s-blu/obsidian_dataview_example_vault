@@ -9,7 +9,8 @@ theme:
     scheme: slate
     primary: deep purple
     accent: deep purple
-
+  logo: assets/logo.png
+  favicon: assets/logo.png
 markdown_extensions:
     - toc:
          permalink: True
