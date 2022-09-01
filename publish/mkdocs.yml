@@ -3,12 +3,16 @@ repo_url: https://github.com/s-blu/obsidian_dataview_example_vault
 docs_dir: pages
 
 theme:
+  name: material
   palette:
     scheme: slate
     primary: deep purple
     accent: deep purple
-  - toc:
-      permalink: true
+
+markdown_extensions:
+    - toc:
+         permalink: True
+    - fenced_code
 
 plugins:
   - search
