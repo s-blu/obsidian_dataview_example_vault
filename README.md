@@ -26,7 +26,7 @@ While I heartly recommend to download the vault, if you only want to browse thro
 
 [**Online Version of the Obsidian Example Vault**](https://s-blu.github.io/obsidian_dataview_example_vault/)
 
-Please note that some formattings could be off. Feel free to open an issue to inform us about that! To see the results of the queries, you need to download the vault. 
+To see the results of the queries, you need to download the vault. 
 
 ## Documentation & FAQ
 
