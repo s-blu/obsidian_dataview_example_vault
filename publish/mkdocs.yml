@@ -13,6 +13,10 @@ markdown_extensions:
     - toc:
          permalink: True
     - fenced_code
+    - tables
+    - admonition
+    - meta
+    - nl2br
 
 plugins:
   - search
