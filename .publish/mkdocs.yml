@@ -11,15 +11,19 @@ theme:
     accent: deep purple
   logo: assets/logo.png
   favicon: assets/logo.png
+  features:
+    - navigation.instant
+  
 markdown_extensions:
     - toc:
          permalink: True
     - fenced_code
     - tables
     - admonition
-    - meta
     - nl2br
 
 plugins:
   - search
-  - roamlinks 
+  - roamlinks
+  - tags:
+      tags_file: tagindex.md
