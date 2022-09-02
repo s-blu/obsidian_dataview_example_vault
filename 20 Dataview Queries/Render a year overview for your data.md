@@ -267,6 +267,68 @@ function generateTooltip(date) {
 }
 ```
 
+### Render more than one meta data per day 
+
+> [!info] Rendering multiple values
+> The amount of color blocks is determined by the number of colors given back, so all you need to tweak is what `determineColor` is giving back - and maybe increase the size of the day elements. 😉
+> If you want to use intensity too, `determineColor` needs to return something like ```[`rgba(177, 200, 51, ${(page.wellbeing.mood / 4)})`, `rgba(50, 90, 220, ${(page.wellbeing.health / 4)})`]```
+
+```dataviewjs
+const values = dv.pages('"10 Example Data/dailys"').where(p => p.wellbeing?.mood);
+const year = 2022;
+const emptyColor = "rgba(255,255,255,0.1)";
+
+// == Fill data ==
+let date = dv.luxon.DateTime.utc(year)
+const calendar = [];
+for(let i = 1; i <= 12; i++) {
+	calendar[i] = []
+}
+
+while (date.year === year) {
+	calendar[date.month].push(
+	getDayEl(
+		date, 
+		determineColor(date)))
+
+	date = addOneDay(date);
+}
+
+// == Render calendar ==
+calendar.forEach((month, i) => {
+	const monthEl = `<span style='display:inline-block;min-width:30px;font-size:small'>${dv.luxon.DateTime.utc(year, i).toFormat('MMM')}</span>`
+	
+	dv.el("div", monthEl + month.reduce((acc, curr) => `${acc} ${curr}`, ""))
+})
+
+function addOneDay(date) {
+	return dv.luxon.DateTime.fromMillis(date + dv.duration("1d"))
+}
+
+function getDayEl(date, colors) {
+	const sizeOfDays = 14;
+	const sizeOfColors = Math.round(sizeOfDays / colors.length)
+	let dayEl = `<span style="width:${sizeOfDays}px;height:${sizeOfDays}px;display:inline-flex;flex-direction:column" title="${date.toFormat('yyyy-MM-dd')}">`
+	for (let color of colors) {
+		dayEl += `<span style="width:${sizeOfDays}px;height:${sizeOfColors}px;background-color:${color};display:inline-flex;"></span>`
+	}
+	dayEl += "</span>"
+	return dayEl;
+}
+
+function determineColor(date) {
+	const page = values.find(p => p.day.startOf('day').equals(date.startOf('day')));
+	if (!page) return [emptyColor, emptyColor];
+
+	return [
+		page.beingthankful ? "#be83eb" : emptyColor,
+		page.praying ? "#6c79b5" : emptyColor
+	]
+}
+```
+
+
+
 ---
 %% === end of query page === %%
 > [!help]- Similar Queries
