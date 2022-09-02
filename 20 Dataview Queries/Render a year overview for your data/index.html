@@ -3412,6 +3412,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#render-more-than-one-meta-data-per-day" class="md-nav__link">
+    Render more than one meta data per day
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4040,6 +4047,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#render-more-than-one-meta-data-per-day" class="md-nav__link">
+    Render more than one meta data per day
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4345,6 +4359,64 @@ function generateTooltip(date) {
     if (!page) return date.toFormat('yyyy-MM-dd');
 
     return `${page.file.name}: ${page.wellbeing?.mood ?? ''}`
+}
+</code></pre>
+<h3 id="render-more-than-one-meta-data-per-day">Render more than one meta data per day<a class="headerlink" href="#render-more-than-one-meta-data-per-day" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Rendering multiple values</p>
+<p>The amount of color blocks is determined by the number of colors given back, so all you need to tweak is what <code>determineColor</code> is giving back - and maybe increase the size of the day elements. 😉<br />
+If you want to use intensity too, <code>determineColor</code> needs to return something like <code>[`rgba(177, 200, 51, ${(page.wellbeing.mood / 4)})`, `rgba(50, 90, 220, ${(page.wellbeing.health / 4)})`]</code></p>
+</div>
+<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =    p.wellbeing?.mood);
+const year = 2022;
+const emptyColor = &quot;rgba(255,255,255,0.1)&quot;;
+
+// == Fill data ==
+let date = dv.luxon.DateTime.utc(year)
+const calendar = [];
+for(let i = 1; i &lt;= 12; i++) {
+    calendar[i] = []
+}
+
+while (date.year === year) {
+    calendar[date.month].push(
+    getDayEl(
+        date, 
+        determineColor(date)))
+
+    date = addOneDay(date);
+}
+
+// == Render calendar ==
+calendar.forEach((month, i) =    {
+    const monthEl = `&lt;span style='display:inline-block;min-width:30px;font-size:small'&gt;${dv.luxon.DateTime.utc(year, i).toFormat('MMM')}&lt;/span&gt;`
+
+    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =    `${acc} ${curr}`, &quot;&quot;))
+})
+
+function addOneDay(date) {
+    return dv.luxon.DateTime.fromMillis(date + dv.duration(&quot;1d&quot;))
+}
+
+function getDayEl(date, colors) {
+    const sizeOfDays = 14;
+    const sizeOfColors = Math.round(sizeOfDays / colors.length)
+    let dayEl = `&lt;span style=&quot;width:${sizeOfDays}px;height:${sizeOfDays}px;display:inline-flex;flex-direction:column&quot; title=&quot;${date.toFormat('yyyy-MM-dd')}&quot;&gt;`
+    for (let color of colors) {
+        dayEl += `&lt;span style=&quot;width:${sizeOfDays}px;height:${sizeOfColors}px;background-color:${color};display:inline-flex;&quot;&gt;&lt;/span&gt;`
+    }
+    dayEl += &quot;&lt;/span&gt;&quot;
+    return dayEl;
+}
+
+function determineColor(date) {
+    const page = values.find(p =    p.day.startOf('day').equals(date.startOf('day')));
+    if (!page) return [emptyColor, emptyColor];
+
+    return [
+        page.beingthankful ? &quot;#be83eb&quot; : emptyColor,
+        page.praying ? &quot;#6c79b5&quot; : emptyColor
+    ]
 }
 </code></pre>
 
