@@ -37,6 +37,7 @@
  - [ ] Add a page about [transforming dates](https://discord.com/channels/686053708261228577/875721010144477204/1011564039639404584) into a [format dataview recognizes](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/#field-types)
  - [ ] Add [List activity log from projects in daily note via a date header](https://discord.com/channels/686053708261228577/1014259487445622855/1014949689394741370)
  - [ ] Add [student assignment overview](https://discord.com/channels/686053708261228577/1014259487445622855/1014879231743893525)
+ - [ ] Add a page how to format dates with reference to https://moment.github.io/luxon/#/formatting?id=table-of-tokens (see also [here](https://discord.com/channels/686053708261228577/1014259487445622855/1016131007923097641))
 
 ## Missing but linked pages
 

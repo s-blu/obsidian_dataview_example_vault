@@ -3,6 +3,7 @@ description: Render a year overview and color every day that matches your search
 topics:
   - visualization
   - year overview
+  - yearly
 ---
  #dv/dataviewjs #dvjs/pages #dvjs/luxon #dvjs/el #dvjs/duration #dvjs/view
 
