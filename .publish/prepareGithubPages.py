@@ -44,12 +44,14 @@ for (dirpath, dirnames, filenames) in os.walk(pagesDir):
                     r"---\s(%% === end of query page === %%)(.+)", '', filedata, flags=re.DOTALL)
 
                 # Change Callout syntax to admonition syntax
-                filedata = re.sub(r"> \[\!(.+?)\][-+]? (.+)",
-                                  r'!!! \1 "\2"', filedata)
+                filedata = re.sub(r"^> \[\!(.+?)\][-+]? (.+)",
+                                  r'!!! \1 "\2"', filedata, flags=re.MULTILINE)
                 # Remove lines that just contain a "> " if there's another "> something" following, since empty lines break the admonition syntax
-                filedata = re.sub(r">\s> (.+)", r'    \1', filedata)
+                filedata = re.sub(r"^>\s> (.+)", r'    \1',
+                                  filedata, flags=re.MULTILINE)
                 # TODO this also converts standard cite blocks, would need to check if I have a match with the first one before this
-                filedata = re.sub(r"> (.+)", r'    \1', filedata)
+                filedata = re.sub(r"^> (.+)", r'    \1',
+                                  filedata, flags=re.MULTILINE)
 
                 # extract description from frontmatter and replace frontmatter with it. Isn't the fanciest thing to do, need to think of something better.
                 filedata = re.sub(
