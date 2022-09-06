@@ -3641,6 +3641,26 @@
     If you have a lot of values to sort
   </a>
   
+    <nav class="md-nav" aria-label="If you have a lot of values to sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-a-flattened-field" class="md-nav__link">
+    With a flattened field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-no-flattened-field" class="md-nav__link">
+    With no flattened field
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -3996,6 +4016,26 @@
     If you have a lot of values to sort
   </a>
   
+    <nav class="md-nav" aria-label="If you have a lot of values to sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-a-flattened-field" class="md-nav__link">
+    With a flattened field
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-no-flattened-field" class="md-nav__link">
+    With no flattened field
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -4106,6 +4146,7 @@ We're calling <code>((x) =&gt; something)(G)</code>, meaning we define a <a href
 "Science-Fiction": 6 }</code><br />
 is an object that maps our genres to a numeric value that's in the end used to define the sorting. This is what puts "Drama" first and "Crime" second. By calling <code>[x]</code> at the very end, we "search" for the genre we pass into the lambda inside the function - returning its numeric value if available or nothing if we did not define it. In case of the latter, we'll get back <code>99</code> due to the <code>default</code> on top.</p>
 </div>
+<h4 id="with-a-flattened-field">With a flattened field<a class="headerlink" href="#with-a-flattened-field" title="Permanent link">&para;</a></h4>
 <pre><code class="language-dataview">TABLE WITHOUT ID key AS &quot;genre&quot;, rows.file.link AS &quot;shows&quot;
 FROM &quot;10 Example Data/shows&quot;
 FLATTEN Genre as G
@@ -4118,6 +4159,15 @@ SORT default(((x) =    {
 &quot;Thriller&quot;: 5,
 &quot;Science-Fiction&quot;: 6
 }[x])(G), &quot;99&quot;) ASC
+</code></pre>
+<h4 id="with-no-flattened-field">With no flattened field<a class="headerlink" href="#with-no-flattened-field" title="Permanent link">&para;</a></h4>
+<pre><code class="language-dataview">TABLE Show_status
+FROM &quot;10 Example Data/shows&quot;
+SORT default(((x) =    {
+&quot;Running&quot;:1,
+&quot;To Be Determined&quot;: 2,
+&quot;Ended&quot;: 3
+}[x])(show_status), &quot;99&quot;) ASC
 </code></pre>
 
 
