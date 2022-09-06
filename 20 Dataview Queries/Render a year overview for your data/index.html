@@ -4126,7 +4126,7 @@
 <h1 id="render-a-year-overview-for-your-data">Render a year overview for your data<a class="headerlink" href="#render-a-year-overview-for-your-data" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <p>Track activities in your dailies, i.e. if you have prayed.</p>
-<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =    p.praying === &quot;yes&quot;);
+<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.praying === &quot;yes&quot;);
 const year = 2022;
 const color = &quot;green&quot;;
 const emptyColor = &quot;rgba(255,255,255,0.1)&quot;;
@@ -4140,17 +4140,17 @@ for(let i = 1; i &lt;= 12; i++) {
 
 // == Fill calendar ==
 while (date.year == year) {
-    const col = !!values.find(p =    p.day.equals(date.startOf('day'))) ? color : emptyColor;
+    const col = !!values.find(p =&gt; p.day.equals(date.startOf('day'))) ? color : emptyColor;
     calendar[date.month].push(getDayEl(date, col))
 
     date = addOneDay(date);
 }
 
 // == Render calendar ==
-calendar.forEach((month, i) =    {
+calendar.forEach((month, i) =&gt; {
     const monthEl = `&lt;span style='display:inline-block;min-width:30px;font-size:small'&gt;${dv.luxon.DateTime.utc(year, i).toFormat('MMM')}&lt;/span&gt;`
 
-    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =    `${acc} ${curr}`, &quot;&quot;))
+    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =&gt; `${acc} ${curr}`, &quot;&quot;))
 })
 
 function addOneDay(date) {
@@ -4165,7 +4165,7 @@ function getDayEl(date, color) {
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="use-a-meta-data-field-with-a-date-instead-of-fileday">Use a meta data field with a date instead of file.day<a class="headerlink" href="#use-a-meta-data-field-with-a-date-instead-of-fileday" title="Permanent link">&para;</a></h3>
 <p>See on one glimpse the <strong>start</strong> and <strong>finish</strong> dates of your projects.</p>
-<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/projects&quot;').where(p =    p.started);
+<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/projects&quot;').where(p =&gt; p.started);
 const year = 2022;
 const emptyColor = &quot;rgba(255,255,255,0.1)&quot;;
 
@@ -4183,10 +4183,10 @@ while (date.year == year) {
 }
 
 // == Render calendar ==
-calendar.forEach((month, i) =    {
+calendar.forEach((month, i) =&gt; {
     const monthEl = `&lt;span style='display:inline-block;min-width:30px;font-size:small'&gt;${dv.luxon.DateTime.utc(year, i).toFormat('MMM')}&lt;/span&gt;`
 
-    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =    `${acc} ${curr}`, &quot;&quot;))
+    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =&gt; `${acc} ${curr}`, &quot;&quot;))
 })
 
 function addOneDay(date) {
@@ -4198,8 +4198,8 @@ function getDayEl(date, color) {
 }
 
 function determineColor(date) {
-    const started = values.find(p =    p.started?.startOf('day').equals(date.startOf('day')));
-    const finished = values.find(p =    p.finished?.startOf('day').equals(date.startOf('day')));
+    const started = values.find(p =&gt; p.started?.startOf('day').equals(date.startOf('day')));
+    const finished = values.find(p =&gt; p.finished?.startOf('day').equals(date.startOf('day')));
     let color = emptyColor;
 
     if (started &amp;&amp; finished) {
@@ -4215,7 +4215,7 @@ function determineColor(date) {
 </code></pre>
 <h3 id="add-information-on-hover">Add information on hover<a class="headerlink" href="#add-information-on-hover" title="Permanent link">&para;</a></h3>
 <p>Hover over a dot and wait a moment to see which project started or finished.</p>
-<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/projects&quot;').where(p =    p.started);
+<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/projects&quot;').where(p =&gt; p.started);
 const year = 2022;
 const emptyColor = &quot;rgba(255,255,255,0.1)&quot;;
 
@@ -4233,7 +4233,7 @@ while (date.year == year) {
 
     function createTooltip() {
         let tooltip = &quot;&quot;;
-        const vals = values.filter(p =    checkDateEq(p.started, date) || checkDateEq(p.finished, date))
+        const vals = values.filter(p =&gt; checkDateEq(p.started, date) || checkDateEq(p.finished, date))
         for (let val of vals) {
             tooltip += `${val.file.name} `
         }
@@ -4242,10 +4242,10 @@ while (date.year == year) {
 }
 
 // == Render calendar ==
-calendar.forEach((month, i) =    {
+calendar.forEach((month, i) =&gt; {
     const monthEl = `&lt;span style='display:inline-block;min-width:30px;font-size:small'&gt;${dv.luxon.DateTime.utc(year, i).toFormat('MMM')}&lt;/span&gt;`
 
-    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =    `${acc} ${curr}`, &quot;&quot;))
+    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =&gt; `${acc} ${curr}`, &quot;&quot;))
 })
 
 function addOneDay(date) {
@@ -4262,8 +4262,8 @@ function checkDateEq(date1, date2) {
 }
 
 function determineColor(date) {
-    const started = values.find(p =    p.started?.startOf('day').equals(date.startOf('day')));
-    const finished = values.find(p =    p.finished?.startOf('day').equals(date.startOf('day')));
+    const started = values.find(p =&gt; p.started?.startOf('day').equals(date.startOf('day')));
+    const finished = values.find(p =&gt; p.finished?.startOf('day').equals(date.startOf('day')));
     let color = emptyColor;
 
     if (started &amp;&amp; finished) {
@@ -4278,7 +4278,7 @@ function determineColor(date) {
 }
 </code></pre>
 <h3 id="use-a-intensity-to-display-different-values">Use a intensity to display different values<a class="headerlink" href="#use-a-intensity-to-display-different-values" title="Permanent link">&para;</a></h3>
-<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =    p.wellbeing?.mood);
+<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.wellbeing?.mood);
 const year = 2022;
 const emptyColor = &quot;rgba(255,255,255,0.1)&quot;;
 
@@ -4299,10 +4299,10 @@ while (date.year == year) {
 }
 
 // == Render calendar ==
-calendar.forEach((month, i) =    {
+calendar.forEach((month, i) =&gt; {
     const monthEl = `&lt;span style='display:inline-block;min-width:30px;font-size:small'&gt;${dv.luxon.DateTime.utc(year, i).toFormat('MMM')}&lt;/span&gt;`
 
-    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =    `${acc} ${curr}`, &quot;&quot;))
+    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =&gt; `${acc} ${curr}`, &quot;&quot;))
 })
 
 function addOneDay(date) {
@@ -4315,7 +4315,7 @@ function getDayEl(date, color) {
 }
 
 function determineColor(date) {
-    const page = values.find(p =    p.day.startOf('day').equals(date.startOf('day')));
+    const page = values.find(p =&gt; p.day.startOf('day').equals(date.startOf('day')));
     if (!page) return emptyColor;
 
 
@@ -4329,13 +4329,13 @@ function determineColor(date) {
 <p><strong>Simple case</strong> - input pages to display, the year to render and an "active" color </p>
 <pre><code class="language-dataviewjs">await dv.view(&quot;00 Meta/dataview_views/year_overview&quot;, 
     {
-        pages: dv.pages('&quot;10 Example Data/dailys&quot;').where(p =    p.praying === &quot;yes&quot;),
+        pages: dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.praying === &quot;yes&quot;),
         year: 2022,
         color: &quot;green&quot;
     })
 </code></pre>
 <p><strong>Complex case</strong> - Provide functions to determine color and tooltip. Both function will be called with the date to fill as argument and need to give back a string.</p>
-<pre><code class="language-dataviewjs">const pages = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =    p.wellbeing?.mood);
+<pre><code class="language-dataviewjs">const pages = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.wellbeing?.mood);
 
 await dv.view(&quot;00 Meta/dataview_views/year_overview&quot;, 
     {
@@ -4346,7 +4346,7 @@ await dv.view(&quot;00 Meta/dataview_views/year_overview&quot;,
     })
 
 function determineColor(date) {
-    const page = pages.find(p =    p.day.startOf('day').equals(date.startOf('day')));
+    const page = pages.find(p =&gt; p.day.startOf('day').equals(date.startOf('day')));
     if (!page) return &quot;rgba(9, 99, 199, 0.15)&quot;;
 
     let opacity = (page.wellbeing.mood / 4) ;
@@ -4355,7 +4355,7 @@ function determineColor(date) {
 }
 
 function generateTooltip(date) {
-    const page = pages.find(p =    p.day.startOf('day').equals(date.startOf('day')));
+    const page = pages.find(p =&gt; p.day.startOf('day').equals(date.startOf('day')));
     if (!page) return date.toFormat('yyyy-MM-dd');
 
     return `${page.file.name}: ${page.wellbeing?.mood ?? ''}`
@@ -4367,7 +4367,7 @@ function generateTooltip(date) {
 <p>The amount of color blocks is determined by the number of colors given back, so all you need to tweak is what <code>determineColor</code> is giving back - and maybe increase the size of the day elements. 😉<br />
 If you want to use intensity too, <code>determineColor</code> needs to return something like <code>[`rgba(177, 200, 51, ${(page.wellbeing.mood / 4)})`, `rgba(50, 90, 220, ${(page.wellbeing.health / 4)})`]</code></p>
 </div>
-<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =    p.wellbeing?.mood);
+<pre><code class="language-dataviewjs">const values = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.wellbeing?.mood);
 const year = 2022;
 const emptyColor = &quot;rgba(255,255,255,0.1)&quot;;
 
@@ -4388,10 +4388,10 @@ while (date.year === year) {
 }
 
 // == Render calendar ==
-calendar.forEach((month, i) =    {
+calendar.forEach((month, i) =&gt; {
     const monthEl = `&lt;span style='display:inline-block;min-width:30px;font-size:small'&gt;${dv.luxon.DateTime.utc(year, i).toFormat('MMM')}&lt;/span&gt;`
 
-    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =    `${acc} ${curr}`, &quot;&quot;))
+    dv.el(&quot;div&quot;, monthEl + month.reduce((acc, curr) =&gt; `${acc} ${curr}`, &quot;&quot;))
 })
 
 function addOneDay(date) {
@@ -4410,7 +4410,7 @@ function getDayEl(date, colors) {
 }
 
 function determineColor(date) {
-    const page = values.find(p =    p.day.startOf('day').equals(date.startOf('day')));
+    const page = values.find(p =&gt; p.day.startOf('day').equals(date.startOf('day')));
     if (!page) return [emptyColor, emptyColor];
 
     return [

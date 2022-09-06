@@ -4033,13 +4033,13 @@
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataview">TABLE choice(praying, &quot;💚&quot;, &quot;➖&quot;) AS Praying, choice(breathing, &quot;💚&quot;, &quot;➖&quot;) AS breating, choice(beingthankful, &quot;💚&quot;, &quot;➖&quot;) AS &quot;being thankful&quot;, choice(slowdown, &quot;💚&quot;, &quot;➖&quot;) AS &quot;slow down&quot;
 FROM &quot;10 Example Data/dailys&quot;
-WHERE wellbeing.mood     0 AND date(file.day).weekyear = 2
+WHERE wellbeing.mood &gt; 0 AND date(file.day).weekyear = 2
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <p>Add the mood of the day as a smiley</p>
-<pre><code class="language-dataview">TABLE choice(wellbeing.mood = 1, &quot;😢&quot;, choice(wellbeing.mood = 2 or wellbeing.mood = 3, &quot;😐&quot;, choice(wellbeing.mood     3, &quot;😃&quot;, &quot;&quot;))) as Mood, choice(praying, &quot;💚&quot;, &quot;➖&quot;) AS Praying, choice(breathing, &quot;💚&quot;, &quot;➖&quot;) AS breating, choice(beingthankful, &quot;💚&quot;, &quot;➖&quot;) AS &quot;being thankful&quot;, choice(slowdown, &quot;💚&quot;, &quot;➖&quot;) AS &quot;slow down&quot;
+<pre><code class="language-dataview">TABLE choice(wellbeing.mood = 1, &quot;😢&quot;, choice(wellbeing.mood = 2 or wellbeing.mood = 3, &quot;😐&quot;, choice(wellbeing.mood &gt; 3, &quot;😃&quot;, &quot;&quot;))) as Mood, choice(praying, &quot;💚&quot;, &quot;➖&quot;) AS Praying, choice(breathing, &quot;💚&quot;, &quot;➖&quot;) AS breating, choice(beingthankful, &quot;💚&quot;, &quot;➖&quot;) AS &quot;being thankful&quot;, choice(slowdown, &quot;💚&quot;, &quot;➖&quot;) AS &quot;slow down&quot;
 FROM &quot;10 Example Data/dailys&quot;
-WHERE wellbeing.mood     0 AND date(file.day).weekyear = 2
+WHERE wellbeing.mood &gt; 0 AND date(file.day).weekyear = 2
 </code></pre>
 
 

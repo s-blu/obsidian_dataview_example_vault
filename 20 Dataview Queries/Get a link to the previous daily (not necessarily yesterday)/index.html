@@ -4099,7 +4099,7 @@ LIMIT 1
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="as-javascript-inline-statement">As javascript inline statement<a class="headerlink" href="#as-javascript-inline-statement" title="Permanent link">&para;</a></h3>
-<p><code>$= dv.pages('"10 Example Data/dailys"').where(p =    p.file.day &amp;&amp; p.file.day &lt; dv.current().file.day).sort(p =&gt; p.file.day, "desc").file.link.limit(1)</code></p>
+<p><code>$= dv.pages('"10 Example Data/dailys"').where(p =&gt; p.file.day &amp;&amp; p.file.day &lt; dv.current().file.day).sort(p =&gt; p.file.day, "desc").file.link.limit(1)</code></p>
 <h3 id="show-a-custom-prefix-before-the-link">Show a custom prefix before the link<a class="headerlink" href="#show-a-custom-prefix-before-the-link" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataview">LIST WITHOUT ID t
 FROM &quot;10 Example Data/dailys&quot;
@@ -4111,7 +4111,7 @@ LIMIT 1
 <h3 id="get-a-link-to-the-next-day-with-a-daily-note">Get a link to the next day with a daily note<a class="headerlink" href="#get-a-link-to-the-next-day-with-a-daily-note" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataview">LIST WITHOUT ID t
 FROM &quot;10 Example Data/dailys&quot;
-WHERE file.name != this.file.name AND file.day     this.file.day
+WHERE file.name != this.file.name AND file.day &gt; this.file.day
 SORT file.day ASC
 FLATTEN &quot;Next day: &quot; + file.link AS t
 LIMIT 1

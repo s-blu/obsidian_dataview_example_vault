@@ -4076,19 +4076,19 @@
 <h1 id="calculate-sum-of-working-hours-for-a-project">Calculate Sum of working hours for a project<a class="headerlink" href="#calculate-sum-of-working-hours-for-a-project" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataviewjs">const projects = dv.pages('&quot;10 Example Data/projects&quot;')
-    .where(p =    p[&quot;working hours&quot;])
-    .mutate(p =    p.workHourSum = sumUpWorkHours(p[&quot;working hours&quot;]))
+    .where(p =&gt; p[&quot;working hours&quot;])
+    .mutate(p =&gt; p.workHourSum = sumUpWorkHours(p[&quot;working hours&quot;]))
 
 
 dv.table([&quot;Project&quot;, &quot;Working Hours&quot;, &quot;Sum Working Hours&quot;], 
-         projects.map(p =    [p.file.link, p[&quot;working hours&quot;], p.workHourSum]))
+         projects.map(p =&gt; [p.file.link, p[&quot;working hours&quot;], p.workHourSum]))
 
 function sumUpWorkHours(workingHours) {
     const durations = workingHours
         .split(&quot;,&quot;)
-        .map(h =    dv.luxon.Duration.fromISOTime(h.trim()));
+        .map(h =&gt; dv.luxon.Duration.fromISOTime(h.trim()));
 
-    const sum = durations.reduce((acc, curr) =    acc + curr, 0)
+    const sum = durations.reduce((acc, curr) =&gt; acc + curr, 0)
     return dv.luxon.Duration.fromMillis(sum) 
 }
 </code></pre>
@@ -4099,20 +4099,20 @@ function sumUpWorkHours(workingHours) {
 <p>Have a look at the <a href="https://moment.github.io/luxon/api-docs/index.html#durationtoformat">luxon documentation</a> for a reference of possible formats</p>
 </div>
 <pre><code class="language-dataviewjs">const projects = dv.pages('&quot;10 Example Data/projects&quot;')
-    .where(p =    p[&quot;working hours&quot;])
-    .mutate(p =    p.workHourSum = sumUpWorkHours(p[&quot;working hours&quot;]))
-    .sort(p =    p.status, &quot;desc&quot;)
+    .where(p =&gt; p[&quot;working hours&quot;])
+    .mutate(p =&gt; p.workHourSum = sumUpWorkHours(p[&quot;working hours&quot;]))
+    .sort(p =&gt; p.status, &quot;desc&quot;)
 
 
 dv.table([&quot;Project&quot;, &quot;ID&quot;, &quot;Status&quot;, &quot;Tags&quot;, &quot;Sum&quot;], 
-         projects.map(p =    [p.file.link, p[&quot;Project ID&quot;], p.status, p[&quot;tags&quot;], p.workHourSum]))
+         projects.map(p =&gt; [p.file.link, p[&quot;Project ID&quot;], p.status, p[&quot;tags&quot;], p.workHourSum]))
 
 function sumUpWorkHours(workingHours) {
     const durations = workingHours
         .split(&quot;,&quot;)
-        .map(h =    dv.luxon.Duration.fromISOTime(h.trim()));
+        .map(h =&gt; dv.luxon.Duration.fromISOTime(h.trim()));
 
-    const sum = durations.reduce((acc, curr) =    acc + curr, 0)
+    const sum = durations.reduce((acc, curr) =&gt; acc + curr, 0)
     return dv.luxon.Duration.fromMillis(sum).toFormat(&quot;hh'h' mm'm'&quot;)
 }
 </code></pre>

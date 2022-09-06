@@ -4132,18 +4132,18 @@ LIMIT 1
 <p class="admonition-title">Usage</p>
 <p>A inline query can be i.e. used as a field for the Kanban Board Plugin</p>
 </div>
-<p><code>$=const notes = dv.pages('"10 Example Data/dailys"').where(p =    p.met).where(p =&gt; String(p.met).includes("Sophie")).sort((p) =&gt; p.file.name, 'desc').limit(1); if (notes.length) { const content = notes.flatMap(m =&gt; dv.array(m.met)).where(m =&gt; m.includes("Sophie")).last(); dv.span(notes[0].file.link + ": " + content); }</code></p>
+<p><code>$=const notes = dv.pages('"10 Example Data/dailys"').where(p =&gt; p.met).where(p =&gt; String(p.met).includes("Sophie")).sort((p) =&gt; p.file.name, 'desc').limit(1); if (notes.length) { const content = notes.flatMap(m =&gt; dv.array(m.met)).where(m =&gt; m.includes("Sophie")).last(); dv.span(notes[0].file.link + ": " + content); }</code></p>
 <p>When editing this, it can be helpful to put it into a regular dataviewjs block while editing for better readability:</p>
 <pre><code class="language-dataviewjs">const notes = dv.pages('&quot;10 Example Data/dailys&quot;')
-    .where(p =    p.met)
-    .where(p =    String(p.met)
+    .where(p =&gt; p.met)
+    .where(p =&gt; String(p.met)
     .includes(&quot;Sophie&quot;))
-    .sort((p) =    p.file.name, 'desc')
+    .sort((p) =&gt; p.file.name, 'desc')
     .limit(1); 
 
 if (notes.length) { 
     const content = notes
-        .flatMap(m =    dv.array(m.met)).where(m =&gt; m.includes(&quot;Sophie&quot;))
+        .flatMap(m =&gt; dv.array(m.met)).where(m =&gt; m.includes(&quot;Sophie&quot;))
         .last(); 
 
     dv.span(notes[0].file.link + &quot;: &quot; + content); 

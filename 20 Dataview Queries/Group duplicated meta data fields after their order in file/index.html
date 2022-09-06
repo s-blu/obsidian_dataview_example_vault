@@ -4023,7 +4023,7 @@
 </div>
 <h1 id="group-duplicated-meta-data-fields-after-their-order-in-file">Group duplicated meta data fields after their order in file<a class="headerlink" href="#group-duplicated-meta-data-fields-after-their-order-in-file" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
-<pre><code class="language-dataviewjs">const pages = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =    p.bought).sort(p =&gt; p.file.name)
+<pre><code class="language-dataviewjs">const pages = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.bought).sort(p =&gt; p.file.name)
 
 const groupedValues = [];
 for (let page of pages) {

@@ -4031,12 +4031,12 @@
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataviewjs">const amountOfImages = 3; 
 const pathToImageFolder = '00 Meta/attachments' 
-const imageFiles = app.vault.getFiles().filter(file =    file.extension !== 'md' &amp;&amp; file.parent.path === pathToImageFolder) 
+const imageFiles = app.vault.getFiles().filter(file =&gt; file.extension !== 'md' &amp;&amp; file.parent.path === pathToImageFolder) 
 
 dv.list(dv.array(imageFiles)
-        .sort(() =    0.5 - Math.random())
+        .sort(() =&gt; 0.5 - Math.random())
         .limit(amountOfImages)
-        .map(file =    dv.func.embed(dv.fileLink(file.path))))
+        .map(file =&gt; dv.func.embed(dv.fileLink(file.path))))
 </code></pre>
 
 

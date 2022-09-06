@@ -4043,11 +4043,11 @@
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataviewjs">const metadatafield = &quot;&quot;
 
-let startDates = dv.pages('&quot;10 Example Data/dailys&quot;').mutate(p =    p.previousDay = dv.page(dv.luxon.DateTime.fromMillis(p.file.day - dv.duration(&quot;1d&quot;)).toFormat('yyyy-MM-dd'))).sort(p =&gt; p.file.name)
+let startDates = dv.pages('&quot;10 Example Data/dailys&quot;').mutate(p =&gt; p.previousDay = dv.page(dv.luxon.DateTime.fromMillis(p.file.day - dv.duration(&quot;1d&quot;)).toFormat('yyyy-MM-dd'))).sort(p =&gt; p.file.name)
 
-const endDates = dv.array(dv.clone(startDates)[0]).where(p =    !checkCriteria(p) &amp;&amp; checkCriteria(p.previousDay))
+const endDates = dv.array(dv.clone(startDates)[0]).where(p =&gt; !checkCriteria(p) &amp;&amp; checkCriteria(p.previousDay))
 
-startDates = startDates.where(p =    checkCriteria(p) &amp;&amp; !checkCriteria(p.previousDay))
+startDates = startDates.where(p =&gt; checkCriteria(p) &amp;&amp; !checkCriteria(p.previousDay))
 
 const cycles = [];
 for (let i = 0; i &lt; endDates.length; i++) {

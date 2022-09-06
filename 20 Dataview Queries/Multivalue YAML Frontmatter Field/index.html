@@ -4027,13 +4027,13 @@
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataview">TABLE wellbeing.mood, wellbeing.mood-notes
 FROM &quot;10 Example Data/dailys&quot;
-WHERE wellbeing.health     2
+WHERE wellbeing.health &gt; 2
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <p>Add better readable table headers</p>
 <pre><code class="language-dataview">TABLE wellbeing.mood AS &quot;Mood&quot;, wellbeing.mood-notes AS &quot;Mood Notes&quot;
 FROM &quot;10 Example Data/dailys&quot;
-WHERE wellbeing.health     2
+WHERE wellbeing.health &gt; 2
 </code></pre>
 
 

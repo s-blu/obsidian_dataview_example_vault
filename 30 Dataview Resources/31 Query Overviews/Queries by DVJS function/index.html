@@ -3951,7 +3951,7 @@ tagsToDisplay.sort()
 
 for (let tag of tagsToDisplay) {
     dv.header(2, tag)
-    dv.table([&quot;File&quot;, &quot;Description&quot;], dv.pages('&quot;20 Dataview Queries&quot; AND #dvjs/' + tag).map(p =    [p.file.link, p.description]))
+    dv.table([&quot;File&quot;, &quot;Description&quot;], dv.pages('&quot;20 Dataview Queries&quot; AND #dvjs/' + tag).map(p =&gt; [p.file.link, p.description]))
 }
 </code></pre>
 

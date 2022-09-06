@@ -4078,7 +4078,7 @@ WHERE birthday.month = date(today).month
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="as-inline-query">As inline query<a class="headerlink" href="#as-inline-query" title="Permanent link">&para;</a></h3>
-<p><code>$=dv.pages('"10 Example Data/people"').where(p =    p.birthday).where(p =&gt; p.birthday.month == dv.date('today').month).file.link</code></p>
+<p><code>$=dv.pages('"10 Example Data/people"').where(p =&gt; p.birthday).where(p =&gt; p.birthday.month == dv.date('today').month).file.link</code></p>
 
 
 

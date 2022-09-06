@@ -3945,7 +3945,7 @@
 <div class="admonition info">
 <p class="admonition-title">You'll find this inline query and its explanation <a href="../../../20%20Dataview%20Queries/List%20most%20recent%20meta%20data%20value%20that%20contains%20a%20certain%20phrase/">here</a></p>
 </div>
-<p><code>$=const notes = dv.pages('"10 Example Data/dailys"').where(p =    p.met).where(p =&gt; String(p.met).includes(dv.current().file.name)).sort((p) =&gt; p.file.name, 'desc').limit(1); if (notes.length) { const content = notes.flatMap(m =&gt; dv.array(m.met)).where(m =&gt; m.includes(dv.current().file.name)).last(); dv.span(notes[0].file.link + ": " + content); }</code></p>
+<p><code>$=const notes = dv.pages('"10 Example Data/dailys"').where(p =&gt; p.met).where(p =&gt; String(p.met).includes(dv.current().file.name)).sort((p) =&gt; p.file.name, 'desc').limit(1); if (notes.length) { const content = notes.flatMap(m =&gt; dv.array(m.met)).where(m =&gt; m.includes(dv.current().file.name)).last(); dv.span(notes[0].file.link + ": " + content); }</code></p>
 <hr />
 <div class="admonition info">
 <p class="admonition-title">You'll find this query and its explanation <a href="../../../20%20Dataview%20Queries/List%20contacts%20with%20a%20person/">here</a></p>

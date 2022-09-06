@@ -4188,8 +4188,8 @@ var labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "O
 let DQL = await dv.tryQuery(sDQL);</p>
 <p>//extract necessary data columns from above results<br />
 var allRows = DQL.values;<br />
-var allLabels = allRows.map(r =    r[1]);<br />
-var distinctSeries = dv.array(allRows).map(r =    r[0]).distinct();</p>
+var allLabels = allRows.map(r =&gt; r[1]);<br />
+var distinctSeries = dv.array(allRows).map(r =&gt; r[0]).distinct();</p>
 <p>//extract labels automatically if required<br />
 if (autoLabels) {<br />
     labels = allLabels;<br />
@@ -4202,12 +4202,12 @@ for (let i = 0; i &lt; distinctSeries.length; i++) { <br />
     let bordCol = colors[i%colors.length]; <br />
     let bWidth = 1;</p>
 <pre><code>//get just the labels and values for this series
-let thisSeriesRows = allRows.filter(r =    r[0] == distinctSeries[i]);
-let thisSeriesLabels = thisSeriesRows.map(r =    r[1]);
-let thisSeriesValues = thisSeriesRows.map(r =    r[2]);
+let thisSeriesRows = allRows.filter(r =&gt; r[0] == distinctSeries[i]);
+let thisSeriesLabels = thisSeriesRows.map(r =&gt; r[1]);
+let thisSeriesValues = thisSeriesRows.map(r =&gt; r[2]);
 
 //for each label, find corresponding value from this series
-let dataPoints = labels.map(l =    {
+let dataPoints = labels.map(l =&gt; {
     let labelIndex = thisSeriesLabels.indexOf(l);
     if (labelIndex &lt; 0) { return 0 }
     else { return thisSeriesValues[labelIndex] }
@@ -4280,8 +4280,8 @@ var labels = ["2021-Q1", "2021-Q2", "2021-Q3", "2021-Q4", "2022-Q1", "2022-Q2", 
 let DQL = await dv.tryQuery(sDQL);</p>
 <p>//extract necessary data columns from above results<br />
 var allRows = DQL.values;<br />
-var allLabels = dv.array(allRows).map(r =    r[1]).distinct();<br />
-var distinctSeries = dv.array(allRows).map(r =    r[0]).distinct();</p>
+var allLabels = dv.array(allRows).map(r =&gt; r[1]).distinct();<br />
+var distinctSeries = dv.array(allRows).map(r =&gt; r[0]).distinct();</p>
 <p>//extract labels automatically if required<br />
 if (autoLabels) {<br />
     labels = allLabels.array(); <br />
@@ -4294,12 +4294,12 @@ for (let i = 0; i &lt; distinctSeries.length; i++) { <br />
     let bordCol = colors[i%colors.length]; <br />
     let bWidth = 1;</p>
 <pre><code>//get just the labels and values for this series
-let thisSeriesRows = allRows.filter(r =    r[0] == distinctSeries[i]);
-let thisSeriesLabels = thisSeriesRows.map(r =    r[1]);
-let thisSeriesValues = thisSeriesRows.map(r =    r[2]);
+let thisSeriesRows = allRows.filter(r =&gt; r[0] == distinctSeries[i]);
+let thisSeriesLabels = thisSeriesRows.map(r =&gt; r[1]);
+let thisSeriesValues = thisSeriesRows.map(r =&gt; r[2]);
 
 //for each label, find corresponding value from this series
-let dataPoints = labels.map(l =    {
+let dataPoints = labels.map(l =&gt; {
     let labelIndex = thisSeriesLabels.indexOf(l);
     if (labelIndex &lt; 0) { return 0 }
     else { return thisSeriesValues[labelIndex] }

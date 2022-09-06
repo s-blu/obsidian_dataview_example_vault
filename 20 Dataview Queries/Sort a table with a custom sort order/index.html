@@ -4151,7 +4151,7 @@ is an object that maps our genres to a numeric value that's in the end used to d
 FROM &quot;10 Example Data/shows&quot;
 FLATTEN Genre as G
 GROUP BY G
-SORT default(((x) =    {
+SORT default(((x) =&gt; {
 &quot;Drama&quot;:1, 
 &quot;Crime&quot;:2,
 &quot;Horror&quot;: 3,
@@ -4163,7 +4163,7 @@ SORT default(((x) =    {
 <h4 id="with-no-flattened-field">With no flattened field<a class="headerlink" href="#with-no-flattened-field" title="Permanent link">&para;</a></h4>
 <pre><code class="language-dataview">TABLE Show_status
 FROM &quot;10 Example Data/shows&quot;
-SORT default(((x) =    {
+SORT default(((x) =&gt; {
 &quot;Running&quot;:1,
 &quot;To Be Determined&quot;: 2,
 &quot;Ended&quot;: 3

@@ -4090,7 +4090,7 @@
 <pre><code class="language-dataview">CALENDAR file.mtime
 FROM &quot;20 Dataview Queries&quot;
 FLATTEN round(sum(paid)) as SUM
-WHERE paid and SUM     75
+WHERE paid and SUM &gt; 75
 </code></pre>
 <p>bought:: Nike shoes<br />
 paid:: 99</p>
@@ -4104,16 +4104,16 @@ You'll need to go back to Januray/Februrary 2022 to see the data
 </code></pre>
 <pre><code class="language-dataview">CALENDAR file.day
 FROM &quot;10 Example Data/dailys&quot;
-FLATTEN round(sum(map(paid, (x) =    number(regexreplace(x, &quot; ?\$&quot;, &quot;&quot;))))) as SUM
-WHERE paid and SUM     75
+FLATTEN round(sum(map(paid, (x) =&gt; number(regexreplace(x, &quot; ?\$&quot;, &quot;&quot;))))) as SUM
+WHERE paid and SUM &gt; 75
 </code></pre>
 <pre><code>[!tip]
 When you try to write complex calendar queries, write a TABLE query first to make sure your query returns the results you're expecting.
 </code></pre>
 <pre><code class="language-dataview">TABLE paid, SUM
 FROM &quot;10 Example Data/dailys&quot;
-FLATTEN round(sum(map(paid, (x) =    number(regexreplace(x, &quot;\$&quot;, &quot;&quot;))))) as SUM
-WHERE paid and SUM     75
+FLATTEN round(sum(map(paid, (x) =&gt; number(regexreplace(x, &quot;\$&quot;, &quot;&quot;))))) as SUM
+WHERE paid and SUM &gt; 75
 </code></pre>
 
 

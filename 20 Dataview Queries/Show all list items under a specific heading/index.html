@@ -4120,14 +4120,14 @@ GROUP BY file.link
 <h3 id="using-flattenfilter-instead-of-group-by">Using flatten/filter instead of group-by<a class="headerlink" href="#using-flattenfilter-instead-of-group-by" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataview">TABLE WITHOUT ID &quot;&lt;nobr&gt;&quot; + file.link + &quot;&lt;/nobr&gt;&quot; AS Page, Research
 FROM &quot;10 Example Data/dailys&quot;
-FLATTEN list(filter(file.lists, (x) =    meta(x.section).subpath = &quot;Research&quot;).text) as Research
+FLATTEN list(filter(file.lists, (x) =&gt; meta(x.section).subpath = &quot;Research&quot;).text) as Research
 WHERE Research
 </code></pre>
 <h3 id="using-flatten-to-make-multiple-columns-based-on-different-headings">Using flatten to make multiple columns based on different headings<a class="headerlink" href="#using-flatten-to-make-multiple-columns-based-on-different-headings" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataview">TABLE WITHOUT ID &quot;&lt;nobr&gt;&quot; + file.link + &quot;&lt;/nobr&gt;&quot; AS Page, Research, Topics
 FROM &quot;10 Example Data/dailys&quot;
-FLATTEN list(filter(file.lists, (x) =    meta(x.section).subpath = &quot;Research&quot;).text) as Research
-FLATTEN list(filter(file.lists, (x) =    meta(x.section).subpath = &quot;Topics&quot;).text) as Topics
+FLATTEN list(filter(file.lists, (x) =&gt; meta(x.section).subpath = &quot;Research&quot;).text) as Research
+FLATTEN list(filter(file.lists, (x) =&gt; meta(x.section).subpath = &quot;Topics&quot;).text) as Topics
 WHERE Research OR Topics
 </code></pre>
 

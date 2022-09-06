@@ -4200,7 +4200,7 @@ var labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]; //only matter if
 let DQL = await dv.tryQuery(sDQL);</p>
 <p>//extract necessary data columns from above results<br />
 var allRows = DQL.values;<br />
-var allLabels = allRows.map(r =    r[0]);<br />
+var allLabels = allRows.map(r =&gt; r[0]);<br />
 var allSeries = DQL.headers.slice(1);</p>
 <p>//extract labels automatically if required<br />
 if (autoLabels) {<br />
@@ -4216,14 +4216,14 @@ for (let i = 0; i &lt; allSeries.length; i++) {  <br />
 <pre><code>var dataPoints = [];
 if (!autoLabels) {
     //map each datapoint to a label in the fixed array
-    dataPoints = labels.map(l =    {
+    dataPoints = labels.map(l =&gt; {
         let labelIndex = allLabels.indexOf(l);
         if (labelIndex &lt; 0) { return 0 }
         else { return allRows[labelIndex][i+1] }
     })  
 } else {
     //dataPoints already align with labels
-    dataPoints = allRows.map(r =    r[i+1]);
+    dataPoints = allRows.map(r =&gt; r[i+1]);
 }
 
 //create a dataset to graph
@@ -4264,9 +4264,9 @@ TABLE
     round(sum(PainValues)/length(PainValues), 1) AS Pain
 FROM &quot;10 Example Data/dailys&quot;
 GROUP BY dateformat(date(file.name), &quot;ccc&quot;) as &quot;DayOfWeek&quot;
-FLATTEN list(filter(rows.wellbeing.mood, (x) =    x)) as MoodValues
-FLATTEN list(filter(rows.wellbeing.health, (x) =    x)) as HealthValues
-FLATTEN list(filter(rows.wellbeing.pain, (x) =    x)) as PainValues
+FLATTEN list(filter(rows.wellbeing.mood, (x) =&gt; x)) as MoodValues
+FLATTEN list(filter(rows.wellbeing.health, (x) =&gt; x)) as HealthValues
+FLATTEN list(filter(rows.wellbeing.pain, (x) =&gt; x)) as PainValues
 SORT date(rows[0].file.name).weekday
 </code></pre>
 <div class="admonition tip">
@@ -4308,9 +4308,9 @@ var labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]; //only matter if
         round(sum(PainValues)/length(PainValues), 1) AS Pain \<br />
     FROM "10 Example Data/dailys" \<br />
     GROUP BY dateformat(date(file.name), "ccc") as "DayOfWeek" \<br />
-    FLATTEN list(filter(rows.wellbeing.mood, (x) =    x)) as MoodValues \<br />
-    FLATTEN list(filter(rows.wellbeing.health, (x) =    x)) as HealthValues \<br />
-    FLATTEN list(filter(rows.wellbeing.pain, (x) =    x)) as PainValues \<br />
+    FLATTEN list(filter(rows.wellbeing.mood, (x) =&gt; x)) as MoodValues \<br />
+    FLATTEN list(filter(rows.wellbeing.health, (x) =&gt; x)) as HealthValues \<br />
+    FLATTEN list(filter(rows.wellbeing.pain, (x) =&gt; x)) as PainValues \<br />
     SORT date(rows[0].file.name).weekday'</p>
 <p>// -----<br />
 // BELOW HERE IS LARGELY AUTOMATIC<br />
@@ -4318,7 +4318,7 @@ var labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]; //only matter if
 let DQL = await dv.tryQuery(sDQL);</p>
 <p>//extract necessary data columns from above results<br />
 var allRows = DQL.values;<br />
-var allLabels = allRows.map(r =    r[0]);<br />
+var allLabels = allRows.map(r =&gt; r[0]);<br />
 var allSeries = DQL.headers.slice(1);</p>
 <p>//extract labels automatically if required<br />
 if (autoLabels) {<br />
@@ -4334,14 +4334,14 @@ for (let i = 0; i &lt; allSeries.length; i++) {  <br />
 <pre><code>var dataPoints = [];
 if (!autoLabels) {
     //map each datapoint to a label in the fixed array
-    dataPoints = labels.map(l =    {
+    dataPoints = labels.map(l =&gt; {
         let labelIndex = allLabels.indexOf(l);
         if (labelIndex &lt; 0) { return 0 }
         else { return allRows[labelIndex][i+1] }
     })  
 } else {
     //dataPoints already align with labels
-    dataPoints = allRows.map(r =    r[i+1]);
+    dataPoints = allRows.map(r =&gt; r[i+1]);
 }
 
 //create a dataset to graph

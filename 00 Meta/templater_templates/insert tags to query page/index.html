@@ -3946,7 +3946,7 @@ for (let query of queries) {<br />
   const type = query[1];<br />
   query = query[2];</p>
 <p>if (type === 'dataview') {<br />
-    datacommands.forEach(datacommand =    {<br />
+    datacommands.forEach(datacommand =&gt; {<br />
       if (query.includes(datacommand)) {<br />
         tags.push(<code>${tagprefix}${datacommand}</code>)<br />
          // we only want to add this tag once, no need to check for the data command again here or in other queries<br />
@@ -3963,7 +3963,7 @@ addFunctionsTags(functions, tags)
 </code></pre>
 <p>}<br />
 }<br />
-tR += tags.reduce((acc, curr) =    <code>${acc} ${curr}</code>, "")</p>
+tR += tags.reduce((acc, curr) =&gt; <code>${acc} ${curr}</code>, "")</p>
 <p>function addFunctionsTags(functions) {<br />
   for (let fn of functions) {<br />
     addTag(fn[1])<br />

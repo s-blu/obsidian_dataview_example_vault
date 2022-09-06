@@ -4046,7 +4046,7 @@ where date(day).weekyear = 3
 <pre><code class="language-dataview">TABLE wake-up, ST AS &quot;Bed time&quot;, [lunch, dinner] AS &quot;Meal times&quot;
 from &quot;10 Example Data/dailys&quot;
 where date(day).weekyear = 3
-FLATTEN filter([gotosleep, go-to-sleep], (x) =    x) as ST
+FLATTEN filter([gotosleep, go-to-sleep], (x) =&gt; x) as ST
 </code></pre>
 
 

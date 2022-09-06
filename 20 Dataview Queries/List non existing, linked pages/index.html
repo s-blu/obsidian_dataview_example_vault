@@ -4159,7 +4159,7 @@ GROUP BY outlinks
 </code></pre>
 <p>As <strong>dataviewjs:</strong> (for a more similar result like the DQL solution, see variant "List the files the unresolved link is contained in")</p>
 <pre><code class="language-dataviewjs">const res = Object.values(app.metadataCache.unresolvedLinks)
-.flatMap(unresolved =    Object.keys(unresolved))
+.flatMap(unresolved =&gt; Object.keys(unresolved))
 .sort(); 
 
 const resSet = new Set(res).values();
@@ -4168,7 +4168,7 @@ dv.list(resSet);
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="list-the-files-the-unresolved-link-is-contained-in">List the files the unresolved link is contained in<a class="headerlink" href="#list-the-files-the-unresolved-link-is-contained-in" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
-<p class="admonition-title">See Basic -    DQL for a pure DQL version of this result</p>
+<p class="admonition-title">See Basic -&gt; DQL for a pure DQL version of this result</p>
 </div>
 <pre><code class="language-dataviewjs">const unresolvedLinksMap = app.metadataCache.unresolvedLinks
 
@@ -4183,14 +4183,14 @@ for (let page in unresolvedLinksMap) {
 }
 
 
-dv.table([&quot;Unresolved Link&quot;, &quot;Contained in&quot;], Object.values(res).map(l =    [l.link, l.usages]));
+dv.table([&quot;Unresolved Link&quot;, &quot;Contained in&quot;], Object.values(res).map(l =&gt; [l.link, l.usages]));
 </code></pre>
 <h3 id="list-only-unresolved-links-from-a-specific-folder-meeting-specific-criteria">List only unresolved links from a specific folder meeting specific criteria<a class="headerlink" href="#list-only-unresolved-links-from-a-specific-folder-meeting-specific-criteria" title="Permanent link">&para;</a></h3>
 <h4 id="as-dql">As DQL<a class="headerlink" href="#as-dql" title="Permanent link">&para;</a></h4>
 <pre><code class="language-dataview">TABLE WITHOUT ID key AS &quot;unresolved link&quot;, rows.file.link AS &quot;referencing file&quot;
 FROM &quot;10 Example Data&quot;
 FLATTEN file.outlinks as outlinks
-WHERE startswith(meta(outlinks).path, &quot;B&quot;) AND length(meta(outlinks).path)     3
+WHERE startswith(meta(outlinks).path, &quot;B&quot;) AND length(meta(outlinks).path) &gt; 3
 WHERE !(outlinks.file) AND !(contains(meta(outlinks).path, &quot;/&quot;))
 GROUP BY outlinks
 </code></pre>
@@ -4212,19 +4212,19 @@ function process(referingFile, unresolvedLinks) {
 }
 
 Object.entries(dv.app.metadataCache.unresolvedLinks)
-  .filter(([referingFile]) =    {
+  .filter(([referingFile]) =&gt; {
     return referingFile.startsWith(&quot;10 Example Data/dailys&quot;)
   })
-  .filter(([_, unresolvedLinks]) =    {
+  .filter(([_, unresolvedLinks]) =&gt; {
       return Object.keys(unresolvedLinks)
-      .filter(link =    link.startsWith(&quot;B&quot;) &amp;&amp; link.length &gt; 3)
+      .filter(link =&gt; link.startsWith(&quot;B&quot;) &amp;&amp; link.length &gt; 3)
       .length
     })
-  .forEach(([referingFile, unresolvedLink]) =    process(referingFile, unresolvedLink));
+  .forEach(([referingFile, unresolvedLink]) =&gt; process(referingFile, unresolvedLink));
 
 dv.table(
   [&quot;Non existing notes&quot;, &quot;Linked from&quot;],
-  Object.entries(result).map(([unresolvedLink, referingFiles]) =    [unresolvedLink, referingFiles.join(&quot; • &quot;)])
+  Object.entries(result).map(([unresolvedLink, referingFiles]) =&gt; [unresolvedLink, referingFiles.join(&quot; • &quot;)])
 );
 </code></pre>
 

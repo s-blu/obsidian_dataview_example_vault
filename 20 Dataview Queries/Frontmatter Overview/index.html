@@ -4218,12 +4218,12 @@ FROM &quot;&quot;
 WHERE file.name = this.file.name
 </code></pre>
 <h4 id="looking-inside">Looking inside<a class="headerlink" href="#looking-inside" title="Permanent link">&para;</a></h4>
-<pre><code class="language-dataview">TABLE WITHOUT ID KeyedObject.name, NestedObject[0].color, &quot;&lt;div style='background-color:#&quot; + NestedObject[0].color + &quot;;'    &lt;/div&gt;&quot; as  &quot;HTML Color&quot;
+<pre><code class="language-dataview">TABLE WITHOUT ID KeyedObject.name, NestedObject[0].color, &quot;&lt;div style='background-color:#&quot; + NestedObject[0].color + &quot;;'&gt; &lt;/div&gt;&quot; as  &quot;HTML Color&quot;
 FROM &quot;&quot;
 WHERE file.name = this.file.name
 </code></pre>
 <h4 id="flattening-objects">Flattening objects<a class="headerlink" href="#flattening-objects" title="Permanent link">&para;</a></h4>
-<pre><code class="language-dataview">TABLE WITHOUT ID NObjects.name, NObjects.color, &quot;&lt;div style='background-color:#&quot; + NObjects.color + &quot;;'    &lt;/div&gt;&quot; as  &quot;HTML Color&quot;
+<pre><code class="language-dataview">TABLE WITHOUT ID NObjects.name, NObjects.color, &quot;&lt;div style='background-color:#&quot; + NObjects.color + &quot;;'&gt; &lt;/div&gt;&quot; as  &quot;HTML Color&quot;
 FROM &quot;&quot;
 WHERE file.name = this.file.name
 FLATTEN NestedObject as NObjects

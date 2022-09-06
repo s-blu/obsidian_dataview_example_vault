@@ -4071,18 +4071,18 @@
 <pre><code class="language-dataviewjs">const DQL = await dv.tryQuery(`
 TABLE WITHOUT ID
     rows.file.link,
-    map(rows, (r) =    r.Lt),
-    map(rows, (r) =    r.Lc),
-    map(rows, (r) =    &quot;&lt;progress style='width:80px;' value='&quot; + (r.Lc/r.Lt)*100 + &quot;' max='100'&gt;&lt;/progress&gt;&quot; + &quot;&amp;nbsp;&amp;nbsp;&lt;span style='font-size:smaller;color:var(--text-muted)'&gt;&quot; + round((r.Lc/r.Lt)*100) + &quot;%&lt;/span&gt;&quot;)
+    map(rows, (r) =&gt; r.Lt),
+    map(rows, (r) =&gt; r.Lc),
+    map(rows, (r) =&gt; &quot;&lt;progress style='width:80px;' value='&quot; + (r.Lc/r.Lt)*100 + &quot;' max='100'&gt;&lt;/progress&gt;&quot; + &quot;&amp;nbsp;&amp;nbsp;&lt;span style='font-size:smaller;color:var(--text-muted)'&gt;&quot; + round((r.Lc/r.Lt)*100) + &quot;%&lt;/span&gt;&quot;)
 FROM outgoing([Goal 1](../10 Example Data/projects/Goal 1.md))
 WHERE file.tasks
 FLATTEN length(file.tasks) AS Lt
-FLATTEN length(filter(file.tasks, (p) =    p.completed)) AS Lc
+FLATTEN length(filter(file.tasks, (p) =&gt; p.completed)) AS Lc
 GROUP BY true
 `)
 
 const globalValues = DQL.values
-    .map(row =     [
+    .map(row =&gt;  [
         removeBulletpoints(row[0]), // Project links
         removeBulletpoints(row[3]), // progress bars
         &quot;&lt;progress value='&quot; + sumUp(row[2])/sumUp(row[1]) * 100 
@@ -4098,7 +4098,7 @@ function removeBulletpoints(array) {
 }
 
 function sumUp(val) {
-    return val.reduce((acc, val) =    acc + val, 0)
+    return val.reduce((acc, val) =&gt; acc + val, 0)
 }
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
@@ -4109,7 +4109,7 @@ function sumUp(val) {
 FROM outgoing([Goal 1](../10 Example Data/projects/Goal 1.md))
 WHERE file.tasks
 FLATTEN length(file.tasks) AS Lt
-FLATTEN length(filter(file.tasks, (p) =    p.completed)) AS Lc`)
+FLATTEN length(filter(file.tasks, (p) =&gt; p.completed)) AS Lc`)
 
 const hrArray = Array(2).fill('&lt;hr style=&quot;padding:0; margin:0 -10px; border-top: 1px solid var(--background-modifier-border)&quot;&gt;');
 
@@ -4119,11 +4119,11 @@ const DQLglobal = await dv.tryQuery(`TABLE WITHOUT ID
 FROM outgoing([Goal 1](../10 Example Data/projects/Goal 1.md))
 WHERE file.tasks
 FLATTEN length(file.tasks) AS Lt
-FLATTEN length(filter(file.tasks, (p) =    p.completed)) AS Lc
+FLATTEN length(filter(file.tasks, (p) =&gt; p.completed)) AS Lc
 GROUP BY true`)
 
 DQL.values.push(hrArray)
-DQL.values.push(DQLglobal.values.flatMap(r =    r))
+DQL.values.push(DQLglobal.values.flatMap(r =&gt; r))
 
 dv.table([&quot;Projects&quot;, &quot;Progress&quot;], DQL.values);
 </code></pre>
@@ -4132,20 +4132,20 @@ dv.table([&quot;Projects&quot;, &quot;Progress&quot;], DQL.values);
 TABLE WITHOUT ID
     G AS Goals,
     rows.OUT,
-    map(rows, (r) =    r.Lt),
-    map(rows, (r) =    r.Lc),
-    map(rows, (r) =    &quot;&lt;progress style='width:80px;' value='&quot; + (r.Lc/r.Lt)*100 + &quot;' max='100'&gt;&lt;/progress&gt;&quot; + &quot;&amp;nbsp;&amp;nbsp;&lt;span style='font-size:smaller;color:var(--text-muted)'&gt;&quot; + round((r.Lc/r.Lt)*100) + &quot;%&lt;/span&gt;&quot;)
+    map(rows, (r) =&gt; r.Lt),
+    map(rows, (r) =&gt; r.Lc),
+    map(rows, (r) =&gt; &quot;&lt;progress style='width:80px;' value='&quot; + (r.Lc/r.Lt)*100 + &quot;' max='100'&gt;&lt;/progress&gt;&quot; + &quot;&amp;nbsp;&amp;nbsp;&lt;span style='font-size:smaller;color:var(--text-muted)'&gt;&quot; + round((r.Lc/r.Lt)*100) + &quot;%&lt;/span&gt;&quot;)
 FROM 
 FLATTEN file.outlinks AS OUT
 WHERE OUT.file.tasks
 FLATTEN length(OUT.file.tasks) AS Lt
-FLATTEN length(filter(OUT.file.tasks, (p) =    p.completed)) AS Lc
+FLATTEN length(filter(OUT.file.tasks, (p) =&gt; p.completed)) AS Lc
 GROUP BY file.link AS G
 SORT G ASC
 `)
 
 const globalValues = DQL.values
-    .map(row =    {
+    .map(row =&gt; {
     console.log(row)
     return [
         row[0], //Goals Link
@@ -4164,7 +4164,7 @@ function removeBulletpoints(array) {
 }
 
 function sumUp(val) {
-    return val.reduce((acc, val) =    acc + val, 0)
+    return val.reduce((acc, val) =&gt; acc + val, 0)
 }
 </code></pre>
 

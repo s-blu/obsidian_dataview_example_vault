@@ -4049,24 +4049,24 @@
 </div>
 <h1 id="list-all-not-references-attachments">List all not references attachments<a class="headerlink" href="#list-all-not-references-attachments" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
-<pre><code class="language-dataviewjs">const allNonMdFiles = app.vault.getFiles().filter(file =    file.extension !== 'md')
-const allNonMdOutlinks = dv.pages().file.outlinks.path.filter(link =    !link.endsWith('.md'))
-const notReferenced = allNonMdFiles.filter(file =    !allNonMdOutlinks.includes(file.path));
+<pre><code class="language-dataviewjs">const allNonMdFiles = app.vault.getFiles().filter(file =&gt; file.extension !== 'md')
+const allNonMdOutlinks = dv.pages().file.outlinks.path.filter(link =&gt; !link.endsWith('.md'))
+const notReferenced = allNonMdFiles.filter(file =&gt; !allNonMdOutlinks.includes(file.path));
 
-dv.list(dv.array(notReferenced).map(link =    dv.fileLink(link.path)))
+dv.list(dv.array(notReferenced).map(link =&gt; dv.fileLink(link.path)))
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <p>Be able to specify file endings to ignore and show a callout if no result is found </p>
 <pre><code class="language-dataviewjs">// add all extensions you want to ignore to the array, i.e. [&quot;md&quot;, &quot;js&quot;, &quot;css&quot;]
-const allNonMdFiles = app.vault.getFiles().filter(file =    ![&quot;md&quot;].includes(file.extension))
-const allNonMdOutlinks = dv.pages().file.outlinks.path.filter(link =    !link.endsWith('.md'))
-const notReferenced = allNonMdFiles.filter(file =    !allNonMdOutlinks.includes(file.path));
+const allNonMdFiles = app.vault.getFiles().filter(file =&gt; ![&quot;md&quot;].includes(file.extension))
+const allNonMdOutlinks = dv.pages().file.outlinks.path.filter(link =&gt; !link.endsWith('.md'))
+const notReferenced = allNonMdFiles.filter(file =&gt; !allNonMdOutlinks.includes(file.path));
 
 if (!notReferenced.length) {
-    dv.span(`!!! done &quot;All good! No unused attachments found :) `)&quot;
+    dv.span(`&gt; [!done] All good! No unused attachments found :) `)
 } 
 
-dv.list(dv.array(notReferenced).map(link =    dv.fileLink(link.path)))
+dv.list(dv.array(notReferenced).map(link =&gt; dv.fileLink(link.path)))
 </code></pre>
 
 

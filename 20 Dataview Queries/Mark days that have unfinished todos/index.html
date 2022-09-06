@@ -4080,7 +4080,7 @@ You'll need to go back to Januray/Februrary 2022 to see the data.
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataview">CALENDAR file.day
 FROM &quot;10 Example Data/dailys&quot;
-FLATTEN all(map(file.tasks, (x) =    x.completed)) AS &quot;allCompleted&quot;
+FLATTEN all(map(file.tasks, (x) =&gt; x.completed)) AS &quot;allCompleted&quot;
 WHERE !allCompleted
 </code></pre>
 <pre><code>[!tip]
@@ -4088,14 +4088,14 @@ When you try to write complex calendar queries, write a TABLE query first to mak
 </code></pre>
 <pre><code class="language-dataview">TABLE file.day, allCompleted
 FROM &quot;10 Example Data/dailys&quot;
-FLATTEN all(map(file.tasks, (x) =    x.completed)) AS &quot;allCompleted&quot;
+FLATTEN all(map(file.tasks, (x) =&gt; x.completed)) AS &quot;allCompleted&quot;
 WHERE allCompleted
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="if-you-use-custom-task-status-and-want-to-see-all-without-a-status">If you use custom task status and want to see all without a status<a class="headerlink" href="#if-you-use-custom-task-status-and-want-to-see-all-without-a-status" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataview">CALENDAR file.day
 FROM &quot;10 Example Data/dailys&quot;
-FLATTEN any(map(file.tasks, (x) =    x.status = &quot; &quot;)) AS &quot;anyEmpty&quot;
+FLATTEN any(map(file.tasks, (x) =&gt; x.status = &quot; &quot;)) AS &quot;anyEmpty&quot;
 WHERE anyEmpty
 </code></pre>
 

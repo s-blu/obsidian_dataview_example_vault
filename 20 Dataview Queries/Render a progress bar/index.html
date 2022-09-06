@@ -4130,10 +4130,10 @@ totalPages:: 130</p>
 <li>[x] Task2</li>
 <li>[ ] Task3</li>
 </ul>
-<p><code>$= const value = Math.round(((dv.current().file.tasks.where(t =    t.completed).length) / (dv.current().file.tasks).length || 0) * 100); "&lt;progress value='" + value + "' max='100'&gt;&lt;/progress&gt;" + " " + value + "%"</code></p>
+<p><code>$= const value = Math.round(((dv.current().file.tasks.where(t =&gt; t.completed).length) / (dv.current().file.tasks).length || 0) * 100); "&lt;progress value='" + value + "' max='100'&gt;&lt;/progress&gt;" + " " + value + "%"</code></p>
 <h3 id="rendering-progress-bar-directly-in-tables-or-list">Rendering progress bar directly in tables or list<a class="headerlink" href="#rendering-progress-bar-directly-in-tables-or-list" title="Permanent link">&para;</a></h3>
 <p>This does not need a extra meta data field on the source files.</p>
-<pre><code class="language-dataview">TABLE pagesRead, totalPages, &quot;&lt;progress value='&quot; + round(100*pagesRead/totalPages) + &quot;' max='100'&gt;&lt;/progress    &quot; + round(100*pagesRead/totalPages) + &quot;%&quot; AS Progress FROM &quot;10 Example Data/books&quot;
+<pre><code class="language-dataview">TABLE pagesRead, totalPages, &quot;&lt;progress value='&quot; + round(100*pagesRead/totalPages) + &quot;' max='100'&gt;&lt;/progress&gt; &quot; + round(100*pagesRead/totalPages) + &quot;%&quot; AS Progress FROM &quot;10 Example Data/books&quot;
 </code></pre>
 <h3 id="rendering-custom-styled-progress-bar-directly-in-tables-or-list">Rendering custom styled progress bar directly in tables or list<a class="headerlink" href="#rendering-custom-styled-progress-bar-directly-in-tables-or-list" title="Permanent link">&para;</a></h3>
 <p>Thanks to Jillard and mnvwvnm!</p>

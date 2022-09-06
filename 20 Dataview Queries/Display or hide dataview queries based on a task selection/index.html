@@ -4077,25 +4077,25 @@
 <li>[x] Walter Benjamin</li>
 <li>[ ] Karl Marx</li>
 </ul>
-<pre><code class="language-dataviewjs">const checklist = dv.current().file.tasks.where(t =    t.completed);
+<pre><code class="language-dataviewjs">const checklist = dv.current().file.tasks.where(t =&gt; t.completed);
 
 if (isActive(&quot;Michel Foucault&quot;)) {
     dv.header(2, &quot;Michel Foucault quotes&quot;)
-    dv.list(dv.pages('&quot;10 Example Data/dailys&quot;').flatMap(p =    p.file.lists).where(l =&gt; l.author == &quot;Michel Foucault&quot;).text)
+    dv.list(dv.pages('&quot;10 Example Data/dailys&quot;').flatMap(p =&gt; p.file.lists).where(l =&gt; l.author == &quot;Michel Foucault&quot;).text)
 }
 
 if (isActive(&quot;Walter Benjamin&quot;)) {
     dv.header(2, &quot;Walter Benjamin quotes&quot;)
-    dv.list(dv.pages('&quot;10 Example Data/dailys&quot;').flatMap(p =    p.file.lists).where(l =&gt; l.author == &quot;Walter Benjamin&quot;).text)
+    dv.list(dv.pages('&quot;10 Example Data/dailys&quot;').flatMap(p =&gt; p.file.lists).where(l =&gt; l.author == &quot;Walter Benjamin&quot;).text)
 }
 
 if (isActive(&quot;Karl Marx&quot;)) {
     dv.header(2, &quot;Karl Marx quotes&quot;)
-    dv.list(dv.pages('&quot;10 Example Data/dailys&quot;').flatMap(p =    p.file.lists).where(l =&gt; l.author == &quot;Karl Marx&quot;).text)
+    dv.list(dv.pages('&quot;10 Example Data/dailys&quot;').flatMap(p =&gt; p.file.lists).where(l =&gt; l.author == &quot;Karl Marx&quot;).text)
 }
 
 function isActive(name) {
-    return checklist.where(t =    t.text == name)[0]
+    return checklist.where(t =&gt; t.text == name)[0]
 } 
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
@@ -4106,17 +4106,17 @@ function isActive(name) {
 <p>If you want to use "toggle tasks" along side normal tasks, the Basic approach is a bit safer. Nevertheless, you can use this one if you like, when you put your "toggle tasks" under a heading and filter for this, too, via <code>&amp;&amp; t.section.subpath === "Basic"</code> in the <code>where</code> function.<br />
 If the only tasks in your file are "toggle tasks", you don't need this additional filter.</p>
 </div>
-<pre><code class="language-dataviewjs">const checklist = dv.current().file.tasks.where(t =    t.completed &amp;&amp; t.section.subpath === &quot;Basic&quot;);
+<pre><code class="language-dataviewjs">const checklist = dv.current().file.tasks.where(t =&gt; t.completed &amp;&amp; t.section.subpath === &quot;Basic&quot;);
 
-checklist.forEach(task =    showContent(task.text))
+checklist.forEach(task =&gt; showContent(task.text))
 
 function isActive(name) {
-    return checklist.where(t =    t.text == name)[0]
+    return checklist.where(t =&gt; t.text == name)[0]
 } 
 
 function showContent(author) {
     dv.header(2, author + &quot; quotes&quot;)
-    dv.list(dv.pages('&quot;10 Example Data/dailys&quot;').flatMap(p =    p.file.lists).where(l =&gt; l.author == author).text)
+    dv.list(dv.pages('&quot;10 Example Data/dailys&quot;').flatMap(p =&gt; p.file.lists).where(l =&gt; l.author == author).text)
 }
 </code></pre>
 

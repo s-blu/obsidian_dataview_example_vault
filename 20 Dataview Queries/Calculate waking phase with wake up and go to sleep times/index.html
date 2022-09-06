@@ -4156,11 +4156,11 @@
 <h3 id="as-dataviewjs-solution">As DataviewJS solution<a class="headerlink" href="#as-dataviewjs-solution" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataviewjs">const dailies = dv.pages('&quot;10 Example Data/dailys&quot;')
     .limit(10)
-    .mutate(p =    p.wakingPhase = calculateWakingPhase(p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;]))
+    .mutate(p =&gt; p.wakingPhase = calculateWakingPhase(p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;]))
 
 
 dv.table([&quot;File&quot;, &quot;wake-up&quot;, &quot;go-to-sleep&quot;, &quot;Waking Phase&quot;], 
-         dailies.map(p =    [p.file.link, p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;], p.wakingPhase]))
+         dailies.map(p =&gt; [p.file.link, p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;], p.wakingPhase]))
 
 function calculateWakingPhase(wakeUp, goToSleep) {
     const isValid = isValidTime(wakeUp) &amp;&amp; isValidTime(goToSleep)
@@ -4191,10 +4191,10 @@ FLATTEN dur(date(dt + &quot;T&quot; + go-to-sleep) - date(dt + &quot;T&quot; + w
 <pre><code class="language-dataviewjs">const Duration = dv.luxon.Duration;
 const dailies = dv.pages('&quot;10 Example Data/dailys&quot;')
     .limit(10)
-    .mutate(p =    p.wakingPhase = calculateWakingPhase(p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;]))
+    .mutate(p =&gt; p.wakingPhase = calculateWakingPhase(p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;]))
 
 
-dv.table([&quot;File&quot;, &quot;wake-up&quot;, &quot;go-to-sleep&quot;, &quot;Waking Phase&quot;], dailies.map(p =    [p.file.link, p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;], p.wakingPhase]))
+dv.table([&quot;File&quot;, &quot;wake-up&quot;, &quot;go-to-sleep&quot;, &quot;Waking Phase&quot;], dailies.map(p =&gt; [p.file.link, p[&quot;wake-up&quot;], p[&quot;go-to-sleep&quot;], p.wakingPhase]))
 
 function calculateWakingPhase(wakeUp, goToSleep) {
     wakeUp = tryToFixUp(wakeUp);

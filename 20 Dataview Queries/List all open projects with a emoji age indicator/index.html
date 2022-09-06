@@ -4094,13 +4094,13 @@ WHERE status != &quot;finished&quot;
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="use-different-emojis-for-certain-timespans">Use different emojis for certain timespans<a class="headerlink" href="#use-different-emojis-for-certain-timespans" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataviewjs">const projects = dv.pages('&quot;10 Example Data/projects&quot;')
-    .where(p =    p.status != &quot;finished&quot;)
-    .mutate(p =    {
+    .where(p =&gt; p.status != &quot;finished&quot;)
+    .mutate(p =&gt; {
         p.age = dv.luxon.Duration.fromMillis(Date.now() - p.started.toMillis())
         p.emojiAgeScore = getEmojiScore(p)
     })
 
-dv.table([&quot;Score&quot;, &quot;Project&quot;, &quot;Started&quot;, &quot;Age&quot;], projects.map(p =    [p.emojiAgeScore, p.file.link, p.started, p.age.toFormat(&quot;y'y' M'm' w'w'&quot;)]))
+dv.table([&quot;Score&quot;, &quot;Project&quot;, &quot;Started&quot;, &quot;Age&quot;], projects.map(p =&gt; [p.emojiAgeScore, p.file.link, p.started, p.age.toFormat(&quot;y'y' M'm' w'w'&quot;)]))
 
 function getEmojiScore(p) {
     const age = p.age.shiftTo('months').toObject()

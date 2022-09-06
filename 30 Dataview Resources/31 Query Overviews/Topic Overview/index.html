@@ -3992,7 +3992,7 @@
 </div>
 <h1 id="topic-overview">Topic Overview<a class="headerlink" href="#topic-overview" title="Permanent link">&para;</a></h1>
 <p>Each query has one or more <strong>topics</strong>, grouping queries with similar goals together. Wonder what's available? Wonder no more!</p>
-<pre><code class="language-dataviewjs">await dv.view(&quot;00 Meta/dataview_views/tagcloud&quot;, {values: dv.pages('&quot;20 Dataview Queries&quot;').where(p =    p.topics).topics})
+<pre><code class="language-dataviewjs">await dv.view(&quot;00 Meta/dataview_views/tagcloud&quot;, {values: dv.pages('&quot;20 Dataview Queries&quot;').where(p =&gt; p.topics).topics})
 </code></pre>
 <h2 id="topic-list">Topic List<a class="headerlink" href="#topic-list" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataview">TABLE WITHOUT ID t as &quot;Topic&quot;, count, rows.file.link AS &quot;pages&quot;
