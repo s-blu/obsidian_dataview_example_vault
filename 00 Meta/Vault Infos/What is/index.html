@@ -3947,6 +3947,12 @@
 <p>This query uses the <a href="https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/#dvviewpath-input">dv.view mechanism of dataview</a>. Views allow you to to reuse complex javascript queries and to add css styling to them. You'll find used dataview view files under <code>00 Meta/dataview_views</code>.</p>
 </div>
 <p>^dv-view</p>
+<div class="admonition hint">
+<p class="admonition-title">New "ID" after grouping</p>
+<p>When grouping, your "first level" changes. Without grouping, the first level are the file links you get back from your <code>FROM/WHERE</code> statement, so they automatically get displayed if you give no additional information to the <code>LIST</code> or <code>TABLE</code> command. The file link is the ID of your results.<br />
+After grouping though, your <em>groups</em> become the first level, the ID of your rows. That means without adding an additional information you'll see the groups in your list or table instead of the file links. To still see the file names, you need to pass them as your additional information to display per <code>rows.file.link</code>. Find out more about this in [[How GROUP BY works]]</p>
+</div>
+<p>^new-id-after-grouping</p>
 
 
 
