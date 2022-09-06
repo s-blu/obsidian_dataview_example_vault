@@ -43,7 +43,7 @@ FROM #next
 **Combine multiple tags**
 ```dataview
 TASK
-FROM #later OR #clientA
+FROM #clientC OR #clientB
 ```
 
 **Combine multiple folders**
@@ -93,7 +93,10 @@ FROM "10 Example Data/assignments"
 WHERE contains(tags, "#later")
 ```
 
-### Show tasks with a due date (or any other meta data field)
+### Show tasks with a due date (a task-located meta data field)
+
+> [!info] Meta data on task level
+> You can add meta data on tasks via the inline meta data syntax, i.e. `[duedate:: 2022-09-09]` - or `[contact:: Petro]`. Just be sure to wrap it into square brackets, so that data view can interpret it correctly. 
 
 ```dataview
 TASK
@@ -114,8 +117,6 @@ FROM "10 Example Data/assignments"
 WHERE completed
 SORT completion
 ```
-
-### List only open tasks
 
 ---
 %% === end of query page === %%
