@@ -12,7 +12,18 @@ Before you can start querying data from your vault, you need [**meta data**](htt
 
 **Learn more about Inline fields** in the [dataview documentation](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/) and our [[Inline Field Overview]].
 
-## Understanding Query Types
+## Basic Structure of Queries
+
+A dataview query consists of following parts - in following order:
+
+- exactly one **Query Type**
+- depending on Query Type, zero, one or many **additional properties** for displaying
+- zero or one **FROM** data command
+- zero to many other **data commands**.
+
+Let's have a detailed look at the parts of queries.
+
+### Understanding Query Types
 
 The [**type of a query**](https://blacksmithgu.github.io/obsidian-dataview/query/queries/) determines the format of your final output. We put together some basic examples you can play around with:
 
@@ -21,7 +32,7 @@ The [**type of a query**](https://blacksmithgu.github.io/obsidian-dataview/query
 - [[Basic Task Queries]]
 - [[Basic Calendar Queries]]
 
-## Understanding Data Commands
+### Understanding Data Commands
 
 Beside the four **types** of a query, you can use [**data commands**](https://blacksmithgu.github.io/obsidian-dataview/query/queries/#data-commands) to filter and enhance your query. There are some specialties to be aware of to successfully use them.
 
