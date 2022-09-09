@@ -19,14 +19,21 @@ shutil.copy('.publish/tagindex.md', f'{pagesDir}/tagindex.md')
 
 
 def moveTagsToFrontmatter(filedata):
-    tags = re.findall(r"[\s]#(dv[js]*/[^\^\#\`\s]+)", filedata)
+    # get content until first H1 heading
+    header = re.search(r"(^[\s\S]+?# .+)", filedata).group(1)
+    # find all tags that start with #dv or #dvjs
+    tags = re.findall(r"[\s]#(dv[js]*/[^\^\#\`\s]+)", header)
     if tags:
+        # create a new frontmatter block that contains these tags (without the #)
         tagFrontmatter = '---\ntags:\n'
         for tag in tags:
             tagFrontmatter += f'  - {tag}\n'
         tagFrontmatter += '---\n'
-        filedata = re.sub(r"[\s]#([^\^\#\s]+)", r'', filedata)
-        filedata = tagFrontmatter + filedata
+        # remove all tags that were added to the frontmatter from the header
+        header = re.sub(r"[\s]#(dv[js]*/[^\^\#\`\s]+)", r'', header)
+        # remove the orginal header to use our modified one
+        filedata = re.sub(r"(^[\s\S]+?# .+)", "", filedata)
+        filedata = tagFrontmatter + header + filedata
     return filedata
 
 
