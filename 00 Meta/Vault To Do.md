@@ -26,13 +26,11 @@
 - [ ] Add an example about indexing through a link, see [here](https://discord.com/channels/686053708261228577/875721010144477204/1006970754375614635) 
 - [ ] Create  syntax examples/explanations that apply to all types
 	- [ ] How to select or exclude the current file
-	- [ ] What does GROUP BY and how to deal with it [[How GROUP BY works]]
-	- [ ] What does FLATTEN and how to use it [[How FLATTEN works]]
-	- [ ] What does SORT and how to use it [[How SORT works]]
+	- [ ] Basic GROUP BY examples [[Basic GROUP BY Queries]]
+	- [ ] Basic FLATTEN examples [[Basic FLATTEN Queries]]
 	- [ ] Where is file.day coming from, how to set and how to use it
-	- [ ] What are implicits fields and how to use them 
 	- [ ] What are inline fields and their types [[Inline Field Overview]]
- - [ ] Explain what inline queries can do (and what not) [[Basic Inline Queries]]
+	- [ ] Explain what inline queries can do (and what not) [[Basic Inline Queries]]
  - [ ] Add [sum up number of pages fulfilling certain criteria](https://discord.com/channels/686053708261228577/875721010144477204/1010262245755858994)
  - [ ] Add a page about [transforming dates](https://discord.com/channels/686053708261228577/875721010144477204/1011564039639404584) into a [format dataview recognizes](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/#field-types)
  - [ ] Add [List activity log from projects in daily note via a date header](https://discord.com/channels/686053708261228577/1014259487445622855/1014949689394741370)
