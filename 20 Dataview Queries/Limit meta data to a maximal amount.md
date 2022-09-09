@@ -15,7 +15,7 @@ topics:
 ## Basic 
 
 > [!info] LIMIT data command
-> If you want to limit your set of **result pages**, you can use `LIMIT` for this. See [[How LIMIT works]]. This page concentrates on the question of how to limit meta data fields, i.e. outlinks, you get back for a page result. 
+> If you want to limit your set of **result pages**, you can use `LIMIT` for this. See the [documentation](https://blacksmithgu.github.io/obsidian-dataview/query/queries/#limit). This page concentrates on the question of how to limit meta data fields, i.e. outlinks, you get back for a page result. 
 
 > [!warning] Need a unused character
 > For the following code to work, you need to declare a UTF-8 character that is **not** used in your meta data value. Otherwise, you'll end up with broken data.
