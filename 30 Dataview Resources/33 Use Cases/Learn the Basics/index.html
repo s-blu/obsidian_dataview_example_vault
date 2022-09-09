@@ -3925,16 +3925,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#basic-structure-of-queries" class="md-nav__link">
+    Basic Structure of Queries
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Structure of Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#understanding-query-types" class="md-nav__link">
     Understanding Query Types
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#understanding-data-commands" class="md-nav__link">
     Understanding Data Commands
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4008,16 +4021,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#basic-structure-of-queries" class="md-nav__link">
+    Basic Structure of Queries
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Structure of Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#understanding-query-types" class="md-nav__link">
     Understanding Query Types
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#understanding-data-commands" class="md-nav__link">
     Understanding Data Commands
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4064,23 +4090,32 @@
 <p>Before you can start querying data from your vault, you need <a href="https://blacksmithgu.github.io/obsidian-dataview/data-annotation/"><strong>meta data</strong></a> to query. While there is already some information available on your <a href="https://blacksmithgu.github.io/obsidian-dataview/data-annotation/#implicit-fields">notes</a> and <a href="https://blacksmithgu.github.io/obsidian-dataview/data-annotation/#implicit-fields_1">tasks</a>, to leverage the full power of dataview, you'll need to add your own meta data via the frontmatter or inline fields.</p>
 <p><strong>Learn more about YAML Frontmatter</strong> on the official documentation of Obsidian and take a look on our <a href="../../../20%20Dataview%20Queries/Frontmatter%20Overview/">Frontmatter Overview</a> and how <a href="../../../20%20Dataview%20Queries/Multivalue%20YAML%20Frontmatter%20Field/">Multivalue YAML Frontmatter Field</a>s work.</p>
 <p><strong>Learn more about Inline fields</strong> in the <a href="https://blacksmithgu.github.io/obsidian-dataview/data-annotation/">dataview documentation</a> and our [[Inline Field Overview]].</p>
-<h2 id="understanding-query-types">Understanding Query Types<a class="headerlink" href="#understanding-query-types" title="Permanent link">&para;</a></h2>
-<p>The <a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/"><strong>type of a query</strong></a> determines the format of your final output. We put together some basic examples you can play around with:</p>
+<h2 id="basic-structure-of-queries">Basic Structure of Queries<a class="headerlink" href="#basic-structure-of-queries" title="Permanent link">&para;</a></h2>
+<p>A dataview query consists of following parts - in following order:</p>
+<ul>
+<li>exactly one <strong>Query Type</strong></li>
+<li>depending on Query Type, zero, one or many <strong>additional properties</strong> for displaying</li>
+<li>zero or one <strong>FROM</strong> data command</li>
+<li>zero to many other <strong>data commands</strong>.</li>
+</ul>
+<p>For more info about the general structure, refer to the <a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#general-format">documentation</a>.</p>
+<h3 id="understanding-query-types">Understanding Query Types<a class="headerlink" href="#understanding-query-types" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#query-types"><strong>type of a query</strong></a> determines the format of your final output. We put together some basic examples you can play around with:</p>
 <ul>
 <li><a href="../../../20%20Dataview%20Queries/Basic%20List%20Queries/">Basic List Queries</a></li>
 <li><a href="../../../20%20Dataview%20Queries/Basic%20Table%20Queries/">Basic Table Queries</a></li>
 <li><a href="../../../20%20Dataview%20Queries/Basic%20Task%20Queries/">Basic Task Queries</a></li>
 <li>[[Basic Calendar Queries]]</li>
 </ul>
-<h2 id="understanding-data-commands">Understanding Data Commands<a class="headerlink" href="#understanding-data-commands" title="Permanent link">&para;</a></h2>
+<h3 id="understanding-data-commands">Understanding Data Commands<a class="headerlink" href="#understanding-data-commands" title="Permanent link">&para;</a></h3>
 <p>Beside the four <strong>types</strong> of a query, you can use <a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#data-commands"><strong>data commands</strong></a> to filter and enhance your query. There are some specialties to be aware of to successfully use them.</p>
 <ul>
-<li>[[How FROM works]]</li>
-<li>[[How WHERE works]]</li>
-<li>[[How GROUP BY works]]</li>
-<li>[[How FLATTEN works]]</li>
-<li>[[How SORT works]]</li>
-<li>[[How LIMIT works]]</li>
+<li><a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#from">FROM</a> determines which notes to initially collect for your query depending on given <a href="https://blacksmithgu.github.io/obsidian-dataview/query/sources/">sources</a></li>
+<li><a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#where">WHERE</a> lets you filter notes based on information <strong>inside</strong> notes, i.e. meta data.</li>
+<li><a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#group-by">GROUP BY</a> lets you bundle up notes as one "result row" depending on a property (or calculation). See [[Basic GROUP BY Queries]] for example usages.</li>
+<li><a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#flatten">FLATTEN</a> does the opposite of <code>GROUP BY</code> - instead of bundling up, it <em>splits</em> notes depending on a property (or calculation). See [[Basic FLATTEN Queries]] for example usages.</li>
+<li><a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#sort">SORT</a> sorts your result data depending on a property and a direction.</li>
+<li><a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#limit">LIMIT</a> lets you crop your result data to a desired (maximum) number. </li>
 </ul>
 <h2 id="understanding-inline-queries">Understanding Inline Queries<a class="headerlink" href="#understanding-inline-queries" title="Permanent link">&para;</a></h2>
 <p><a href="https://blacksmithgu.github.io/obsidian-dataview/data-queries/#inline-dql"><strong>Inline Queries</strong></a> are a special form of query. We'll showcase the basics in [[Basic Inline Queries]].</p>
