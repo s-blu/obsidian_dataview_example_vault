@@ -4133,18 +4133,6 @@
         </a>
       
     
-      
-        <a href="../../tagindex/#dvjsel" class="md-tag">
-          dvjs/el
-        </a>
-      
-    
-      
-        <a href="../../tagindex/#dvmin" class="md-tag">
-          dv/min
-        </a>
-      
-    
   </nav>
 
 
@@ -4166,11 +4154,11 @@ FROM &quot;10 Example Data/games&quot;
 </code></pre>
 <p><strong>Show pages from a tag  as table</strong></p>
 <pre><code class="language-dataview">LIST
-FROM 
+FROM #type/books 
 </code></pre>
 <p><strong>Combine multiple tags</strong></p>
 <pre><code class="language-dataview">TABLE
-FROM OR 
+FROM #dvjs/el OR #dv/min 
 </code></pre>
 <p><strong>Combine multiple folders</strong></p>
 <pre><code class="language-dataview">TABLE
@@ -4178,7 +4166,7 @@ FROM &quot;10 Example Data/books&quot; OR &quot;10 Example Data/games&quot;
 </code></pre>
 <p><strong>Combine tags and folders</strong></p>
 <pre><code class="language-dataview">TABLE
-FROM &quot;10 Example Data/games&quot; AND  
+FROM &quot;10 Example Data/games&quot; AND #genre/action  
 </code></pre>
 <p><strong>List all pages</strong></p>
 <div class="admonition attention">
@@ -4191,12 +4179,12 @@ Please note: There needs to be a <strong>space</strong> behind <code>TABLE</code
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="show-pages-from-a-certain-author">Show pages from a certain author<a class="headerlink" href="#show-pages-from-a-certain-author" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataview">TABLE
-FROM 
+FROM #type/books 
 WHERE author = &quot;Conrad C&quot;
 </code></pre>
 <h3 id="show-pages-and-additional-information">Show pages and additional information<a class="headerlink" href="#show-pages-and-additional-information" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataview">TABLE author, pagesRead, totalPages
-FROM
+FROM #type/books
 </code></pre>
 <h3 id="show-only-meta-data-information-and-no-file-link">Show only meta data information and no file link<a class="headerlink" href="#show-only-meta-data-information-and-no-file-link" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataview">TABLE WITHOUT ID source, time, ingredients

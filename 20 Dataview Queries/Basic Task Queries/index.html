@@ -4150,11 +4150,11 @@ FROM &quot;10 Example Data/assignments&quot;
 </code></pre>
 <p><strong>List tasks from a tag</strong></p>
 <pre><code class="language-dataview">TASK
-FROM
+FROM #next
 </code></pre>
 <p><strong>Combine multiple tags</strong></p>
 <pre><code class="language-dataview">TASK
-FROM OR
+FROM #clientC OR #clientB
 </code></pre>
 <p><strong>Combine multiple folders</strong></p>
 <pre><code class="language-dataview">TASK
@@ -4162,7 +4162,7 @@ FROM &quot;10 Example Data/assignments&quot; OR &quot;10 Example Data/games&quot
 </code></pre>
 <p><strong>Combine tags and folders</strong></p>
 <pre><code class="language-dataview">TASK
-FROM &quot;10 Example Data/assignments&quot; AND  
+FROM &quot;10 Example Data/assignments&quot; AND #later  
 </code></pre>
 <p><strong>List all tasks, everywhere</strong></p>
 <div class="admonition attention">

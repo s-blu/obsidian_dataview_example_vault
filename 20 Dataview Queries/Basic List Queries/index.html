@@ -4119,18 +4119,6 @@
         </a>
       
     
-      
-        <a href="../../tagindex/#dvjsel" class="md-tag">
-          dvjs/el
-        </a>
-      
-    
-      
-        <a href="../../tagindex/#dvmin" class="md-tag">
-          dv/min
-        </a>
-      
-    
   </nav>
 
 
@@ -4152,11 +4140,11 @@ FROM &quot;10 Example Data/games&quot;
 </code></pre>
 <p><strong>List pages from a tag</strong></p>
 <pre><code class="language-dataview">LIST
-FROM 
+FROM #type/books 
 </code></pre>
 <p><strong>Combine multiple tags</strong></p>
 <pre><code class="language-dataview">LIST
-FROM OR 
+FROM #dvjs/el OR #dv/min 
 </code></pre>
 <p><strong>Combine multiple folders</strong></p>
 <pre><code class="language-dataview">LIST
@@ -4164,7 +4152,7 @@ FROM &quot;10 Example Data/books&quot; OR &quot;10 Example Data/games&quot;
 </code></pre>
 <p><strong>Combine tags and folders</strong></p>
 <pre><code class="language-dataview">LIST
-FROM &quot;10 Example Data/games&quot; AND  
+FROM &quot;10 Example Data/games&quot; AND #genre/action  
 </code></pre>
 <p><strong>List all pages</strong></p>
 <div class="admonition attention">
@@ -4177,7 +4165,7 @@ Please note: There needs to be a <strong>space</strong> behind <code>LIST</code>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="list-pages-from-a-certain-author">List pages from a certain author<a class="headerlink" href="#list-pages-from-a-certain-author" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataview">LIST
-FROM 
+FROM #type/books 
 WHERE author = &quot;Conrad C&quot;
 </code></pre>
 <h3 id="list-pages-and-show-a-meta-data-field">List pages and show a meta data field<a class="headerlink" href="#list-pages-and-show-a-meta-data-field" title="Permanent link">&para;</a></h3>
@@ -4186,7 +4174,7 @@ WHERE author = &quot;Conrad C&quot;
 <p>For lists, you can only add <strong>one</strong> additional output. For more, you need to use a <a href="../Basic%20Table%20Queries/">table</a> or <a href="../How%20to%20create%20custom%20outputs%20in%20queries/">create a custom output</a>.</p>
 </div>
 <pre><code class="language-dataview">LIST author
-FROM
+FROM #type/books
 </code></pre>
 <h3 id="list-meta-data-values-instead-of-the-pages">List meta data values instead of the pages<a class="headerlink" href="#list-meta-data-values-instead-of-the-pages" title="Permanent link">&para;</a></h3>
 <p>i.e. list source links of your recipes:</p>

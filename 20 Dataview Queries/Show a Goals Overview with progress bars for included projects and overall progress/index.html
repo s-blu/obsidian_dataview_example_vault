@@ -4150,7 +4150,7 @@ TABLE WITHOUT ID
     map(rows, (r) =&gt; r.Lt),
     map(rows, (r) =&gt; r.Lc),
     map(rows, (r) =&gt; &quot;&lt;progress style='width:80px;' value='&quot; + (r.Lc/r.Lt)*100 + &quot;' max='100'&gt;&lt;/progress&gt;&quot; + &quot;&amp;nbsp;&amp;nbsp;&lt;span style='font-size:smaller;color:var(--text-muted)'&gt;&quot; + round((r.Lc/r.Lt)*100) + &quot;%&lt;/span&gt;&quot;)
-FROM 
+FROM #goal 
 FLATTEN file.outlinks AS OUT
 WHERE OUT.file.tasks
 FLATTEN length(OUT.file.tasks) AS Lt
