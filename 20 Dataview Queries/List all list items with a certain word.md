@@ -3,7 +3,6 @@ description: List all bullet points that contain a specific word
 topics:
   - filter bullet points
 ---
-#dataviewquery
 #dv/list #dv/from #dv/where #dv/groupby #dv/flatten #dv/icontains
 
 # List all list items with a certain word

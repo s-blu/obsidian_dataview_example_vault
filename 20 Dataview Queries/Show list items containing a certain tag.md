@@ -3,7 +3,6 @@ description: Show all bullet points that contain a certain tag
 topics:
   - filter bullet points
 ---
-#dataviewquery
 #dv/table #dv/from #dv/where #dv/groupby #dv/flatten #dv/contains 
 
 # Show list items containing a certain tag

@@ -4,7 +4,6 @@ topics:
   - open tasks
   - latest items
 ---
-#dataviewquery
 #dv/task #dv/from #dv/where #dv/sort #dv/limit 
 
 # Get latest open tasks

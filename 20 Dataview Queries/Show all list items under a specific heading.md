@@ -3,7 +3,6 @@ description: List all bullet points under a certain heading
 topics:
   - filter bullet points
 ---
-#dataviewquery
 #dv/table #dv/from #dv/where #dv/groupby #dv/flatten #dv/meta #dv/filter
 
 # Show all list items under a specific heading

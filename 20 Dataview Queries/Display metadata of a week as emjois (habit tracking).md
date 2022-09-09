@@ -4,7 +4,6 @@ topics:
   - habit tracking
   - emojis as output
 ---
-#dataviewquery
 #dv/table #dv/from  #dv/where #dv/choice
 # Display metadata of a week as emjois (habit tracking)
 

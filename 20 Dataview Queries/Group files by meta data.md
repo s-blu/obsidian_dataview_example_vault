@@ -4,7 +4,6 @@ topics:
   - grouping
   - group pages based on meta data
 ---
-#dataviewquery
 #dv/table #dv/from #dv/where #dv/groupby #dv/choice 
 # Group files by meta data
 
