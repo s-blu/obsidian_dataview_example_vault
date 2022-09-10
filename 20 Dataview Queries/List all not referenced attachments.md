@@ -6,7 +6,7 @@ topics:
 ---
 #dv/dataviewjs #dvjs/pages #dvjs/filter #dvjs/list #dvjs/fileLink #dvjs/array #dvjs/map 
 
-# List all not references attachments
+# List all not referenced attachments
 
 ## Basic 
 
