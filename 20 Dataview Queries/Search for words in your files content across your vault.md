@@ -17,24 +17,26 @@ topics:
 ```dataviewjs
 const word = "Queries" // <-- Type your search between the ""
 
+// We need to double-escape \b here so it's correctly fed into RegExp after the concationation (as "\b" and not as "b").
 const regex = new RegExp("\\b" + word + "\\b", "gi")
+// Query pages and crawl their raw data content 
 const pages = await Promise.all(
     dv.pages('"30 Dataview Resources"')
-    .array()
     .map(async (page) => {
         const content = await dv.io.load(page.file.path);
+        // Map pages to a custom object - if you want to have more infos in the
+        // table below, you need to add them here!
         return {
             link: page.file.link,
-            content,
             count: ( content.match(regex) || []).length
         };
     })
 )
-
+// Render the result table 
 dv.table(
         ["Note", `Matches for "${word}"`],
             pages
-            .filter(p => p.content && p.count)
+            .filter(p => p.count)
             .sort((a, b) => b.count - a.count)
             .map(p => [p.link, p.count])  
     );
@@ -49,16 +51,15 @@ dv.table(
 
 ```dataviewjs
 const word = "but"
+
 const regex = new RegExp("(\\S+\\s?){0,2}(\\b"+word+"\\b)(\\s\\S+){0,2}", "gi")
 const pages = await Promise.all(
     dv.pages('"30 Dataview Resources"')
-    .array()
     .map(async (page) => {
         const content = await dv.io.load(page.file.path);
         const matches = content.match(regex);
         return {
             link: page.file.link,
-            content,
             count: ( matches || []).length,
             matches
         };
@@ -68,7 +69,7 @@ const pages = await Promise.all(
 dv.table(
         ["Note", "Count", `Matches for "${word}"`],
             pages
-            .filter(p => p.content && p.count)
+            .filter(p => p.count)
             .sort((a, b) => b.count - a.count)
             .map(p => [p.link, p.count, p.matches])  
     );
