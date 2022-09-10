@@ -1,5 +1,5 @@
 ---
-description: List all attachments that are nowhere linked
+description: List all attachments that are not linked anywhere
 topics:
   - attachments
   - unresolved links
