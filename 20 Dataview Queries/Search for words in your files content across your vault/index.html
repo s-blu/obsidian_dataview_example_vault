@@ -4095,24 +4095,26 @@
 </div>
 <pre><code class="language-dataviewjs">const word = &quot;Queries&quot; // &lt;-- Type your search between the &quot;&quot;
 
+// We need to double-escape \b here so it's correctly fed into RegExp after the concationation (as &quot;\b&quot; and not as &quot;b&quot;).
 const regex = new RegExp(&quot;\\b&quot; + word + &quot;\\b&quot;, &quot;gi&quot;)
+// Query pages and crawl their raw data content 
 const pages = await Promise.all(
     dv.pages('&quot;30 Dataview Resources&quot;')
-    .array()
     .map(async (page) =&gt; {
         const content = await dv.io.load(page.file.path);
+        // Map pages to a custom object - if you want to have more infos in the
+        // table below, you need to add them here!
         return {
             link: page.file.link,
-            content,
             count: ( content.match(regex) || []).length
         };
     })
 )
-
+// Render the result table 
 dv.table(
         [&quot;Note&quot;, `Matches for &quot;${word}&quot;`],
             pages
-            .filter(p =&gt; p.content &amp;&amp; p.count)
+            .filter(p =&gt; p.count)
             .sort((a, b) =&gt; b.count - a.count)
             .map(p =&gt; [p.link, p.count])  
     );
@@ -4124,16 +4126,15 @@ dv.table(
 <p>To see more surrounding words, increase the second number in the regular expression in the curly brackets. You can set it i.e. to <code>{0,5}</code> to see up to five surrounding words.</p>
 </div>
 <pre><code class="language-dataviewjs">const word = &quot;but&quot;
+
 const regex = new RegExp(&quot;(\\S+\\s?){0,2}(\\b&quot;+word+&quot;\\b)(\\s\\S+){0,2}&quot;, &quot;gi&quot;)
 const pages = await Promise.all(
     dv.pages('&quot;30 Dataview Resources&quot;')
-    .array()
     .map(async (page) =&gt; {
         const content = await dv.io.load(page.file.path);
         const matches = content.match(regex);
         return {
             link: page.file.link,
-            content,
             count: ( matches || []).length,
             matches
         };
@@ -4143,7 +4144,7 @@ const pages = await Promise.all(
 dv.table(
         [&quot;Note&quot;, &quot;Count&quot;, `Matches for &quot;${word}&quot;`],
             pages
-            .filter(p =&gt; p.content &amp;&amp; p.count)
+            .filter(p =&gt; p.count)
             .sort((a, b) =&gt; b.count - a.count)
             .map(p =&gt; [p.link, p.count, p.matches])  
     );
