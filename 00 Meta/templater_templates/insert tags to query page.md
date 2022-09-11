@@ -43,6 +43,4 @@ function addTag(subtag) {
 	const tag = `${tagprefix}${subtag}`
     if (!tags.contains(tag)) tags.push(tag)
 }
-
 %>
-

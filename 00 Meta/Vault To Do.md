@@ -27,7 +27,6 @@
 - [ ] Create  syntax examples/explanations that apply to all types
 	- [ ] How to select or exclude the current file
 	- [ ] Basic GROUP BY examples [[Basic GROUP BY Queries]]
-	- [ ] Basic FLATTEN examples [[Basic FLATTEN Queries]]
 	- [ ] Where is file.day coming from, how to set and how to use it
 	- [ ] What are inline fields and their types [[Inline Field Overview]]
 	- [ ] Explain what inline queries can do (and what not) [[Basic Inline Queries]]

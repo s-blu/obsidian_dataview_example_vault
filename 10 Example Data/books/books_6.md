@@ -1,5 +1,9 @@
 ---
 author: Berta B
+booktopics:
+- coming of age
+- magical items
+- first love
 genres:
 - Romance
 - Children

@@ -96,6 +96,8 @@ LIST author
 FROM "10 Example Data/books"
 SORT author
 ```
+> [!hint] Advanced usage
+> Do you want to see more advanced examples? Head over to the [[Queries by Type#List|Query Type Overview]] to see all available LIST queries in the vault!
 
 ---
 %% === end of query page === %%
