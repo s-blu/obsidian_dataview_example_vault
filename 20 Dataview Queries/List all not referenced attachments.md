@@ -1,12 +1,12 @@
 ---
-description: List all attachments that are nowhere linked
+description: List all attachments that are not linked anywhere
 topics:
   - attachments
   - unresolved links
 ---
 #dv/dataviewjs #dvjs/pages #dvjs/filter #dvjs/list #dvjs/fileLink #dvjs/array #dvjs/map 
 
-# List all not references attachments
+# List all not referenced attachments
 
 ## Basic 
 
