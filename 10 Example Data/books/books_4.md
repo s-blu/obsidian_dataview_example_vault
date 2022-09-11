@@ -1,5 +1,7 @@
 ---
 author: Conrad C
+booktopics:
+- cats
 genres:
 - Children
 totalPages: 512

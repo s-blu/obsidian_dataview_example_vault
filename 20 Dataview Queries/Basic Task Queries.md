@@ -102,6 +102,9 @@ WHERE completed
 SORT completion
 ```
 
+> [!hint] Advanced usage
+> Do you want to see more advanced examples? Head over to the [[Queries by Type#Task|Query Type Overview]] to see all available TASK queries in the vault!
+
 ---
 %% === end of query page === %%
 > [!help]- Similar Queries

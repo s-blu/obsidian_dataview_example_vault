@@ -123,6 +123,10 @@ TABLE author
 FROM "10 Example Data/books"
 SORT author
 ```
+
+> [!hint] Advanced usage
+> Do you want to see more advanced examples? Head over to the [[Queries by Type#Table|Query Type Overview]] to see all available TABLE queries in the vault!
+
 ---
 %% === end of query page === %%
 > [!help]- Similar Queries
