@@ -13,7 +13,7 @@
     
     
       
-        <title>List all not references attachments - Dataview Example Vault</title>
+        <title>List all not referenced attachments - Dataview Example Vault</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#list-all-not-references-attachments" class="md-skip">
+        <a href="#list-all-not-referenced-attachments" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              List all not references attachments
+              List all not referenced attachments
             
           </span>
         </div>
@@ -3108,12 +3108,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          List all not references attachments
+          List all not referenced attachments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        List all not references attachments
+        List all not referenced attachments
       </a>
       
         
@@ -4067,16 +4067,16 @@
 
 
 
-  <a href="https://github.com/s-blu/obsidian_dataview_example_vault/tree/master/20 Dataview Queries/List all not references attachments.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/s-blu/obsidian_dataview_example_vault/tree/master/20 Dataview Queries/List all not referenced attachments.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 <div class="admonition info">
-<p class="admonition-title">List all attachments that are nowhere linked</p>
+<p class="admonition-title">List all attachments that are not linked anywhere</p>
 </div>
-<h1 id="list-all-not-references-attachments">List all not references attachments<a class="headerlink" href="#list-all-not-references-attachments" title="Permanent link">&para;</a></h1>
+<h1 id="list-all-not-referenced-attachments">List all not referenced attachments<a class="headerlink" href="#list-all-not-referenced-attachments" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <pre><code class="language-dataviewjs">const allNonMdFiles = app.vault.getFiles().filter(file =&gt; file.extension !== 'md')
 const allNonMdOutlinks = dv.pages().file.outlinks.path.filter(link =&gt; !link.endsWith('.md'))
