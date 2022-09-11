@@ -39,7 +39,7 @@ Beside the four **types** of a query, you can use [**data commands**](https://bl
 - [FROM](https://blacksmithgu.github.io/obsidian-dataview/query/queries/#from) determines which notes to initially collect for your query depending on given [sources](https://blacksmithgu.github.io/obsidian-dataview/query/sources/)
 - [WHERE](https://blacksmithgu.github.io/obsidian-dataview/query/queries/#where) lets you filter notes based on information **inside** notes, i.e. meta data.
 - [GROUP BY](https://blacksmithgu.github.io/obsidian-dataview/query/queries/#group-by) lets you bundle up notes as one "result row" depending on a property (or calculation). See [[Basic GROUP BY Queries]] for example usages.
-- [FLATTEN](https://blacksmithgu.github.io/obsidian-dataview/query/queries/#flatten) does the opposite of `GROUP BY` - instead of bundling up, it _splits_ notes depending on a property (or calculation). See [[Basic FLATTEN Queries]] for example usages.
+- [FLATTEN](https://blacksmithgu.github.io/obsidian-dataview/query/queries/#flatten) does the opposite of `GROUP BY` - instead of bundling up, it _splits_ notes depending on a property (or calculation). See [[Example FLATTEN Queries]] for example usages.
 - [SORT](https://blacksmithgu.github.io/obsidian-dataview/query/queries/#sort) sorts your result data depending on a property and a direction.
 - [LIMIT](https://blacksmithgu.github.io/obsidian-dataview/query/queries/#limit) lets you crop your result data to a desired (maximum) number. 
 

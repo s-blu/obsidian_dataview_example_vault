@@ -1,5 +1,9 @@
 ---
 author: Alice A
+booktopics:
+- middleage
+- elves
+- runes
 genres:
 - Fantasy
 - Historical

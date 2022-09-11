@@ -1,5 +1,8 @@
 ---
 author: Berta B
+booktopics:
+- lost earth
+- virtual reality
 genres:
 - Science-Fiction
 - Dystopia

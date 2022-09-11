@@ -1,5 +1,6 @@
 ---
 author:
+booktopics:
 genres:
 - 
 totalPages: 347

@@ -11,7 +11,7 @@ Since I answered all the above with a "Yes", I wrote a utility that auto-generat
 ## How to use
 
 1. First, write all your queries. Your query page needs to be complete.
-2. Place your cursor at the top of the page (right below the frontmatter) and hit CTRL + E (this is the default for opening Templater's Template Modal)
+2. Place your cursor at the top of the page (right below the frontmatter) and hit ALT + E (this is the default for opening Templater's Template Modal)
 3. Choose `insert tags to query page`
 4. Done!
 

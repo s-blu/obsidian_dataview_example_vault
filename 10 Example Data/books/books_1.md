@@ -1,5 +1,8 @@
 ---
 author: Dora D
+booktopics:
+- lost earth
+- Cyborgs
 genres:
 - Science-Fiction
 - Dystopia
