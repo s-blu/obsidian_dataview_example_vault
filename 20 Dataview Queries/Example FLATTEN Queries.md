@@ -2,6 +2,14 @@
 description: Showcase the various possible usages of the FLATTEN data command
 topics:
   - basics
+nestedField:
+  - value1
+  - value2
+  - value3
+  - valueWithSubValues:
+    - sub1
+    - sub2
+    - sub3
 ---
  #dv/TABLE #dv/FROM #dv/FLATTEN #dv/groupby #dv/WHERE #dv/meta #dv/contains #dv/round
 
@@ -127,6 +135,25 @@ FROM "10 Example Data/books"
 FLATTEN round((pagesRead / totalPages) * 100) AS progress
 WHERE progress < 50
 FLATTEN progress + "%" AS percentage
+```
+
+### About flattening nested fields
+
+> [!error] FLATTEN on objects has no effect
+> `FLATTEN` works only correctly on lists or single values. A nested field, like you see in the frontmatter of this file, _is_ a list, but `valueWithSubValues` is an object - and one element in the list you're flattening. Therefore, it'll appear as one row.
+
+```dataview
+TABLE nestedField
+WHERE file = this.file
+FLATTEN nestedField
+```
+
+The same is true for pure objects, they cannot be flattened. This `FLATTEN` **has no effect**.
+
+```dataview
+TABLE wellbeing
+FROM "10 Example Data/dailys/2022-01-05"
+FLATTEN wellbeing
 ```
 
 > [!hint] More Examples
