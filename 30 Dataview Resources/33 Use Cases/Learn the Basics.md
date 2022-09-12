@@ -10,7 +10,7 @@ Before you can start querying data from your vault, you need [**meta data**](htt
 
 **Learn more about YAML Frontmatter** on the official documentation of Obsidian and take a look on our [[Frontmatter Overview]] and how [[Multivalue YAML Frontmatter Field]]s work.
 
-**Learn more about Inline fields** in the [dataview documentation](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/) and our [[Inline Field Overview]].
+**Learn more about Inline fields** in the [dataview documentation](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/) .
 
 ## Basic Structure of Queries
 
