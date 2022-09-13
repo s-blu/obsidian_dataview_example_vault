@@ -13,7 +13,7 @@
     
     
       
-        <title>Show all list items containing a specific metadata value - Dataview Example Vault</title>
+        <title>Example GROUP BY Queries - Dataview Example Vault</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#show-all-list-items-containing-a-specific-metadata-value" class="md-skip">
+        <a href="#example-group-by-queries" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Show all list items containing a specific metadata value
+              Example GROUP BY Queries
             
           </span>
         </div>
@@ -4381,11 +4381,86 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Example%20GROUP%20BY%20Queries/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Example GROUP BY Queries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Example GROUP BY Queries
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic" class="md-nav__link">
+    Basic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    Variants
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-pages-match-multiple-groups" class="md-nav__link">
+    When pages match multiple groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-a-calculation-as-a-group" class="md-nav__link">
+    Use a calculation as a group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-by-literals-to-trim-down-your-result-to-exactly-one-result" class="md-nav__link">
+    Group by literals to trim down your result to exactly one result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4941,52 +5016,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Show all list items containing a specific metadata value
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Show%20all%20list%20items%20containing%20a%20specific%20metadata%20value/" class="md-nav__link">
         Show all list items containing a specific metadata value
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic" class="md-nav__link">
-    Basic
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5458,6 +5492,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    Variants
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-pages-match-multiple-groups" class="md-nav__link">
+    When pages match multiple groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-a-calculation-as-a-group" class="md-nav__link">
+    Use a calculation as a group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-by-literals-to-trim-down-your-result-to-exactly-one-result" class="md-nav__link">
+    Group by literals to trim down your result to exactly one result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5475,32 +5543,62 @@
   <nav class="md-tags" >
     
       
-        <a href="../../tagindex/#dvtable" class="md-tag">
-          dv/table
+        <a href="../../tagindex/#dvlist" class="md-tag">
+          dv/LIST
         </a>
       
     
       
         <a href="../../tagindex/#dvfrom" class="md-tag">
-          dv/from
+          dv/FROM
         </a>
       
     
       
-        <a href="../../tagindex/#dvwhere" class="md-tag">
-          dv/where
+        <a href="../../tagindex/#dvgroupby" class="md-tag">
+          dv/groupby
+        </a>
+      
+    
+      
+        <a href="../../tagindex/#dvtable" class="md-tag">
+          dv/TABLE
         </a>
       
     
       
         <a href="../../tagindex/#dvflatten" class="md-tag">
-          dv/flatten
+          dv/FLATTEN
         </a>
       
     
       
-        <a href="../../tagindex/#dvcontains" class="md-tag">
-          dv/contains
+        <a href="../../tagindex/#dvchoice" class="md-tag">
+          dv/choice
+        </a>
+      
+    
+      
+        <a href="../../tagindex/#dvdate" class="md-tag">
+          dv/date
+        </a>
+      
+    
+      
+        <a href="../../tagindex/#dvwhere" class="md-tag">
+          dv/WHERE
+        </a>
+      
+    
+      
+        <a href="../../tagindex/#dvround" class="md-tag">
+          dv/round
+        </a>
+      
+    
+      
+        <a href="../../tagindex/#dvlength" class="md-tag">
+          dv/length
         </a>
       
     
@@ -5508,23 +5606,81 @@
 
 
 
-  <a href="https://github.com/s-blu/obsidian_dataview_example_vault/tree/master/20 Dataview Queries/Show all list items containing a specific metadata value.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/s-blu/obsidian_dataview_example_vault/tree/master/20 Dataview Queries/Example GROUP BY Queries.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 <div class="admonition info">
-<p class="admonition-title">Show all bullet points that contain a certain metadata value</p>
+<p class="admonition-title">Showcase the various possible usages of the GROUP BY data command</p>
 </div>
-<h1 id="show-all-list-items-containing-a-specific-metadata-value">Show all list items containing a specific metadata value<a class="headerlink" href="#show-all-list-items-containing-a-specific-metadata-value" title="Permanent link">&para;</a></h1>
+<h1 id="example-group-by-queries">Example GROUP BY Queries<a class="headerlink" href="#example-group-by-queries" title="Permanent link">&para;</a></h1>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
-<p>All lists with "Surname" in the inline field <code>author::</code></p>
-<pre><code class="language-dataview">TABLE L.text AS &quot;My lists&quot;
-FROM &quot;10 Example Data/dailys&quot;
-FLATTEN file.lists AS L
-WHERE contains(L.author, &quot;Surname&quot;)
+<div class="admonition info">
+<p class="admonition-title">Effect of <code>GROUP BY</code></p>
+<p>Initially, a dataview results yields the pages you receive from your <code>FROM</code> and <code>WHERE</code> arguments as results - one "row", one result item, per note. When a <code>GROUP BY</code> is applied to a Query, you <strong>bundle up</strong> all pages after the <strong>field you're grouping by</strong>. This has two implications:<br />
+First, after a <code>GROUP BY</code>, you have as many results as the field you grouped by has values.<br />
+Secondly, the result pages are not your "first level" anymore, but the group is. When listing out a grouped query, you will not receive the files anymore, but the groups. <br />
+<a href="https://blacksmithgu.github.io/obsidian-dataview/query/literals/">Documentation</a></p>
+</div>
+<pre><code class="language-dataview">LIST
+FROM &quot;10 Example Data/books&quot;
+GROUP BY author
 </code></pre>
+<div class="admonition hint">
+<p class="admonition-title">Working with grouped pages</p>
+<p>A grouped result list is made up of result items that look like this:<br />
+<code>Key</code>: Value of the field you used in GROUP BY<br />
+<code>rows</code>: All pages that match <code>Key</code><br />
+Before grouping, every note was a result item and file.link was the <code>Key</code>. After grouping, your file informations are bundled up under the group value as key under the field <code>rows</code>. That means you need to use <code>rows</code> as a prefix when listing informations.</p>
+</div>
+<pre><code class="language-dataview">TABLE rows.file.link
+FROM &quot;10 Example Data/books&quot;
+GROUP BY author
+</code></pre>
+<h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
+<h3 id="when-pages-match-multiple-groups">When pages match multiple groups<a class="headerlink" href="#when-pages-match-multiple-groups" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Duplication of entries</p>
+<p>If a page matches multiple groups, dataview will duplicate the page for you to put it in every matching group. Therefor, pages can show up multiple times in a grouped result list.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Why do we need to use <code>FLATTEN</code> here first?</p>
+<p>In order to get decent groups, we need to <code>FLATTEN</code> the multi value field <code>genres</code> first. Read more about that in <a href="../Example%20FLATTEN%20Queries/#group-by-a-flattened-field">Example FLATTEN Queries#Group by a flattened field</a></p>
+</div>
+<pre><code class="language-dataview">TABLE rows.file.link
+FROM &quot;10 Example Data/books&quot;
+FLATTEN genres
+GROUP BY genres
+</code></pre>
+<h3 id="use-a-calculation-as-a-group">Use a calculation as a group<a class="headerlink" href="#use-a-calculation-as-a-group" title="Permanent link">&para;</a></h3>
+<pre><code>[!info]
+It's also possible to use a calculation as a group, not only a plain field.
+</code></pre>
+<pre><code class="language-dataview">LIST rows.file.link
+FROM &quot;10 Example Data/assignments&quot;
+GROUP BY choice(due &lt; date(today), &quot;Overdue&quot;, &quot;Still has time&quot;)
+</code></pre>
+<p>In addition, you can name this calculation to reference it further in your query.</p>
+<pre><code class="language-dataview">TABLE WITHOUT ID progress + &quot;%&quot; AS &quot;% read&quot;, rows.file.link
+FROM &quot;10 Example Data/books&quot;
+GROUP BY round((pagesRead/totalPages) * 100) as progress
+WHERE progress &gt; 50 AND progress &lt; 100
+</code></pre>
+<h3 id="group-by-literals-to-trim-down-your-result-to-exactly-one-result">Group by literals to trim down your result to exactly one result<a class="headerlink" href="#group-by-literals-to-trim-down-your-result-to-exactly-one-result" title="Permanent link">&para;</a></h3>
+<pre><code>[!info]
+Beside calculations and fields, you can use a [literal](https://blacksmithgu.github.io/obsidian-dataview/query/literals/) - a fixed value - as a group. This will always result into **one group** and can be useful in certain scenarios, i.e. if you want to calculate a sum or average of your data.
+The literal itself is used as the group name, but doesn't matter otherwise. You can use it to declare a senseful prefix or omit it completely by using `WITHOUT ID`.
+</code></pre>
+<pre><code class="language-dataview">LIST length(rows) 
+FROM &quot;10 Example Data/books&quot;
+GROUP BY &quot;Total Books in Obsidian&quot;
+</code></pre>
+<div class="admonition hint">
+<p class="admonition-title">More Examples</p>
+<p>Do you want to see more examples how <code>GROUP BY</code> can be used? Head over to <a href="../../30%20Dataview%20Resources/31%20Query%20Overviews/Queries%20by%20Data%20Command/#groupby">Queries by Data Command#GROUPBY</a> to see all queries in this vault that use <code>GROUP BY</code>.</p>
+</div>
 
 
 
@@ -5544,7 +5700,7 @@ WHERE contains(L.author, &quot;Surname&quot;)
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../Show%20all%20birthdays%20for%20this%20month/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Show all birthdays for this month" rel="prev">
+        <a href="../Example%20FLATTEN%20Queries/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Example FLATTEN Queries" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -5553,20 +5709,20 @@ WHERE contains(L.author, &quot;Surname&quot;)
               <span class="md-footer__direction">
                 Previous
               </span>
-              Show all birthdays for this month
+              Example FLATTEN Queries
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Show%20all%20list%20items%20under%20a%20specific%20heading%20with%20a%20metadata%20field/" class="md-footer__link md-footer__link--next" aria-label="Next: Show all list items under a specific heading with a metadata field" rel="next">
+        <a href="../Frontmatter%20Overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Frontmatter Overview" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Show all list items under a specific heading with a metadata field
+              Frontmatter Overview
             </div>
           </div>
           <div class="md-footer__button md-icon">

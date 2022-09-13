@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.4">
     
     
       
@@ -4381,6 +4381,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../20%20Dataview%20Queries/Example%20GROUP%20BY%20Queries/" class="md-nav__link">
+        Example GROUP BY Queries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../20%20Dataview%20Queries/Frontmatter%20Overview/" class="md-nav__link">
         Frontmatter Overview
       </a>
@@ -5556,7 +5570,7 @@
 <h2 id="understanding-meta-data-on-notes">Understanding meta data on notes<a class="headerlink" href="#understanding-meta-data-on-notes" title="Permanent link">&para;</a></h2>
 <p>Before you can start querying data from your vault, you need <a href="https://blacksmithgu.github.io/obsidian-dataview/data-annotation/"><strong>meta data</strong></a> to query. While there is already some information available on your <a href="https://blacksmithgu.github.io/obsidian-dataview/data-annotation/#implicit-fields">notes</a> and <a href="https://blacksmithgu.github.io/obsidian-dataview/data-annotation/#implicit-fields_1">tasks</a>, to leverage the full power of dataview, you'll need to add your own meta data via the frontmatter or inline fields.</p>
 <p><strong>Learn more about YAML Frontmatter</strong> on the official documentation of Obsidian and take a look on our <a href="../../../20%20Dataview%20Queries/Frontmatter%20Overview/">Frontmatter Overview</a> and how <a href="../../../20%20Dataview%20Queries/Multivalue%20YAML%20Frontmatter%20Field/">Multivalue YAML Frontmatter Field</a>s work.</p>
-<p><strong>Learn more about Inline fields</strong> in the <a href="https://blacksmithgu.github.io/obsidian-dataview/data-annotation/">dataview documentation</a> and our [[Inline Field Overview]].</p>
+<p><strong>Learn more about Inline fields</strong> in the <a href="https://blacksmithgu.github.io/obsidian-dataview/data-annotation/">dataview documentation</a> .</p>
 <h2 id="basic-structure-of-queries">Basic Structure of Queries<a class="headerlink" href="#basic-structure-of-queries" title="Permanent link">&para;</a></h2>
 <p>A dataview query consists of following parts - in following order:</p>
 <ul>
@@ -5579,7 +5593,7 @@
 <ul>
 <li><a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#from">FROM</a> determines which notes to initially collect for your query depending on given <a href="https://blacksmithgu.github.io/obsidian-dataview/query/sources/">sources</a></li>
 <li><a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#where">WHERE</a> lets you filter notes based on information <strong>inside</strong> notes, i.e. meta data.</li>
-<li><a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#group-by">GROUP BY</a> lets you bundle up notes as one "result row" depending on a property (or calculation). See [[Basic GROUP BY Queries]] for example usages.</li>
+<li><a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#group-by">GROUP BY</a> lets you bundle up notes as one "result row" depending on a property (or calculation). See <a href="../../../20%20Dataview%20Queries/Example%20GROUP%20BY%20Queries/">Example GROUP BY Queries</a> for example usages.</li>
 <li><a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#flatten">FLATTEN</a> does the opposite of <code>GROUP BY</code> - instead of bundling up, it <em>splits</em> notes depending on a property (or calculation). See <a href="../../../20%20Dataview%20Queries/Example%20FLATTEN%20Queries/">Example FLATTEN Queries</a> for example usages.</li>
 <li><a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#sort">SORT</a> sorts your result data depending on a property and a direction.</li>
 <li><a href="https://blacksmithgu.github.io/obsidian-dataview/query/queries/#limit">LIMIT</a> lets you crop your result data to a desired (maximum) number. </li>
@@ -5590,6 +5604,7 @@
 <p>... would go way beyond the scope of this project 😉. <a href="https://blacksmithgu.github.io/obsidian-dataview/api/intro/">JavaScript Queries</a> are an advanced technique, enabling you to create basically <em>anything</em> if you have dataview, time and knowledge. JavaScript is a full-fledged programming language and learning it takes a huge commitment. </p>
 <p><strong>Don't fret, though!</strong> The native dataview implementation is already immensely powerful and let you do a ton of complex querying right out of the box. You certainly do not need JavaScript to get started and you're probably fine for the rest of your journey without opening this pandora's box. </p>
 <p>If you <em>really</em> wish to get into <strong>dataviewjs</strong>, hop over to your favorite search engine, search for one of the various free basic courses in JavaScript, learn the basics, read the <a href="https://blacksmithgu.github.io/obsidian-dataview/api/code-reference/">dataviewjs documentation</a> and get a glimpse of a world full of anarchy.</p>
+
 
 
 
