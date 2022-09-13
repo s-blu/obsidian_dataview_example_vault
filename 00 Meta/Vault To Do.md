@@ -19,7 +19,6 @@
 - [ ] How to select or exclude the current file
 - [ ] Where is file.day coming from, how to set and how to use it
 - [ ] Finish up [[Learn the Basics]]
-	- [ ] Basic GROUP BY examples [[Basic GROUP BY Queries]] (also see [here](https://discord.com/channels/686053708261228577/875721010144477204/1004654445348532234))
 	- [ ] Explain what inline queries can do (and what not) [[Basic Inline Queries]]
  - [ ] Add [sum up number of pages fulfilling certain criteria](https://discord.com/channels/686053708261228577/875721010144477204/1010262245755858994)
  - [ ] Add a page about [transforming dates](https://discord.com/channels/686053708261228577/875721010144477204/1011564039639404584) into a [format dataview recognizes](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/#field-types)
