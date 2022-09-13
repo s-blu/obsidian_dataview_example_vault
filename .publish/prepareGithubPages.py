@@ -51,7 +51,7 @@ for (dirpath, dirnames, filenames) in os.walk(pagesDir):
                     r"---\s(%% === end of query page === %%)(.+)", '', filedata, flags=re.DOTALL)
 
                 # Change Callout syntax to admonition syntax
-                filedata = re.sub(r"^> \[\!(.+?)\][-+]? (.+)",
+                filedata = re.sub(r"^> \[\!(.+?)\][-+]? (.+)?",
                                   r'!!! \1 "\2"', filedata, flags=re.MULTILINE)
                 # Remove lines that just contain a "> " if there's another "> something" following, since empty lines break the admonition syntax
                 filedata = re.sub(r"^>\s> (.+)", r'    \1',

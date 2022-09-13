@@ -7,7 +7,7 @@ multivalue:
   - val2
   - val3
 ---
- #dv/inline #dv/inlinejs #dv/LIST #dv/WHERE
+ #dv/inlinejs #dv/inline #dv/LIST #dv/WHERE
 
 # Basic Inline Queries
 
@@ -59,7 +59,7 @@ The "`= [[Learn the Basics]].file.link`" Use Case exists since `= [[Learn the Ba
 
 ### Formatting inline queries
 
-> [!info] Inline Queries are threaten as text
+> [!info] Inline Queries are treaten as text
 > You can format an inline query like you'd format normal text.
 
 Today is **`= date(today)`**, and it's **`= dateformat(date(now), "HH:MM")`**.

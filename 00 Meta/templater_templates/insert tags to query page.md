@@ -8,6 +8,13 @@ const datacommands = ["LIST", "TABLE", "TASK", "CALENDAR", "FROM", "WHERE", "FLA
 const tags = [];
 let tagprefix = "#dv/"
 
+if (content.match(/`\$= [^`]+`/)) {
+  tags.push(tagprefix + 'inlinejs')
+}
+if (content.match(/`\= [^`]+`/)) {
+  tags.push(tagprefix + 'inline')
+}
+
 const queries = content.matchAll(dataviewRegex);
 for (let query of queries) {
   const type = query[1];
@@ -16,7 +23,7 @@ for (let query of queries) {
   if (type === 'dataview') {
     datacommands.forEach(datacommand => {
       if (query.includes(datacommand)) {
-        tags.push(`${tagprefix}${datacommand}`)
+        tags.push(`${tagprefix}${datacommand.replace(/\s/, '')}`)
          // we only want to add this tag once, no need to check for the data command again here or in other queries
         datacommands.splice(datacommands.indexOf(datacommand), 1)
       }
