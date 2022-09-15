@@ -11,9 +11,10 @@ We hope you enjoy!
 1. Download the vault [here](https://github.com/s-blu/obsidian_dataview_example_vault/archive/refs/heads/master.zip)
 3. Open the vault in Obsidian via "Open another vault -> Open folder as vault"
 4. Trust us. :) 
-5. Done! The example vault is now available to you in its purest and most useful form!
+5. When Obsidian opens the settings, hit the switch on "Dataview" to enable the plugin
+6. Done! The example vault is now available to you in its purest and most useful form!
 
-Wonder where to start? Good starting points are the Use Cases under `30 Dataview Knowledge/33 Use Cases`, the [[Dataview Queries Overview]] or the [[Topic Overview]]. You can, of course, add and edit files to your liking to try things out!
+Wonder where to start? Good starting points are our [[Use Case Overview]], the [[Dataview Queries Overview]] or the [[Topic Overview]]. You can, of course, add and edit files to your liking to try things out!
 
 **Are you new to dataview?** Have a look at [[Learn the Basics]]!
 
