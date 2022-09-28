@@ -10,7 +10,7 @@ topics:
 ## Basic 
 
 ```dataview
-TABLE choice(praying, "💚", "➖") AS Praying, choice(breathing, "💚", "➖") AS breating, choice(beingthankful, "💚", "➖") AS "being thankful", choice(slowdown, "💚", "➖") AS "slow down"
+TABLE choice(praying, "💚", "➖") AS Praying, choice(breathing, "💚", "➖") AS breathing, choice(beingthankful, "💚", "➖") AS "being thankful", choice(slowdown, "💚", "➖") AS "slow down"
 FROM "10 Example Data/dailys"
 WHERE wellbeing.mood > 0 AND date(file.day).weekyear = 2
 ```
