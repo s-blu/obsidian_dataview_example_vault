@@ -17,7 +17,7 @@ FROM "10 Example Data/games"
 
 **Show pages from a tag  as table**
 ```dataview
-LIST
+TABLE
 FROM #type/books 
 ```
 
