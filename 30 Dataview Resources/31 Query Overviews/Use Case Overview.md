@@ -6,8 +6,8 @@ We hope the Use Cases aid you to find inspiration and helpful queries that make 
 
 For Newcomers, we have our [[Learn the Basics]] Use Case, that points you to the correct places in the documentation and give you basic syntax examples.
 
-> [!attention] Work in Progress
-> Most Use Cases are not available yet - but we are working on them! :) Check back later!
+> [!attention] Contributions welcome!
+> Most Use Cases are not available right now. When you want to help making this vault more useful, please consider contributing one of linked Use Cases below! Find more information about contributing under [[Contribution]] and more about Use Cases under [[Use Cases]]. Thank you!
 
 ## Periodic Notes
 
