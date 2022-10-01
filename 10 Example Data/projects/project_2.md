@@ -15,3 +15,8 @@ finished::
   - [x] Subtask 5.1 of project_2 
   - [ ] Subtask 5.2 of project_2 
 - [ ] Task 4 of project_2 
+
+## Urgent 
+
+- [ ] Urgent task of project_2 1
+- [ ] Urgent task of project_2 2

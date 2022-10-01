@@ -1,5 +1,5 @@
-# Learn the Basics
 
+# Learn the Basics
 This page shall guide you if you are a newcomer to the power of Dataview. **Before you start out**, make sure you made yourself familiar with the [official Documentation](https://blacksmithgu.github.io/obsidian-dataview/). While the documentation is not the most intuitive guide, it's important to get a grasp of the general idea and functionality to enable you writing your own queries. 
 
 There is some [[Dataview Documentation and Resources|further reading]] you can dive into, but that's not necessary to get started. If you stumble across something, maybe the [[FAQ]] can help out.

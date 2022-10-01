@@ -11,7 +11,7 @@ date: 2022-07-07
 ## Basic 
 
 ```dataview
-LIST WITHOUT ID
+LIST
 FROM "10 Example Data/dailys"
 WHERE file.name != this.file.name AND file.day < this.file.day
 SORT file.day DESC

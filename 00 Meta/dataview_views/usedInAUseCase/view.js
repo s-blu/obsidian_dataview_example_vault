@@ -1,4 +1,4 @@
-const inlinksFromUseCases = input?.current?.file.inlinks.filter(link => link.path.contains("33 Use Cases")) ?? [];
+const inlinksFromUseCases = input?.current?.file.inlinks.filter(link => link.path.match(/30 Dataview Resources\/33 Use Cases\/(?:(?:[^\/]+\.md)|(?:(.+)\/\1.md))/)) ?? [];
 
 const header = `> [!info] Part of Use Cases`;
 
