@@ -39,7 +39,7 @@ function determineColor(date) {
   if (input.color && typeof input.color === 'function') {
     return input.color(date);
   } else {
-    const page = input.pages.find(p => p.day.startOf('day').equals(date.startOf('day')));
+    const page = input.pages.find(p => p.file.day.startOf('day').equals(date.startOf('day')));
     return page ? input.color : emptyColor;
   }
 }
