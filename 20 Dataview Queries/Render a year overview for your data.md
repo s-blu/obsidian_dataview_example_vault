@@ -214,7 +214,8 @@ function getDayEl(date, color) {
 }
 
 function determineColor(date) {
-	const page = values.find(p => p.day.startOf('day').equals(date.startOf('day')));
+	console.log(values.find(p => !p.day))
+	const page = values.find(p => p.file.day.startOf('day').equals(date.startOf('day')));
 	if (!page) return emptyColor;
 
 
@@ -318,7 +319,7 @@ function getDayEl(date, colors) {
 }
 
 function determineColor(date) {
-	const page = values.find(p => p.day.startOf('day').equals(date.startOf('day')));
+	const page = values.find(p => p.file.day.startOf('day').equals(date.startOf('day')));
 	if (!page) return [emptyColor, emptyColor];
 
 	return [
