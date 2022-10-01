@@ -24,6 +24,4 @@ There are some other queries that are worth to mention when it comes to daily no
 - [[Display metadata of a week as emjois (habit tracking)]]
 - [[List all list items with a certain word]]
 - [[List the last contact with every person]]
-- 
-
 
