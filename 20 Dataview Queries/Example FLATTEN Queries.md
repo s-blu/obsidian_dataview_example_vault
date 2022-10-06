@@ -18,7 +18,7 @@ nestedField:
 ## Basic 
 
 > [!info] Effect of FLATTEN
-> `FLATTEN` is the opposite of `GROUP BY`. Instead of putting multiple notes into one row, it (potentionally) **splits up** one page into **multiple rows**. If your result contains seven notes and you use `FLATTEN` on a **multi value field**, you'll get `7 * sum of values in flattened field` results.
+> `FLATTEN` is the opposite of `GROUP BY`. Instead of putting multiple notes into one row, it (potentionally) **splits up** one note into **multiple rows**. If your result contains seven notes and you use `FLATTEN` on a **multi value field**, you'll get `7 * sum of values in flattened field` results.
 > [Documentation](https://blacksmithgu.github.io/obsidian-dataview/query/queries/#flatten)
 
 
@@ -84,8 +84,8 @@ FLATTEN genres
 
 ## Use FLATTEN to perform other operations on your values
 
-> [!hint] Use function that cannot operate on arrays
-> To use functions that do not take an array (a multi value) as an argument, you need to `FLATTEN` this value first. This is also true for functions that act differently on single values, i.e. `contains`
+> [!hint] Use function that cannot operate on lists
+> To use functions that do not take an lists (a multi value) as an argument, you need to `FLATTEN` this value first. This is also true for functions that act differently on single values, i.e. `contains`
 
 **Use a function that only takes single values as arguments**
 ```dataview
@@ -123,6 +123,18 @@ TABLE pagesRead, totalPages, progress AS "%"
 FROM "10 Example Data/books"
 FLATTEN round((pagesRead / totalPages) * 100) AS progress
 WHERE progress < 50
+```
+
+#### Use FLATTEN on a multi-value field but calculate a single value
+
+> [!hint] Special case of declaring a new field
+> There is one special case FLATTEN can act a bit unintuitive. When you 
+
+```dataview
+TABLE rows.file.link, rows.genreCount
+FROM "10 Example Data/books"
+FLATTEN length(genres) AS genreCount
+GROUP BY genres
 ```
 
 ### Flattening a field multiple times

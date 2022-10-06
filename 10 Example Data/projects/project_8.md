@@ -18,3 +18,11 @@ finished:: 2022-07-22
   - [x] Subtask 5.1 of project_8 
   - [x] Subtask 5.2 of project_8 
 - [x] Task 6 of project_8 
+
+
+- [ ] [priority:: low] low prio task
+- [ ] [priority:: low] low prio task
+- [ ] [priority:: low] low prio task
+- [ ] [priority:: low] low prio task
+- [ ] [priority:: low] low prio task
+- [ ] [priority:: low] low prio task

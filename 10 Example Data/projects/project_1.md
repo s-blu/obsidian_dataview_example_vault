@@ -18,3 +18,7 @@ finished:: 2022-07-02
   - [x] Subtask 5.1 of project_1 
   - [x] Subtask 5.2 of project_1 
 - [x] Task 6 of project_1 
+
+
+- [ ] Task with priority [priority:: low]
+- [ ] [priority::high] important task, do ASAP

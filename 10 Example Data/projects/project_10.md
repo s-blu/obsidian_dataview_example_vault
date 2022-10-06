@@ -12,3 +12,6 @@ finished:: 2022-08-07
 - [x] Task 1 of project_10 
 - [x] Task 2 of project_10
 - [x] Task 3 of project_10
+
+- [ ] medium stuff [priority:: medium]
+- [ ] medium stuff [priority::medium]

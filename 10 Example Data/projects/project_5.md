@@ -18,3 +18,6 @@ finished:: 2022-02-06
   - [x] Subtask 5.1 of project_5 
   - [x] Subtask 5.2 of project_5 
 - [x] Task 6 of project_5 
+
+- [x] done task with [priority:: medium] and other stuff
+- [ ] open task with [priority:: medium] and other stuff
