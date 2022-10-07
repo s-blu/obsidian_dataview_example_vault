@@ -4453,8 +4453,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#show-newest-completed-task-with-low-opacity" class="md-nav__link">
-    Show newest completed task with low opacity
+  <a href="#show-newest-completed-tasks-with-low-opacity" class="md-nav__link">
+    Show newest completed tasks with low opacity
   </a>
   
 </li>
@@ -4462,6 +4462,13 @@
           <li class="md-nav__item">
   <a href="#in-case-of-more-priority-values-use-a-map-object" class="md-nav__link">
     In case of more priority values, use a map object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#also-show-tasks-that-have-no-priority-and-sort-them-last" class="md-nav__link">
+    Also show tasks that have no priority and sort them last
   </a>
   
 </li>
@@ -5744,8 +5751,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#show-newest-completed-task-with-low-opacity" class="md-nav__link">
-    Show newest completed task with low opacity
+  <a href="#show-newest-completed-tasks-with-low-opacity" class="md-nav__link">
+    Show newest completed tasks with low opacity
   </a>
   
 </li>
@@ -5753,6 +5760,13 @@
           <li class="md-nav__item">
   <a href="#in-case-of-more-priority-values-use-a-map-object" class="md-nav__link">
     In case of more priority values, use a map object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#also-show-tasks-that-have-no-priority-and-sort-them-last" class="md-nav__link">
+    Also show tasks that have no priority and sort them last
   </a>
   
 </li>
@@ -5845,7 +5859,7 @@ const order = [ &quot;low&quot;, &quot;medium&quot;, &quot;high&quot;]
 dv.taskList(tasks.sort((a, b) =&gt; order.indexOf(b.priority) - order.indexOf(a.priority)), false)
 </code></pre>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
-<h3 id="show-newest-completed-task-with-low-opacity">Show newest completed task with low opacity<a class="headerlink" href="#show-newest-completed-task-with-low-opacity" title="Permanent link">&para;</a></h3>
+<h3 id="show-newest-completed-tasks-with-low-opacity">Show newest completed tasks with low opacity<a class="headerlink" href="#show-newest-completed-tasks-with-low-opacity" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataviewjs">// define pages
 const pages = dv.pages('&quot;10 Example Data/projects&quot;')
 
@@ -5880,7 +5894,7 @@ dv.taskList(tasks.sort((a, b) =&gt; order.indexOf(b.priority) - order.indexOf(a.
 
 
 // COMPLETED TASKS
-const done = pages.file.tasks.where(t =&gt; t.completed)
+const done = pages.file.tasks.where(t =&gt; t.priority &amp;&amp; t.completed)
 
 // render completed tasks and add a limit to the number of the listed tasks (sorted by the completion date - need to activate auto-completion in dataview settings)
 if (done.length &gt;= 1) {
@@ -5896,6 +5910,48 @@ const pages = dv.pages('&quot;10 Example Data/projects&quot;')
 
 // OPEN TASKS
 const tasks = pages.file.tasks.where(t =&gt; t.priority &amp;&amp; !t.completed)
+
+const priorityColorMap = {
+    low: &quot;rgb(55 166 155)&quot;,
+    medium: &quot;orange&quot;,
+    high: &quot;red&quot;,
+}
+
+// regex to remove the field priority in text
+const regex = /\[priority[^\]]+\]/g
+
+// assign colors according to priority
+for (let task of tasks) {
+    task.visual = getColorCode(task.priority) + task.text.replace(regex, &quot;&quot;);
+}
+
+// render open tasks
+const order = Object.keys(priorityColorMap)
+dv.taskList(tasks.sort((a, b) =&gt; order.indexOf(b.priority) - order.indexOf(a.priority)), false)
+
+
+// COMPLETED TASKS
+const done = pages.file.tasks.where(t =&gt; t.completed)
+
+// render completed tasks and add a limit to the number of the listed tasks (sorted by the completion date - need to activate auto-completion in dataview settings)
+if (done.length &gt;= 1) {
+    dv.taskList(done.sort(t =&gt;  t.priority &amp;&amp;  t.completion, 'desc').limit(10), false)
+}
+
+// change opacity of completed tasks
+this.container.querySelectorAll(&quot;li.task-list-item.is-checked&quot;).forEach(s =&gt; s.style.opacity = &quot;30%&quot;)
+
+function getColorCode(priority) {
+    const color = priorityColorMap[priority] ?? &quot;grey&quot;;
+    return `&lt;span style='border-left: 3px solid ${color};'&gt;&amp;nbsp;&lt;/span&gt;`
+}
+</code></pre>
+<h3 id="also-show-tasks-that-have-no-priority-and-sort-them-last">Also show tasks that have no priority and sort them last<a class="headerlink" href="#also-show-tasks-that-have-no-priority-and-sort-them-last" title="Permanent link">&para;</a></h3>
+<pre><code class="language-dataviewjs">// define pages
+const pages = dv.pages('&quot;10 Example Data/projects&quot;')
+
+// OPEN TASKS
+const tasks = pages.file.tasks.where(t =&gt; !t.completed)
 
 const priorityColorMap = {
     low: &quot;rgb(55 166 155)&quot;,
