@@ -2,7 +2,6 @@
 ## Organization
 
 - [ ] [[Use Cases]]
-	- [ ] Daily Notes
 	- [ ] Weekly Notes
 	- [ ] A Person page (last contact, birthday, ...)
 
@@ -18,16 +17,12 @@
 - [ ] Add an example about indexing through a link, see [here](https://discord.com/channels/686053708261228577/875721010144477204/1006970754375614635) 
 - [ ] How to select or exclude the current file
 - [ ] Where is file.day coming from, how to set and how to use it
-- [ ] Finish up [[Learn the Basics]]
-	- [ ] Explain what inline queries can do (and what not) [[Basic Inline Queries]]
  - [ ] Add [sum up number of pages fulfilling certain criteria](https://discord.com/channels/686053708261228577/875721010144477204/1010262245755858994)
  - [ ] Add a page about [transforming dates](https://discord.com/channels/686053708261228577/875721010144477204/1011564039639404584) into a [format dataview recognizes](https://blacksmithgu.github.io/obsidian-dataview/data-annotation/#field-types)
  - [ ] Add [List activity log from projects in daily note via a date header](https://discord.com/channels/686053708261228577/1014259487445622855/1014949689394741370)
  - [ ] Add [student assignment overview](https://discord.com/channels/686053708261228577/1014259487445622855/1014879231743893525)
  - [ ] Add a page how to format dates with reference to https://moment.github.io/luxon/#/formatting?id=table-of-tokens (see also [here](https://discord.com/channels/686053708261228577/1014259487445622855/1016131007923097641))
  - [ ] Add a page about sub tasks and their behaviour
- - [ ] Add [this progress bar](https://discord.com/channels/686053708261228577/1014259487445622855/1018118073615650877) to [[Render a progress bar]]
- - [ ] Add "List tasks under specific heading" Query, similar to [[Show all list items under a specific heading]]
  - [ ] Add a page about flattening objects or nested list (see [[Example FLATTEN Queries#About flattening nested fields]] for the problem)
 
 ## Unresolved links
