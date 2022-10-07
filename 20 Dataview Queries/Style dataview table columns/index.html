@@ -5307,6 +5307,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#use-bold-italic-or-highlight-text-styles" class="md-nav__link">
+    Use bold, italic or highlight text styles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#style-multiple-columns" class="md-nav__link">
     Style multiple columns
   </a>
@@ -5765,6 +5772,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#use-bold-italic-or-highlight-text-styles" class="md-nav__link">
+    Use bold, italic or highlight text styles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#style-multiple-columns" class="md-nav__link">
     Style multiple columns
   </a>
@@ -5833,7 +5847,7 @@
 
 
 <div class="admonition info">
-<p class="admonition-title">Style columns of your table output without external css snippet and in DQL</p>
+<p class="admonition-title">Style columns of your output by i.e. right-align table columns, add bold or italic font style or color text without the need of a css snippet</p>
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Contributed by <a href="https://discord.com/channels/686053708261228577/1014259487445622855/1027857346019459153">mnvwvnm</a></p>
@@ -5846,21 +5860,41 @@
     &quot;&lt;span style='display:flex; justify-content: right;'&gt;&quot; + price + &quot;&lt;/span&gt;&quot; AS Price
 FROM &quot;10 Example Data/games&quot;
 </code></pre>
+<div class="admonition info">
+<p class="admonition-title">Other style possibilities</p>
+<p>For bold, italic, highlighted or strikethrough text, see the first variant.<br />
+<strong>Underscore text</strong>: <code>&lt;span style='text-decoration: underline;'&gt;</code><br />
+<strong>Right alignment</strong>: <code>&lt;span style='display:flex; justify-content: right;'&gt;</code><br />
+<strong>Center alignment</strong>: <code>&lt;span style='display:flex; justify-content: center;'&gt;</code><br />
+<strong>Make text uppercase</strong>: <code>&lt;span style='text-transform: uppercase;'&gt;</code><br />
+<strong>Text color</strong>:  <code>&lt;span style='color: red;'&gt;</code></p>
+</div>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
+<h3 id="use-bold-italic-or-highlight-text-styles">Use bold, italic or highlight text styles<a class="headerlink" href="#use-bold-italic-or-highlight-text-styles" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Available styles</p>
+<p>You can use every style <a href="https://help.obsidian.md/How+to/Format+your+notes">Obsidian has available</a> this way.</p>
+</div>
+<pre><code class="language-dataview">TABLE 
+    &quot;_&quot; + publisher + &quot;_&quot; AS Publisher,
+    &quot;**&quot; + developer + &quot;**&quot; AS Developer,
+    &quot;==&quot; + price + &quot;==&quot; AS Price
+FROM &quot;10 Example Data/games&quot;
+</code></pre>
 <h3 id="style-multiple-columns">Style multiple columns<a class="headerlink" href="#style-multiple-columns" title="Permanent link">&para;</a></h3>
 <pre><code class="language-dataview">TABLE styleStart + author + styleEnd AS Author, 
     genres, 
     styleStart + totalPages + styleEnd AS &quot;Total Pages&quot;
 FROM &quot;10 Example Data/books&quot;
-FLATTEN &quot;&lt;span style='font-weight: bold;'&gt;&quot; AS styleStart
+FLATTEN &quot;&lt;span style='display:flex; justify-content: center;'&gt;&quot; AS styleStart
 FLATTEN &quot;&lt;/span&gt;&quot; AS styleEnd
 </code></pre>
 <h3 id="use-different-styles">Use different styles<a class="headerlink" href="#use-different-styles" title="Permanent link">&para;</a></h3>
-<pre><code class="language-dataview">TABLE boldStyle + author + styleEnd AS Author, 
+<pre><code class="language-dataview">TABLE greenStyle + author + styleEnd AS Author, 
     genres, 
     rightAlignStyle + totalPages + styleEnd AS &quot;Total Pages&quot;
 FROM &quot;10 Example Data/books&quot;
-FLATTEN &quot;&lt;span style='font-weight: bold;'&gt;&quot; AS boldStyle
+FLATTEN &quot;&lt;span style='color: lightgreen;'&gt;&quot; AS greenStyle
 FLATTEN &quot;&lt;span style='display:flex; justify-content: right;'&gt;&quot; AS rightAlignStyle
 FLATTEN &quot;&lt;/span&gt;&quot; AS styleEnd
 </code></pre>
@@ -5869,7 +5903,7 @@ FLATTEN &quot;&lt;/span&gt;&quot; AS styleEnd
     author,
     totalPages
 FROM &quot;10 Example Data/books&quot;
-FLATTEN &quot;&lt;span style='font-style: italic;'&gt;&quot; AS styleStart
+FLATTEN &quot;&lt;span style='text-transform: uppercase;'&gt;&quot; AS styleStart
 FLATTEN &quot;&lt;/span&gt;&quot; AS styleEnd
 </code></pre>
 
