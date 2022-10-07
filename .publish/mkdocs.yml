@@ -5,6 +5,7 @@ docs_dir: pages
 
 theme:
   name: material
+  custom_dir: docs/overrides
   palette:
     scheme: slate
     primary: deep purple
@@ -21,6 +22,12 @@ markdown_extensions:
     - tables
     - admonition
     - nl2br
+
+extra_javascript:
+  - extras/matomo.js
+
+extra_css:
+  - extras/styles.css
 
 plugins:
   - search
