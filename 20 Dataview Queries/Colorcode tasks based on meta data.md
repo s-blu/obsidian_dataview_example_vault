@@ -51,7 +51,7 @@ dv.taskList(tasks.sort((a, b) => order.indexOf(b.priority) - order.indexOf(a.pri
 
 ## Variants
 
-### Show newest completed task with low opacity
+### Show newest completed tasks with low opacity
 
 ```dataviewjs
 // define pages
@@ -88,7 +88,7 @@ dv.taskList(tasks.sort((a, b) => order.indexOf(b.priority) - order.indexOf(a.pri
 
 
 // COMPLETED TASKS
-const done = pages.file.tasks.where(t => t.completed)
+const done = pages.file.tasks.where(t => t.priority && t.completed)
 
 // render completed tasks and add a limit to the number of the listed tasks (sorted by the completion date - need to activate auto-completion in dataview settings)
 if (done.length >= 1) {
@@ -107,6 +107,51 @@ const pages = dv.pages('"10 Example Data/projects"')
 
 // OPEN TASKS
 const tasks = pages.file.tasks.where(t => t.priority && !t.completed)
+
+const priorityColorMap = {
+	low: "rgb(55 166 155)",
+	medium: "orange",
+	high: "red",
+}
+
+// regex to remove the field priority in text
+const regex = /\[priority[^\]]+\]/g
+
+// assign colors according to priority
+for (let task of tasks) {
+	task.visual = getColorCode(task.priority) + task.text.replace(regex, "");
+}
+
+// render open tasks
+const order = Object.keys(priorityColorMap)
+dv.taskList(tasks.sort((a, b) => order.indexOf(b.priority) - order.indexOf(a.priority)), false)
+
+
+// COMPLETED TASKS
+const done = pages.file.tasks.where(t => t.completed)
+
+// render completed tasks and add a limit to the number of the listed tasks (sorted by the completion date - need to activate auto-completion in dataview settings)
+if (done.length >= 1) {
+    dv.taskList(done.sort(t =>  t.priority &&  t.completion, 'desc').limit(10), false)
+}
+
+// change opacity of completed tasks
+this.container.querySelectorAll("li.task-list-item.is-checked").forEach(s => s.style.opacity = "30%")
+
+function getColorCode(priority) {
+	const color = priorityColorMap[priority] ?? "grey";
+	return `<span style='border-left: 3px solid ${color};'>&nbsp;</span>`
+}
+```
+
+### Also show tasks that have no priority and sort them last
+
+```dataviewjs
+// define pages
+const pages = dv.pages('"10 Example Data/projects"')
+
+// OPEN TASKS
+const tasks = pages.file.tasks.where(t => !t.completed)
 
 const priorityColorMap = {
 	low: "rgb(55 166 155)",
