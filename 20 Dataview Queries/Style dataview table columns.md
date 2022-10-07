@@ -1,7 +1,7 @@
 ---
-description: Style columns of your table output without external css snippet and in DQL
+description: Style columns of your output by i.e. right-align table columns, add bold or italic font style or color text without the need of a css snippet
 topics:
-  - custom output 
+  - custom output
 ---
  #dv/TABLE #dv/FROM #dv/FLATTEN
 
@@ -20,7 +20,29 @@ TABLE
 FROM "10 Example Data/games"
 ```
 
+> [!info] Other style possibilities
+> For bold, italic, highlighted or strikethrough text, see the first variant.
+> **Underscore text**: `<span style='text-decoration: underline;'>`
+> **Right alignment**: `<span style='display:flex; justify-content: right;'>`
+> **Center alignment**: `<span style='display:flex; justify-content: center;'>`
+> **Make text uppercase**: `<span style='text-transform: uppercase;'>`
+> **Text color**:  `<span style='color: red;'>`
+
+
 ## Variants
+
+### Use bold, italic or highlight text styles
+
+> [!info] Available styles
+> You can use every style [Obsidian has available](https://help.obsidian.md/How+to/Format+your+notes) this way.
+
+```dataview
+TABLE 
+	"_" + publisher + "_" AS Publisher,
+	"**" + developer + "**" AS Developer,
+    "==" + price + "==" AS Price
+FROM "10 Example Data/games"
+```
 
 ### Style multiple columns 
 
@@ -29,18 +51,18 @@ TABLE styleStart + author + styleEnd AS Author,
 	genres, 
 	styleStart + totalPages + styleEnd AS "Total Pages"
 FROM "10 Example Data/books"
-FLATTEN "<span style='font-weight: bold;'>" AS styleStart
+FLATTEN "<span style='display:flex; justify-content: center;'>" AS styleStart
 FLATTEN "</span>" AS styleEnd
 ```
 
 ### Use different styles
 
 ```dataview
-TABLE boldStyle + author + styleEnd AS Author, 
+TABLE greenStyle + author + styleEnd AS Author, 
 	genres, 
 	rightAlignStyle + totalPages + styleEnd AS "Total Pages"
 FROM "10 Example Data/books"
-FLATTEN "<span style='font-weight: bold;'>" AS boldStyle
+FLATTEN "<span style='color: lightgreen;'>" AS greenStyle
 FLATTEN "<span style='display:flex; justify-content: right;'>" AS rightAlignStyle
 FLATTEN "</span>" AS styleEnd
 ```
@@ -52,7 +74,7 @@ TABLE WITHOUT ID styleStart + file.link + styleEnd AS "Book",
 	author,
 	totalPages
 FROM "10 Example Data/books"
-FLATTEN "<span style='font-style: italic;'>" AS styleStart
+FLATTEN "<span style='text-transform: uppercase;'>" AS styleStart
 FLATTEN "</span>" AS styleEnd
 ```
 
