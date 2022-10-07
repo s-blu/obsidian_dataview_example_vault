@@ -9,8 +9,6 @@ topics:
 
 # Render a progress bar
 
-> [!info] Inline queries currently (v0.5.41) do not render in Live Preview mode. Switch to Read Mode to see the result.
-
 pagesRead:: 42
 totalPages:: 130
 
@@ -71,6 +69,15 @@ LIST task-completion
 FROM "10 Example Data/dailys"
 WHERE task-completion
 ```
+
+### Render a progress bar with additional textual information
+Thanks to [Dovos!](https://discord.com/channels/686053708261228577/1014259487445622855/1018118073615650877)
+
+**Over the complete vault for all tasks that contains "priority::"
+`$= const valToSearch= "priority::"; const value = Math.round(((dv.pages().file.tasks.where(t => t.completed).where(t => t.text.includes(valToSearch)).length) / (dv.pages().file.tasks).where(t => t.text.includes(valToSearch)).length) * 100); "<progress value='" + value + "' max='100'></progress>" + "<span style='font-size:smaller;color:var(--text-muted)'> " + value + "% &nbsp;| &nbsp;" + (dv.pages().file.tasks.where(t => t.text.includes(valToSearch)).length - dv.pages().file.tasks.where(t => t.completed).where(t => t.text.includes(valToSearch)).length) + " left</span>"`
+
+**All tasks of a specific file**
+`$= const tasks = dv.page("10 Example Data/projects/project_9").file.tasks; const value = Math.round(tasks.where(t => t.completed).length / tasks.length * 100); "<progress value='" + value + "' max='100'></progress>" + "<span style='font-size:smaller;color:var(--text-muted)'> " + value + "% &nbsp;| &nbsp;" + (tasks.length - tasks.where(t => t.completed).length) + " left</span>"`
 
 ---
 %% === end of query page === %%
