@@ -1,7 +1,7 @@
 ---
 description: Interpret a link to a daily note (in format YYYY-MM-DD) with a given time as a date
 topics:
-  - use links as dates
+  - working with dates
 ---
 #dv/list #dv/where #dv/flatten #dv/date #dv/regexreplace #dv/table 
 
