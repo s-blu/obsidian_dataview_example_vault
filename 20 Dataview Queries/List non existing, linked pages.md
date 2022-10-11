@@ -55,6 +55,40 @@ for (let page in unresolvedLinksMap) {
 dv.table(["Unresolved Link", "Contained in"], Object.values(res).map(l => [l.link, l.usages]));
 ```
 
+#### A variant that sorts the results by count of references
+This version sorts the unresolved links by the count on how much they appear in other files. It also shows a direct file link to create the file and condenses the references for easier viewing.
+
+```dataviewjs
+const unresolvedLinksMap = app.metadataCache.unresolvedLinks
+
+const res = {}
+
+for (let page in unresolvedLinksMap) {
+	const unresolved = Object.keys(unresolvedLinksMap[page]);
+	
+	if (unresolved.length === 0) {
+    	continue;
+    }
+    	
+	for (let link of unresolved) {
+		if (!res[link]) {
+    		res[link] = {link, usages: []}
+    	}
+    	
+		res[link].usages.push(dv.fileLink(page))
+	}
+}
+
+const rows = Object.values(res)
+    .map(l => [dv.fileLink(l.link), l.usages.join(' · '), l.usages.length])
+    .sort((a, b) => a[2] > b[2] ? -1 : 1)
+
+dv.table(
+    ["Unresolved Link", "Contained in", "Count"], 
+    rows
+);
+```
+
 ### List only unresolved links from a specific folder meeting specific criteria
 
 #### As DQL
