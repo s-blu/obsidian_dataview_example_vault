@@ -55,7 +55,7 @@ for (let page in unresolvedLinksMap) {
 dv.table(["Unresolved Link", "Contained in"], Object.values(res).map(l => [l.link, l.usages]));
 ```
 
-#### A variant that sorts the results by count of references
+#### Sort the results by count of references
 This version sorts the unresolved links by the count on how much they appear in other files. It also shows a direct file link to create the file and condenses the references for easier viewing.
 
 ```dataviewjs
