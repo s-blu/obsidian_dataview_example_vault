@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
     
     
       
@@ -4851,6 +4851,19 @@
     List the files the unresolved link is contained in
   </a>
   
+    <nav class="md-nav" aria-label="List the files the unresolved link is contained in">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sort-the-results-by-count-of-references" class="md-nav__link">
+    Sort the results by count of references
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -5826,6 +5839,19 @@
     List the files the unresolved link is contained in
   </a>
   
+    <nav class="md-nav" aria-label="List the files the unresolved link is contained in">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sort-the-results-by-count-of-references" class="md-nav__link">
+    Sort the results by count of references
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -5980,6 +6006,37 @@ for (let page in unresolvedLinksMap) {
 
 dv.table([&quot;Unresolved Link&quot;, &quot;Contained in&quot;], Object.values(res).map(l =&gt; [l.link, l.usages]));
 </code></pre>
+<h4 id="sort-the-results-by-count-of-references">Sort the results by count of references<a class="headerlink" href="#sort-the-results-by-count-of-references" title="Permanent link">&para;</a></h4>
+<p>This version sorts the unresolved links by the count on how much they appear in other files. It also shows a direct file link to create the file and condenses the references for easier viewing.</p>
+<pre><code class="language-dataviewjs">const unresolvedLinksMap = app.metadataCache.unresolvedLinks
+
+const res = {}
+
+for (let page in unresolvedLinksMap) {
+    const unresolved = Object.keys(unresolvedLinksMap[page]);
+
+    if (unresolved.length === 0) {
+        continue;
+    }
+
+    for (let link of unresolved) {
+        if (!res[link]) {
+            res[link] = {link, usages: []}
+        }
+
+        res[link].usages.push(dv.fileLink(page))
+    }
+}
+
+const rows = Object.values(res)
+    .map(l =&gt; [dv.fileLink(l.link), l.usages.join(' · '), l.usages.length])
+    .sort((a, b) =&gt; a[2] &gt; b[2] ? -1 : 1)
+
+dv.table(
+    [&quot;Unresolved Link&quot;, &quot;Contained in&quot;, &quot;Count&quot;], 
+    rows
+);
+</code></pre>
 <h3 id="list-only-unresolved-links-from-a-specific-folder-meeting-specific-criteria">List only unresolved links from a specific folder meeting specific criteria<a class="headerlink" href="#list-only-unresolved-links-from-a-specific-folder-meeting-specific-criteria" title="Permanent link">&para;</a></h3>
 <h4 id="as-dql">As DQL<a class="headerlink" href="#as-dql" title="Permanent link">&para;</a></h4>
 <pre><code class="language-dataview">TABLE WITHOUT ID key AS &quot;unresolved link&quot;, rows.file.link AS &quot;referencing file&quot;
@@ -6121,10 +6178,10 @@ dv.table(
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
       
         <script src="../../extras/matomo.js"></script>
       
