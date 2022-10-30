@@ -48,7 +48,9 @@ dv.pages().forEach(page => {
 		if (!metadataMap[metadata]) {
 			metadataMap[metadata] = []
 		}
-		metadataMap[metadata].push(page.file.link);
+		if (!metadataMap[metadata].some(l => l.path === page.file.link.path)) {
+			metadataMap[metadata].push(page.file.link);
+		}
 	})
 })
 
@@ -71,8 +73,9 @@ dv.pages().forEach(page => {
 		if (!metadataMap[metadata]) {
 			metadataMap[metadata] = []
 		}
-		
-		metadataMap[metadata].push(page.file.link);
+		if (!metadataMap[metadata].some(l => l.path === page.file.link.path)) {
+			metadataMap[metadata].push(page.file.link);
+		}
 	})
 })
 
