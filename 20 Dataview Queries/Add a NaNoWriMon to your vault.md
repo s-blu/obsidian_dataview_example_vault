@@ -68,14 +68,14 @@ const page = dv.page(pagePath);
 let image = images[0];
 const percentage = Math.round(page[inlineWordcount] / page[inlineTargetCount] * 100);
 if (images.length > 1) {
-	const breakpoint = 100 / images.length // 5 = 20
-	let b = 0;
-	let currentBreakpoint = (b + 1) * breakpoint;
+	const breakpoint = 100 / images.length;
+	let i = 0;
+	let currentBreakpoint = (i + 1) * breakpoint;
 	while (percentage > currentBreakpoint && currentBreakpoint <= 100) {
-		b++;
-		currentBreakpoint = (b + 1) * breakpoint;
+		i++;
+		currentBreakpoint = (i + 1) * breakpoint;
 	}
-	image = images[b]
+	image = images[i]
 } 
 
 const attachments = this.app.vault.getConfig("attachmentFolderPath");
