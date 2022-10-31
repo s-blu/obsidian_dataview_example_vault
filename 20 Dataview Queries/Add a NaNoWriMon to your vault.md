@@ -16,8 +16,8 @@ topics:
 > [!info] Local image files
 > To save us from fetching the image pictures from the web all the time, this query assumes that you have them local and inside your configured attachment folder. This has the advantage that your mascot do not need to be a Pokémon but can be whatever you choose!
 
-wordcount:: 3400
-targetcount:: 25000
+wordcount:: 3500
+targetcount:: 15000
 
 ```dataviewjs
 const pagePath = "Add a NaNoWriMon to your vault" // the page path from vault root
@@ -27,7 +27,7 @@ const name = "Bulba"; // The name of your mon
 const images = ["Pokémon-Icon_001.png", "Pokémon-Icon_002.png", "Pokémon-Icon_003.png"] // Image file names to use for your mon. needs to be three and they need to be saved in your attachments folder
 
 
-// magic
+// rendering, doesn't need to be adjusted 
 const page = dv.page(pagePath);
 let image = images[0];
 const percentage = Math.round(page[inlineWordcount] / page[inlineTargetCount] * 100);
@@ -51,6 +51,45 @@ dv.el("div", html)
 
 ## Variants
 
+### Use any amount of images
+
+The Basic Variant is set to use three images. With this variant the breakpoints on which percentage the next image will be shown gets calculated automatically depending on the amount of images specified and thus support i.e. Pokémon with two evolutions or image series of any number.
+
+```dataviewjs
+const pagePath = "Add a NaNoWriMon to your vault" // the page path from vault root
+const inlineWordcount = "wordcount"; // the field your wordcount is saved in
+const inlineTargetCount = "targetcount" // the field your target count is saved in
+const name = "Story Progress"; // The name of your mon
+const images = ["flower_growth/flowergrowth1.png", "flower_growth/flowergrowth2.png","flower_growth/flowergrowth3.png","flower_growth/flowergrowth4.png","flower_growth/flowergrowth5.png","flower_growth/flowergrowth6.png"] // Image file names to use for your mon. 
+
+
+// rendering, doesn't need to be adjusted 
+const page = dv.page(pagePath);
+let image = images[0];
+const percentage = Math.round(page[inlineWordcount] / page[inlineTargetCount] * 100);
+if (images.length > 1) {
+	const breakpoint = 100 / images.length // 5 = 20
+	let b = 0;
+	let currentBreakpoint = (b + 1) * breakpoint;
+	while (percentage > currentBreakpoint && currentBreakpoint <= 100) {
+		b++;
+		currentBreakpoint = (b + 1) * breakpoint;
+	}
+	image = images[b]
+} 
+
+const attachments = this.app.vault.getConfig("attachmentFolderPath");
+const basePath = this.app.vault.adapter.basePath
+
+const html = `<div class="monwrapper" style="display:flex;align-items:center;">
+<img src="${basePath}/${attachments}/${image}" class="mon" style="margin-right:10px;"></img>
+<div>
+<div class="monname">${name}</div>
+<div class="progressbar"><progress max="100" value="${percentage}"></progress> Lv. ${percentage}</div></div>
+</div>`;
+dv.el("div", html)
+```
+
 ### Use the current page as source
 
 ```dataviewjs
@@ -60,7 +99,7 @@ const name = "Bulba"; // The name of your mon
 const images = ["Pokémon-Icon_001.png", "Pokémon-Icon_002.png", "Pokémon-Icon_003.png"] // Image file names to use for your mon. needs to be three and they need to be saved in your attachments folder
 
 
-// magic
+// rendering, doesn't need to be adjusted 
 const page = dv.current();
 let image = images[0];
 const percentage = Math.round(page[inlineWordcount] / page[inlineTargetCount] * 100);
@@ -72,7 +111,6 @@ if (percentage > 33 && percentage < 66) {
 
 const attachments = this.app.vault.getConfig("attachmentFolderPath");
 const basePath = this.app.vault.adapter.basePath
-console.log(dv.current())
 
 const html = `<div class="monwrapper" style="display:flex;align-items:center;">
 <img src="${basePath}/${attachments}/${image}" class="mon" style="margin-right:10px;"></img>
@@ -97,7 +135,7 @@ const name = "Belli"; // The name of your mon
 const images = ["Pokémon-Icon_069.png", "Pokémon-Icon_070.png", "Pokémon-Icon_071.png"] // Image file names to use for your mon. needs to be three and they need to be saved in your attachments folder
 
 
-// magic
+// rendering, doesn't need to be adjusted 
 const page = dv.current();
 let image = images[0];
 const percentage = Math.round(page.file.size / page[inlineTargetCount] * 100);
