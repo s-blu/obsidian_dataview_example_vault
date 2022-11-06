@@ -41,10 +41,23 @@ TABLE wake-up, go-to-sleep, wakeTime
 FROM "10 Example Data/dailys"
 LIMIT 10
 FLATTEN dateformat(file.day, "yyyy-MM-dd") as dt
-FLATTEN dur(date(dt + "T" + go-to-sleep) - date(dt + "T" + wake-up)) as wakeTime
+FLATTEN date(dt + "T" + go-to-sleep) - date(dt + "T" + wake-up) as wakeTime
 ```
 
 ## Variants
+
+### Calculate Sleeping time instead Wake time
+
+```dataview
+TABLE go-to-sleep, wake-up, sleep
+FROM "10 Example Data/dailys"
+LIMIT 10
+FLATTEN dateformat(file.day, "yyyy-MM-dd") as dt
+FLATTEN (date(dt + "T" + wake-up) + dur("1d")) - date(dt + "T" + go-to-sleep)  as sleep
+```
+
+## Variants
+
 
 ### Fix up missing leading zeros & sleep times after midnight
 
@@ -73,6 +86,7 @@ function calculateWakingPhase(wakeUp, goToSleep) {
 }
 
 function tryToFixUp(time) {
+	if (!time) return time;
 	if (time.match(/^[0-9]{3}/) || time.match(/^[0-9]{1}:[0-9]{2}/)) {
 		return "0" + time;
 	}
@@ -96,6 +110,14 @@ TABLE WITHOUT ID t1, t2, duration
 WHERE file.name = this.file.name
 FLATTEN t2 - t1 as duration
 ```
+
+### As Inline statement for current file
+
+date:: 2022-06-06
+wake-up:: 07:35
+go-to-sleep:: 23:50
+
+Wake time: `= date(dateformat(this.file.day, "yyyy-MM-dd") + "T" + this.go-to-sleep) - (date(dateformat(this.file.day, "yyyy-MM-dd") + "T" + this.wake-up))`
 
 ---
 %% === end of query page === %%
