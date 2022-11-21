@@ -9,10 +9,13 @@ We hope you enjoy!
 ### **For the optimal experience, open this vault in Obsidian!**
 
 1. Download the vault [here](https://github.com/s-blu/obsidian_dataview_example_vault/archive/refs/heads/master.zip)
-3. Open the vault in Obsidian via "Open another vault -> Open folder as vault"
-4. Trust us. :) 
-5. When Obsidian opens the settings, hit the switch on "Dataview" to enable the plugin
-6. Done! The example vault is now available to you in its purest and most useful form!
+2. Open the vault in Obsidian via "Open another vault -> Open folder as vault"
+3. Trust us. :) 
+4. When Obsidian opens the settings, hit the switch on "Dataview" to enable the plugin
+5. Done! The example vault is now available to you in its purest and most useful form!
+
+> [!info] Choose correct vault root
+> Be sure to choose the folder that directly contains `00 Meta`, `10 Example Data` etc as a vault. These folders should be the most top folder level when viewing the vault in Obsidian, otherwise queries won't find their data.
 
 Wonder where to start? Good starting points are our [[Use Case Overview]], the [[Dataview Queries Overview]] or the [[Topic Overview]]. You can, of course, add and edit files to your liking to try things out!
 
