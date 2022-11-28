@@ -20,7 +20,7 @@ fake:
 ```dataview
 LIST summary
 FROM "10 Example Data/dailys"
-WHERE string(day.year) = split(this.fake.name, "-W")[0] AND string(day.weekyear) = split(this.fake.name, "-W")[1]
+WHERE string(file.day.year) = split(this.fake.name, "-W")[0] AND string(file.day.weekyear) = split(this.fake.name, "-W")[1]
 SORT file.name
 ```
 
@@ -32,16 +32,16 @@ SORT file.name
 ### Print weekdays instead of file names
 
 ```dataview
-LIST WITHOUT ID "**" + dateformat(day, "cccc") + "**: " + summary
+LIST WITHOUT ID "**" + dateformat(file.day, "cccc") + "**: " + summary
 FROM "10 Example Data/dailys"
-WHERE string(day.year) = split(this.fake.name, "-W")[0] AND string(day.weekyear) = split(this.fake.name, "-W")[1]
+WHERE string(file.day.year) = split(this.fake.name, "-W")[0] AND string(file.day.weekyear) = split(this.fake.name, "-W")[1]
 SORT file.name
 ```
 
 ### Print weekdays instead of file names but still link to daily
 
 ```dataview
-LIST WITHOUT ID "**" + link(file.path,  dateformat(day, "cccc")) + "**: " + summary
+LIST WITHOUT ID "**" + link(file.path,  dateformat(file.day, "cccc")) + "**: " + summary
 FROM "10 Example Data/dailys"
 WHERE string(day.year) = split(this.fake.name, "-W")[0] AND string(day.weekyear) = split(this.fake.name, "-W")[1]
 SORT file.name
@@ -50,26 +50,26 @@ SORT file.name
 ### Print multiple values per day
 
 ```dataview
-LIST WITHOUT ID "**" + dateformat(day, "cccc") + "**: " + join(note, " | ")
+LIST WITHOUT ID "**" + dateformat(file.day, "cccc") + "**: " + join(note, " | ")
 FROM "10 Example Data/dailys"
-WHERE string(day.year) = split(this.fake.name2, "-W")[0] AND string(day.weekyear) = split(this.fake.name2, "-W")[1]
+WHERE string(file.day.year) = split(this.fake.name2, "-W")[0] AND string(file.day.weekyear) = split(this.fake.name2, "-W")[1]
 SORT file.name
 ```
 
 ### Print multiple values per day as table
 ```dataview
-TABLE WITHOUT ID "**" + dateformat(day, "cccc") + "**" AS "Day" , note
+TABLE WITHOUT ID "**" + dateformat(file.day, "cccc") + "**" AS "Day" , note
 FROM "10 Example Data/dailys"
-WHERE string(day.year) = split(this.fake.name2, "-W")[0] AND string(day.weekyear) = split(this.fake.name2, "-W")[1]
+WHERE string(file.day.year) = split(this.fake.name2, "-W")[0] AND string(file.day.weekyear) = split(this.fake.name2, "-W")[1]
 SORT file.name
 ```
 
 ### Print multiple values per day as table in unified look
 
 ```dataview
-TABLE WITHOUT ID "**" + dateformat(day, "cccc") + "**" AS "Day" , choice(typeof(note) = "array", note, array(note)) AS "Notes"
+TABLE WITHOUT ID "**" + dateformat(file.day, "cccc") + "**" AS "Day" , choice(typeof(note) = "array", note, array(note)) AS "Notes"
 FROM "10 Example Data/dailys"
-WHERE string(day.year) = split(this.fake.name2, "-W")[0] AND string(day.weekyear) = split(this.fake.name2, "-W")[1]
+WHERE string(file.day.year) = split(this.fake.name2, "-W")[0] AND string(file.day.weekyear) = split(this.fake.name2, "-W")[1]
 SORT file.name
 ```
 

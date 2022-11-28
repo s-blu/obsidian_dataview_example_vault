@@ -22,7 +22,7 @@ topics:
 
 ```dataviewjs
 const yearAndWeek = ["2022", "02"]
-const pages = dv.pages('"10 Example Data/dailys"').where(p => p.day && p.day.year == yearAndWeek[0] && p.day.weekNumber == yearAndWeek[1])
+const pages = dv.pages('"10 Example Data/dailys"').where(p => p.file.day && p.file.day.year == yearAndWeek[0] && p.file.day.weekNumber == yearAndWeek[1])
 dv.container.className += ' imagegrid'
 dv.list(pages.picoftheday)
 ```
