@@ -5979,7 +5979,7 @@
 </div>
 <pre><code class="language-dataview">LIST summary
 FROM &quot;10 Example Data/dailys&quot;
-WHERE string(day.year) = split(this.fake.name, &quot;-W&quot;)[0] AND string(day.weekyear) = split(this.fake.name, &quot;-W&quot;)[1]
+WHERE string(file.day.year) = split(this.fake.name, &quot;-W&quot;)[0] AND string(file.day.weekyear) = split(this.fake.name, &quot;-W&quot;)[1]
 SORT file.name
 </code></pre>
 <div class="admonition hint">
@@ -5988,33 +5988,33 @@ SORT file.name
 </div>
 <h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h2>
 <h3 id="print-weekdays-instead-of-file-names">Print weekdays instead of file names<a class="headerlink" href="#print-weekdays-instead-of-file-names" title="Permanent link">&para;</a></h3>
-<pre><code class="language-dataview">LIST WITHOUT ID &quot;**&quot; + dateformat(day, &quot;cccc&quot;) + &quot;**: &quot; + summary
+<pre><code class="language-dataview">LIST WITHOUT ID &quot;**&quot; + dateformat(file.day, &quot;cccc&quot;) + &quot;**: &quot; + summary
 FROM &quot;10 Example Data/dailys&quot;
-WHERE string(day.year) = split(this.fake.name, &quot;-W&quot;)[0] AND string(day.weekyear) = split(this.fake.name, &quot;-W&quot;)[1]
+WHERE string(file.day.year) = split(this.fake.name, &quot;-W&quot;)[0] AND string(file.day.weekyear) = split(this.fake.name, &quot;-W&quot;)[1]
 SORT file.name
 </code></pre>
 <h3 id="print-weekdays-instead-of-file-names-but-still-link-to-daily">Print weekdays instead of file names but still link to daily<a class="headerlink" href="#print-weekdays-instead-of-file-names-but-still-link-to-daily" title="Permanent link">&para;</a></h3>
-<pre><code class="language-dataview">LIST WITHOUT ID &quot;**&quot; + link(file.path,  dateformat(day, &quot;cccc&quot;)) + &quot;**: &quot; + summary
+<pre><code class="language-dataview">LIST WITHOUT ID &quot;**&quot; + link(file.path,  dateformat(file.day, &quot;cccc&quot;)) + &quot;**: &quot; + summary
 FROM &quot;10 Example Data/dailys&quot;
 WHERE string(day.year) = split(this.fake.name, &quot;-W&quot;)[0] AND string(day.weekyear) = split(this.fake.name, &quot;-W&quot;)[1]
 SORT file.name
 </code></pre>
 <h3 id="print-multiple-values-per-day">Print multiple values per day<a class="headerlink" href="#print-multiple-values-per-day" title="Permanent link">&para;</a></h3>
-<pre><code class="language-dataview">LIST WITHOUT ID &quot;**&quot; + dateformat(day, &quot;cccc&quot;) + &quot;**: &quot; + join(note, &quot; | &quot;)
+<pre><code class="language-dataview">LIST WITHOUT ID &quot;**&quot; + dateformat(file.day, &quot;cccc&quot;) + &quot;**: &quot; + join(note, &quot; | &quot;)
 FROM &quot;10 Example Data/dailys&quot;
-WHERE string(day.year) = split(this.fake.name2, &quot;-W&quot;)[0] AND string(day.weekyear) = split(this.fake.name2, &quot;-W&quot;)[1]
+WHERE string(file.day.year) = split(this.fake.name2, &quot;-W&quot;)[0] AND string(file.day.weekyear) = split(this.fake.name2, &quot;-W&quot;)[1]
 SORT file.name
 </code></pre>
 <h3 id="print-multiple-values-per-day-as-table">Print multiple values per day as table<a class="headerlink" href="#print-multiple-values-per-day-as-table" title="Permanent link">&para;</a></h3>
-<pre><code class="language-dataview">TABLE WITHOUT ID &quot;**&quot; + dateformat(day, &quot;cccc&quot;) + &quot;**&quot; AS &quot;Day&quot; , note
+<pre><code class="language-dataview">TABLE WITHOUT ID &quot;**&quot; + dateformat(file.day, &quot;cccc&quot;) + &quot;**&quot; AS &quot;Day&quot; , note
 FROM &quot;10 Example Data/dailys&quot;
-WHERE string(day.year) = split(this.fake.name2, &quot;-W&quot;)[0] AND string(day.weekyear) = split(this.fake.name2, &quot;-W&quot;)[1]
+WHERE string(file.day.year) = split(this.fake.name2, &quot;-W&quot;)[0] AND string(file.day.weekyear) = split(this.fake.name2, &quot;-W&quot;)[1]
 SORT file.name
 </code></pre>
 <h3 id="print-multiple-values-per-day-as-table-in-unified-look">Print multiple values per day as table in unified look<a class="headerlink" href="#print-multiple-values-per-day-as-table-in-unified-look" title="Permanent link">&para;</a></h3>
-<pre><code class="language-dataview">TABLE WITHOUT ID &quot;**&quot; + dateformat(day, &quot;cccc&quot;) + &quot;**&quot; AS &quot;Day&quot; , choice(typeof(note) = &quot;array&quot;, note, array(note)) AS &quot;Notes&quot;
+<pre><code class="language-dataview">TABLE WITHOUT ID &quot;**&quot; + dateformat(file.day, &quot;cccc&quot;) + &quot;**&quot; AS &quot;Day&quot; , choice(typeof(note) = &quot;array&quot;, note, array(note)) AS &quot;Notes&quot;
 FROM &quot;10 Example Data/dailys&quot;
-WHERE string(day.year) = split(this.fake.name2, &quot;-W&quot;)[0] AND string(day.weekyear) = split(this.fake.name2, &quot;-W&quot;)[1]
+WHERE string(file.day.year) = split(this.fake.name2, &quot;-W&quot;)[0] AND string(file.day.weekyear) = split(this.fake.name2, &quot;-W&quot;)[1]
 SORT file.name
 </code></pre>
 

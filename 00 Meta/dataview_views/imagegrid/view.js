@@ -1,10 +1,10 @@
 // requiring or importing the lib did not work, thus we call it directly from within the same file
 const Colcade = factory();
 
-const yearAndWeek = ["2022", "2"] // ATTENTION! use this instead: input.current.file.name.split('-W')
+const yearAndWeek = ["2022", "2"] // ATTENTION! replace this line with: const yearAndWeek = input.current.file.name.split('-W')
 const pages = dv
   .pages(input.dailyNotesSearchQuery)
-  .where(p => p.day && p.day.year == yearAndWeek[0] && p.day.weekNumber == yearAndWeek[1])
+  .where(p => p.file.day && p.file.day.year == yearAndWeek[0] && p.file.day.weekNumber == yearAndWeek[1])
   .sort(p => p.file.name);
 dv.container.className += ' imagegrid';
 

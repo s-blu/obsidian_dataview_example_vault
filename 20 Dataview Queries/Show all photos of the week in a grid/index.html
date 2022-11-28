@@ -5919,7 +5919,7 @@
  This will retrieve the year and weeknumber information from your file name and you do not need to adjust this manually.</p>
 </div>
 <pre><code class="language-dataviewjs">const yearAndWeek = [&quot;2022&quot;, &quot;02&quot;]
-const pages = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.day &amp;&amp; p.day.year == yearAndWeek[0] &amp;&amp; p.day.weekNumber == yearAndWeek[1])
+const pages = dv.pages('&quot;10 Example Data/dailys&quot;').where(p =&gt; p.file.day &amp;&amp; p.file.day.year == yearAndWeek[0] &amp;&amp; p.file.day.weekNumber == yearAndWeek[1])
 dv.container.className += ' imagegrid'
 dv.list(pages.picoftheday)
 </code></pre>
