@@ -29,6 +29,12 @@ LIST metadatafield
 FROM "10 Example Data/todos/100files-a-100-todos"
 ```
 
+ca. instant
+```
+LIST metadatafield
+FROM "10 Example Data/todos/bad-files"
+```
+
 ## Files with FLATTEN
 
 ca. 1sek
@@ -62,6 +68,15 @@ ca. 17 sek
 ```
 list WITHOUT ID tasks.text + " (" + link(file.link, Title) + ")"
 FROM "10 Example Data/todos/100files-a-100-todos"
+flatten file.tasks as tasks
+where contains(tasks.text, "[[" + this.file.name + "]]")
+SORT tasks.text ASC
+```
+
+**crashes** - around 2180 tasks in total, ca. 1500 matches the query. 
+```
+list WITHOUT ID tasks.text + " (" + link(file.link, Title) + ")"
+FROM "10 Example Data/todos/bad-files"
 flatten file.tasks as tasks
 where contains(tasks.text, "[[" + this.file.name + "]]")
 SORT tasks.text ASC
