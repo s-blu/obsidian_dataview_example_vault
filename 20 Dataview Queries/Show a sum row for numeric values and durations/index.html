@@ -5889,7 +5889,7 @@ const sums = [nameOfTotalRow];
 // for each header (except the first one, which is &quot;File&quot;)...
 for (let i = 1; i &lt; DQL.headers.length; i++) {
     let sum = 0;
-    const dataType = dv.func.typeof(DQL.values[0][i])
+    const dataType = getDatatypeOfColumn(i, DQL.values)
     // check if we have a calculateable datatype - if not, skip the column
     if (![&quot;number&quot;, &quot;duration&quot;].includes(dataType)) {
         sums.push(&quot;&quot;)
@@ -5903,6 +5903,16 @@ for (let i = 1; i &lt; DQL.headers.length; i++) {
     }
     if (!sum) sum = &quot;&quot;
     sums.push(dataType === &quot;duration&quot; ? luxon.Duration.fromMillis(sum) : sum);
+}
+
+function getDatatypeOfColumn(columnNo, values) {
+    let i = 0;
+    let datatype;
+    while (i &lt; DQL.values[0].length &amp;&amp; (!datatype || datatype === &quot;null&quot;)) {
+        datatype = dv.func.typeof(DQL.values[i][columnNo])
+        i++;
+    }
+    return datatype;
 }
 
 // add a divider line for visual distinction between the query and the sums (thanks, Jillard!), add both to the table data
