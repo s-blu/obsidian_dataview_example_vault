@@ -52,7 +52,7 @@ for (let page in unresolvedLinksMap) {
 }
 
 
-dv.table(["Unresolved Link", "Contained in"], Object.values(res).map(l => [l.link, l.usages]));
+dv.table(["Unresolved Link", "Contained in"], Object.values(res).map(l => [dv.fileLink(l.link), l.usages]));
 ```
 
 #### Sort the results by count of references
