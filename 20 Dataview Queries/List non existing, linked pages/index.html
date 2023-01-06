@@ -6032,7 +6032,7 @@ for (let page in unresolvedLinksMap) {
 }
 
 
-dv.table([&quot;Unresolved Link&quot;, &quot;Contained in&quot;], Object.values(res).map(l =&gt; [dv.fileLink(l.link), l.usages]));
+dv.table([&quot;Unresolved Link&quot;, &quot;Contained in&quot;], Object.values(res).map(l =&gt; [l.link, l.usages]));
 </code></pre>
 <h4 id="sort-the-results-by-count-of-references">Sort the results by count of references<a class="headerlink" href="#sort-the-results-by-count-of-references" title="Permanent link">&para;</a></h4>
 <p>This version sorts the unresolved links by the count on how much they appear in other files. It also shows a direct file link to create the file and condenses the references for easier viewing.</p>
