@@ -136,6 +136,38 @@ dv.table(
 );
 ```
 
+### List unresolved links, sorted by name, excluding certain folders and notes
+
+#### As DataviewJS
+```dataviewjs
+let result = {};
+
+function process(referingFile, unresolvedLinks) {
+  Object.keys(unresolvedLinks).forEach(function (link) {
+    link = dv.fileLink(link);
+    if (!result[link]) result[link] = [];
+
+    result[link].push(dv.fileLink(referingFile));
+  });
+}
+
+Object.entries(dv.app.metadataCache.unresolvedLinks)
+  .filter(([referingFile]) => {
+    return !referingFile.startsWith("00 Meta") && !referingFile.startsWith("30 Dataview Resources/31 Query Overviews/Use Case Overview")
+  })
+  .forEach(([referingFile, unresolvedLink]) => process(referingFile, unresolvedLink));
+
+
+const rows = Object.entries(result)
+    .map(([unresolvedLink, referingFiles]) => [unresolvedLink, referingFiles])
+    .sort((a, b) => a[0] > b[0] ? 1 : -1)
+
+dv.table(
+    ["Unresolved Link", "Contained in"],
+	rows
+);
+```
+
 ---
 %% === end of query page === %%
 > [!help]- Similar Queries
