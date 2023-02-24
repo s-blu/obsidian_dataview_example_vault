@@ -27,7 +27,6 @@ WHERE file.name = "2022-01-20"
 dv.span(dv.page("2022-01-05"))
 ```
 
+## The difference between \`=[[]]\` and \`=this\`
 
-# What is the difference between `=[[]]` and `=this`?
-
-In DQL inline code, `=[[]]` doesn't output anything, but `=[[]].file` or `=[[]].variable` does. It is because `=[[]]` is showing an empty link. If you index it (by using ".something") you get the current file as fail save. While `=this` is referring to the current page metadata like `$= dv.current()`. The reason why `=[[]].something` works is that you can do stuff like `=[[Peter]].lastname` inside another note. (comparable with `$=dv.page("Peter").lastname`)
+In DQL inline code, \`=[[]]\` doesn't output anything, but \`=[[]].file\` or \`=[[]].something\` does. It is because \`=[[]]\` is showing an empty link. If you index it (by using ".something") you get the current file, probably because the author just makes it refer to the current page like "this" instead of throwing an error. While \`=this\` is referring to the current page metadata like what \`\$= dv.current()\` does. The reason why \`=[[]].something\` works is that you can do stuff like \`=[[Peter]].lastname\` inside another note (comparable with \`$=dv.page("Peter").lastname\`).
