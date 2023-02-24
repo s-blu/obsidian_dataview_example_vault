@@ -2,6 +2,8 @@
   "enabledCssSnippets": [
     "show-photos-of-the-week-as-grid"
   ],
-  "accentColor": "",
-  "showViewHeader": false
+  "accentColor": "#ff00a2",
+  "showViewHeader": false,
+  "theme": "moonstone",
+  "cssTheme": "Abyssal"
 }
