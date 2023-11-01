@@ -5,8 +5,6 @@
   "promptDelete": false,
   "showFrontmatter": true,
   "alwaysUpdateLinks": true,
-  "spellcheckLanguages": [
-    "en-US"
-  ],
+  "spellcheckLanguages": null,
   "spellcheck": true
 }
