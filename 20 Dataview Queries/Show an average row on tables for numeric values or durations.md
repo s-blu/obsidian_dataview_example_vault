@@ -43,7 +43,7 @@ for (let i = 1; i < DQL.headers.length; i++) {
 	    }
 	}
 	let avg = sum ? (sum / count).toFixed(digitAfterComma) : "";
-	sums.push(dataType === "duration" ? luxon.Duration.fromMillis(avg) : avg);
+	sums.push(dataType === "duration" ? dv.luxon.Duration.fromMillis(avg) : avg);
 }
 
 function getDatatypeOfColumn(columnNo, values) {

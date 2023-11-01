@@ -76,7 +76,7 @@ for (let i = 1; i < DQL.headers.length; i++) {
 		if (currentValue) sum += currentValue 
 	}
 	if (!sum) sum = ""
-	sums.push(dataType === "duration" ? luxon.Duration.fromMillis(sum) : sum);
+	sums.push(dataType === "duration" ? dv.luxon.Duration.fromMillis(sum) : sum);
 }
 
 function getDatatypeOfColumn(columnNo, values) {
