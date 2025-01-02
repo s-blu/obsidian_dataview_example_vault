@@ -27,7 +27,8 @@ for(let i = 1; i <= 12; i++) {
 
 // == Fill calendar ==
 while (date.year == year) {
-	const col = !!values.find(p => p.day.equals(date.startOf('day'))) ? color : emptyColor;
+	const value = values.find(p => p.day && p.day.equals(date.startOf('day')));
+	const col = value ? color : emptyColor;
 	calendar[date.month].push(getDayEl(date, col))
 
 	date = addOneDay(date);
@@ -253,7 +254,7 @@ await dv.view("00 Meta/dataview_views/year_overview",
 	})
 
 function determineColor(date) {
-	const page = pages.find(p => p.day.startOf('day').equals(date.startOf('day')));
+	const page = pages.find(p => p.day && p.day.startOf('day').equals(date.startOf('day')));
 	if (!page) return "rgba(9, 99, 199, 0.15)";
 
 	let opacity = (page.wellbeing.mood / 4) ;
@@ -262,7 +263,7 @@ function determineColor(date) {
 }
 
 function generateTooltip(date) {
-	const page = pages.find(p => p.day.startOf('day').equals(date.startOf('day')));
+	const page = pages.find(p => p.day && p.day.startOf('day').equals(date.startOf('day')));
 	if (!page) return date.toFormat('yyyy-MM-dd');
 
 	return `${page.file.name}: ${page.wellbeing?.mood ?? ''}`

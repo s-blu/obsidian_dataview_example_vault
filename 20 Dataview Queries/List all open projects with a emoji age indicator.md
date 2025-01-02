@@ -22,29 +22,33 @@ WHERE status != "finished"
 
 ```dataviewjs
 const projects = dv.pages('"10 Example Data/projects"')
-	.where(p => p.status != "finished")
-	.mutate(p => {
-		p.age = dv.luxon.Duration.fromMillis(Date.now() - p.started.toMillis())
-		p.emojiAgeScore = getEmojiScore(p)
-	})
+    .where(p => p.status !== undefined && p.status != "finished")
+    .mutate(p => {
+        p.age = p.started && p.started instanceof dv.luxon.DateTime ? dv.luxon.Duration.fromMillis(Date.now() - p.started.toMillis()) : null
+        p.emojiAgeScore = getEmojiScore(p)
+    })
 
-dv.table(["Score", "Project", "Started", "Age"], projects.map(p => [p.emojiAgeScore, p.file.link, p.started, p.age.toFormat("y'y' M'm' w'w'")]))
+dv.table(["Score", "Project", "Started", "Age"], projects.map(p => [p.emojiAgeScore, p.file.link, p.started, p.age ? p.age.toFormat("y'y' M'm' w'w'") : 'N/A']))
 
 function getEmojiScore(p) {
-	const age = p.age.shiftTo('months').toObject()
-	let score = "";
-	
-	score += addEmojis("👿", age.months / 6)  
-	score += addEmojis("😡", (age.months % 6) / 3)
-	score += addEmojis("😒", (age.months % 6 % 3)) 
+    if (!p.age || !(p.age instanceof dv.luxon.Duration)) {
+        return ""
+    }
 
-	return score;
+    const age = p.age.shiftTo('months').toObject()
+    let score = "";
+    
+    score += addEmojis("👿", age.months / 6)
+    score += addEmojis("😡", (age.months % 6) / 3)
+    score += addEmojis("😒", (age.months % 6 % 3))
+
+    return score;
 }
 
 function addEmojis(emoji, max) {
-	let emojis = "";
-	for (let i = 1; i < max; i++) emojis += emoji;
-	return emojis;
+    let emojis = "";
+    for (let i = 1; i < Math.floor(max); i++) emojis += emoji;
+    return emojis;
 }
 
 ```

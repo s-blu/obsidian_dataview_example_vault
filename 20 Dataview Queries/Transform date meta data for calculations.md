@@ -50,7 +50,7 @@ americanformat:: 09/25/2022 09:09 AM
 
 ```dataview
 TABLE date(regexreplace(americanformat, "([0-9]+)/([0-9]+)/([0-9]+) ([0-9:]+)(.+)", "$3-$1-$2T$4")) AS "date"
-WHERE germanformat
+WHERE americanformat
 ```
 
 ---
