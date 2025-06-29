@@ -2,16 +2,18 @@
 
 Good day!
 
-This example vault showcases different usages of the [Dataview](https://blacksmithgu.github.io/obsidian-dataview/) plugin for [Obsidian.md](https://obsidian.md/). You'll find everything from more basic syntactical examples to complex javascript supported solutions to help you build your own dataview querys that are tailor-made for your needs and data.
+This example vault showcases different usages of the [Dataview](https://blacksmithgu.github.io/obsidian-dataview/) plugin for [Obsidian.md](https://obsidian.md/). You'll find everything from more basic syntactical examples to complex javascript supported solutions to help you build your own dataview queries that are tailor-made for your needs and data.
 
 We hope you enjoy!
 
-### **For the optimal experience, open this vault in Obsidian!**
+## Usage
+
+> [!tip] **For the optimal experience, open this vault in Obsidian!**
 
 1. Download the vault [here](https://github.com/s-blu/obsidian_dataview_example_vault/archive/refs/heads/master.zip)
 2. Open the vault in Obsidian via "Open another vault -> Open folder as vault"
-3. Trust us. :) 
-4. When Obsidian opens the settings, hit the switch on "Dataview" to enable the plugin
+3. Trust us :) 
+4. When Obsidian opens the settings, hit the switch next to "Dataview" to enable the community plugin
 5. Done! The example vault is now available to you in its purest and most useful form!
 
 > [!info] Choose correct vault root
@@ -26,7 +28,7 @@ Wonder where to start? Good starting points are our [[Use Case Overview]], the [
 
 ## Online Version
 
-While I heartly recommend to download the vault, if you only want to browse through it or want to link a query to someone, the vault is deployed as a mkdocs page:
+While we heartly recommend to download the vault, if you only want to browse through it or want to link a query to someone, the vault is deployed as a mkdocs page:
 
 [**Online Version of the Obsidian Example Vault**](https://s-blu.github.io/obsidian_dataview_example_vault/)
 
